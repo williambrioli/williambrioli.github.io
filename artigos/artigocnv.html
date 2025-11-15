@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title id="metaTitle">Carregando artigo...</title>
+  <meta name="description" id="metaDescription" content="">
+  <meta name="author" content="William Brioli">
+ 
+  <!-- OG tags dinâmicas -->
+  <meta property="og:title" id="ogTitle" content="">
+  <meta property="og:description" id="ogDescription" content="">
+  <meta property="og:image" id="ogImage" content="">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="pt_BR">
+</head>
+
+<body>
+  <div id="topMenu" class="top-menu"></div>
+
+  <main class="article-page">
+    <div class="container">
+      <article class="article-card">
+        <header class="article-header">
+          <h1 id="articleTitle">Carregando título...</h1>
+          <div class="article-meta" id="articleMeta"></div>
+        </header>
+
+        <div class="article-cover" id="articleCover" style="display:none;">
+          <img id="articleCoverImg" src="" alt="">
+        </div>
+
+        <section class="article-body" id="articleBody">
+          <p>Carregando conteúdo...</p>
+        </section>
+      </article>
+    </div>
+
+    <!-- Rodapé igual ao anterior -->
+    <footer id="contato" class="site-footer">
+      <div class="container">
+        <div class="footer-card">
+          <h2>Contato</h2>
+          <p style="margin:0 0 12px;">
+            <strong>William Brioli</strong><br>
+            Psicanalista Clínico Integrativo
+          </p>
+          <ul class="contact-list">
+            <li><strong>Horário de Atendimento:</strong> Segunda à sexta – 8h00 às 22h00 (consulte agenda).</li>
+            <li><strong>Telefone:</strong> <a href="#" id="phoneLink"></a></li>
+          </ul>
+          <a class="btn" id="btnContact" href="#">Enviar mensagem</a>
+        </div>
+      </div>
+    </footer>
+  </main>
+
+  <div class="whatsapp-fab" role="link" aria-label="Conversar pelo WhatsApp">
+    <a id="waFab" href="#" aria-label="WhatsApp">💬</a>
+  </div>
+
+  <script>
+    // Caminho do arquivo Markdown
+    const ARTICLE_MD_PATH = '../posts/artigocnv.md'; // 🔹 ALTERE APENAS ISSO
+
+    // Extrai o front matter (--- ... ---)
+    function parseFrontMatter(md) {
+      const match = md.match(/^---\n([\s\S]*?)\n---\n?/);
+      if (!match) return { metadata: {}, content: md };
+
+      const yaml = match[1];
+      const content = md.slice(match[0].length);
+      const metadata = {};
+
+      yaml.split('\n').forEach(line => {
+        const [key, ...rest] = line.split(':');
+        if (key && rest.length) {
+          metadata[key.trim()] = rest.join(':').trim().replace(/^"|"$/g, '');
+        }
+      });
+      return { metadata, content };
+    }
+
+    // Converte markdown básico em HTML
+    function simpleMarkdownToHtml(md) {
+      if (!md) return '';
+      let text = md.replace(/\r\n/g, '\n');
+      text = text.replace(/^### (.*)$/gm, '<h3>$1</h3>');
+      text = text.replace(/^## (.*)$/gm, '<h2>$1</h2>');
+      text = text.replace(/^# (.*)$/gm, '<h2>$1</h2>');
+      text = text.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
+      text = text.replace(/\*(.+?)\*/g, '<em>$1</em>');
+      text = text.replace(/^[\-\*] (.*)$/gm, '<li>$1</li>');
+      text = text.replace(/(<li>.*<\/li>\n?)+/gm, match => `<ul>${match}</ul>`);
+      const parts = text.split(/\n{2,}/).map(block => (
+        /^<h[23]>/.test(block) || /^<ul>/.test(block) ? block : `<p>${block.trim()}</p>`
+      ));
+      return parts.join('\n');
+    }
+
+    async function loadArticle() {
+      const bodyEl = document.getElementById('articleBody');
+      const titleEl = document.getElementById('articleTitle');
+      const metaEl = document.getElementById('articleMeta');
+      const coverWrap = document.getElementById('articleCover');
+      const coverImg = document.getElementById('articleCoverImg');
+
+      try {
+        const resp = await fetch(ARTICLE_MD_PATH, { cache: 'no-store' });
+        const md = await resp.text();
+        const { metadata, content } = parseFrontMatter(md);
+
+        // 🧩 Atualiza título, meta e og tags automaticamente
+        if (metadata.title) {
+          document.title = metadata.title + ' | William Brioli';
+          titleEl.textContent = metadata.title;
+          document.getElementById('metaTitle').textContent = metadata.title;
+          document.getElementById('ogTitle').content = metadata.title;
+        }
+        if (metadata.description) {
+          document.getElementById('metaDescription').content = metadata.description;
+          document.getElementById('ogDescription').content = metadata.description;
+        }
+        if (metadata.cover) {
+          coverWrap.style.display = 'block';
+          coverImg.src = metadata.cover;
+          coverImg.alt = metadata.alt || metadata.title;
+          document.getElementById('ogImage').content = metadata.cover;
+        }
+        if (metadata.date && metadata.author) {
+          const date = new Date(metadata.date);
+          metaEl.textContent = `${date.toLocaleDateString('pt-BR', { day: '2-digit', month: 'long', year: 'numeric' })} • por ${metadata.author}`;
+        }
+
+        // 🔹 Renderiza o conteúdo
+        bodyEl.innerHTML = simpleMarkdownToHtml(content);
+
+      } catch (err) {
+        console.error(err);
+        bodyEl.innerHTML = '<p>Erro ao carregar o artigo.</p>';
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', loadArticle);
+  </script>
+
+  <script src="../js/menu.js"></script>
+</body>
+</html>

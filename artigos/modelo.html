@@ -1,0 +1,496 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- ===================
+       SEO – ALTERAR AQUI
+       =================== -->
+  <title>O Impacto da Comunicação Não Violenta na Vida Profissional | William Brioli</title> <!-- ALTERAR -->
+  <meta name="description" content="Como a Comunicação Não Violenta pode transformar relações, feedbacks, liderança e clima emocional no ambiente profissional."> <!-- ALTERAR -->
+  <meta name="author" content="William Brioli">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="O Impacto da Comunicação Não Violenta na Vida Profissional" /> <!-- ALTERAR -->
+  <meta property="og:description" content="Reflexões sobre Comunicação Não Violenta (CNV) aplicada à vida profissional, relações de trabalho, liderança e saúde emocional." /> <!-- ALTERAR -->
+  <meta property="og:type" content="article" />
+  <meta property="og:locale" content="pt_BR" />
+  <meta property="og:image" content="https://williambrioli.com.br/img/artigo-cnv.jpg" /> <!-- ALTERAR -->
+  <meta property="og:url" content="https://williambrioli.com.br/artigos/cnv-vida-profissional.html" /> <!-- ALTERAR -->
+
+  <!-- (Opcional) JSON-LD Article – se quiser pode ajustar datas e slug -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "O Impacto da Comunicação Não Violenta na Vida Profissional",
+    "author": {
+      "@type": "Person",
+      "name": "William Brioli"
+    },
+    "datePublished": "2025-11-14",
+    "image": "https://williambrioli.com.br/img/artigo-cnv.jpg",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://williambrioli.com.br/artigos/cnv-vida-profissional.html"
+    }
+  }
+  </script>
+
+  <!-- ===================
+       ESTILOS – herdando sua identidade visual
+       =================== -->
+  <style>
+    :root {
+      --bg: #F3F8F8;
+      --card: #FFFFFF;
+      --primary: #2E7D7E;
+      --primary-700: #1e5b5c;
+      --accent: #F3C78A;
+      --text: #1F2D2D;
+      --muted: #000000;
+      --radius: 12px;
+      --max-width: 1100px;
+    }
+
+    * { box-sizing: border-box; }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 8px;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 24px 16px;
+    }
+
+    /* ==========================
+       TOPO / MENU – usa o mesmo estilo do blog
+       ========================== */
+    .top-menu {
+      position: fixed;
+      left: 50%;
+      transform: translateX(-50%);
+      width: var(--max-width);
+      max-width: 100%;
+      top: 18px;
+      background: var(--primary);
+      backdrop-filter: blur(6px);
+      border-radius: 0;
+      padding: 8px 16px;
+      box-shadow: 0 6px 18px rgba(30, 30, 30, 0.08);
+      display: flex;
+      gap: 8px;
+      align-items: center;
+      justify-content: center;
+      z-index: 1200;
+      opacity: 0;
+      pointer-events: none;
+      transition: all .35s ease;
+    }
+
+    .top-menu.visible {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .top-menu a {
+      color: #fff;
+      font-size: 14px;
+      font-weight: 600;
+      padding: 6px 10px;
+      border-radius: 999px;
+      transition: background-color 0.25s ease,
+                  color 0.25s ease,
+                  transform 0.25s ease,
+                  box-shadow 0.25s ease;
+      white-space: nowrap;
+    }
+
+    .top-menu a:hover {
+      background: rgba(46, 125, 126, 0.15);
+      color: #fff;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(46, 125, 126, 0.25);
+    }
+
+    @media (max-width: 520px) {
+      .top-menu {
+        display: none;
+        position: fixed;
+        top: 64px;
+        left: 10px;
+        right: 10px;
+        width: auto;
+        background: #fff;
+        border-radius: 12px;
+        padding: 12px;
+        box-shadow: 0 14px 40px rgba(10,10,10,0.12);
+        flex-direction: column;
+        gap: 8px;
+        z-index: 2100;
+        transform: none;
+      }
+
+      .top-menu.open {
+        display: flex !important;
+        opacity: 1;
+        pointer-events: auto;
+      }
+
+      .top-menu a {
+        display: block;
+        padding: 10px 12px;
+        border-radius: 10px;
+        color: #000;
+      }
+    }
+
+    /* ==========================
+       LAYOUT DA PÁGINA DE ARTIGO
+       ========================== */
+    main.article-page {
+      padding-top: 90px; /* espaço pro menu flutuante */
+    }
+
+    .article-card {
+      background: var(--card);
+      border-radius: 20px;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.06);
+      padding: 24px 18px 24px;
+    }
+
+    .article-header h1 {
+      margin: 0 0 8px;
+      font-size: 28px;
+      color: var(--primary-700);
+    }
+
+    .article-meta {
+      font-size: 14px;
+      color: #555;
+      margin-bottom: 16px;
+    }
+
+    .article-cover {
+      margin: 12px 0 18px;
+    }
+
+    .article-body {
+      font-size: 15px;
+      line-height: 1.7;
+      color: var(--muted);
+    }
+
+    .article-body h2,
+    .article-body h3,
+    .article-body h4 {
+      margin-top: 20px;
+      margin-bottom: 6px;
+      color: var(--primary-700);
+    }
+
+    .article-body p {
+      margin: 0 0 10px;
+    }
+
+    .article-body ul {
+      padding-left: 20px;
+      margin: 0 0 10px;
+    }
+
+    /* CTA / sessão final (pode usar dentro do .md também) */
+    .cta-box {
+      margin-top: 24px;
+      padding: 16px;
+      border-radius: 12px;
+      background: rgba(46,125,126,0.06);
+      border: 1px solid rgba(46,125,126,0.15);
+    }
+
+    /* Botão genérico */
+    .btn {
+      display: inline-block;
+      padding: 8px 16px;
+      border-radius: 999px;
+      background: var(--primary);
+      color: #fff;
+      font-weight: 700;
+      font-size: 14px;
+      border: none;
+      cursor: pointer;
+      transition: all .25s ease-in-out;
+      text-align: center;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(0,0,0,0.18);
+      background: var(--primary-700);
+    }
+
+    /* ==========================
+       RODAPÉ
+       ========================== */
+    footer.site-footer {
+      padding: 24px 0 30px;
+      margin-top: 20px;
+    }
+
+    .footer-card {
+      background: var(--card);
+      border-radius: var(--radius);
+      padding: 20px 18px;
+      box-shadow: 0 6px 18px rgba(30,30,30,0.04);
+    }
+
+    .footer-card h2 {
+      margin: 0 0 10px;
+      font-size: 22px;
+      color: var(--primary-700);
+      text-align: left;
+    }
+
+    .contact-list {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 8px;
+      font-size: 14px;
+    }
+
+    .contact-list li {
+      margin-bottom: 6px;
+    }
+
+    /* ==========================
+       WHATSAPP FLUTUANTE
+       ========================== */
+    .whatsapp-fab {
+      position: fixed;
+      right: 18px;
+      bottom: 18px;
+      background: #25D366;
+      width: 64px;
+      height: 64px;
+      border-radius: 999px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 8px 24px rgba(46, 125, 126, 0.25);
+      z-index: 2300;
+      cursor: pointer;
+      animation: waFloat 2.5s ease-in-out infinite;
+    }
+
+    .whatsapp-fab a {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+    }
+
+    .whatsapp-label {
+      position: fixed;
+      right: 15px;
+      bottom: 5px;
+      background: rgba(255,255,255,1);
+      color: #25D366;
+      padding: 2px 8px;
+      border-radius: 8px;
+      font-size: 10px;
+      font-weight: 600;
+      z-index: 2300;
+      backdrop-filter: blur(4px);
+      animation: waFloat 2.5s ease-in-out infinite;
+    }
+
+    @keyframes waFloat {
+      0%   { transform: translateY(0); }
+      50%  { transform: translateY(-4px); }
+      100% { transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- MENU é injetado pelo js/menu.js (igual nas outras páginas) -->
+  <!-- O menu.js deve criar o elemento com id="topMenu" -->
+  <div id="topMenu" class="top-menu"></div>
+
+  <main class="article-page">
+    <div class="container">
+      <article class="article-card">
+        <header class="article-header">
+          <h1 id="articleTitle">O Impacto da Comunicação Não Violenta na Vida Profissional</h1> <!-- ALTERAR -->
+          <div class="article-meta" id="articleMeta">
+            14 de novembro de 2025 • por William Brioli <!-- ALTERAR -->
+          </div>
+        </header>
+
+        <div class="article-cover">
+          <img src="https://williambrioli.com.br/img/artigo-cnv.jpg"
+               alt="Profissionais conversando com empatia em ambiente de trabalho"> <!-- ALTERAR -->
+        </div>
+
+        <!-- Aqui o conteúdo .md será inserido -->
+        <section class="article-body" id="articleBody">
+          <p>Carregando artigo...</p>
+        </section>
+      </article>
+    </div>
+
+    <!-- RODAPÉ -->
+    <footer id="contato" class="site-footer">
+      <div class="container">
+        <div class="footer-card">
+          <h2>Contato</h2>
+          <p style="margin:0 0 12px;">
+            <strong>William Brioli</strong><br>
+            Psicanalista Clínico Integrativo
+          </p>
+          <ul class="contact-list">
+            <li><strong>Horário de Atendimento:</strong> Segunda à sexta – 8h00 às 22h00 (consulte agenda).</li>
+            <li><strong>Telefone:</strong> <a href="#" id="phoneLink"></a></li>
+          </ul>
+          <a class="btn" id="btnContact" href="#">Enviar mensagem</a>
+        </div>
+      </div>
+    </footer>
+  </main>
+
+  <!-- WHATSAPP FLUTUANTE -->
+  <div class="whatsapp-label">Fale comigo</div>
+  <div class="whatsapp-fab" role="link" aria-label="Conversar pelo WhatsApp">
+    <a id="waFab" href="#" aria-label="WhatsApp">
+      <svg width="32" height="32" viewBox="0 0 32 32" fill="white" xmlns="http://www.w3.org/2000/svg">
+        <path d="M16.006 3C9.373 3 4 8.373 4 15.006c0 2.647.873 5.098 2.348 7.083L4 29l7.127-2.298A12.943 12.943 0 0016.006 27c6.632 0 12.006-5.373 12.006-11.994C28.012 8.373 22.638 3 16.006 3zm6.725 16.994c-.28.782-1.634 1.517-2.262 1.547-.58.03-1.31.042-2.113-.133-.488-.112-1.114-.362-1.93-.708-3.386-1.467-5.592-4.876-5.756-5.107-.165-.23-1.37-1.82-1.37-3.47 0-1.65.865-2.463 1.173-2.8.308-.338.675-.423.9-.423.226 0 .451.002.648.012.21.01.49-.08.768.588.28.668.953 2.305 1.036 2.472.082.166.137.362.026.592-.11.23-.165.362-.322.56-.165.197-.347.44-.495.59-.165.165-.337.345-.145.677.197.338.877 1.446 1.886 2.34 1.297 1.153 2.392 1.51 2.73 1.677.338.165.533.142.73-.085.197-.226.843-.983 1.067-1.32.226-.338.451-.28.768-.165.317.112 2.007.947 2.352 1.118.346.173.575.258.66.402.082.14.082.783-.197 1.565z"/>
+      </svg>
+    </a>
+  </div>
+
+  <!-- ===================
+       SCRIPTS
+       =================== -->
+  <script>
+    // CONFIG GERAL (reutiliza do blog)
+    const SITE_CONFIG = {
+      whatsappNumber: '5518988092571',
+      phoneDisplay: '(18) 98809-2571',
+      messages: {
+        generic: 'Ol%C3%A1%2C%20William%2C%20tudo%20bem%3F%20Gostaria%20de%20conversar%20sobre%20atendimento.' 
+      }
+    };
+
+    function waLink(msgKey) {
+      const num = SITE_CONFIG.whatsappNumber;
+      const msg = SITE_CONFIG.messages[msgKey] || SITE_CONFIG.messages.generic;
+      return `https://wa.me/${num}?text=${msg}`;
+    }
+
+    // WhatsApp – links, rodapé e FAB
+    (function(){
+      const phoneLink = document.getElementById('phoneLink');
+      const btnContact = document.getElementById('btnContact');
+      const waFab = document.getElementById('waFab');
+
+      if (phoneLink) {
+        phoneLink.textContent = SITE_CONFIG.phoneDisplay;
+        phoneLink.href = `tel:${SITE_CONFIG.whatsappNumber.replace(/^55/, '+')}`;
+      }
+
+      function openWA() {
+        window.open(waLink('generic'), '_blank');
+      }
+
+      if (btnContact) {
+        btnContact.addEventListener('click', (e) => {
+          e.preventDefault();
+          openWA();
+        });
+      }
+
+      if (waFab) {
+        waFab.addEventListener('click', (e) => {
+          e.preventDefault();
+          openWA();
+        });
+        waFab.parentElement.addEventListener('click', (e) => {
+          e.preventDefault();
+          openWA();
+        });
+      }
+    })();
+
+    // MINI PARSER DE MARKDOWN (mesmo do blog)
+    function simpleMarkdownToHtml(md) {
+      if (!md) return '';
+
+      let text = md.replace(/\r\n/g, '\n');
+
+      text = text.replace(/^### (.*)$/gm, '<h3>$1</h3>');
+      text = text.replace(/^## (.*)$/gm, '<h2>$1</h2>');
+      text = text.replace(/^# (.*)$/gm, '<h2>$1</h2>');
+
+      text = text.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
+      text = text.replace(/\*(.+?)\*/g, '<em>$1</em>');
+
+      text = text.replace(/^[\-\*] (.*)$/gm, '<li>$1</li>');
+      text = text.replace(/(<li>.*<\/li>\n?)+/gm, match => `<ul>${match}</ul>`);
+
+      const parts = text.split(/\n{2,}/).map(block => {
+        if (/^<h[23]>/.test(block) || /^<ul>/.test(block)) {
+          return block;
+        }
+        return `<p>${block.trim()}</p>`;
+      });
+
+      return parts.join('\n');
+    }
+
+    // === CONFIG ESPECÍFICA DO ARTIGO ===
+    // ALTERE APENAS ESTE CAMINHO para o .md correspondente
+    const ARTICLE_MD_PATH = '../posts/cnv-vida-profissional.md'; // ALTERAR
+
+    document.addEventListener('DOMContentLoaded', async () => {
+      const bodyEl = document.getElementById('articleBody');
+      if (!bodyEl) return;
+
+      try {
+        const resp = await fetch(ARTICLE_MD_PATH, { cache: 'no-store' });
+        if (!resp.ok) throw new Error('Erro ao carregar markdown');
+        const md = await resp.text();
+        const html = simpleMarkdownToHtml(md);
+        bodyEl.innerHTML = html || '<p>Conteúdo vazio.</p>';
+      } catch (err) {
+        console.error(err);
+        bodyEl.innerHTML = '<p>Ocorreu um erro ao carregar o conteúdo deste artigo.</p>';
+      }
+    });
+  </script>
+
+  <!-- MENU DINÂMICO (mesmo do index/blog) -->
+  <script src="../js/menu.js"></script>
+
+</body>
+</html>
