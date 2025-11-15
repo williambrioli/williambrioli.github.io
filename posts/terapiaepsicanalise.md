@@ -3,7 +3,7 @@
 Muitas pessoas chegam ao consultório com uma dúvida comum: **“Afinal, que tipo de terapia o psicanalista faz?”**  
 Essa é uma pergunta legítima, já que a psicanálise, embora muito conhecida, ainda é cercada de mitos e interpretações equivocadas.
 
-
+---
 
 ## A terapia psicanalítica: um mergulho no autoconhecimento
 
@@ -12,7 +12,7 @@ Diferente de abordagens mais diretivas, a psicanálise não oferece respostas pr
 
 Durante o processo terapêutico, o paciente é estimulado a **falar livremente** sobre o que pensa, sente e vivencia. Essa liberdade de expressão abre espaço para que **conteúdos inconscientes** venham à tona, permitindo a elaboração de conflitos e o desenvolvimento de uma nova compreensão sobre si mesmo.
 
-
+---
 
 ## O que diferencia a psicanálise de outras terapias?
 
@@ -21,7 +21,7 @@ Ela considera que os sintomas — como ansiedade, crises emocionais, dificuldade
 
 O psicanalista, então, atua como um facilitador de escuta e reflexão, ajudando o paciente a **encontrar suas próprias respostas**, e não a seguir conselhos prontos.
 
-
+---
 
 ## A terapia psicanalítica é indicada para quem?
 
@@ -35,7 +35,7 @@ Ela pode ser buscada por quem:
 
 Ao longo do processo, a pessoa aprende a **reconhecer padrões inconscientes**, **elaborar suas dores** e **criar novos caminhos de amadurecimento emocional**.
 
-
+---
 
 ## A terapia do psicanalista é um processo de transformação
 
@@ -44,7 +44,7 @@ Ao compreender as origens de suas emoções e comportamentos, o paciente desenvo
 
 > **A psicanálise não muda quem você é — ela ajuda você a descobrir quem realmente é.**
 
-
+---
 
 **William Brioli** é **Psicanalista Clínico Integrativo**, pós-graduado em **Neurociência, Comunicação e Desenvolvimento Humano**.  
 Atende presencialmente em **Ilha Solteira (SP)** e **online para todo o Brasil**.  
