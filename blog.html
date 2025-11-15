@@ -531,15 +531,17 @@
       }
     }
 
-    <!-- ===================
-       IGUALAR CONTEINER AO MENU
-       =================== -->
-
-    .container {
-  max-width: calc(var(--max-width) + 32px); /* adiciona os 16px de padding de cada lado */
+    /* === Correção de alinhamento visual do menu no blog === */
+.top-menu {
+  left: 0 !important;
+  right: 0 !important;
+  width: auto !important;
+  max-width: none !important;
+  transform: none !important;
+  padding: 0 calc((100vw - var(--max-width)) / 2); /* centraliza baseado no mesmo limite do conteúdo */
 }
 
-    
+      
   </style>
 </head>
 <body>
@@ -990,6 +992,7 @@
 
 </body>
 </html>
+
 
 
 
