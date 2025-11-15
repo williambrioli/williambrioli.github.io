@@ -10,11 +10,12 @@
   },
   {
     "id": "cnv",
-    "title": "O Impacto da Comunicação Não Violenta na Vida Profissional",
-    "date": "2025-11-10",
+    "title": "Que tipo de terapia o psicanalista faz?",
+    "date": "2025-11-14",
     "author": "William Brioli",
-    "cover": "https://williambrioli.com.br/img/artigo-cnv.jpg",
-    "excerpt": "Como a CNV pode transformar relacionamentos e equipes no ambiente corporativo.",
-    "file": "posts/artigocnv.md"
+    "cover": "https://williambrioli.com.br/img/terapiaepsicanalise.png",
+    "excerpt": "Muitas pessoas chegam ao consultório com uma dúvida comum: **“Afinal, que tipo de terapia o psicanalista faz?”**  
+     Essa é uma pergunta legítima, já que a psicanálise, embora muito conhecida, ainda é cercada de mitos e interpretações equivocadas.",
+    "file": "posts/terapiaepsicanalise.md"
   }
 ]
