@@ -532,7 +532,21 @@
       }
     }
 
-    
+ /* ==========================
+   AJUSTE: Botões do modal alinhados à esquerda
+   ========================== */
+.modal-footer {
+  justify-content: flex-start !important; /* Alinha à esquerda */
+  align-items: center;
+  gap: 8px; /* Espaçamento entre os botões */
+}
+
+@media (max-width: 600px) {
+  .modal-footer {
+    margin-bottom: 80px; /* Evita que o botão 'Fechar' fique sob o WhatsApp no mobile */
+  }
+}
+   
       
   </style>
 </head>
@@ -984,6 +998,7 @@
 
 </body>
 </html>
+
 
 
 
