@@ -69,16 +69,15 @@
        ========================== */
     .top-menu {
       position: fixed;
-      left: 0;
-      right: 0;
+      left: 50%;
       transform: translateX(-50%);
-      width: auto;
-      max-width: none;
+      width: var(--max-width);
+      max-width: 100%;
       top: 18px;
       background: var(--primary);
       backdrop-filter: blur(6px);
       border-radius: 0;
-      padding: 16px;
+      padding: 8px 16px;
       box-shadow: 0 6px 18px rgba(30, 30, 30, 0.08);
       display: flex;
       gap: 8px;
@@ -531,6 +530,16 @@
         margin-top: 90px;
       }
     }
+
+    <!-- ===================
+       IGUALAR CONTEINER AO MENU
+       =================== -->
+
+    .container {
+  max-width: calc(var(--max-width) + 32px); /* adiciona os 16px de padding de cada lado */
+}
+
+    
   </style>
 </head>
 <body>
@@ -981,6 +990,7 @@
 
 </body>
 </html>
+
 
 
 
