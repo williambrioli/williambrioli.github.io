@@ -64,4 +64,4 @@ Se você sente que suas relações profissionais estão desgastantes, ou que sua
 **William Brioli** é **Psicanalista Clínico Integrativo**, pós-graduado em **Neurociência, Comunicação e Desenvolvimento Humano**.  
 Atende presencialmente em **Ilha Solteira (SP)** e **online para todo o Brasil**.  
 Atua com **psicoterapia individual, terapia de casal, empreendedores, carreira e desenvolvimento emocional**.  
-Saiba mais em [williambrioli.com](https://williambrioli.com.br) ou agende seu atendimento pelo **WhatsApp**.
+
