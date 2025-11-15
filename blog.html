@@ -89,6 +89,30 @@
       transition: all .35s ease;
     }
 
+
+/* Corrige largura do menu para alinhar com o container */
+.top-menu {
+  position: fixed;
+  top: 18px;
+  left: 0;
+  right: 0;
+  width: 100%;
+  max-width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.top-menu nav,
+.top-menu > * {
+  max-width: var(--max-width);
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+}
+
+    
+    
     .top-menu.visible {
       opacity: 1;
       pointer-events: auto;
@@ -967,5 +991,6 @@
 
 </body>
 </html>
+
 
 
