@@ -17,7 +17,8 @@
       description: "Como a Comunicação Não Violenta pode transformar relações, feedbacks e liderança no ambiente de trabalho.",
       date: "2025-11-15",
       author: "William Brioli",
-      cover: " ",
+      cover: "https://williambrioli.com.br/img/HEROog.png",
+      showCover: false, // 🚫 adiciona esse novo campo
       alt: "Profissionais conversando com empatia em ambiente corporativo",
       canonical: "https://williambrioli.com.br/artigos/cnv.html",
 
@@ -1186,13 +1187,11 @@ Atua com <strong>psicoterapia individual, terapia de casal, empreendedores, carr
       document.getElementById("articleTitle").textContent = ARTICLE.title;
       const coverImg = document.getElementById("articleCover");
 
-if (ARTICLE.cover && ARTICLE.cover.trim() !== "") {
-  // ✅ Se houver imagem definida, exibe normalmente
+if (ARTICLE.showCover && ARTICLE.cover && ARTICLE.cover.trim() !== "") {
   coverImg.src = ARTICLE.cover;
   coverImg.alt = ARTICLE.alt || "";
   coverImg.style.display = "block";
 } else {
-  // 🚫 Se não houver imagem, oculta o elemento
   coverImg.style.display = "none";
 }
       
