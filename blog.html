@@ -561,6 +561,62 @@
   position: relative;
 }
    
+/* ==============================
+   CORREÇÃO DE MENU NO BLOG
+   Mantém o layout idêntico ao index
+   ============================== */
+
+/* Ajuste no container principal do menu */
+.top-menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 6px; /* mesmo espaçamento horizontal do index */
+  padding: 10px 16px;
+}
+
+/* Garante que os links fiquem centralizados no desktop e mobile */
+.top-menu a {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #fff;
+  transition: background-color 0.25s ease, transform 0.25s ease;
+}
+
+/* Efeito hover igual ao index */
+.top-menu a:hover {
+  background: rgba(255, 255, 255, 0.12);
+  transform: translateY(-2px);
+}
+
+/* Corrige menu hambúrguer (mobile) */
+@media (max-width: 520px) {
+  .top-menu {
+    flex-direction: column;
+    gap: 8px;
+    text-align: center;
+    padding: 12px;
+  }
+
+  .top-menu a {
+    width: 100%;
+    color: #000;
+    background: #fff;
+    border-radius: 10px;
+    padding: 10px 12px;
+  }
+
+  .top-menu a:hover {
+    background: rgba(46, 125, 126, 0.15);
+    transform: scale(0.98);
+  }
+}
 
       
   </style>
@@ -1023,6 +1079,7 @@
 
 </body>
 </html>
+
 
 
 
