@@ -6,6 +6,7 @@
 
   <!-- =========================
        🔧 BLOCO DE CONFIGURAÇÃO
+       (edite apenas este trecho)
        ========================= -->
   <script>
     const ARTICLE = {
@@ -16,6 +17,8 @@
       cover: "https://williambrioli.com.br/img/artigocnv.png",
       alt: "Profissionais conversando com empatia em ambiente corporativo",
       canonical: "https://williambrioli.com.br/artigos/modelo.html",
+
+      // 📝 Conteúdo do artigo
       content: `
 <p>No ambiente profissional, comunicar-se bem vai muito além de falar com clareza — envolve <strong>escutar com empatia</strong>, <strong>reconhecer emoções</strong> e <strong>expressar-se sem atacar nem se submeter</strong>.</p>
 
@@ -29,7 +32,23 @@
   <li><strong>Pedidos claros e respeitosos</strong> – expressar o que desejamos de forma construtiva, sem impor.</li>
 </ul>
 
-<p>Esses quatro elementos parecem simples, mas exigem um movimento interno de <strong>consciência e empatia</strong> — algo que a maioria dos ambientes corporativos ainda está aprendendo a desenvolver.</p>
+<h2>Como a CNV transforma as relações no trabalho</h2>
+<p>Quando aplicada no cotidiano profissional, a Comunicação Não Violenta promove mudanças profundas:</p>
+<ul>
+  <li>Melhora o clima organizacional, pois reduz conflitos desnecessários.</li>
+  <li>Aumenta a colaboração entre equipes, fortalecendo vínculos de confiança.</li>
+  <li>Desenvolve líderes mais conscientes, que sabem ouvir, acolher e inspirar.</li>
+  <li>Reduz o estresse e o desgaste emocional, já que a comunicação se torna mais autêntica e menos defensiva.</li>
+</ul>
+
+<h2>A CNV e o autoconhecimento</h2>
+<p><strong>Comunicar-se sem violência é, antes de tudo, um ato de autoconhecimento.</strong><br>
+A forma como reagimos aos outros costuma refletir nossos próprios medos e expectativas. Quando reconhecemos isso, conseguimos responder de modo mais equilibrado e menos impulsivo.</p>
+
+<p>A CNV convida cada pessoa a olhar para dentro antes de falar — e é exatamente aí que ela se conecta com o processo terapêutico: ambos promovem <strong>consciência emocional</strong> e <strong>responsabilidade afetiva</strong>.</p>
+
+<h2>Um novo olhar sobre o sucesso</h2>
+<p>Em um mercado competitivo, a habilidade de comunicar-se com empatia se tornou um diferencial humano e estratégico.</p>
 
 <blockquote>
 A terapia pode ser o espaço ideal para desenvolver essa consciência emocional — e transformar, de dentro para fora, sua forma de se relacionar com o trabalho e com as pessoas.
@@ -43,7 +62,7 @@ Atua com <strong>psicoterapia individual, terapia de casal, empreendedores, carr
   </script>
 
   <!-- =========================
-       SEO AUTOMÁTICO
+       SEO / OG AUTOMÁTICO
        ========================= -->
   <title id="metaTitle"></title>
   <meta name="description" id="metaDescription" content="">
@@ -55,9 +74,6 @@ Atua com <strong>psicoterapia individual, terapia de casal, empreendedores, carr
   <meta property="og:locale" content="pt_BR">
   <link id="canonicalLink" rel="canonical" href="">
 
-  <!-- =========================
-       ESTILOS INTERNOS
-       ========================= -->
   <style>
     :root {
       --primary: #2E7D7E;
@@ -65,82 +81,34 @@ Atua com <strong>psicoterapia individual, terapia de casal, empreendedores, carr
       --bg: #f3f8f8;
       --text: #1f2d2d;
       --radius: 12px;
-      --max-width: 950px;
-    }
-
-    * {
-      box-sizing: border-box;
+      --max-width: 850px;
     }
 
     body {
       margin: 0;
-      font-family: "Inter", system-ui, sans-serif;
+      font-family: Inter, system-ui, sans-serif;
       background: var(--bg);
       color: var(--text);
       line-height: 1.7;
     }
 
-    /* ==== MENU ==== */
-    .top-menu {
+    /* ==== MENU SUPERIOR ==== */
+    header.top-menu {
       background: var(--primary);
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      padding: 14px;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
+      color: #fff;
+      padding: 14px 0;
+      text-align: center;
+      font-weight: 600;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     }
 
-    .top-menu a {
+    header.top-menu a {
       color: #fff;
       text-decoration: none;
-      font-weight: 600;
-      transition: opacity 0.25s ease;
+      font-size: 15px;
     }
 
-    .top-menu a:hover {
-      opacity: 0.8;
-    }
-
-    /* ==== HERO ==== */
-    .blog-hero-wrap {
-      margin-top: 0;
-    }
-
-    .blog-hero {
-      background: linear-gradient(135deg, #2E7D7E, #1e5b5c);
-      border-radius: 0 0 24px 24px;
-      padding: 40px 24px;
-      color: #fff;
-      text-align: center;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-    }
-
-    .blog-hero h1 {
-      margin: 0 0 8px;
-      font-size: 28px;
-    }
-
-    .blog-hero p {
-      max-width: 680px;
-      margin: 0 auto 8px;
-      line-height: 1.6;
-      color: #e7f4f4;
-    }
-
-    .blog-hero small {
-      display: block;
-      margin-top: 10px;
-      background: rgba(0,0,0,0.15);
-      padding: 4px 10px;
-      border-radius: 999px;
-      font-size: 12px;
-      width: fit-content;
-      margin-inline: auto;
-    }
-
-    /* ==== CONTEÚDO ==== */
+    /* ==== CONTEÚDO DO ARTIGO ==== */
     main.article {
       max-width: var(--max-width);
       margin: 40px auto;
@@ -162,7 +130,7 @@ Atua com <strong>psicoterapia individual, terapia de casal, empreendedores, carr
 
     .article-meta {
       font-size: 14px;
-      color: #666;
+      color: #555;
       margin-bottom: 16px;
     }
 
@@ -170,11 +138,6 @@ Atua com <strong>psicoterapia individual, terapia de casal, empreendedores, carr
       border-radius: var(--radius);
       width: 100%;
       margin: 0 0 24px;
-      box-shadow: 0 6px 18px rgba(0,0,0,0.06);
-    }
-
-    ul {
-      padding-left: 20px;
     }
 
     blockquote {
@@ -243,19 +206,12 @@ Atua com <strong>psicoterapia individual, terapia de casal, empreendedores, carr
 </head>
 
 <body>
-  <!-- MENU SUPERIOR -->
-  <div id="topMenu" class="top-menu"></div>
+  <!-- TOPO / MENU -->
+  <header class="top-menu">
+    <a href="https://williambrioli.com.br/blog.html">← Voltar ao Blog</a>
+  </header>
 
-  <!-- HERO -->
-  <section class="blog-hero-wrap">
-    <div class="blog-hero">
-      <h1>Blog • Psicanálise, Terapia e Vida Real</h1>
-      <p>Reflexões sobre saúde emocional, relacionamentos, carreira, empreendedorismo e desenvolvimento humano, a partir da prática clínica e da experiência no mundo corporativo.</p>
-      <small>Atualizado periodicamente com novos artigos.</small>
-    </div>
-  </section>
-
-  <!-- CONTEÚDO -->
+  <!-- CONTEÚDO DO ARTIGO -->
   <main class="article">
     <article>
       <img id="articleCover" class="article-cover" src="" alt="">
@@ -278,10 +234,10 @@ Atua com <strong>psicoterapia individual, terapia de casal, empreendedores, carr
   <!-- BOTÃO WHATSAPP -->
   <a href="https://wa.me/5518988092571?text=Olá,%20William,%20tudo%20bem?" class="whatsapp-fab" aria-label="WhatsApp">💬</a>
 
-  <!-- SCRIPTS -->
+  <!-- SCRIPT DE AUTO-PREENCHIMENTO -->
   <script>
-    // Preenche as informações automaticamente
     document.addEventListener("DOMContentLoaded", () => {
+      // Preenche SEO
       document.title = ARTICLE.title + " | William Brioli";
       document.getElementById("metaTitle").textContent = ARTICLE.title;
       document.getElementById("metaDescription").content = ARTICLE.description;
@@ -290,6 +246,7 @@ Atua com <strong>psicoterapia individual, terapia de casal, empreendedores, carr
       document.getElementById("ogImage").content = ARTICLE.cover;
       document.getElementById("canonicalLink").href = ARTICLE.canonical;
 
+      // Cabeçalho do artigo
       document.getElementById("articleTitle").textContent = ARTICLE.title;
       document.getElementById("articleCover").src = ARTICLE.cover;
       document.getElementById("articleCover").alt = ARTICLE.alt;
@@ -299,10 +256,9 @@ Atua com <strong>psicoterapia individual, terapia de casal, empreendedores, carr
         date.toLocaleDateString("pt-BR", { day: "2-digit", month: "long", year: "numeric" }) +
         " • por " + ARTICLE.author;
 
+      // Corpo do artigo
       document.getElementById("articleContent").innerHTML = ARTICLE.content;
     });
   </script>
-
-  <script src="../js/menu.js"></script>
 </body>
 </html>
