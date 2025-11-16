@@ -663,7 +663,34 @@ Atua com <strong>psicoterapia individual, terapia de casal, empreendedores, carr
   border-radius: var(--radius);
   margin-bottom: 24px;
 }
-      
+
+
+/* ==========================
+   BOTÃO AO FINAL DO ARTIGO
+   ========================== */
+.article-footer {
+  margin-top: 32px;
+  text-align: left; /* ou center se quiser centralizado */
+}
+
+.article-footer .btn {
+  display: inline-block;
+  background: var(--primary);
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 15px;
+  transition: all 0.25s ease;
+}
+
+.article-footer .btn:hover {
+  background: var(--primary-700);
+  transform: translateY(-2px);
+}
+
+
+    
   </style>
 </head>
 <body>
@@ -691,9 +718,17 @@ Atua com <strong>psicoterapia individual, terapia de casal, empreendedores, carr
       <h1 id="articleTitle"></h1>
       <div id="articleMeta" class="article-meta"></div>
       <section id="articleContent"></section>
+
+      <!-- 🔘 BOTÃO AO FINAL DO ARTIGO -->
+      <div class="article-footer">
+        <button type="button" class="btn" id="btnAgendarAtendimento">
+          Agendar atendimento
+        </button>
+      </div>
     </article>
   </div>
 </section>
+
 
    
     <!-- ===================
