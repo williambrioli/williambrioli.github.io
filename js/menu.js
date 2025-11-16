@@ -11,7 +11,7 @@ async function carregarMenu() {
 
   try {
     // Busca o conteúdo do menu.html (mesma pasta da página)
-    const res = await fetch(window.location.pathname.includes('/artigos/') ? '../menu.html' : 'menu.html');
+    const res = await fetch('/menu.html');
 
     if (!res.ok) throw new Error('Erro ao carregar menu.html');
 
