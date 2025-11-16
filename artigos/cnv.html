@@ -438,6 +438,25 @@
       margin: 0;
     }
 
+
+.blog-text-content {
+  background: var(--card);
+  border-radius: var(--radius);
+  box-shadow: 0 6px 18px rgba(30,30,30,0.06);
+  padding: 24px 28px;
+  line-height: 1.7;
+  font-size: 16px;
+  color: var(--muted);
+}
+
+.blog-text-content h2,
+.blog-text-content h3 {
+  color: var(--primary-700);
+  margin-top: 0;
+}
+    
+    
+    
     /* ==========================
        RODAPÉ / CONTATO (simples)
        ========================== */
@@ -579,14 +598,34 @@
       <div class="container">
         <h2>Artigos Recentes</h2>
 
-        <!-- Container onde os cards serão injetados via JS -->
-        <div id="postsGrid" class="posts-grid">
-          <!-- Cards criados dinamicamente -->
-        </div>
 
-        <!-- Mensagem de erro / vazio -->
-        <div id="postsMessage" class="posts-empty" style="display:none;"></div>
-      </div>
+
+<div class="blog-text-content">
+  <h2>Sobre este espaço</h2>
+  <p>
+    Este blog é um espaço de reflexão sobre a mente humana, os desafios da vida moderna
+    e o papel da psicanálise no autoconhecimento e na transformação pessoal.
+  </p>
+
+  <p>
+    Aqui você encontrará textos que dialogam com o cotidiano — a ansiedade,
+    o trabalho, os relacionamentos, a busca por sentido e o equilíbrio emocional —
+    sempre com uma linguagem acessível e um olhar clínico e humano.
+  </p>
+
+  <h3>Propósito</h3>
+  <p>
+    Mais do que informar, o objetivo é provocar questionamentos, inspirar mudanças
+    e abrir caminhos para uma escuta mais profunda de si mesmo.
+  </p>
+
+  <p><em>— William Brioli</em></p>
+</div>
+
+
+
+
+        
     </section>
 
     <!-- ===================
