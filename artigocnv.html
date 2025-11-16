@@ -255,12 +255,16 @@ Atua com <strong>psicoterapia individual, terapia de casal, empreendedores, carr
     }
 
     .blog-hero {
-      background: linear-gradient(135deg, #2E7D7E, #1e5b5c);
-      border-radius: 20px;
-      padding: 32px 24px;
-      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
-      color: #fff;
-    }
+  position: relative;
+  border-radius: 20px;
+  padding: 48px 32px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+  color: #fff;
+  background: 
+    linear-gradient(rgba(46, 125, 126, 0.7), rgba(30, 91, 92, 0.85)), /* sobreposição suave */
+    url("../img/HEROog.jpg") center/cover no-repeat; /* 🔹 sua imagem aqui */
+  overflow: hidden;
+}
 
     .blog-hero h1 {
       margin: 0 0 8px;
