@@ -150,102 +150,145 @@ Atua com <strong>psicoterapia individual, terapia de casal, empreendedores, carr
     }
 
 
-.top-menu nav,
-.top-menu > * {
-  max-width: var(--max-width);
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  gap: 8px;
-}
+     .top-menu a {
+     color: #fff !important;
+    }
 
-
-
-    
+  
     
     .top-menu.visible {
       opacity: 1;
       pointer-events: auto;
     }
 
-    .top-menu a {
-      color: #fff;
-      font-size: 14px;
-      font-weight: 600;
-      padding: 6px 10px;
-      border-radius: 999px;
-      transition:
-        background-color 0.25s ease,
-        color 0.25s ease,
-        transform 0.25s ease,
-        box-shadow 0.25s ease;
-      white-space: nowrap;
-    }
 
-    .top-menu a:hover {
-      background: rgba(46, 125, 126, 0.15);
-      color: #fff;
-      transform: translateY(-2px);
-      box-shadow: 0 4px 12px rgba(46, 125, 126, 0.25);
-    }
+    @media(max-width:520px){
+  .top-menu{
+    left: 10px !important;
+    right: 10px !important;
+    width: calc(100% - 20px);
+    transform: none !important;
+    flex-wrap: wrap;             /* permite quebrar linha */
+    justify-content: center;     /* centraliza todos os botões */
+    padding: 10px 12px;
+    gap: 6px;
+  }
 
-    /* Botão hambúrguer (mobile) */
-    .hamburger {
-      display: none;
-      position: fixed;
-      top: 14px;
-      left: 14px;
-      z-index: 2200;
-      background: rgba(255, 255, 255, 0.95);
-      border: 0;
-      padding: 8px 10px;
-      border-radius: 10px;
-      font-size: 22px;
-      line-height: 1;
-      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
-      cursor: pointer;
-    }
+  .top-menu a{
+    padding: 8px 10px;
+    font-size: 13px;
+    flex-shrink: 0;              /* evita esmagar texto */
+    white-space: nowrap;         /* impede quebra dentro dos botões */
+    color:#000 !important;  /* texto preto no mobile */
+  }
+}
 
-    @media (max-width: 520px) {
-      .hamburger {
-        display: block;
-      }
+/* Hover animado nos itens do menu */
+.top-menu a {
+  transition: 
+    background-color 0.25s ease,
+    color 0.25s ease,
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
 
-      .top-menu {
-        display: none;
-        position: fixed;
-        top: 64px;
-        left: 10px;
-        right: 10px;
-        width: auto;
-        background: #fff;
-        border-radius: 12px;
-        padding: 12px;
-        box-shadow: 0 14px 40px rgba(10, 10, 10, 0.12);
-        flex-direction: column;
-        gap: 8px;
-        z-index: 2100;
-        transform: none;
-      }
+.top-menu a:hover {
+  background: rgba(46,125,126,0.15);   /* cor suave com sua cor primária */
+  color: var(--primary-700);
+  transform: translateY(-2px);         /* levanta levemente */
+  box-shadow: 0 4px 12px rgba(46,125,126,0.25); /* sombra elegante */
+  border-radius: 999px;                /* mantém o estilo */
+}
+    
 
-      .top-menu.open {
-        display: flex !important;
-        opacity: 1;
-        pointer-events: auto;
-      }
+    /* ---------------------------
+   HAMBURGUER & menu mobile
+   --------------------------- */
 
-      .top-menu a {
-        display: block;
-        padding: 10px 12px;
-        border-radius: 10px;
-        color: #000;
-      }
+/* Estilo do botão hambúrguer (desktop: escondido) */
+.hamburger{
+  display: none;                   /* só aparece no mobile via media query */
+  position: fixed;
+  top: 14px;
+  left: 14px;
+  z-index: 2200;
+  background: rgba(255,255,255,0.95);
+  border: 0;
+  padding: 8px 10px;
+  border-radius: 10px;
+  font-size: 22px;
+  line-height: 1;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+  cursor: pointer;
+}
 
-      .top-menu a:active {
-        background: rgba(46, 125, 126, 0.15);
-        transform: scale(0.97);
-      }
-    }
+    /* Mobile behavior: mostra hambúrguer e converte top-menu em drawer */
+@media (max-width: 520px) {
+
+  /* mostra o botão */
+  .hamburger{ display: block; }
+
+  /* Esconde o top-menu por padrão no mobile — vai abrir ao clicar */
+  .top-menu{
+    display: none;
+    position: fixed;
+    top: 64px;               /* fica abaixo do hamburguer */
+    left: 10px;
+    right: 10px;
+    width: auto;
+    background: #fff;
+    border-radius: 12px;
+    padding: 12px;
+    box-shadow: 0 14px 40px rgba(10,10,10,0.12);
+    flex-direction: column;
+    gap: 8px;
+    z-index: 2100;
+ 
+}
+
+     /* Efeito de “toque” nos itens do menu mobile */
+  .top-menu a {
+    transition: background-color 0.25s ease,
+                transform 0.2s ease;
+  }
+
+  .top-menu a:active {
+    background: rgba(46,125,126,0.15);    /* fundo suave */
+    transform: scale(0.97);               /* efeito de pressionado */
+    border-radius: 10px;
+  }
+}
+
+
+  /* Estado aberto do menu */
+  .top-menu.open{
+    display: flex !important;
+  }
+
+      /* Ajustes dos links dentro do drawer */
+  .top-menu a{
+    display: block;
+    padding: 10px 12px;
+    border-radius: 10px;
+    white-space: nowrap;
+  }
+
+      /* Permite rolagem caso tenha muitos itens */
+  .top-menu { max-height: calc(100vh - 120px); overflow:auto; }
+}
+
+.hero__overlay {
+  padding: 48px 24px; /* espaçamento confortável */
+  width: 100%;
+  
+}
+
+.hero__text {
+  max-width: 600px; /* mantém o texto bonito e legível */
+  margin-left: 0;   /* garante alinhamento total à esquerda */
+  text-align: left; /* só para garantir */
+}
+
 
     /* ==========================
        HERO DO BLOG
