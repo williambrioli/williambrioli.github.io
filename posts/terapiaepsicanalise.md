@@ -1,14 +1,3 @@
----
-title: "O Impacto da Comunicação Não Violenta na Vida Profissional"
-description: "Como a Comunicação Não Violenta pode transformar relações, feedbacks e liderança no ambiente de trabalho."
-date: "2025-11-15"
-author: "William Brioli"
-cover: "https://williambrioli.com.br/img/artigocnv.png"
-alt: "Profissionais conversando com empatia em ambiente corporativo"
----
-
-
-
 # Que tipo de terapia o psicanalista faz?
 
 Muitas pessoas chegam ao consultório com uma dúvida comum: **“Afinal, que tipo de terapia o psicanalista faz?”**  
