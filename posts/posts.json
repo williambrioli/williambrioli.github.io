@@ -11,14 +11,14 @@
    
   },
   {
-    "id": "terapiaepsicanalise",
+    "id": "Que_tipo_de_terapia_o_psicanalista_faz",
     "title": "Que tipo de terapia o psicanalista faz?",
-    "date": "2025-11-14",
+    "date": "2025-11-16",
     "author": "William Brioli",
     "cover": "https://williambrioli.com.br/img/terapiaepsicanalise.png",
     "excerpt": "Muitas pessoas chegam ao consultório com uma dúvida comum: 'Afinal, que tipo de terapia o psicanalista faz?' Essa é uma pergunta legítima, já que a psicanálise, embora muito conhecida, ainda é cercada de mitos e interpretações equivocadas.",
-    "file": "posts/terapiaepsicanalise.md",
-    "html": "terapiaepsicanalise.html"
+    "file": "posts/Que_tipo_de_terapia_o_psicanalista_faz.md",
+    "html": "Que_tipo_de_terapia_o_psicanalista_faz.html"
     
   }
 ]
