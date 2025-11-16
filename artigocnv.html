@@ -689,6 +689,10 @@ Atua com <strong>psicoterapia individual, terapia de casal, empreendedores, carr
   transform: translateY(-2px);
 }
 
+/* Remove espaço extra quando o artigo não tem imagem */
+.article .article-cover[style*="display: none"] + h1 {
+  margin-top: 0;
+}
 
     
   </style>
@@ -1129,8 +1133,18 @@ Atua com <strong>psicoterapia individual, terapia de casal, empreendedores, carr
 
       // Conteúdo
       document.getElementById("articleTitle").textContent = ARTICLE.title;
-      document.getElementById("articleCover").src = ARTICLE.cover;
-      document.getElementById("articleCover").alt = ARTICLE.alt;
+      const coverImg = document.getElementById("articleCover");
+
+if (ARTICLE.cover && ARTICLE.cover.trim() !== "") {
+  // ✅ Se houver imagem definida, exibe normalmente
+  coverImg.src = ARTICLE.cover;
+  coverImg.alt = ARTICLE.alt || "";
+  coverImg.style.display = "block";
+} else {
+  // 🚫 Se não houver imagem, oculta o elemento
+  coverImg.style.display = "none";
+}
+      
 
       const date = new Date(ARTICLE.date);
       document.getElementById("articleMeta").textContent =
