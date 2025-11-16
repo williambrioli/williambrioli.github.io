@@ -1064,6 +1064,35 @@ Atua com <strong>psicoterapia individual, terapia de casal, empreendedores, carr
       loadPosts();
     });
 
+
+    <!-- SCRIPT DE AUTO-PREENCHIMENTO -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      // Preenche SEO
+      document.title = ARTICLE.title + " | William Brioli";
+      document.getElementById("metaTitle").textContent = ARTICLE.title;
+      document.getElementById("metaDescription").content = ARTICLE.description;
+      document.getElementById("ogTitle").content = ARTICLE.title;
+      document.getElementById("ogDescription").content = ARTICLE.description;
+      document.getElementById("ogImage").content = ARTICLE.cover;
+      document.getElementById("canonicalLink").href = ARTICLE.canonical;
+
+      // Cabeçalho do artigo
+      document.getElementById("articleTitle").textContent = ARTICLE.title;
+      document.getElementById("articleCover").src = ARTICLE.cover;
+      document.getElementById("articleCover").alt = ARTICLE.alt;
+
+      const date = new Date(ARTICLE.date);
+      document.getElementById("articleMeta").textContent =
+        date.toLocaleDateString("pt-BR", { day: "2-digit", month: "long", year: "numeric" }) +
+        " • por " + ARTICLE.author;
+
+      // Corpo do artigo
+      document.getElementById("articleContent").innerHTML = ARTICLE.content;
+    });
+  </script>
+
+    
   </script>
 
  
