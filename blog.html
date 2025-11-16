@@ -775,77 +775,76 @@
     }
 
     function renderPosts(posts, container) {
-      container.innerHTML = '';
+  container.innerHTML = '';
 
-      posts.forEach(post => {
-        const card = document.createElement('article');
-        card.className = 'post-card';
+  posts.forEach(post => {
+    const card = document.createElement('article');
+    card.className = 'post-card';
 
-        // Imagem de capa
-        if (post.cover) {
-          const img = document.createElement('img');
-          img.src = post.cover;
-          img.alt = post.title || '';
-          card.appendChild(img);
-        }
-
-        const body = document.createElement('div');
-        body.className = 'post-card-body';
-
-        // Tag (primeira tag do array, se existir)
-        if (Array.isArray(post.tags) && post.tags.length > 0) {
-          const tag = document.createElement('span');
-          tag.className = 'post-tag';
-          tag.textContent = post.tags[0];
-          body.appendChild(tag);
-        }
-
-        // Título
-        const h3 = document.createElement('h3');
-        h3.textContent = post.title || 'Artigo sem título';
-        body.appendChild(h3);
-
-        // Meta: data e autor
-        const meta = document.createElement('div');
-        meta.className = 'post-meta';
-        meta.textContent = formatPostMeta(post);
-        body.appendChild(meta);
-
-        // Resumo
-        if (post.excerpt) {
-          const excerpt = document.createElement('div');
-          excerpt.className = 'post-excerpt';
-          excerpt.textContent = post.excerpt;
-          body.appendChild(excerpt);
-        }
-
-        // Botão "Ler artigo"
-const footer = document.createElement('div');
-footer.className = 'post-card-footer';
-
-const btn = document.createElement('button');
-btn.type = 'button';
-btn.className = 'btn';
-btn.textContent = 'Ler artigo completo';
-
-// 🔧 evento corrigido
-btn.addEventListener('click', () => {
-  if (post.html) {
-    // se no JSON tiver a propriedade "html"
-    window.location.href = post.html;
-  } else {
-    console.warn('Este artigo não tem página HTML definida.');
-  }
-});
-
-footer.appendChild(btn);
-body.appendChild(footer);
-card.appendChild(body);
-container.appendChild(card);
-
-
- 
+    // Imagem de capa
+    if (post.cover) {
+      const img = document.createElement('img');
+      img.src = post.cover;
+      img.alt = post.title || '';
+      card.appendChild(img);
     }
+
+    const body = document.createElement('div');
+    body.className = 'post-card-body';
+
+    // Tag (primeira tag do array, se existir)
+    if (Array.isArray(post.tags) && post.tags.length > 0) {
+      const tag = document.createElement('span');
+      tag.className = 'post-tag';
+      tag.textContent = post.tags[0];
+      body.appendChild(tag);
+    }
+
+    // Título
+    const h3 = document.createElement('h3');
+    h3.textContent = post.title || 'Artigo sem título';
+    body.appendChild(h3);
+
+    // Meta: data e autor
+    const meta = document.createElement('div');
+    meta.className = 'post-meta';
+    meta.textContent = formatPostMeta(post);
+    body.appendChild(meta);
+
+    // Resumo
+    if (post.excerpt) {
+      const excerpt = document.createElement('div');
+      excerpt.className = 'post-excerpt';
+      excerpt.textContent = post.excerpt;
+      body.appendChild(excerpt);
+    }
+
+    // Botão "Ler artigo completo"
+    const footer = document.createElement('div');
+    footer.className = 'post-card-footer';
+
+    const btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = 'btn';
+    btn.textContent = 'Ler artigo completo';
+
+    // Evento de clique → abre página HTML
+    btn.addEventListener('click', () => {
+      if (post.html) {
+        window.location.href = post.html; // redireciona
+      } else {
+        console.warn('Este artigo não tem página HTML definida.');
+      }
+    });
+
+    footer.appendChild(btn);
+    body.appendChild(footer);
+    card.appendChild(body);
+    container.appendChild(card);
+  }); // 👈 fecha o forEach
+
+} // 👈 fecha a função renderPosts corretamente
+
 
     function formatPostMeta(post) {
       let parts = [];
@@ -1015,6 +1014,7 @@ container.appendChild(card);
 
 </body>
 </html>
+
 
 
 
