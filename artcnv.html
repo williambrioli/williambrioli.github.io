@@ -1,0 +1,1059 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- ===================
+       SEO – BLOG
+       =================== -->
+  <title>Blog | William Brioli – Psicanálise, Terapia, Saúde Emocional</title>
+  <meta name="description" content="Artigos, reflexões e conteúdos sobre psicanálise, saúde emocional, relações, carreira, empreendedorismo e desenvolvimento humano com William Brioli, Psicanalista Clínico Integrativo.">
+  <meta name="author" content="William Brioli">
+
+  <!-- Open Graph básico para o blog -->
+  <meta property="og:title" content="Blog – William Brioli">
+  <meta property="og:description" content="Conteúdos sobre psicanálise, terapia, carreira, relacionamentos, saúde emocional e desenvolvimento humano.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="pt_BR">
+
+  <!-- ===================
+       STYLES – mesmo padrão de cores do site principal
+       =================== -->
+  <style>
+    :root {
+      --bg: #F3F8F8;
+      --card: #FFFFFF;
+      --primary: #2E7D7E;
+      --primary-700: #1e5b5c;
+      --accent: #F3C78A;
+      --text: #1F2D2D;
+      --muted: #000000;
+      --radius: 12px;
+      --max-width: 1500px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 8px;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 24px 16px;
+    }
+
+    /* ==========================
+       TOPO / MENU (mesmo estilo)
+       ========================== */
+   .top-menu {
+      position: fixed;
+      left: 50%;
+      transform: translateX(-50%);
+      width: var(--max-width);
+      max-width: 100%;
+      top: 18px;
+      background: var(--primary);
+      backdrop-filter: blur(6px);
+      border-radius: 0;
+      padding: 8px 16px;
+      box-shadow: 0 6px 18px rgba(30, 30, 30, 0.08);
+      display: flex;
+      gap: 8px;
+      align-items: center;
+      justify-content: center;
+      z-index: 1200;
+      opacity: 0;
+      pointer-events: none;
+      transition: all .35s ease;
+    }
+
+
+.top-menu nav,
+.top-menu > * {
+  max-width: var(--max-width);
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+}
+
+
+
+    
+    
+    .top-menu.visible {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .top-menu a {
+      color: #fff;
+      font-size: 14px;
+      font-weight: 600;
+      padding: 6px 10px;
+      border-radius: 999px;
+      transition:
+        background-color 0.25s ease,
+        color 0.25s ease,
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+      white-space: nowrap;
+    }
+
+    .top-menu a:hover {
+      background: rgba(46, 125, 126, 0.15);
+      color: #fff;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(46, 125, 126, 0.25);
+    }
+
+    /* Botão hambúrguer (mobile) */
+    .hamburger {
+      display: none;
+      position: fixed;
+      top: 14px;
+      left: 14px;
+      z-index: 2200;
+      background: rgba(255, 255, 255, 0.95);
+      border: 0;
+      padding: 8px 10px;
+      border-radius: 10px;
+      font-size: 22px;
+      line-height: 1;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+      cursor: pointer;
+    }
+
+    @media (max-width: 520px) {
+      .hamburger {
+        display: block;
+      }
+
+      .top-menu {
+        display: none;
+        position: fixed;
+        top: 64px;
+        left: 10px;
+        right: 10px;
+        width: auto;
+        background: #fff;
+        border-radius: 12px;
+        padding: 12px;
+        box-shadow: 0 14px 40px rgba(10, 10, 10, 0.12);
+        flex-direction: column;
+        gap: 8px;
+        z-index: 2100;
+        transform: none;
+      }
+
+      .top-menu.open {
+        display: flex !important;
+        opacity: 1;
+        pointer-events: auto;
+      }
+
+      .top-menu a {
+        display: block;
+        padding: 10px 12px;
+        border-radius: 10px;
+        color: #000;
+      }
+
+      .top-menu a:active {
+        background: rgba(46, 125, 126, 0.15);
+        transform: scale(0.97);
+      }
+    }
+
+    /* ==========================
+       HERO DO BLOG
+       ========================== */
+    .blog-hero-wrap {
+      margin-top: 80px; /* espaço para o menu flutuante */
+    }
+
+    .blog-hero {
+      background: linear-gradient(135deg, #2E7D7E, #1e5b5c);
+      border-radius: 20px;
+      padding: 32px 24px;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+      color: #fff;
+    }
+
+    .blog-hero h1 {
+      margin: 0 0 8px;
+      font-size: 28px;
+    }
+
+    .blog-hero p {
+      margin: 0;
+      max-width: 600px;
+      line-height: 1.6;
+      color: #f0f7f7;
+    }
+
+    .blog-hero small {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: rgba(0,0,0,0.18);
+      font-size: 12px;
+    }
+
+    /* ==========================
+       GRID DE POSTS
+       ========================== */
+    .blog-section {
+      margin-top: 24px;
+    }
+
+    .blog-section h2 {
+      margin: 0 0 16px;
+      font-size: 24px;
+      color: var(--primary-700);
+      text-align: left;
+    }
+
+    .posts-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 20px;
+    }
+
+    .post-card {
+      background: var(--card);
+      border-radius: var(--radius);
+      box-shadow: 0 6px 18px rgba(30, 30, 30, 0.06);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .post-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 24px rgba(30, 30, 30, 0.12);
+    }
+
+    .post-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 0;
+    }
+
+    .post-card-body {
+      padding: 14px 16px 16px;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+
+    .post-tag {
+      display: inline-block;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: .04em;
+      padding: 3px 8px;
+      border-radius: 999px;
+      background: rgba(46, 125, 126, 0.12);
+      color: var(--primary-700);
+      margin-bottom: 8px;
+    }
+
+    .post-card h3 {
+      margin: 0 0 6px;
+      font-size: 18px;
+      color: var(--primary-700);
+    }
+
+    .post-meta {
+      font-size: 12px;
+      color: #555;
+      margin-bottom: 10px;
+    }
+
+    .post-excerpt {
+      font-size: 14px;
+      color: var(--muted);
+      line-height: 1.55;
+      margin-bottom: 10px;
+      flex: 1;
+    }
+
+    .post-card-footer {
+      margin-top: 4px;
+    }
+
+    .btn {
+      display: block;
+      width: max-content;
+      padding: 6px 14px;
+      border-radius: 999px;
+      background: var(--primary);
+      color: #fff;
+      font-weight: 700;
+      margin: 8px 0 0;
+      text-align: center;
+      font-size: 14px;
+      border: none;
+      cursor: pointer;
+      transition: all .25s ease-in-out;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.18);
+      background: var(--primary-700);
+    }
+
+    .btn:active {
+      transform: scale(0.96);
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+    }
+
+    .post-card .btn {
+      margin-top: 4px;
+    }
+
+    .posts-empty {
+      font-size: 14px;
+      color: #555;
+      padding: 16px;
+      background: rgba(255,255,255,0.8);
+      border-radius: var(--radius);
+    }
+
+
+/* ==========================
+   BLOCO DE INTRODUÇÃO (acima dos cards)
+   ========================== */
+.blog-intro-card {
+  background: var(--card);
+  border-radius: var(--radius);
+  box-shadow: 0 6px 18px rgba(30, 30, 30, 0.06);
+  padding: 24px 28px;
+  line-height: 1.7;
+  font-size: 16px;
+  color: var(--muted);
+  margin-bottom: 28px;
+}
+
+.blog-intro-card h3,
+.blog-intro-card h4 {
+  color: var(--primary-700);
+  margin-top: 0;
+}
+
+
+    
+
+    
+    /* ==========================
+       MODAL DE LEITURA DO ARTIGO
+       ========================== */
+    .modal-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.45);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 2000;
+      padding: 16px;
+    }
+
+    .modal-backdrop.open {
+      display: flex;
+    }
+
+    .modal {
+      background: var(--card);
+      max-width: 900px;
+      width: 100%;
+      max-height: 90vh;
+      overflow-y: auto;
+      border-radius: var(--radius);
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.35);
+      padding: 24px 22px 20px;
+      position: relative;
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 10px;
+      right: 12px;
+      border: none;
+      background: transparent;
+      font-size: 22px;
+      cursor: pointer;
+      color: #666;
+    }
+
+    .modal-header {
+      margin-bottom: 8px;
+    }
+
+    .modal-header h2 {
+      margin: 0 0 4px;
+      font-size: 22px;
+      color: var(--primary-700);
+    }
+
+    .modal-header .post-meta {
+      margin-bottom: 0;
+    }
+
+    .modal-cover {
+      margin: 12px 0 14px;
+    }
+
+    .modal-content {
+      font-size: 15px;
+      line-height: 1.7;
+      color: var(--muted);
+    }
+
+    .modal-content h2,
+    .modal-content h3,
+    .modal-content h4 {
+      margin-top: 18px;
+      margin-bottom: 6px;
+      color: var(--primary-700);
+    }
+
+    .modal-content p {
+      margin: 0 0 10px;
+    }
+
+    .modal-footer {
+      margin-top: 16px;
+      border-top: 1px solid #eef2f2;
+      padding-top: 10px;
+      display: flex;
+      justify-content: flex-end;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .modal-footer .btn {
+      margin: 0;
+    }
+
+    /* ==========================
+       RODAPÉ / CONTATO (simples)
+       ========================== */
+    footer.site-footer {
+      padding: 24px 0 30px;
+      margin-top: 16px;
+    }
+
+    .footer-card {
+      background: var(--card);
+      border-radius: var(--radius);
+      padding: 20px 18px;
+      box-shadow: 0 6px 18px rgba(30,30,30,0.04);
+    }
+
+    .footer-card h2 {
+      margin: 0 0 10px;
+      font-size: 22px;
+      color: var(--primary-700);
+      text-align: left;
+    }
+
+    .contact-list {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 8px;
+      font-size: 14px;
+    }
+
+    .contact-list li {
+      margin-bottom: 6px;
+    }
+
+    /* ==========================
+       BOTÃO WHATSAPP FLUTUANTE
+       ========================== */
+    .whatsapp-fab {
+      position: fixed;
+      right: 18px;
+      bottom: 18px;
+      background: #25D366;
+      width: 64px;
+      height: 64px;
+      border-radius: 999px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 8px 24px rgba(46, 125, 126, 0.25);
+      z-index: 2300;
+      cursor: pointer;
+      animation: waFloat 2.5s ease-in-out infinite;
+    }
+
+    .whatsapp-fab a {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+    }
+
+    .whatsapp-fab:hover {
+      transform: scale(1.08);
+      box-shadow: 0 12px 32px rgba(46, 125, 126, 0.35);
+    }
+
+    .whatsapp-label {
+      position: fixed;
+      right: 15px;
+      bottom: 5px;
+      background: rgba(255, 255, 255, 1);
+      color: #25D366;
+      padding: 2px 8px;
+      border-radius: 8px;
+      font-size: 10px;
+      font-weight: 600;
+      z-index: 2300;
+      backdrop-filter: blur(4px);
+      animation: waFloat 2.5s ease-in-out infinite;
+    }
+
+    @keyframes waFloat {
+      0%   { transform: translateY(0); }
+      50%  { transform: translateY(-4px); }
+      100% { transform: translateY(0); }
+    }
+
+    @media (max-width: 900px) {
+      .blog-hero-wrap {
+        margin-top: 90px;
+      }
+    }
+
+ /* ==========================
+   AJUSTE: Botões do modal alinhados à esquerda
+   ========================== */
+
+
+/* ==== Ajuste dos botões do modal de artigo ==== */
+.modal-footer {
+  display: flex !important;
+  justify-content: flex-start !important;  /* Alinha à esquerda */
+  align-items: center;
+  gap: 8px;  /* Espaço entre os botões */
+  flex-wrap: wrap;  /* Evita quebra feia em telas pequenas */
+}
+
+/* Opcional: garante que o botão "Fechar" não fique atrás do WhatsApp */
+.modal-footer button,
+.modal-footer a {
+  z-index: 10;
+  position: relative;
+}
+   
+      
+  </style>
+</head>
+<body>
+
+  <!-- ===================
+       HERO DO BLOG
+       =================== -->
+  <main id="blog-top">
+    <section class="blog-hero-wrap">
+      <div class="container">
+        <div class="blog-hero">
+          <h1>Blog • Psicanálise, Terapia e Vida Real</h1>
+          <p>Reflexões sobre saúde emocional, relacionamentos, carreira, empreendedorismo e desenvolvimento humano, a partir da prática clínica e da experiência no mundo corporativo.</p>
+          <small>Atualizado periodicamente com novos artigos.</small>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================
+         LISTA DE ARTIGOS
+         =================== -->
+    <section class="blog-section">
+      <div class="container">
+        <h2>Artigos Recentes</h2>
+
+
+        <!-- ==========================
+     BLOCO DE INTRODUÇÃO / SOBRE ESTE ESPAÇO
+     ========================== -->
+<div class="blog-intro-card">
+  <h3>Sobre este espaço</h3>
+  <p>
+    Este blog é um espaço de reflexão sobre a mente humana, os desafios da vida moderna
+    e o papel da psicanálise no autoconhecimento e na transformação pessoal.
+  </p>
+
+  <p>
+    Aqui você encontrará textos que dialogam com o cotidiano — a ansiedade, o trabalho,
+    os relacionamentos, a busca por sentido e o equilíbrio emocional — sempre com uma
+    linguagem acessível e um olhar clínico e humano.
+  </p>
+
+  <h4>Propósito</h4>
+  <p>
+    Mais do que informar, o objetivo é provocar questionamentos, inspirar mudanças
+    e abrir caminhos para uma escuta mais profunda de si mesmo.
+  </p>
+
+  <p><em>— William Brioli</em></p>
+</div>
+
+        
+
+        <!-- Container onde os cards serão injetados via JS -->
+        <div id="postsGrid" class="posts-grid">
+          <!-- Cards criados dinamicamente -->
+        </div>
+
+        <!-- Mensagem de erro / vazio -->
+        <div id="postsMessage" class="posts-empty" style="display:none;"></div>
+      </div>
+    </section>
+
+    <!-- ===================
+         CONTATO / RODAPÉ
+         =================== -->
+    <footer id="contato" class="site-footer">
+      <div class="container">
+        <div class="footer-card">
+          <h2>Contato</h2>
+          <p style="margin:0 0 12px;">
+            <strong>William Brioli</strong><br>
+            Psicanalista Clínico Integrativo
+          </p>
+          <ul class="contact-list">
+            <li><strong>Horário de Atendimento:</strong> Segunda à sexta – 8h00 às 22h00 (consulte agenda).</li>
+            <li><strong>Telefone:</strong> <a href="#" id="phoneLink"></a></li>
+          </ul>
+          <a class="btn" id="btnContact" href="#">Enviar mensagem</a>
+        </div>
+      </div>
+    </footer>
+  </main>
+
+  <!-- ===================
+       BOTÃO WHATSAPP
+       =================== -->
+  <div class="whatsapp-label">Fale comigo</div>
+  <div class="whatsapp-fab" role="link" aria-label="Conversar pelo WhatsApp">
+    <a id="waFab" href="#" aria-label="WhatsApp">
+      <svg width="32" height="32" viewBox="0 0 32 32" fill="white" xmlns="http://www.w3.org/2000/svg">
+        <path d="M16.006 3C9.373 3 4 8.373 4 15.006c0 2.647.873 5.098 2.348 7.083L4 29l7.127-2.298A12.943 12.943 0 0016.006 27c6.632 0 12.006-5.373 12.006-11.994C28.012 8.373 22.638 3 16.006 3zm6.725 16.994c-.28.782-1.634 1.517-2.262 1.547-.58.03-1.31.042-2.113-.133-.488-.112-1.114-.362-1.93-.708-3.386-1.467-5.592-4.876-5.756-5.107-.165-.23-1.37-1.82-1.37-3.47 0-1.65.865-2.463 1.173-2.8.308-.338.675-.423.9-.423.226 0 .451.002.648.012.21.01.49-.08.768.588.28.668.953 2.305 1.036 2.472.082.166.137.362.026.592-.11.23-.165.362-.322.56-.165.197-.347.44-.495.59-.165.165-.337.345-.145.677.197.338.877 1.446 1.886 2.34 1.297 1.153 2.392 1.51 2.73 1.677.338.165.533.142.73-.085.197-.226.843-.983 1.067-1.32.226-.338.451-.28.768-.165.317.112 2.007.947 2.352 1.118.346.173.575.258.66.402.082.14.082.783-.197 1.565z"/>
+      </svg>
+    </a>
+  </div>
+
+  <!-- ===================
+       MODAL DE LEITURA DO POST
+       =================== -->
+  <div id="postModalBackdrop" class="modal-backdrop" aria-hidden="true">
+    <article class="modal" role="dialog" aria-modal="true" aria-labelledby="postModalTitle">
+      <button class="modal-close" type="button" id="postModalClose" aria-label="Fechar artigo">×</button>
+      <header class="modal-header">
+        <h2 id="postModalTitle"></h2>
+        <div class="post-meta" id="postModalMeta"></div>
+      </header>
+      <div class="modal-cover" id="postModalCover" style="display:none;"></div>
+      <section class="modal-content" id="postModalContent"></section>
+      <footer class="modal-footer">
+        <button type="button" class="btn" id="postModalWhatsApp">Agendar atendimento</button>
+        <button type="button" class="btn" id="postModalCloseBottom">Fechar</button>
+      </footer>
+    </article>
+  </div>
+
+  <!-- ===================
+       SCRIPTS – BLOG + MINI CMS ESTÁTICO
+       =================== -->
+  <script>
+    // ==========================
+    // CONFIGURAÇÕES GERAIS
+    // ==========================
+    const SITE_CONFIG = {
+      whatsappNumber: '5518988092571',
+      phoneDisplay: '(18) 98809-2571',
+      messages: {
+        generic: 'Ol%C3%A1%2C%20William%2C%20tudo%20bem%3F%20Li%20um%20artigo%20seu%20no%20blog%20e%20gostaria%20de%20conversar%20sobre%20atendimento.',
+      }
+    };
+
+    function waLink(msgKey) {
+      const num = SITE_CONFIG.whatsappNumber;
+      const msg = SITE_CONFIG.messages[msgKey] || SITE_CONFIG.messages.generic;
+      return `https://wa.me/${num}?text=${msg}`;
+    }
+
+   
+    // ==========================
+    // WHATSAPP – links e botão flutuante
+    // ==========================
+    (function(){
+      const phoneLink = document.getElementById('phoneLink');
+      const btnContact = document.getElementById('btnContact');
+      const waFab = document.getElementById('waFab');
+
+      if (phoneLink) {
+        phoneLink.textContent = SITE_CONFIG.phoneDisplay;
+        phoneLink.href = `tel:${SITE_CONFIG.whatsappNumber.replace(/^55/, '+')}`;
+      }
+
+      function openWA() {
+        window.open(waLink('generic'), '_blank');
+      }
+
+      if (btnContact) {
+        btnContact.addEventListener('click', (e) => {
+          e.preventDefault();
+          openWA();
+        });
+      }
+
+      if (waFab) {
+        waFab.addEventListener('click', (e) => {
+          e.preventDefault();
+          openWA();
+        });
+        // também no contêiner
+        waFab.parentElement.addEventListener('click', (e) => {
+          e.preventDefault();
+          openWA();
+        });
+      }
+    })();
+
+    // ==========================
+    // MINI PARSER DE MARKDOWN (simplificado)
+    // ==========================
+    function simpleMarkdownToHtml(md) {
+      if (!md) return '';
+
+      // Normaliza quebras de linha
+      let text = md.replace(/\r\n/g, '\n');
+
+      // Títulos: #, ##, ###
+      text = text.replace(/^### (.*)$/gm, '<h3>$1</h3>');
+      text = text.replace(/^## (.*)$/gm, '<h2>$1</h2>');
+      text = text.replace(/^# (.*)$/gm, '<h2>$1</h2>');
+
+      // Negrito **texto**
+      text = text.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
+
+      // Itálico *texto*
+      text = text.replace(/\*(.+?)\*/g, '<em>$1</em>');
+
+      // Listas simples iniciadas por "- " ou "* "
+      text = text.replace(/^[\-\*] (.*)$/gm, '<li>$1</li>');
+      text = text.replace(/(<li>.*<\/li>\n?)+/gm, match => `<ul>${match}</ul>`);
+
+      // Quebra em parágrafos (duas quebras de linha)
+      const parts = text.split(/\n{2,}/).map(block => {
+        if (/^<h[23]>/.test(block) || /^<ul>/.test(block)) {
+          return block;
+        }
+        return `<p>${block.trim()}</p>`;
+      });
+
+      return parts.join('\n');
+    }
+
+    // ==========================
+    // CARREGAMENTO DE POSTS via JSON
+    // ==========================
+    let POSTS_CACHE = [];
+
+    async function loadPosts() {
+      const grid = document.getElementById('postsGrid');
+      const msgEl = document.getElementById('postsMessage');
+
+      if (!grid || !msgEl) return;
+
+      msgEl.style.display = 'none';
+      msgEl.textContent = '';
+
+      try {
+        // Arquivo: /posts/posts.json (mesmo repositório, mesma branch GitHub Pages)
+        const response = await fetch('posts/posts.json', { cache: 'no-store' });
+
+        if (!response.ok) {
+          throw new Error('Não foi possível carregar a lista de artigos.');
+        }
+
+        const posts = await response.json();
+        if (!Array.isArray(posts) || posts.length === 0) {
+          msgEl.style.display = 'block';
+          msgEl.textContent = 'Ainda não há artigos publicados. Em breve, novos conteúdos estarão disponíveis aqui.';
+          return;
+        }
+
+        POSTS_CACHE = posts;
+        renderPosts(posts, grid);
+
+      } catch (err) {
+        console.error(err);
+        msgEl.style.display = 'block';
+        msgEl.textContent = 'Ocorreu um problema ao carregar os artigos. Verifique se o arquivo "posts/posts.json" existe no repositório.';
+      }
+    }
+
+    function renderPosts(posts, container) {
+      container.innerHTML = '';
+
+      posts.forEach(post => {
+        const card = document.createElement('article');
+        card.className = 'post-card';
+
+        // Imagem de capa
+        if (post.cover) {
+          const img = document.createElement('img');
+          img.src = post.cover;
+          img.alt = post.title || '';
+          card.appendChild(img);
+        }
+
+        const body = document.createElement('div');
+        body.className = 'post-card-body';
+
+        // Tag (primeira tag do array, se existir)
+        if (Array.isArray(post.tags) && post.tags.length > 0) {
+          const tag = document.createElement('span');
+          tag.className = 'post-tag';
+          tag.textContent = post.tags[0];
+          body.appendChild(tag);
+        }
+
+        // Título
+        const h3 = document.createElement('h3');
+        h3.textContent = post.title || 'Artigo sem título';
+        body.appendChild(h3);
+
+        // Meta: data e autor
+        const meta = document.createElement('div');
+        meta.className = 'post-meta';
+        meta.textContent = formatPostMeta(post);
+        body.appendChild(meta);
+
+        // Resumo
+        if (post.excerpt) {
+          const excerpt = document.createElement('div');
+          excerpt.className = 'post-excerpt';
+          excerpt.textContent = post.excerpt;
+          body.appendChild(excerpt);
+        }
+
+        // Botão "Ler artigo"
+        const footer = document.createElement('div');
+        footer.className = 'post-card-footer';
+
+        const btn = document.createElement('button');
+        btn.type = 'button';
+        btn.className = 'btn';
+        btn.textContent = 'Ler artigo completo';
+        btn.addEventListener('click', () => openPostModal(post));
+        footer.appendChild(btn);
+
+        body.appendChild(footer);
+        card.appendChild(body);
+        container.appendChild(card);
+      });
+    }
+
+    function formatPostMeta(post) {
+      let parts = [];
+      if (post.date) {
+        const d = new Date(post.date);
+        if (!isNaN(d)) {
+          const formatted = d.toLocaleDateString('pt-BR', {
+            day: '2-digit',
+            month: 'long',
+            year: 'numeric'
+          });
+          parts.push(formatted);
+        }
+      }
+      if (post.author) {
+        parts.push('por ' + post.author);
+      }
+      return parts.join(' • ');
+    }
+
+    // ==========================
+    // MODAL – ABRIR ARTIGO COMPLETO
+    // ==========================
+    const modalBackdrop = document.getElementById('postModalBackdrop');
+    const modalTitle = document.getElementById('postModalTitle');
+    const modalMeta = document.getElementById('postModalMeta');
+    const modalCover = document.getElementById('postModalCover');
+    const modalContent = document.getElementById('postModalContent');
+    const modalClose = document.getElementById('postModalClose');
+    const modalCloseBottom = document.getElementById('postModalCloseBottom');
+    const modalWhatsApp = document.getElementById('postModalWhatsApp');
+
+    async function openPostModal(post) {
+      if (!post) return;
+
+      modalTitle.textContent = post.title || '';
+      modalMeta.textContent = formatPostMeta(post);
+
+      // Capa no modal
+      if (post.cover) {
+        modalCover.style.display = 'block';
+        modalCover.innerHTML = `<img src="${post.cover}" alt="${post.title || ''}">`;
+      } else {
+        modalCover.style.display = 'none';
+        modalCover.innerHTML = '';
+      }
+
+      // Carrega markdown do artigo
+      modalContent.innerHTML = '<p>Carregando conteúdo...</p>';
+
+      if (!post.file) {
+        modalContent.innerHTML = '<p>Não foi possível localizar o conteúdo deste artigo. Verifique a propriedade <code>file</code> no JSON.</p>';
+      } else {
+        try {
+          const resp = await fetch(post.file, { cache: 'no-store' });
+          if (!resp.ok) {
+            throw new Error('Erro ao carregar arquivo Markdown.');
+          }
+          const md = await resp.text();
+          const html = simpleMarkdownToHtml(md);
+          modalContent.innerHTML = html || '<p>Conteúdo vazio.</p>';
+        } catch (err) {
+          console.error(err);
+          modalContent.innerHTML = '<p>Ocorreu um erro ao carregar o conteúdo deste artigo.</p>';
+        }
+      }
+
+      // Botão WhatsApp dentro do modal
+      modalWhatsApp.onclick = () => {
+        window.open(waLink('generic'), '_blank');
+      };
+
+      modalBackdrop.classList.add('open');
+      modalBackdrop.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closePostModal() {
+      modalBackdrop.classList.remove('open');
+      modalBackdrop.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+    }
+
+    if (modalClose) {
+      modalClose.addEventListener('click', closePostModal);
+    }
+    if (modalCloseBottom) {
+      modalCloseBottom.addEventListener('click', closePostModal);
+    }
+
+    modalBackdrop.addEventListener('click', (e) => {
+      if (e.target === modalBackdrop) {
+        closePostModal();
+      }
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && modalBackdrop.classList.contains('open')) {
+        closePostModal();
+      }
+    });
+
+    // ==========================
+    // INICIALIZAÇÃO
+    // ==========================
+    document.addEventListener('DOMContentLoaded', () => {
+      loadPosts();
+    });
+
+  </script>
+
+ 
+
+<script src="js/menu.js"></script>
+
+
+  <!-- ==========================
+       EXEMPLOS (APENAS COMENTÁRIOS)
+       Crie a pasta /posts/ e o arquivo posts.json
+       ==========================
+
+  EXEMPLO DE posts/posts.json:
+
+  [
+    {
+      "id": "ansiedade-no-trabalho",
+      "title": "Como lidar com a ansiedade no trabalho",
+      "date": "2025-11-10",
+      "author": "William Brioli",
+      "cover": "img/blog-ansiedade-trabalho.jpg",
+      "excerpt": "Um olhar psicanalítico sobre os impactos da ansiedade no ambiente profissional.",
+      "file": "posts/ansiedade-no-trabalho.md",
+      "tags": ["Ansiedade", "Trabalho", "Saúde Emocional"]
+    },
+    {
+      "id": "terapia-de-casal-conexao",
+      "title": "Terapia de casal: quando procurar e o que esperar",
+      "date": "2025-11-05",
+      "author": "William Brioli",
+      "cover": "img/blog-terapia-casal.jpg",
+      "excerpt": "Como a terapia de casal pode ajudar a resgatar a comunicação, o respeito e a conexão na relação.",
+      "file": "posts/terapia-de-casal-conexao.md",
+      "tags": ["Relacionamentos", "Terapia de Casal"]
+    }
+  ]
+
+  EXEMPLO de arquivo Markdown: posts/ansiedade-no-trabalho.md
+
+  # Como lidar com a ansiedade no trabalho
+
+  A ansiedade no ambiente profissional não é sinal de fraqueza, mas um pedido de atenção do seu mundo interno.
+
+  **O primeiro passo** não é “forçar produtividade”, e sim compreender o que essa ansiedade tenta comunicar.
+
+  ## Quando a ansiedade aparece
+
+  - Antes de reuniões importantes  
+  - Na hora de tomar decisões  
+  - Ao receber críticas ou feedbacks  
+
+  *A terapia psicanalítica* oferece um espaço seguro para olhar para essas experiências com profundidade, sem julgamentos, e compreender quais histórias, expectativas e medos estão por trás delas.
+
+  --
+
+  Basta seguir esse padrão para criar quantos artigos quiser.
+  ========================== -->
+
+</body>
+</html>
