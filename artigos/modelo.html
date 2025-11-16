@@ -16,8 +16,6 @@
       cover: "https://williambrioli.com.br/img/artigocnv.png",
       alt: "Profissionais conversando com empatia em ambiente corporativo",
       canonical: "https://williambrioli.com.br/artigos/modelo.html",
-
-      // Conteúdo do artigo
       content: `
 <p>No ambiente profissional, comunicar-se bem vai muito além de falar com clareza — envolve <strong>escutar com empatia</strong>, <strong>reconhecer emoções</strong> e <strong>expressar-se sem atacar nem se submeter</strong>.</p>
 
@@ -58,69 +56,232 @@ Atua com <strong>psicoterapia individual, terapia de casal, empreendedores, carr
   <link id="canonicalLink" rel="canonical" href="">
 
   <!-- =========================
-       ESTILOS (herdados do blog)
+       ESTILOS INTERNOS
        ========================= -->
-  <link rel="stylesheet" href="../css/site.css">
+  <style>
+    :root {
+      --primary: #2E7D7E;
+      --primary-dark: #1e5b5c;
+      --bg: #f3f8f8;
+      --text: #1f2d2d;
+      --radius: 12px;
+      --max-width: 950px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Inter", system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    /* ==== MENU ==== */
+    .top-menu {
+      background: var(--primary);
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      padding: 14px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .top-menu a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 600;
+      transition: opacity 0.25s ease;
+    }
+
+    .top-menu a:hover {
+      opacity: 0.8;
+    }
+
+    /* ==== HERO ==== */
+    .blog-hero-wrap {
+      margin-top: 0;
+    }
+
+    .blog-hero {
+      background: linear-gradient(135deg, #2E7D7E, #1e5b5c);
+      border-radius: 0 0 24px 24px;
+      padding: 40px 24px;
+      color: #fff;
+      text-align: center;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    }
+
+    .blog-hero h1 {
+      margin: 0 0 8px;
+      font-size: 28px;
+    }
+
+    .blog-hero p {
+      max-width: 680px;
+      margin: 0 auto 8px;
+      line-height: 1.6;
+      color: #e7f4f4;
+    }
+
+    .blog-hero small {
+      display: block;
+      margin-top: 10px;
+      background: rgba(0,0,0,0.15);
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-size: 12px;
+      width: fit-content;
+      margin-inline: auto;
+    }
+
+    /* ==== CONTEÚDO ==== */
+    main.article {
+      max-width: var(--max-width);
+      margin: 40px auto;
+      background: #fff;
+      padding: 32px 24px;
+      border-radius: var(--radius);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+    }
+
+    h1 {
+      font-size: 28px;
+      color: var(--primary-dark);
+    }
+
+    h2, h3 {
+      color: var(--primary);
+      margin-top: 24px;
+    }
+
+    .article-meta {
+      font-size: 14px;
+      color: #666;
+      margin-bottom: 16px;
+    }
+
+    .article-cover {
+      border-radius: var(--radius);
+      width: 100%;
+      margin: 0 0 24px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+
+    blockquote {
+      margin: 20px 0;
+      padding: 12px 20px;
+      border-left: 4px solid var(--primary);
+      background: #f6f9f9;
+      font-style: italic;
+    }
+
+    /* ==== RODAPÉ ==== */
+    footer.site-footer {
+      background: #fff;
+      padding: 32px 16px;
+      margin-top: 48px;
+      box-shadow: 0 -4px 18px rgba(0,0,0,0.05);
+    }
+
+    .footer-card {
+      max-width: var(--max-width);
+      margin: auto;
+      background: #f7f9f9;
+      border-radius: var(--radius);
+      padding: 20px;
+    }
+
+    .footer-card h2 {
+      color: var(--primary-dark);
+    }
+
+    .btn {
+      display: inline-block;
+      background: var(--primary);
+      color: #fff;
+      padding: 10px 16px;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all .2s ease;
+    }
+
+    .btn:hover {
+      background: var(--primary-dark);
+      transform: translateY(-2px);
+    }
+
+    /* ==== WHATSAPP FLUTUANTE ==== */
+    .whatsapp-fab {
+      position: fixed;
+      right: 18px;
+      bottom: 18px;
+      background: #25D366;
+      width: 64px;
+      height: 64px;
+      border-radius: 999px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 8px 24px rgba(46,125,126,0.25);
+      cursor: pointer;
+      font-size: 28px;
+      color: #fff;
+      text-decoration: none;
+    }
+  </style>
 </head>
 
 <body>
-  <!-- =========================
-       MENU (carregado via menu.js)
-       ========================= -->
+  <!-- MENU SUPERIOR -->
   <div id="topMenu" class="top-menu"></div>
 
-  <!-- =========================
-       HERO IGUAL AO BLOG
-       ========================= -->
+  <!-- HERO -->
   <section class="blog-hero-wrap">
-    <div class="container">
-      <div class="blog-hero">
-        <h1>Blog • Psicanálise, Terapia e Vida Real</h1>
-        <p>Reflexões sobre saúde emocional, relacionamentos, carreira, empreendedorismo e desenvolvimento humano, a partir da prática clínica e da experiência no mundo corporativo.</p>
-        <small>Atualizado periodicamente com novos artigos.</small>
-      </div>
+    <div class="blog-hero">
+      <h1>Blog • Psicanálise, Terapia e Vida Real</h1>
+      <p>Reflexões sobre saúde emocional, relacionamentos, carreira, empreendedorismo e desenvolvimento humano, a partir da prática clínica e da experiência no mundo corporativo.</p>
+      <small>Atualizado periodicamente com novos artigos.</small>
     </div>
   </section>
 
-  <!-- =========================
-       CONTEÚDO DO ARTIGO
-       ========================= -->
+  <!-- CONTEÚDO -->
   <main class="article">
-    <div class="container">
-      <article>
-        <img id="articleCover" class="article-cover" src="" alt="">
-        <h1 id="articleTitle"></h1>
-        <div class="article-meta" id="articleMeta"></div>
-        <section id="articleContent"></section>
-      </article>
-    </div>
+    <article>
+      <img id="articleCover" class="article-cover" src="" alt="">
+      <h1 id="articleTitle"></h1>
+      <div class="article-meta" id="articleMeta"></div>
+      <section id="articleContent"></section>
+    </article>
   </main>
 
-  <!-- =========================
-       RODAPÉ
-       ========================= -->
+  <!-- RODAPÉ -->
   <footer class="site-footer">
-    <div class="container">
-      <div class="footer-card">
-        <h2>Contato</h2>
-        <p><strong>William Brioli</strong><br>Psicanalista Clínico Integrativo</p>
-        <p>Atendimento presencial em Ilha Solteira (SP) e online para todo o Brasil.</p>
-        <a href="https://wa.me/5518988092571?text=Olá,%20William.%20Li%20seu%20artigo%20e%20gostaria%20de%20conversar%20sobre%20atendimento." class="btn">Falar pelo WhatsApp</a>
-      </div>
+    <div class="footer-card">
+      <h2>Contato</h2>
+      <p><strong>William Brioli</strong><br>Psicanalista Clínico Integrativo</p>
+      <p>Atendimento presencial em Ilha Solteira (SP) e online para todo o Brasil.</p>
+      <a href="https://wa.me/5518988092571?text=Olá,%20William.%20Li%20seu%20artigo%20e%20gostaria%20de%20conversar%20sobre%20atendimento." class="btn">Falar pelo WhatsApp</a>
     </div>
   </footer>
 
-  <!-- =========================
-       BOTÃO WHATSAPP FLUTUANTE
-       ========================= -->
+  <!-- BOTÃO WHATSAPP -->
   <a href="https://wa.me/5518988092571?text=Olá,%20William,%20tudo%20bem?" class="whatsapp-fab" aria-label="WhatsApp">💬</a>
 
-  <!-- =========================
-       SCRIPT DE AUTO-PREENCHIMENTO
-       ========================= -->
+  <!-- SCRIPTS -->
   <script>
+    // Preenche as informações automaticamente
     document.addEventListener("DOMContentLoaded", () => {
-      // Preenche SEO
       document.title = ARTICLE.title + " | William Brioli";
       document.getElementById("metaTitle").textContent = ARTICLE.title;
       document.getElementById("metaDescription").content = ARTICLE.description;
@@ -129,20 +290,19 @@ Atua com <strong>psicoterapia individual, terapia de casal, empreendedores, carr
       document.getElementById("ogImage").content = ARTICLE.cover;
       document.getElementById("canonicalLink").href = ARTICLE.canonical;
 
-      // Preenche conteúdo do artigo
       document.getElementById("articleTitle").textContent = ARTICLE.title;
       document.getElementById("articleCover").src = ARTICLE.cover;
       document.getElementById("articleCover").alt = ARTICLE.alt;
-      document.getElementById("articleContent").innerHTML = ARTICLE.content;
 
       const date = new Date(ARTICLE.date);
       document.getElementById("articleMeta").textContent =
         date.toLocaleDateString("pt-BR", { day: "2-digit", month: "long", year: "numeric" }) +
         " • por " + ARTICLE.author;
+
+      document.getElementById("articleContent").innerHTML = ARTICLE.content;
     });
   </script>
 
-  <!-- MENU (reaproveitado) -->
   <script src="../js/menu.js"></script>
 </body>
 </html>
