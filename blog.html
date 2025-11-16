@@ -820,14 +820,15 @@
         }
 
         // Botão "Ler artigo"
-        const footer = document.createElement('div');
-        footer.className = 'post-card-footer';
+const footer = document.createElement('div');
+footer.className = 'post-card-footer';
 
-        const btn = document.createElement('button');
-        btn.type = 'button';
-        btn.className = 'btn';
-        btn.textContent = 'Ler artigo completo';
+const btn = document.createElement('button');
+btn.type = 'button';
+btn.className = 'btn';
+btn.textContent = 'Ler artigo completo';
 
+// 🔧 evento corrigido
 btn.addEventListener('click', () => {
   if (post.html) {
     // se no JSON tiver a propriedade "html"
@@ -836,6 +837,12 @@ btn.addEventListener('click', () => {
     console.warn('Este artigo não tem página HTML definida.');
   }
 });
+
+footer.appendChild(btn);
+body.appendChild(footer);
+card.appendChild(body);
+container.appendChild(card);
+
 
  
     }
@@ -1008,6 +1015,7 @@ btn.addEventListener('click', () => {
 
 </body>
 </html>
+
 
 
 
