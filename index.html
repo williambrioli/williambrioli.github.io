@@ -1447,20 +1447,26 @@ Na abordagem psicanalítica clínica integrativa, o atendimento costuma acontece
       // Fecha todos os outros
       document.querySelectorAll('.acc-item.open').forEach(i => i.classList.remove('open'));
 
-      // Abre ou fecha o item clicado
       if (!isOpen) {
+        // 🔒 Bloqueia temporariamente o scroll
+        const scrollY = window.scrollY;
+        document.body.style.position = 'fixed';
+        document.body.style.top = `-${scrollY}px`;
+        document.body.style.width = '100%';
+
+        // Abre o item
         item.classList.add('open');
 
-        // 🔒 impede rolagem automática em qualquer dispositivo
-        // salva a posição atual antes da expansão
-        const scrollY = window.scrollY;
+        // Libera o scroll após a expansão
         setTimeout(() => {
-          window.scrollTo({ top: scrollY, behavior: 'auto' });
-        }, 100);
+          document.body.style.position = '';
+          document.body.style.top = '';
+          document.body.style.width = '';
+          window.scrollTo(0, scrollY); // garante o retorno exato
+        }, 350); // tempo suficiente pra terminar a transição
       }
     });
 
-    // acessibilidade via teclado
     header.addEventListener('keydown', (e) => {
       if (e.key === 'Enter' || e.key === ' ') {
         e.preventDefault();
@@ -1469,6 +1475,7 @@ Na abordagem psicanalítica clínica integrativa, o atendimento costuma acontece
     });
   });
 })();
+
 
  
           
@@ -1737,6 +1744,7 @@ document.addEventListener("DOMContentLoaded", () => {
   
 </body>
 </html>
+
 
 
 
