@@ -1287,6 +1287,32 @@ if (ARTICLE.showCover && ARTICLE.cover && ARTICLE.cover.trim() !== "") {
 <script src="js/menu.js"></script>
 
 
+
+
+<script src="js/config-whatsapp.js"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    // 🔘 Exemplo de uso: botão flutuante
+    const waFab = document.getElementById("waFab");
+    if (waFab) waFab.addEventListener("click", () => openWA());
+
+    // 🔘 Exemplo de botão de contato
+    const btnContact = document.getElementById("btnContact");
+    if (btnContact) btnContact.addEventListener("click", () => openWA());
+
+    // 🔘 Exemplo no artigo
+    const btnAgendar = document.getElementById("btnAgendarAtendimento");
+    if (btnAgendar) btnAgendar.addEventListener("click", () => openWA());
+  });
+</script>
+
+
+
+
+
+
+
+  
   <!-- ==========================
        EXEMPLOS (APENAS COMENTÁRIOS)
        Crie a pasta /posts/ e o arquivo posts.json
