@@ -1235,6 +1235,26 @@ if (ARTICLE.showCover && ARTICLE.cover && ARTICLE.cover.trim() !== "") {
       document.getElementById("articleContent").innerHTML = ARTICLE.content;
     });
 
+
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const btnAgendar = document.getElementById("btnAgendarAtendimento");
+
+    if (btnAgendar) {
+      btnAgendar.addEventListener("click", (e) => {
+        e.preventDefault();
+        // Gera o link com a mensagem padrão
+        const link = waLink("generic");
+        // Abre o WhatsApp em uma nova aba ou app
+        window.open(link, "_blank");
+      });
+    }
+  });
+
+
+
+    
   </script>
 
  
