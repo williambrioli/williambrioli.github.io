@@ -1,0 +1,467 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- ===================
+       SEO – BLOG OTIMIZADO 2025
+       =================== -->
+  <title>Blog | William Brioli – Psicanálise, Terapia, Saúde Emocional e Desenvolvimento Humano</title>
+
+  <meta name="description" content="Blog de William Brioli, Psicanalista Clínico Integrativo. Artigos sobre psicanálise, terapia, saúde emocional, relacionamentos, carreira, empreendedorismo, autoconhecimento e qualidade de vida.">
+  <meta name="keywords" content="blog psicanálise, terapia online, saúde emocional, autoconhecimento, desenvolvimento humano, psicanalista William Brioli, terapia para ansiedade, terapia de casal, psicoterapia, inteligência emocional, carreira e propósito, bem-estar mental, psicanálise clínica, terapia e autoconhecimento">
+  <meta name="author" content="William Brioli">
+  <meta name="robots" content="index, follow">
+
+  <!-- SEO local -->
+  <meta name="geo.region" content="BR-SP">
+  <meta name="geo.placename" content="Ilha Solteira">
+  <meta name="geo.position" content="-20.4299;-51.3426">
+  <meta name="ICBM" content="-20.4299, -51.3426">
+
+  <!-- Canonical -->
+  <link rel="canonical" href="https://williambrioli.com.br/img/HEROog.png">
+
+  <!-- Open Graph (Facebook, WhatsApp, LinkedIn) -->
+  <meta property="og:title" content="Blog | William Brioli – Psicanálise, Terapia e Saúde Emocional">
+  <meta property="og:description" content="Reflexões e artigos sobre psicanálise, saúde mental, autoconhecimento e qualidade de vida com William Brioli.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:url" content="https://williambrioli.github.io/blog.html">
+  <meta property="og:site_name" content="William Brioli – Psicanalista Clínico Integrativo">
+  <meta property="og:image" content="https://williambrioli.github.io/img/artigocnv.png">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Blog | William Brioli – Psicanálise, Terapia e Saúde Emocional">
+  <meta name="twitter:description" content="Artigos sobre psicanálise, terapia, saúde emocional, carreira e autoconhecimento.">
+  <meta name="twitter:image" content="https://williambrioli.github.io/img/artigocnv.png">
+
+  <!-- JSON-LD estruturado para Blog -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Blog",
+    "name": "Blog | William Brioli",
+    "url": "https://williambrioli.github.io/blog.html",
+    "description": "Artigos sobre psicanálise, terapia, saúde emocional, relacionamentos, carreira e desenvolvimento humano.",
+    "publisher": {
+      "@type": "Person",
+      "name": "William Brioli",
+      "jobTitle": "Psicanalista Clínico Integrativo",
+      "url": "https://williambrioli.github.io",
+      "image": "https://williambrioli.github.io/img/HEROog.jpg"
+    },
+    "inLanguage": "pt-BR"
+  }
+  </script>
+
+  <!-- ===================
+       CSS (arquivos externos, já criados)
+       =================== -->
+  <link rel="stylesheet" href="/css/global.css">
+  <link rel="stylesheet" href="/css/menu.css">
+  <link rel="stylesheet" href="/css/blog.css">
+  <link rel="stylesheet" href="/css/footer.css">
+
+</head>
+<body>
+
+  <!-- ===================
+       HERO DO BLOG
+       =================== -->
+  <main id="blog-top">
+    <section class="blog-hero-wrap">
+      <div class="container">
+        <div class="blog-hero">
+          <h1>Blog • Psicanálise, Terapia e Vida Real</h1>
+          <p>Reflexões sobre saúde emocional, relacionamentos, carreira, empreendedorismo e desenvolvimento humano, a partir da prática clínica e da experiência no mundo corporativo.</p>
+          <small>Atualizado periodicamente com novos artigos.</small>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================
+         LISTA DE ARTIGOS
+         =================== -->
+    <section class="blog-section">
+      <div class="container">
+        <h2>Artigos Recentes</h2>
+
+        <!-- Container onde os cards serão injetados via JS -->
+        <div id="postsGrid" class="posts-grid">
+          <!-- Cards criados dinamicamente -->
+        </div>
+
+        <!-- Mensagem de erro / vazio -->
+        <div id="postsMessage" class="posts-empty" style="display:none;"></div>
+      </div>
+    </section>
+
+    <!-- ===================
+         CONTATO / RODAPÉ
+         =================== -->
+    <footer id="contato" class="site-footer">
+      <div class="container footer-card" id="footerContainer">
+        <!-- Conteúdo será injetado via JS -->
+      </div>
+    </footer>
+
+  </main>
+
+  <!-- ===================
+       BOTÃO WHATSAPP
+       =================== -->
+  <div class="whatsapp-label">Fale comigo</div>
+  <div class="whatsapp-fab" role="link" aria-label="Conversar pelo WhatsApp">
+    <a id="waFab" href="#" aria-label="WhatsApp">
+      <svg width="32" height="32" viewBox="0 0 32 32" fill="white" xmlns="http://www.w3.org/2000/svg">
+        <path d="M16.006 3C9.373 3 4 8.373 4 15.006c0 2.647.873 5.098 2.348 7.083L4 29l7.127-2.298A12.943 12.943 0 0016.006 27c6.632 0 12.006-5.373 12.006-11.994C28.012 8.373 22.638 3 16.006 3zm6.725 16.994c-.28.782-1.634 1.517-2.262 1.547-.58.03-1.31.042-2.113-.133-.488-.112-1.114-.362-1.93-.708-3.386-1.467-5.592-4.876-5.756-5.107-.165-.23-1.37-1.82-1.37-3.47 0-1.65.865-2.463 1.173-2.8.308-.338.675-.423.9-.423.226 0 .451.002.648.012.21.01.49-.08.768.588.28.668.953 2.305 1.036 2.472.082.166.137.362.026.592-.11.23-.165.362-.322.56-.165.197-.347.44-.495.59-.165.165-.337.345-.145.677.197.338.877 1.446 1.886 2.34 1.297 1.153 2.392 1.51 2.73 1.677.338.165.533.142.73-.085.197-.226.843-.983 1.067-1.32.226-.338.451-.28.768-.165.317.112 2.007.947 2.352 1.118.346.173.575.258.66.402.082.14.082.783-.197 1.565z"/>
+      </svg>
+    </a>
+  </div>
+
+  <!-- ===================
+       MODAL DE LEITURA DO POST
+       =================== -->
+  <div id="postModalBackdrop" class="modal-backdrop" aria-hidden="true">
+    <article class="modal" role="dialog" aria-modal="true" aria-labelledby="postModalTitle">
+      <button class="modal-close" type="button" id="postModalClose" aria-label="Fechar artigo">×</button>
+      <header class="modal-header">
+        <h2 id="postModalTitle"></h2>
+        <div class="post-meta" id="postModalMeta"></div>
+      </header>
+      <div class="modal-cover" id="postModalCover" style="display:none;"></div>
+      <section class="modal-content" id="postModalContent"></section>
+      <footer class="modal-footer">
+        <button type="button" class="btn" id="postModalWhatsApp">Agendar atendimento</button>
+        <button type="button" class="btn" id="postModalCloseBottom">Fechar</button>
+      </footer>
+    </article>
+  </div>
+
+  <!-- ===================
+       SCRIPTS – BLOG + MINI CMS ESTÁTICO
+       =================== -->
+  <script>
+    // ==========================
+    // WHATSAPP – links e botão flutuante (CORRIGIDO)
+    // ==========================
+    // NÃO declare function openWA aqui. Ela vem do config-whatsapp.js
+
+    // Pega os elementos de forma segura
+    const btnContact = document.getElementById('btnContact');
+    const waFab = document.getElementById('waFab');
+
+    // Botão de contato (footer)
+    if (btnContact) {
+      btnContact.addEventListener('click', (e) => {
+        e.preventDefault();
+        if (typeof openWA === 'function') {
+          openWA('generic');
+        }
+      });
+    }
+
+    // Botão flutuante do WhatsApp
+    if (waFab) {
+      waFab.addEventListener('click', (e) => {
+        e.preventDefault();
+        if (typeof openWA === 'function') {
+          openWA('generic');
+        }
+      });
+
+      if (waFab.parentElement) {
+        waFab.parentElement.addEventListener('click', (e) => {
+          e.preventDefault();
+          if (typeof openWA === 'function') {
+            openWA('generic');
+          }
+        });
+      }
+    }
+
+    // ==========================
+    // MINI PARSER DE MARKDOWN (simplificado)
+    // ==========================
+    function simpleMarkdownToHtml(md) {
+      if (!md) return '';
+
+      // Normaliza quebras de linha
+      let text = md.replace(/\r\n/g, '\n');
+
+      // Títulos: #, ##, ###
+      text = text.replace(/^### (.*)$/gm, '<h3>$1</h3>');
+      text = text.replace(/^## (.*)$/gm, '<h2>$1</h2>');
+      text = text.replace(/^# (.*)$/gm, '<h2>$1</h2>');
+
+      // Negrito **texto**
+      text = text.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
+
+      // Itálico *texto*
+      text = text.replace(/\*(.+?)\*/g, '<em>$1</em>');
+
+      // Listas simples iniciadas por "- " ou "* "
+      text = text.replace(/^[\-\*] (.*)$/gm, '<li>$1</li>');
+      text = text.replace(/(<li>.*<\/li>\n?)+/gm, match => `<ul>${match}</ul>`);
+
+      // Quebra em parágrafos (duas quebras de linha)
+      const parts = text.split(/\n{2,}/).map(block => {
+        if (/^<h[23]>/.test(block) || /^<ul>/.test(block)) {
+          return block;
+        }
+        return `<p>${block.trim()}</p>`;
+      });
+
+      return parts.join('\n');
+    }
+
+    // ==========================
+    // CARREGAMENTO DE POSTS via JSON
+    // ==========================
+    let POSTS_CACHE = [];
+
+    async function loadPosts() {
+      const grid = document.getElementById('postsGrid');
+      const msgEl = document.getElementById('postsMessage');
+
+      if (!grid || !msgEl) return;
+
+      msgEl.style.display = 'none';
+      msgEl.textContent = '';
+
+      try {
+        // Arquivo: /posts/posts.json (mesmo repositório, mesma branch GitHub Pages)
+        const response = await fetch('posts/posts.json', { cache: 'no-store' });
+
+        if (!response.ok) {
+          throw new Error('Não foi possível carregar a lista de artigos.');
+        }
+
+        const posts = await response.json();
+        if (!Array.isArray(posts) || posts.length === 0) {
+          msgEl.style.display = 'block';
+          msgEl.textContent = 'Ainda não há artigos publicados. Em breve, novos conteúdos estarão disponíveis aqui.';
+          return;
+        }
+
+        POSTS_CACHE = posts;
+        renderPosts(posts, grid);
+
+      } catch (err) {
+        console.error(err);
+        msgEl.style.display = 'block';
+        msgEl.textContent = 'Ocorreu um problema ao carregar os artigos. Verifique se o arquivo "posts/posts.json" existe no repositório.';
+      }
+    }
+
+    function renderPosts(posts, container) {
+      container.innerHTML = '';
+
+      posts.forEach(post => {
+        const card = document.createElement('article');
+        card.className = 'post-card';
+
+        // Imagem de capa
+        if (post.cover) {
+          const img = document.createElement('img');
+          img.src = post.cover;
+          img.alt = post.title || '';
+          card.appendChild(img);
+        }
+
+        const body = document.createElement('div');
+        body.className = 'post-card-body';
+
+        // Tag (primeira tag do array, se existir)
+        if (Array.isArray(post.tags) && post.tags.length > 0) {
+          const tag = document.createElement('span');
+          tag.className = 'post-tag';
+          tag.textContent = post.tags[0];
+          body.appendChild(tag);
+        }
+
+        // Título
+        const h3 = document.createElement('h3');
+        h3.textContent = post.title || 'Artigo sem título';
+        body.appendChild(h3);
+
+        // Meta: data e autor
+        const meta = document.createElement('div');
+        meta.className = 'post-meta';
+        meta.textContent = formatPostMeta(post);
+        body.appendChild(meta);
+
+        // Resumo
+        if (post.excerpt) {
+          const excerpt = document.createElement('div');
+          excerpt.className = 'post-excerpt';
+          excerpt.textContent = post.excerpt;
+          body.appendChild(excerpt);
+        }
+
+        // Botão "Ler artigo completo"
+        const footer = document.createElement('div');
+        footer.className = 'post-card-footer';
+
+        const btn = document.createElement('button');
+        btn.type = 'button';
+        btn.className = 'btn';
+        btn.textContent = 'Ler artigo completo';
+
+        // Evento de clique → abre página HTML
+        btn.addEventListener('click', () => {
+          if (post.html) {
+            window.location.href = post.html; // redireciona
+          } else {
+            console.warn('Este artigo não tem página HTML definida.');
+          }
+        });
+
+        footer.appendChild(btn);
+        body.appendChild(footer);
+        card.appendChild(body);
+        container.appendChild(card);
+      });
+    }
+
+    function formatPostMeta(post) {
+      let parts = [];
+      if (post.date) {
+        const d = new Date(post.date);
+        if (!isNaN(d)) {
+          const formatted = d.toLocaleDateString('pt-BR', {
+            day: '2-digit',
+            month: 'long',
+            year: 'numeric'
+          });
+          parts.push(formatted);
+        }
+      }
+      if (post.author) {
+        parts.push('por ' + post.author);
+      }
+      return parts.join(' • ');
+    }
+
+    // ==========================
+    // MODAL – ABRIR ARTIGO COMPLETO
+    // ==========================
+    const modalBackdrop = document.getElementById('postModalBackdrop');
+    const modalTitle = document.getElementById('postModalTitle');
+    const modalMeta = document.getElementById('postModalMeta');
+    const modalCover = document.getElementById('postModalCover');
+    const modalContent = document.getElementById('postModalContent');
+    const modalClose = document.getElementById('postModalClose');
+    const modalCloseBottom = document.getElementById('postModalCloseBottom');
+    const modalWhatsApp = document.getElementById('postModalWhatsApp');
+
+    async function openPostModal(post) {
+      if (!post) return;
+
+      modalTitle.textContent = post.title || '';
+      modalMeta.textContent = formatPostMeta(post);
+
+      // Capa no modal
+      if (post.cover) {
+        modalCover.style.display = 'block';
+        modalCover.innerHTML = `<img src="${post.cover}" alt="${post.title || ''}">`;
+      } else {
+        modalCover.style.display = 'none';
+        modalCover.innerHTML = '';
+      }
+
+      // Carrega markdown do artigo
+      modalContent.innerHTML = '<p>Carregando conteúdo...</p>';
+
+      if (!post.file) {
+        modalContent.innerHTML = '<p>Não foi possível localizar o conteúdo deste artigo. Verifique a propriedade <code>file</code> no JSON.</p>';
+      } else {
+        try {
+          const resp = await fetch(post.file, { cache: 'no-store' });
+          if (!resp.ok) {
+            throw new Error('Erro ao carregar arquivo Markdown.');
+          }
+          const md = await resp.text();
+          const html = simpleMarkdownToHtml(md);
+          modalContent.innerHTML = html || '<p>Conteúdo vazio.</p>';
+        } catch (err) {
+          console.error(err);
+          modalContent.innerHTML = '<p>Ocorreu um erro ao carregar o conteúdo deste artigo.</p>';
+        }
+      }
+
+      // Botão WhatsApp dentro do modal
+      modalWhatsApp.onclick = () => {
+        window.open(waLink('generic'), '_blank');
+      };
+
+      modalBackdrop.classList.add('open');
+      modalBackdrop.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closePostModal() {
+      modalBackdrop.classList.remove('open');
+      modalBackdrop.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+    }
+
+    if (modalClose) {
+      modalClose.addEventListener('click', closePostModal);
+    }
+    if (modalCloseBottom) {
+      modalCloseBottom.addEventListener('click', closePostModal);
+    }
+
+    modalBackdrop.addEventListener('click', (e) => {
+      if (e.target === modalBackdrop) {
+        closePostModal();
+      }
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && modalBackdrop.classList.contains('open')) {
+        closePostModal();
+      }
+    });
+
+    // ==========================
+    // INICIALIZAÇÃO
+    // ==========================
+    document.addEventListener('DOMContentLoaded', () => {
+      loadPosts();
+    });
+
+  </script>
+
+  <script src="js/menu.js"></script>
+  <script src="js/config-whatsapp.js"></script>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      // 🔘 Exemplo de uso: botão flutuante
+      const waFab = document.getElementById("waFab");
+      if (waFab) waFab.addEventListener("click", () => openWA());
+
+      // 🔘 Exemplo de botão de contato
+      const btnContact = document.getElementById("btnContact");
+      if (btnContact) btnContact.addEventListener("click", () => openWA());
+
+      // 🔘 Exemplo no artigo
+      const btnAgendar = document.getElementById("btnAgendarAtendimento");
+      if (btnAgendar) btnAgendar.addEventListener("click", () => openWA());
+    });
+  </script>
+
+  <script src="/js/site-data.js"></script>
+  <script src="/js/footer-inject.js"></script>
+
+  <!-- ==========================
+       EXEMPLOS (APENAS COMENTÁRIOS)
+       Crie a pasta /posts/ e o arquivo posts.json
+       ========================== -->
+</body>
+</html>
