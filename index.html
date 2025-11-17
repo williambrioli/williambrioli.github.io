@@ -876,40 +876,45 @@ button.btn {
 
 
 /* ============================
-   SEÇÃO BLOG (ajuste visual)
+   SEÇÃO BLOG (corrigida)
    ============================ */
 #blog {
-  padding: 60px 24px;
-  background: #f9fdfd;
+  background: var(--bg); /* mantém coerência com o restante do site */
+  padding: 0; /* remove espaçamento duplo */
 }
 
 #blog .container {
-  max-width: var(--max-width); /* usa o mesmo valor das demais (1500px) */
+  max-width: var(--max-width); /* igual às outras seções */
   margin: 0 auto;
+  padding: 28px; /* mesmo padding da section-card */
+  background: var(--card);
+  border-radius: var(--radius);
+  box-shadow: 0 6px 18px rgba(30,30,30,0.04);
 }
 
+/* conteúdo interno */
 #blog h2 {
-  font-size: 1.8rem;
-  margin-bottom: 24px;
-  color: var(--primary-900, #2e7d7e);
-  text-align: center; /* título centralizado */
+  font-size: 28px;
+  margin-bottom: 16px;
+  color: var(--primary-700);
+  text-align: center;
 }
 
 #blog p {
-  font-size: 1.05rem;
+  max-width: 720px;
+  margin: 0 auto 16px;
   line-height: 1.6;
-  margin-bottom: 16px;
-  color: #333;
-  text-align: left; /* texto principal alinhado à esquerda */
+  font-size: 1.05rem;
+  color: var(--muted);
+  text-align: left;
 }
 
 #blog .btn {
-  margin-top: 28px !important;
-  display: block !important;
-  margin-left: auto !important;
-  margin-right: auto !important;
-  text-align: center !important; /* botão centralizado */
+  display: block;
+  margin: 24px auto 0;
+  text-align: center;
 }
+
 
 
 
@@ -1726,6 +1731,7 @@ document.addEventListener("DOMContentLoaded", () => {
   
 </body>
 </html>
+
 
 
 
