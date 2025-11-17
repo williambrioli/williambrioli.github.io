@@ -760,34 +760,60 @@
   <!-- ===================
        SCRIPTS – BLOG + MINI CMS ESTÁTICO
        =================== -->
-  <script>
-       
-    // ==========================
-    // WHATSAPP – links e botão flutuante
-    // ==========================
-    // NÃO declare function openWA aqui.
-// Use a openWA global vinda do config-whatsapp.js
+ <script>
+  // ==========================
+  // WHATSAPP – links e botão flutuante (CORREÇÃO)
+  // ==========================
+  // Não declarar a função openWA aqui — ela vem do config-whatsapp.js
 
-if (btnContact) {
-  btnContact.addEventListener('click', (e) => {
-    e.preventDefault();
-    openWA('generic'); // usa mensagem "generic" do config
-  });
-}
+  // --- Pegando elementos com segurança (evita ReferenceError) ---
+  const btnContact = document.getElementById('btnContact');
+  const waFab = document.getElementById('waFab');
 
-if (waFab) {
-  waFab.addEventListener('click', (e) => {
-    e.preventDefault();
-    openWA('generic');
-  });
-
-  if (waFab.parentElement) {
-    waFab.parentElement.addEventListener('click', (e) => {
+  // Se btnContact existir no DOM, vincula evento corretamente
+  if (btnContact) {
+    btnContact.addEventListener('click', (e) => {
       e.preventDefault();
-      openWA('generic');
+      // tenta usar openWA se existir; se não, usa href do próprio link
+      if (typeof openWA === 'function') {
+        openWA('generic');
+      } else {
+        const href = btnContact.getAttribute('href') || '#';
+        if (href && href !== '#') window.location.href = href;
+      }
     });
   }
-}
+
+  // Se waFab existir, vincula evento
+  if (waFab) {
+    waFab.addEventListener('click', (e) => {
+      e.preventDefault();
+      if (typeof openWA === 'function') {
+        openWA('generic');
+      } else {
+        const href = waFab.getAttribute('href') || '#';
+        if (href && href !== '#') window.location.href = href;
+      }
+    });
+
+    // Também captura clique no pai (caso tenha wrapper)
+    if (waFab.parentElement) {
+      waFab.parentElement.addEventListener('click', (e) => {
+        e.preventDefault();
+        if (typeof openWA === 'function') {
+          openWA('generic');
+        } else {
+          const href = waFab.getAttribute('href') || '#';
+          if (href && href !== '#') window.location.href = href;
+        }
+      });
+    }
+  }
+
+  // ============== resto do script continua normalmente ==============
+  // (mantenha o restante do seu código a partir do MINI PARSER e abaixo)
+</script>
+
 
 
 
@@ -1130,6 +1156,7 @@ if (waFab) {
 
 </body>
 </html>
+
 
 
 
