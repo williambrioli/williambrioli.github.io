@@ -884,29 +884,43 @@ Atua com <strong>psicoterapia individual, terapia de casal, empreendedores, carr
     // ==========================
     // CONFIGURAÇÕES GERAIS
     // ==========================
-    // NÃO declare function openWA aqui.
-// Use a openWA global vinda do config-whatsapp.js
+// WHATSAPP – links e botão flutuante (CORRIGIDO)
+// ==========================
+// NÃO declare function openWA aqui. Ela vem do config-whatsapp.js
 
+// Pega os elementos de forma segura
+const btnContact = document.getElementById('btnContact');
+const waFab = document.getElementById('waFab');
+
+// Botão de contato (footer)
 if (btnContact) {
   btnContact.addEventListener('click', (e) => {
     e.preventDefault();
-    openWA('generic'); // usa mensagem "generic" do config
+    if (typeof openWA === 'function') {
+      openWA('generic');
+    }
   });
 }
 
+// Botão flutuante do WhatsApp
 if (waFab) {
   waFab.addEventListener('click', (e) => {
     e.preventDefault();
-    openWA('generic');
+    if (typeof openWA === 'function') {
+      openWA('generic');
+    }
   });
 
   if (waFab.parentElement) {
     waFab.parentElement.addEventListener('click', (e) => {
       e.preventDefault();
-      openWA('generic');
+      if (typeof openWA === 'function') {
+        openWA('generic');
+      }
     });
   }
 }
+
 
     // ==========================
     // MINI PARSER DE MARKDOWN (simplificado)
