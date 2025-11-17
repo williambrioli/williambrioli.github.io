@@ -33,11 +33,9 @@
 
     <ul class="contact-list">
       <li><strong>Horário de Atendimento:</strong> ${cfg.hoursHTML}</li>
-<!-- TELEFONE REMOVIDO
       <li><strong>Telefone:</strong> 
       <a href="${cfg.phoneHref}" id="phoneLink">${cfg.phoneDisplay}</a>
       </li>
--->
     </ul>
 
     <p style="margin-top:12px">
