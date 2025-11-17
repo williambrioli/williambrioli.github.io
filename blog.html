@@ -801,29 +801,28 @@
         phoneLink.href = `tel:${SITE_CONFIG.whatsappNumber.replace(/^55/, '+')}`;
       }
 
-      function openWA() {
-        window.open(waLink(), '_blank');
-      }
+     // NÃO recria openWA aqui, usa a global do config-whatsapp.js
 
-      if (btnContact) {
-        btnContact.addEventListener('click', (e) => {
-          e.preventDefault();
-          openWA();
-        });
-      }
+if (btnContact) {
+  btnContact.addEventListener('click', (e) => {
+    e.preventDefault();
+    openWA('generic'); // usa a mensagem "generic" do config-whatsapp.js
+  });
+}
 
-      if (waFab) {
-        waFab.addEventListener('click', (e) => {
-          e.preventDefault();
-          openWA();
-        });
-        // também no contêiner
-        waFab.parentElement.addEventListener('click', (e) => {
-          e.preventDefault();
-          openWA();
-        });
-      }
-    })();
+if (waFab) {
+  waFab.addEventListener('click', (e) => {
+    e.preventDefault();
+    openWA('generic');
+  });
+
+  // também no contêiner, se quiser manter
+  waFab.parentElement.addEventListener('click', (e) => {
+    e.preventDefault();
+    openWA('generic');
+  });
+}
+
 
     // ==========================
     // MINI PARSER DE MARKDOWN (simplificado)
@@ -1163,6 +1162,7 @@
 
 </body>
 </html>
+
 
 
 
