@@ -1430,34 +1430,39 @@ Na abordagem psicanalítica clínica integrativa, o atendimento costuma acontece
 })();
 
 
-   // Accordion behavior
+   // =============================
+// ACCORDION – sem scroll (desktop e mobile)
+// =============================
 (function(){
   const items = document.querySelectorAll('.acc-item');
-  items.forEach(item=>{
+
+  items.forEach(item => {
     const header = item.querySelector('.acc-header');
 
-    header.addEventListener('click', ()=>{
+    header.addEventListener('click', (e) => {
+      e.preventDefault();
+
       const isOpen = item.classList.contains('open');
 
-      // fecha todos os outros
-      document.querySelectorAll('.acc-item.open').forEach(i=>i.classList.remove('open'));
+      // Fecha todos os outros
+      document.querySelectorAll('.acc-item.open').forEach(i => i.classList.remove('open'));
 
-      if(!isOpen){
+      // Abre ou fecha o item clicado
+      if (!isOpen) {
         item.classList.add('open');
 
-        // 🔥 SCROLL CORRIGIDO 🔥
-       // setTimeout(()=>{
-       //   item.scrollIntoView({
-       //     behavior: "smooth",
-       //     block: "start"
-       //   });
-     //   }, 120);
+        // 🔒 impede rolagem automática em qualquer dispositivo
+        // salva a posição atual antes da expansão
+        const scrollY = window.scrollY;
+        setTimeout(() => {
+          window.scrollTo({ top: scrollY, behavior: 'auto' });
+        }, 100);
       }
     });
 
-    // mantém acessibilidade por teclado (Enter / Espaço)
-    header.addEventListener('keydown', (e)=>{
-      if(e.key === 'Enter' || e.key === ' '){
+    // acessibilidade via teclado
+    header.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
         e.preventDefault();
         header.click();
       }
@@ -1732,6 +1737,7 @@ document.addEventListener("DOMContentLoaded", () => {
   
 </body>
 </html>
+
 
 
 
