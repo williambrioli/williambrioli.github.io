@@ -664,13 +664,6 @@
   }
 }
 
-/* Centralizar títulos das seções no blog e nos artigos */
-#blog h2,
-.article-container h2,
-.post-article h2,
-section h2 {
-  text-align: center;
-}
 
 /* ==========================
    REMOVER IMAGENS DOS CARDS DO BLOG
@@ -683,7 +676,15 @@ section h2 {
   padding-top: 20px; /* compensa o espaço vazio deixado pela imagem */
 }
 
-
+/* Força centralização do título da sessão CONTATO em todas as páginas */
+footer.site-footer .footer-card h2,
+#footerContainer .footer-card h2,
+footer.site-footer h2 {
+  text-align: center !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  display: block;
+}
 
     
   </style>
@@ -1150,6 +1151,7 @@ if (waFab) {
 
 </body>
 </html>
+
 
 
 
