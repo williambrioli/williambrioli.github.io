@@ -417,127 +417,6 @@ terapia emocional online, terapia para ansiedade, terapia para depressão, autoe
 }
 
 
-
-
-
-
-
-
-/* ======== Ajuste estrutural do carrossel DEPOIMENTOS ======== */
-
-/* container alinhado */
-.testimonials-carousel{
-  position:relative;
-  width:100%;
-  max-width:800px;
-  margin:16px auto 0;
-  display:block; /* ← IMPORTANTE: tira do modo flex */
-}
-
-#testimonials .tc-prev,
-#testimonials .tc-next{
-  position:absolute;
-  top:50%;
-  transform:translateY(-50%);
-}
-
-#testimonials .tc-prev{
-  left:-20px; /* ajuste fino */
-}
-
-#testimonials .tc-next{
-  right:-20px; /* ajuste fino */
-}
-
-
-/* AUMENTAR ALTURA DEPOIMENTO FOTOS */
-
-/* trilho central */
-.tc-track{
-  position:relative;   /* 🔥 ESSENCIAL para slides sobrepostos */
-  overflow:hidden;
-  width:100%;
-  height:360px;
-  border-radius:12px;
-  background:#fff;
-  box-shadow:0 8px 24px rgba(0,0,0,0.04);
-}
-
-/* slides */
-.tc-slide{
-  position:absolute;   /* 🔥 ESSENCIAL para mostrar 1 por vez */
-  top:0;
-  left:0;
-  width:100%;
-  height:100%;
-  opacity:0;
-  transform: translateX(20px) scale(.98);
-  transition: all .45s cubic-bezier(.2,.8,.2,1);
-}
-
-.tc-slide.active{
-  opacity:1;
-  transform: translateX(0) scale(1);
-}
-
-/* imagem */
-.tc-slide img{
-  width:100%;
-  height:100%;
-  object-fit:cover;       /* ← NÃO CORTA */
-  background:#ffffff;       /* ← fundo branco (melhor para fotos) */
-  border-radius:12px;
-}
-/* setas */
-.tc-btn{
-  background:#fff;
-  border:0;
-  width:44px;
-  height:44px;
-  border-radius:999px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-size:26px;
-  cursor:pointer;
-  box-shadow:0 6px 18px rgba(0,0,0,0.08);
-  transition:all .25s ease;
-  z-index:20;
-}
-
-.tc-btn:hover{
-  transform:scale(1.12);
-}
-
-/* dots */
-.tc-dots{
-  display:flex;
-  gap:8px;
-  justify-content:center;
-  margin-top:12px;
-}
-
-.tc-dot{
-  width:10px;
-  height:10px;
-  border-radius:999px;
-  background:rgba(0,0,0,0.15);
-  transition:.25s;
-  cursor:pointer;
-}
-
-.tc-dot.active{
-  width:28px;
-  background:var(--primary);
-}
-
-
-
-
-
-
-
-
 @media(max-width:520px){
   .top-menu{
     left: 10px !important;
@@ -1747,6 +1626,7 @@ document.addEventListener("DOMContentLoaded", () => {
   
 </body>
 </html>
+
 
 
 
