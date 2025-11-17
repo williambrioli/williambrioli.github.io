@@ -1352,12 +1352,7 @@ Na abordagem psicanalítica clínica integrativa, o atendimento costuma acontece
        SCRIPTS - behavior & injection
        =================== -->
   <script>
-    // Helper: build wa link
-    function waLink(msgKey){
-      const num = SITE_CONFIG.whatsappNumber;
-      const msg = SITE_CONFIG.messages[msgKey] || SITE_CONFIG.messages.generic;
-      return `https://wa.me/${num}?text=${msg}`;
-    }
+    
 
 /* ======= HERO IMAGE LOADER (FUNCIONA) ======= */
 (function(){
@@ -1471,31 +1466,14 @@ Na abordagem psicanalítica clínica integrativa, o atendimento costuma acontece
   });
 })();
 
-  document.addEventListener("DOMContentLoaded", () => {
-  document.querySelectorAll("[data-wa-msg]").forEach(btn => {
-    btn.addEventListener("click", e => {
-      e.preventDefault();
-      const key = btn.getAttribute("data-wa-msg") || "generic";
-      openWA(key);
-    });
-  });
-
-  const waFab = document.getElementById("waFab");
-  if (waFab) waFab.addEventListener("click", e => { e.preventDefault(); openWA(); });
-
-  const btnContact = document.getElementById("btnContact");
-  if (btnContact) btnContact.addEventListener("click", e => { e.preventDefault(); openWA(); });
-});
-
-
-
+ 
       // Specific buttons
       document.getElementById('agendarDepBtn').addEventListener('click', (e)=>{ e.preventDefault(); window.open(waLink(''),'_blank'); });
       document.getElementById('btnContact').addEventListener('click', (e)=>{ e.preventDefault(); window.open(waLink(),'_blank'); });
       document.getElementById('waFab').parentElement.addEventListener('click', (e)=>{ e.preventDefault(); window.open(waLink(),'_blank'); });
       // make WA fab inner link correct
       const waFabLink = document.getElementById('waFab'); waFabLink.href = waLink('generic'); 
-    })();
+    
 
     // 'Me conheça mais' expands text (replaces content with the extended text)
     (function(){
@@ -1748,6 +1726,7 @@ Na abordagem psicanalítica clínica integrativa, o atendimento costuma acontece
 
 </body>
 </html>
+
 
 
 
