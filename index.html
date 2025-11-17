@@ -1323,17 +1323,10 @@ Na abordagem psicanalítica clínica integrativa, o atendimento costuma acontece
 
     <!-- CONTATO / RODAPÉ -->
     <footer id="contato" class="site-footer">
-      <div class="container section-card">
-        <h2>Contato</h2>
-        <p style="margin:0 0 12px"><strong>William Brioli</strong><br>Psicanalista Clínico Integrativo</p>
-        <ul class="contact-list">
-          <li><strong>Horário de Atendimento:</strong> Segunda à sexta-feira — 8h00 às 22h00 (consulte agenda)</li>
-          <li><strong>Telefone:</strong> <a href="#" id="phoneLink"></a></li>
-        </ul>
-
-        <p style="margin-top:12px"><a class="btn" id="btnContact" href="#">Enviar mensagem</a></p>
-      </div>
-    </footer>
+  <div class="container section-card" id="footerContainer">
+    <!-- Conteúdo será injetado via JS -->
+  </div>
+</footer>
 
   </main>
 
@@ -1787,9 +1780,12 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 </script>
 
+<script src="/js/site-data.js"></script>
+<script src="/js/footer-inject.js"></script>
   
 </body>
 </html>
+
 
 
 
