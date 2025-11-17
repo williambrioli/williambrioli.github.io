@@ -1431,7 +1431,8 @@ Na abordagem psicanalítica clínica integrativa, o atendimento costuma acontece
 
 
    // =============================
-// ACCORDION – sem scroll (desktop e mobile)
+// =============================
+// ACCORDION — versão estável (sem scroll, sem salto)
 // =============================
 (function(){
   const items = document.querySelectorAll('.acc-item');
@@ -1447,26 +1448,33 @@ Na abordagem psicanalítica clínica integrativa, o atendimento costuma acontece
       // Fecha todos os outros
       document.querySelectorAll('.acc-item.open').forEach(i => i.classList.remove('open'));
 
-      if (!isOpen) {
-        // 🔒 Bloqueia temporariamente o scroll
-        const scrollY = window.scrollY;
-        document.body.style.position = 'fixed';
-        document.body.style.top = `-${scrollY}px`;
-        document.body.style.width = '100%';
+      // Guarda a posição atual antes de qualquer mudança
+      const scrollY = window.scrollY;
 
-        // Abre o item
+      if (!isOpen) {
         item.classList.add('open');
 
-        // Libera o scroll após a expansão
-        setTimeout(() => {
-          document.body.style.position = '';
-          document.body.style.top = '';
-          document.body.style.width = '';
-          window.scrollTo(0, scrollY); // garante o retorno exato
-        }, 350); // tempo suficiente pra terminar a transição
+        // 🔒 Bloqueia scroll visual e mantém a posição exata
+        requestAnimationFrame(() => {
+          // Em vez de fixar o body, apenas “corrige” a posição após o reflow
+          window.scrollTo({
+            top: scrollY,
+            behavior: 'instant' || 'auto'
+          });
+        });
+      } else {
+        // Fechando o item
+        item.classList.remove('open');
+        requestAnimationFrame(() => {
+          window.scrollTo({
+            top: scrollY,
+            behavior: 'instant' || 'auto'
+          });
+        });
       }
     });
 
+    // Acessibilidade por teclado
     header.addEventListener('keydown', (e) => {
       if (e.key === 'Enter' || e.key === ' ') {
         e.preventDefault();
@@ -1744,6 +1752,7 @@ document.addEventListener("DOMContentLoaded", () => {
   
 </body>
 </html>
+
 
 
 
