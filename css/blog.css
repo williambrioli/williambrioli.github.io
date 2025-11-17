@@ -1,0 +1,97 @@
+/* ============================================================
+   BLOG.CSS — ESTILOS EXCLUSIVOS PARA A PÁGINA blog.html
+   ============================================================ */
+
+/* -----------------------------
+   CONTAINER PRINCIPAL DO BLOG
+------------------------------ */
+#blog-page {
+  background: var(--bg);
+  padding: 0;
+}
+
+#blog-page .container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 28px;
+  background: var(--card);
+  border-radius: var(--radius);
+  box-shadow: 0 6px 18px rgba(30,30,30,0.04);
+}
+
+/* -----------------------------
+   TÍTULO PRINCIPAL
+------------------------------ */
+#blog-page h1 {
+  color: var(--primary-700);
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 30px;
+}
+
+/* -----------------------------
+   PARÁGRAFOS
+------------------------------ */
+#blog-page p {
+  max-width: 100%;
+  font-size: 1.05rem;
+  line-height: 1.6;
+  margin-bottom: 16px;
+  color: var(--muted);
+}
+
+/* -----------------------------
+   GRID DE POSTAGENS
+------------------------------ */
+.blog-list {
+  display: grid;
+  gap: 26px;
+  margin-top: 24px;
+}
+
+/* Card de cada artigo */
+.blog-card {
+  background: var(--card);
+  border-radius: var(--radius);
+  padding: 20px;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.04);
+  transition: 0.25s ease;
+}
+
+.blog-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 22px rgba(0,0,0,0.06);
+}
+
+/* Título do artigo */
+.blog-card h3 {
+  font-size: 22px;
+  margin-bottom: 12px;
+  color: var(--primary-700);
+}
+
+/* Trecho do artigo */
+.blog-card p {
+  margin-bottom: 16px;
+}
+
+/* Botão */
+.blog-card .btn {
+  display: inline-block;
+  margin-top: 10px;
+}
+
+/* -----------------------------
+   RESPONSIVIDADE
+------------------------------ */
+@media (min-width: 700px) {
+  .blog-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1100px) {
+  .blog-list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
