@@ -57,14 +57,14 @@
               ${phoneBlock}
             </ul>
 
-         <!--   <p style="margin-top:12px">
+            <p style="margin-top:12px">
               <a class="btn" 
                  id="btnContact" 
                  href="${phoneHref}" 
                  data-wa-msg="${escapeHtmlAttr(contactButtonWA)}">
                  ${contactButtonText}
               </a>
-            </p> -->
+            </p>
           </div>
         `;
 
