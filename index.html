@@ -1523,15 +1523,15 @@ Na abordagem psicanalítica clínica integrativa, o atendimento costuma acontece
             generic: 'generic'
           };
           const msgKey = map[key] || 'generic';
-          window.open(waLink(msgKey),'_blank');
+          window.open(waLink(),'_blank');
         });
       });
 
 
       // Specific buttons
-      document.getElementById('agendarDepBtn').addEventListener('click', (e)=>{ e.preventDefault(); window.open(waLink('depoimentosAgendamento'),'_blank'); });
-      document.getElementById('btnContact').addEventListener('click', (e)=>{ e.preventDefault(); window.open(waLink('generic'),'_blank'); });
-      document.getElementById('waFab').parentElement.addEventListener('click', (e)=>{ e.preventDefault(); window.open(waLink('generic'),'_blank'); });
+      document.getElementById('agendarDepBtn').addEventListener('click', (e)=>{ e.preventDefault(); window.open(waLink(''),'_blank'); });
+      document.getElementById('btnContact').addEventListener('click', (e)=>{ e.preventDefault(); window.open(waLink(),'_blank'); });
+      document.getElementById('waFab').parentElement.addEventListener('click', (e)=>{ e.preventDefault(); window.open(waLink(),'_blank'); });
       // make WA fab inner link correct
       const waFabLink = document.getElementById('waFab'); waFabLink.href = waLink('generic'); 
     })();
@@ -1787,6 +1787,7 @@ Na abordagem psicanalítica clínica integrativa, o atendimento costuma acontece
 
 </body>
 </html>
+
 
 
 
