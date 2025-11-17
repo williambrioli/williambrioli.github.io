@@ -1,34 +1,43 @@
 // =========================
 // CONFIGURAÇÃO GLOBAL – WHATSAPP
 // =========================
-window.SITE_CONFIG = {
-  whatsappNumber: "5518988092571",
-  phoneDisplay: "(18) 98809-2571",
-  messages: {
-    generic: "Olá, William! Encontrei seu site e gostaria de conversar sobre atendimento."
-    // se quiser, depois você pode criar:
-    // blog: "Olá, William! Li um artigo no blog e quero falar sobre terapia.",
-    // index: "Olá, William! Visitei seu site e quero saber sobre atendimentos."
+(function () {
+  const CONFIG = {
+    whatsappNumber: "5518988092571",
+    phoneDisplay: "(18) 98809-2571",
+    messages: {
+      generic: "Olá, William! Encontrei seu site e gostaria de conversar sobre atendimento."
+      // Você pode criar mais, se quiser:
+      // blog: "Olá, William! Li um artigo no seu blog e gostaria de falar sobre terapia.",
+      // artigo: "Olá, William! Li um artigo específico e quero tirar uma dúvida."
+    }
+  };
+
+  // Expõe no escopo global para usar em outros scripts (telefone no rodapé, etc.)
+  window.WA_CONFIG = CONFIG;
+
+  // Gera o link do WhatsApp a partir de UMA CHAVE (ex: "generic", "blog"...)
+  function buildWaLink(key) {
+    const num = CONFIG.whatsappNumber;
+    const msgs = CONFIG.messages || {};
+
+    // pega a mensagem pela chave ou cai no generic
+    const raw = (key && msgs[key]) ? msgs[key] : msgs.generic;
+
+    // fallback extra pra NUNCA virar "undefined"
+    const finalText = raw || "Olá, William! Gostaria de conversar sobre atendimento.";
+    const encoded = encodeURIComponent(finalText);
+
+    return `https://wa.me/${num}?text=${encoded}`;
   }
-};
 
-// Gera o link do WhatsApp a partir de UMA CHAVE (ex: "generic", "blog"...)
-window.waLink = function (key) {
-  const num = window.SITE_CONFIG.whatsappNumber;
-  const msgs = window.SITE_CONFIG.messages || {};
+  // Expor função global
+  window.waLink = function (key) {
+    return buildWaLink(key);
+  };
 
-  // se a chave existir, usa; se não, cai no generic
-  const raw = (key && msgs[key]) ? msgs[key] : msgs.generic;
-
-  // se por algum motivo ainda assim não houver texto, evita "undefined"
-  const finalText = raw || "Olá, William! Gostaria de conversar sobre atendimento.";
-  const encoded = encodeURIComponent(finalText);
-
-  return `https://wa.me/${num}?text=${encoded}`;
-};
-
-// Abre o WhatsApp
-window.openWA = function (key) {
-  const url = window.waLink(key);
-  window.open(url, "_blank");
-};
+  window.openWA = function (key) {
+    const url = buildWaLink(key);
+    window.open(url, "_blank");
+  };
+})();
