@@ -4,18 +4,31 @@
 window.SITE_CONFIG = {
   whatsappNumber: "5518988092571",
   phoneDisplay: "(18) 98809-2571",
-  message: "Olá, William! Encontrei seu site e gostaria de conversar sobre atendimento."
+  messages: {
+    generic: "Olá, William! Encontrei seu site e gostaria de conversar sobre atendimento."
+    // se quiser, depois você pode criar:
+    // blog: "Olá, William! Li um artigo no blog e quero falar sobre terapia.",
+    // index: "Olá, William! Visitei seu site e quero saber sobre atendimentos."
+  }
 };
 
-// Função para gerar o link do WhatsApp
-window.waLink = function(customMsg) {
-  const num = SITE_CONFIG.whatsappNumber;
-  // 👇 aqui está a chave: usar SITE_CONFIG.message, não messages.generic
-  const msg = encodeURIComponent(customMsg || SITE_CONFIG.message);
-  return `https://wa.me/${num}?text=${msg}`;
+// Gera o link do WhatsApp a partir de UMA CHAVE (ex: "generic", "blog"...)
+window.waLink = function (key) {
+  const num = window.SITE_CONFIG.whatsappNumber;
+  const msgs = window.SITE_CONFIG.messages || {};
+
+  // se a chave existir, usa; se não, cai no generic
+  const raw = (key && msgs[key]) ? msgs[key] : msgs.generic;
+
+  // se por algum motivo ainda assim não houver texto, evita "undefined"
+  const finalText = raw || "Olá, William! Gostaria de conversar sobre atendimento.";
+  const encoded = encodeURIComponent(finalText);
+
+  return `https://wa.me/${num}?text=${encoded}`;
 };
 
-// Função para abrir o WhatsApp
-window.openWA = function(customMsg) {
-  window.open(waLink(customMsg), "_blank");
+// Abre o WhatsApp
+window.openWA = function (key) {
+  const url = window.waLink(key);
+  window.open(url, "_blank");
 };
