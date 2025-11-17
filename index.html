@@ -876,22 +876,45 @@ button.btn {
 
 
 /* ============================
-   SEÇÃO BLOG (corrigida e limpa)
+   SEÇÃO BLOG (corrigida)
    ============================ */
 #blog {
-  background: transparent; /* 🔥 remove a faixa extra */
-  padding: 0;              /* 🔥 tira o espaçamento da seção */
-  margin: 0;
+  background: var(--bg); /* mantém coerência com o restante do site */
+  padding: 0; /* remove espaçamento duplo */
 }
 
 #blog .container {
-  max-width: var(--max-width);
+  max-width: var(--max-width); /* igual às outras seções */
   margin: 0 auto;
-  padding: 28px;
-  background: var(--card); /* mantém o card branco */
+  padding: 28px; /* mesmo padding da section-card */
+  background: var(--card);
   border-radius: var(--radius);
-  
+  box-shadow: 0 6px 18px rgba(30,30,30,0.04);
 }
+
+/* conteúdo interno */
+#blog h2 {
+  font-size: 28px;
+  margin-bottom: 16px;
+  color: var(--primary-700);
+  text-align: center;
+}
+
+#blog p {
+  max-width: 720px;
+  margin: 0 auto 16px;
+  line-height: 1.6;
+  font-size: 1.05rem;
+  color: var(--muted);
+  text-align: left;
+}
+
+#blog .btn {
+  display: block;
+  margin: 24px auto 0;
+  text-align: center;
+}
+
 
 
 
@@ -1423,12 +1446,12 @@ Na abordagem psicanalítica clínica integrativa, o atendimento costuma acontece
         item.classList.add('open');
 
         // 🔥 SCROLL CORRIGIDO 🔥
-        setTimeout(()=>{
-          item.scrollIntoView({
-            behavior: "smooth",
-            block: "start"
-          });
-        }, 120);
+       // setTimeout(()=>{
+       //   item.scrollIntoView({
+       //     behavior: "smooth",
+       //     block: "start"
+       //   });
+     //   }, 120);
       }
     });
 
@@ -1709,6 +1732,7 @@ document.addEventListener("DOMContentLoaded", () => {
   
 </body>
 </html>
+
 
 
 
