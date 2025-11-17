@@ -1277,26 +1277,18 @@ Na abordagem psicanalítica clínica integrativa, o atendimento costuma acontece
     </div>
 
     <!-- TEXTO FIXO ABAIXO DO CARROSSEL -->
-    <div class="palestra-texto">
-      <p>Como Psicanalista Clínico Integrativo, atuo com foco na promoção da saúde emocional e no desenvolvimento humano, levando reflexões e ferramentas práticas para diferentes contextos — sejam clínicos, educacionais ou corporativos.</p>
+   <div class="palestra-texto">
+  
+  <!-- TEXTO CURTO INICIAL -->
+  <div id="palestraResumo">
+    <p>Como Psicanalista Clínico Integrativo, atuo com foco na promoção da saúde emocional e no desenvolvimento humano, levando reflexões e ferramentas práticas para diferentes contextos — clínicos, educacionais e corporativos.</p>
+  </div>
 
-  <p>Acredito que a psicanálise e o cuidado emocional não devem ficar restritos ao consultório. Eles também precisam chegar onde as pessoas estão: nas empresas, nas escolas e nas instituições que formam e acolhem a sociedade. É por isso que desenvolvo ações e palestras temáticas voltadas à saúde mental, autoconhecimento e qualidade de vida.</p>
+  <!-- BOTÃO DE EXPANSÃO -->
+  <button id="palestraExpandBtn" class="btn">Ler mais</button>
 
-  <p>Essas palestras são construídas com linguagem acessível, sensível e transformadora — abordando temas como <strong>Setembro Amarelo (prevenção ao suicídio)</strong>, <strong>Janeiro Branco (saúde mental e equilíbrio emocional)</strong>, <strong>Novembro Azul</strong>, além de assuntos sobre <strong>relações humanas, comunicação empática, inteligência emocional e gestão do estresse</strong> no trabalho.</p>
+</div>
 
-  <p>Nas <strong>escolas e universidades</strong>, os encontros são direcionados para professores, alunos e equipes pedagógicas, com foco em acolhimento, escuta e fortalecimento emocional. Já nas <strong>empresas e instituições</strong>, o objetivo é promover ambientes mais saudáveis, melhorar o clima organizacional e fortalecer a saúde emocional dos colaboradores.</p>
-
-  <p>Além das ações educativas, realizo também <strong>implementações da Norma Regulamentadora nº 1 (NR-1)</strong>, voltadas à <strong>Gestão de Riscos Ocupacionais</strong> e à conformidade legal em segurança e saúde no trabalho. Essa implementação é feita de forma humanizada e prática, alinhando os requisitos técnicos da norma a estratégias de conscientização e cuidado com o bem-estar das equipes.</p>
-
-  <p>Atuo ainda com <strong>palestras e treinamentos voltados para empreendedores, líderes e gestores</strong>, com foco em <strong>inteligência emocional, liderança humanizada, autogestão e Programação Neurolinguística (PNL)</strong>. Esses encontros têm como objetivo fortalecer a mentalidade de liderança, desenvolver comunicação assertiva e aprimorar competências emocionais que influenciam diretamente o desempenho pessoal e profissional.</p>
-
-  <p>Cada projeto é planejado de forma personalizada, considerando o perfil e a realidade da instituição ou grupo envolvido — sempre com o propósito de despertar consciência, responsabilidade e equilíbrio emocional nos diferentes ambientes em que o ser humano atua.</p>
-
-  <p>Essas ações refletem minha missão: levar a psicanálise e o cuidado emocional para além das paredes do consultório, transformando ambientes, fortalecendo pessoas e promovendo qualidade de vida real.</p>
-
-
-      <p><a class="btn" href="#" data-wa-msg="palestraContato">Saiba mais</a></p>
-    </div>
 
   </div>
 
@@ -1529,6 +1521,49 @@ Na abordagem psicanalítica clínica integrativa, o atendimento costuma acontece
     })();
 
 
+// 'Palestras' expands text (replaces content with the extended text)
+    
+(function(){
+
+  const btn = document.getElementById('palestraExpandBtn');
+  const resumo = document.getElementById('palestraResumo');
+
+  // texto completo (coloquei exatamente seu texto atual, formatado)
+  const textoCompleto = `
+  <p>Como Psicanalista Clínico Integrativo, atuo com foco na promoção da saúde emocional e no desenvolvimento humano, levando reflexões e ferramentas práticas para diferentes contextos — sejam clínicos, educacionais ou corporativos.</p>
+
+  <p>Acredito que a psicanálise e o cuidado emocional não devem ficar restritos ao consultório. Eles também precisam chegar onde as pessoas estão: nas empresas, nas escolas e nas instituições que formam e acolhem a sociedade. É por isso que desenvolvo ações e palestras temáticas voltadas à saúde mental, autoconhecimento e qualidade de vida.</p>
+
+  <p>Essas palestras são construídas com linguagem acessível, sensível e transformadora — abordando temas como <strong>Setembro Amarelo (prevenção ao suicídio)</strong>, <strong>Janeiro Branco (saúde mental)</strong>, <strong>Novembro Azul</strong>, além de assuntos sobre <strong>relações humanas, comunicação empática, inteligência emocional</strong> e <strong>gestão do estresse</strong> no trabalho.</p>
+
+  <p>Nas <strong>escolas e universidades</strong>, os encontros são direcionados para professores, alunos e equipes pedagógicas. Já nas <strong>empresas</strong>, o objetivo é promover ambientes mais saudáveis e fortalecer a saúde emocional dos colaboradores.</p>
+
+  <p>Também realizo <strong>implementações da NR-1</strong>, voltadas à gestão de riscos ocupacionais, conformidade legal e humanização dos processos de segurança no trabalho.</p>
+
+  <p>Atuo ainda com <strong>palestras para empreendedores, líderes e gestores</strong>, com foco em inteligência emocional, liderança humanizada, autogestão e PNL.</p>
+
+  <p>Cada projeto é planejado conforme a realidade da instituição, com o propósito de despertar consciência, responsabilidade e equilíbrio emocional nos diferentes ambientes em que o ser humano atua.</p>
+
+  <p><a class="btn" href="#" data-wa-msg="palestraContato">Falar sobre palestras</a></p>
+  `;
+
+  let expanded = false;
+
+  btn.addEventListener('click', () => {
+      if (!expanded) {
+          resumo.innerHTML = textoCompleto;
+          btn.textContent = "Mostrar menos";
+          expanded = true;
+      } 
+      else {
+          location.reload();
+      }
+  });
+
+})();
+
+    
+
 // =============================
 // CARROSSEL CONSULTÓRIO
 // =============================
@@ -1752,6 +1787,7 @@ document.addEventListener("DOMContentLoaded", () => {
   
 </body>
 </html>
+
 
 
 
