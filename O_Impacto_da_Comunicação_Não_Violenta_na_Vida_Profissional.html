@@ -895,57 +895,29 @@ Atua com <strong>psicoterapia individual, terapia de casal, empreendedores, carr
     // ==========================
     // CONFIGURAÇÕES GERAIS
     // ==========================
-    const SITE_CONFIG = {
-      whatsappNumber: '5518988092571',
-      phoneDisplay: '(18) 98809-2571',
-      messages: {
-        generic: 'Ol%C3%A1%2C%20William%2C%20tudo%20bem%3F%20Li%20um%20artigo%20seu%20no%20blog%20e%20gostaria%20de%20conversar%20sobre%20atendimento.',
-      }
-    };
+    // NÃO declare function openWA aqui.
+// Use a openWA global vinda do config-whatsapp.js
 
-    function waLink(msgKey) {
-      const num = SITE_CONFIG.whatsappNumber;
-      const msg = SITE_CONFIG.messages[msgKey] || SITE_CONFIG.messages.generic;
-      return `https://wa.me/${num}?text=${msg}`;
-    }
+if (btnContact) {
+  btnContact.addEventListener('click', (e) => {
+    e.preventDefault();
+    openWA('generic'); // usa mensagem "generic" do config
+  });
+}
 
-   
-    // ==========================
-    // WHATSAPP – links e botão flutuante
-    // ==========================
-    (function(){
-      const phoneLink = document.getElementById('phoneLink');
-      const btnContact = document.getElementById('btnContact');
-      const waFab = document.getElementById('waFab');
+if (waFab) {
+  waFab.addEventListener('click', (e) => {
+    e.preventDefault();
+    openWA('generic');
+  });
 
-      if (phoneLink) {
-        phoneLink.textContent = SITE_CONFIG.phoneDisplay;
-        phoneLink.href = `tel:${SITE_CONFIG.whatsappNumber.replace(/^55/, '+')}`;
-      }
-
-      function openWA() {
-        window.open(waLink(), '_blank');
-      }
-
-      if (btnContact) {
-        btnContact.addEventListener('click', (e) => {
-          e.preventDefault();
-          openWA();
-        });
-      }
-
-      if (waFab) {
-        waFab.addEventListener('click', (e) => {
-          e.preventDefault();
-          openWA();
-        });
-        // também no contêiner
-        waFab.parentElement.addEventListener('click', (e) => {
-          e.preventDefault();
-          openWA();
-        });
-      }
-    })();
+  if (waFab.parentElement) {
+    waFab.parentElement.addEventListener('click', (e) => {
+      e.preventDefault();
+      openWA('generic');
+    });
+  }
+}
 
     // ==========================
     // MINI PARSER DE MARKDOWN (simplificado)
