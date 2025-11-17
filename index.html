@@ -917,29 +917,10 @@ button.btn {
 </head>
 <body>
 
-  <!-- ===================
-       CONFIG - easy editable area
-       Replace the values below with your images, phone and messages
-       =================== -->
+  <!-- ==============================================================================================
+       CONFIGURAR IMAGENS DO SITE INDEX
+       ============================================================================================== -->
   <script>
-
-/* ======= DEBUG RÁPIDO - coloque isto logo no topo do <script> ======= */
-
-// Mostra erros JS em console e em alerta (temporário)
-window.onerror = function(message, source, lineno, colno, error) {
-  console.error('Global error caught:', {message, source, lineno, colno, error});
-  // Mostra mensagem curta ao usuário (pode retirar depois)
-  alert('Ocorreu um erro de script na página. Abra o console (F12) e veja detalhes.');
-  return false; // permitir que erro seja mostrado também no console
-};
-
-// Captura erros não tratados de promises
-window.addEventListener('unhandledrejection', function (ev) {
-  console.error('Unhandled promise rejection:', ev.reason);
-  alert('Promise rejeitada: veja console (F12).');
-});
-
-
 
 
     const SITE_CONFIG = {
@@ -966,21 +947,7 @@ window.addEventListener('unhandledrejection', function (ev) {
         'https://williambrioli.github.io/img/imgconsultorio4.jpg'
       ],
       
-      whatsappNumber: '5518988092571', // country code + area + number, no symbols
-      phoneDisplay: '(18) 98809-2571', // how it shows on site
-      // Prefilled messages (URL encoded later by JS)
-      messages: {
-        psicoterapiaIndividual: 'Quero%20agendar%20meu%20atendimento%20para%20Psicoterapia%20Individual',
-        psicoterapiaBreve: 'Quero%20agendar%20meu%20atendimento%20para%20Psicoterapia%20Breve',
-        sessaoUnica: 'Quero%20agendar%20meu%20atendimento%20para%20Sess%C3%A3o%20%C3%9Anica',
-        terapiaCasal: 'Quero%20agendar%20meu%20atendimento%20para%20Terapia%20de%20Casal',
-        terapiaEmpreendedores: 'Quero%20agendar%20meu%20atendimento%20para%20Terapia%20para%20Empreendedores',
-        orientacaoCarreira: 'Quero%20agendar%20meu%20atendimento%20para%20Orienta%C3%A7%C3%A3o%20e%20Transi%C3%A7%C3%A3o%20de%20Carreira',
-        orientacaoFinanceira: 'Quero%20agendar%20meu%20atendimento%20para%20Orienta%C3%A7%C3%A3o%20Financeira',
-        depoimentosAgendamento: 'Ol%C3%A1%2C%20William%20Brioli%2C%20vi%20aqui%20depoimento%20dos%20seus%20pacientes%20e%20quero%20agendar%20meu%20atendimento%20com%20voc%C3%AA.%20Tem%20agenda%20dispon%C3%ADvel%3F',
-        palestraContato: 'Ol%C3%A1%20William%2C%20quero%20convidar%20voc%C3%AA%20para%20palestrar%20no%20meu%20evento%20ou%20empresa.%20Voc%C3%AA%20tem%20agenda%20dispon%C3%ADvel%3F',
-        generic: 'Ol%C3%A1%2C%20William%2C%20tudo%20bem%3F%20Preciso%20agendar%20um%20hor%C3%A1rio%20com%20voc%C3%AA%20para...' 
-      }
+     
     };
   </script>
 
@@ -1504,28 +1471,22 @@ Na abordagem psicanalítica clínica integrativa, o atendimento costuma acontece
   });
 })();
 
-    // Buttons that open whatsapp links
-    (function(){
-      document.querySelectorAll('[data-wa-msg]').forEach(btn=>{
-        btn.addEventListener('click', (e)=>{
-          e.preventDefault();
-          const key = btn.getAttribute('data-wa-msg');
-          // Map attr values to SITE_CONFIG.messages keys
-          const map = {
-            psicoterapiaIndividual: 'psicoterapiaIndividual',
-            psicoterapiaBreve: 'psicoterapiaBreve',
-            sessaoUnica: 'sessaoUnica',
-            terapiaCasal: 'terapiaCasal',
-            terapiaEmpreendedores: 'terapiaEmpreendedores',
-            orientacaoCarreira: 'orientacaoCarreira',
-            orientacaoFinanceira: 'orientacaoFinanceira',
-            palestraContato: 'palestraContato',
-            generic: 'generic'
-          };
-          const msgKey = map[key] || 'generic';
-          window.open(waLink(),'_blank');
-        });
-      });
+  document.addEventListener("DOMContentLoaded", () => {
+  document.querySelectorAll("[data-wa-msg]").forEach(btn => {
+    btn.addEventListener("click", e => {
+      e.preventDefault();
+      const key = btn.getAttribute("data-wa-msg") || "generic";
+      openWA(key);
+    });
+  });
+
+  const waFab = document.getElementById("waFab");
+  if (waFab) waFab.addEventListener("click", e => { e.preventDefault(); openWA(); });
+
+  const btnContact = document.getElementById("btnContact");
+  if (btnContact) btnContact.addEventListener("click", e => { e.preventDefault(); openWA(); });
+});
+
 
 
       // Specific buttons
@@ -1787,6 +1748,7 @@ Na abordagem psicanalítica clínica integrativa, o atendimento costuma acontece
 
 </body>
 </html>
+
 
 
 
