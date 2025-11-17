@@ -109,7 +109,7 @@
     ]
   }
 }
-
+</script>
 <!-- ===================
      KEYWORDS OCULTAS (Google-friendly)
      =================== -->
@@ -118,7 +118,7 @@ Palavras-chave semânticas adicionais:
 terapia emocional online, terapia para ansiedade, terapia para depressão, autoestima, acolhimento emocional, saúde mental Brasil, terapia para estresse, terapia para relacionamentos, atendimento psicológico SP MS Brasil, consulta terapêutica online, terapia para autoconhecimento, acompanhamento psicológico remoto, atendimento psicanalítico online, psicanálise moderna, terapeuta integrativo, clínica emocional online, suporte emocional, trauma emocional, orientação de vida, psicoterapia para adultos, psicoterapia para casais, psicoterapia segura e ética, consultório online, consultório psicológico, tratamento emocional online, terapia por videoconferência, terapia segura, terapia humanizada, atendimento humanizado online.
 -->
 
-  </script>
+  
 
   <!-- ===================
        STYLES - edit colors easily in :root below
@@ -1397,14 +1397,7 @@ Na abordagem psicanalítica clínica integrativa, o atendimento costuma acontece
   img.src = imgUrl;
 })();
 
-
-    
-      // Set phone text & links
-      document.getElementById('phoneLink').textContent = SITE_CONFIG.phoneDisplay;
-      document.getElementById('phoneLink').href = `tel:${SITE_CONFIG.whatsappNumber.replace(/^55/,'+')}`;
-
-
-      
+          
 
       
 
@@ -1467,13 +1460,7 @@ Na abordagem psicanalítica clínica integrativa, o atendimento costuma acontece
 })();
 
  
-      // Specific buttons
-      document.getElementById('agendarDepBtn').addEventListener('click', (e)=>{ e.preventDefault(); window.open(waLink(''),'_blank'); });
-      document.getElementById('btnContact').addEventListener('click', (e)=>{ e.preventDefault(); window.open(waLink(),'_blank'); });
-      document.getElementById('waFab').parentElement.addEventListener('click', (e)=>{ e.preventDefault(); window.open(waLink(),'_blank'); });
-      // make WA fab inner link correct
-      const waFabLink = document.getElementById('waFab'); waFabLink.href = waLink('generic'); 
-    
+          
 
     // 'Me conheça mais' expands text (replaces content with the extended text)
     (function(){
@@ -1726,6 +1713,7 @@ Na abordagem psicanalítica clínica integrativa, o atendimento costuma acontece
 
 </body>
 </html>
+
 
 
 
