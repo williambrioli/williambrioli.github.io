@@ -1,4 +1,5 @@
 document.getElementById("footerContainer").innerHTML = `
+  <p><strong>SOBRE O AUTOR:</strong>
   <p><strong>William Brioli</strong> é 
   <strong>Psicanalista Clínico Integrativo</strong>, pós-graduado em 
   <strong>Neurociência, Comunicação e Desenvolvimento Humano</strong>.<br>
