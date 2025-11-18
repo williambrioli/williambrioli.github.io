@@ -1,146 +1,67 @@
-// js/menu.js
+// js/menu.js (versão resiliente)
 // =====================================
 // Carrega o menu.html em TODAS as páginas
-// e aplica o mesmo comportamento (desktop + mobile)
+// Tenta vários caminhos (root, relativo, subpastas) e resolve automaticamente.
 // =====================================
 
+async function fetchAny(pathCandidates, opts = {}) {
+  for (const p of pathCandidates) {
+    try {
+      const res = await fetch(p, opts);
+      if (res.ok) {
+        console.info('[menu] encontrado em:', p);
+        return { res, path: p };
+      } else {
+        console.debug('[menu] tentou e falhou (status):', p, res.status);
+      }
+    } catch (err) {
+      console.debug('[menu] erro ao tentar:', p, err && err.message);
+    }
+  }
+  return null;
+}
+
 async function carregarMenu() {
-  // Cria um <header> no topo da página
-  const header = document.createElement('header');
-  document.body.prepend(header);
+  // Cria um <header> no topo da página (se já existir, não cria outra)
+  let header = document.querySelector('header[data-injected-menu="1"]');
+  if (!header) {
+    header = document.createElement('header');
+    header.setAttribute('data-injected-menu', '1');
+    document.body.prepend(header);
+  }
+
+  // caminhos a tentar (ordem: raiz absoluta, relativo à página, subpastas)
+  const candidates = [
+    '/menu.html',
+    'menu.html',
+    '../menu.html',
+    '../../menu.html',
+    '../../../menu.html'
+  ];
+
+  // opção: sem cache para evitar resultados velhos
+  const found = await fetchAny(candidates, { cache: 'no-store' });
+
+  if (!found) {
+    console.error('[menu] Não foi possível localizar menu.html. Verifique onde o arquivo está publicado e se o caminho /menu.html é acessível.');
+    header.innerHTML = ''; // garante que não fique conteúdo parcial
+    return;
+  }
 
   try {
-    // Busca o conteúdo do menu.html (mesma pasta da página)
-    const res = await fetch('/menu.html');
-    if (!res.ok) throw new Error('Erro ao carregar menu.html');
-
-    const html = await res.text();
+    const html = await found.res.text();
     header.innerHTML = html;
-
-    // Depois que o HTML entra na página, ativamos o comportamento
+    // opcional: marca do caminho para diagnóstico
+    header.setAttribute('data-menu-path-tried', found.path);
+    // ativa comportamento
     inicializarMenu();
   } catch (err) {
-    console.error('Erro ao carregar o menu:', err);
+    console.error('[menu] erro ao processar menu.html:', err);
   }
 }
 
-function inicializarMenu() {
-  const topMenu   = document.getElementById('topMenu');
-  const hamburger = document.getElementById('hamburger');
-
-  if (!topMenu || !hamburger) return;
-
-  // Define o limite de scroll dependendo da página
-  // index.html: menu aparece depois de 120px
-  // blog.html : menu aparece depois de 20px
-  let scrollLimit = 120;
-  const path = window.location.pathname;
-  if (path.endsWith('blog.html')) {
-    scrollLimit = 20;
-  }
-
-  // ----------------------------
-  // Exibir menu flutuante no desktop
-  // ----------------------------
-  window.addEventListener('scroll', () => {
-    const y = window.scrollY || window.pageYOffset;
-    if (y > scrollLimit && !topMenu.classList.contains('open')) {
-      topMenu.classList.add('visible');
-    } else if (y <= scrollLimit && !topMenu.classList.contains('open')) {
-      topMenu.classList.remove('visible');
-    }
-  });
-
-  // ----------------------------
-  // Menu hambúrguer (mobile)
-  // ----------------------------
-  hamburger.addEventListener('click', (e) => {
-    e.stopPropagation();
-    const isOpen = topMenu.classList.contains('open');
-
-    if (!isOpen) {
-      topMenu.classList.add('open');
-      topMenu.classList.add('visible');
-      hamburger.setAttribute('aria-expanded', 'true');
-    } else {
-      topMenu.classList.remove('open');
-      hamburger.setAttribute('aria-expanded', 'false');
-      if (window.scrollY <= scrollLimit) {
-        topMenu.classList.remove('visible');
-      }
-    }
-  });
-
-  // Fecha ao clicar em um link do menu
-  topMenu.querySelectorAll('a').forEach(a => {
-    a.addEventListener('click', () => {
-      if (topMenu.classList.contains('open')) {
-        topMenu.classList.remove('open');
-        hamburger.setAttribute('aria-expanded', 'false');
-      }
-    });
-  });
-
-  // Fecha ao clicar fora do menu
-  document.addEventListener('click', (e) => {
-    if (topMenu.classList.contains('open')) {
-      const inside = topMenu.contains(e.target) || hamburger.contains(e.target);
-      if (!inside) {
-        topMenu.classList.remove('open');
-        hamburger.setAttribute('aria-expanded', 'false');
-      }
-    }
-  });
-
-  // Fecha com tecla ESC
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && topMenu.classList.contains('open')) {
-      topMenu.classList.remove('open');
-      hamburger.setAttribute('aria-expanded', 'false');
-      hamburger.focus();
-    }
-  });
-
- // Scroll suave apenas para âncoras locais (href começa com "#")
-document.querySelectorAll('a[href^="#"]').forEach(a => {
-  a.addEventListener('click', (e) => {
-    const href = a.getAttribute('href');
-
-    // Se for um link ABSOLUTO + âncora → não mexe
-    if (href.startsWith('/')) return;
-
-    // Se for só âncora (#sobre, #duvidas) → scroll suave
-    if (href.length > 1) {
-      const el = document.querySelector(href);
-      if (el) {
-        e.preventDefault();
-        el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      }
-    }
-  });
-});
-
-
-
-// 🔒 Força links absolutos mesmo dentro da pasta /artigos/
-document.addEventListener('click', (e) => {
-  const link = e.target.closest('a.nav-link');
-  if (!link) return;
-
-  const href = link.getAttribute('href');
-
-  // Só executa para links que começam com "/"
-  if (href.startsWith('/')) {
-    e.preventDefault();
-    window.location.href = href; // Força ABSOLUTO
-  }
-});
-
-
-
-
-
-// Inicializa tudo quando a página terminar de carregar
-document.addEventListener('DOMContentLoaded', carregarMenu);
-
+// export para testes (opcional)
+if (typeof window !== 'undefined') {
+  window.carregarMenu = carregarMenu;
+}
 
