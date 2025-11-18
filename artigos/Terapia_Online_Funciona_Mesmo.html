@@ -803,13 +803,36 @@ footer.site-footer h2 {
     <section class="blog-hero-wrap">
       <div class="container">
         <div class="blog-hero">
-          <h1>Blog • Psicanálise, Terapia e Vida Real</h1>
-          <p>Reflexões sobre saúde emocional, relacionamentos, carreira, empreendedorismo e desenvolvimento humano, a partir da prática clínica e da experiência no mundo corporativo.</p>
-          <small>Atualizado periodicamente com novos artigos.</small>
+          <h1 id="heroTitle"></h1>
+<p id="heroSubtitle"></p>
+<small id="heroSmall"></small>
+
         </div>
       </div>
     </section>
 
+
+    
+<script src="/js/blog-hero-config.js"></script>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const hero = window.BLOG_HERO;
+
+  // Aplica a imagem no background
+  const heroBox = document.querySelector(".blog-hero");
+  heroBox.style.backgroundImage =
+    `linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url("${hero.image}")`;
+
+  // Textos
+  document.getElementById("heroTitle").textContent = hero.title;
+  document.getElementById("heroSubtitle").textContent = hero.subtitle;
+  document.getElementById("heroSmall").textContent = hero.small;
+});
+</script>
+
+    
+    
 
 <!-- CONTEÚDO DO ARTIGO -->
 <section class="article">
