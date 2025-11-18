@@ -4,7 +4,7 @@
 // ===========================
 
 window.BLOG_HERO = {
-  image: "/img/HEROog.jpg",
+  image: "/img/palestra1.jpg",
   title: "Blog • Psicanálise, Terapia e Vida Real",
   subtitle: "Reflexões sobre saúde emocional, relacionamentos, carreira, empreendedorismo e desenvolvimento humano, a partir da prática clínica e da experiência no mundo corporativo.",
   small: "Atualizado periodicamente com novos artigos."
