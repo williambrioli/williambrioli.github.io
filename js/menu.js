@@ -1,67 +1,122 @@
-// js/menu.js (versão resiliente)
-// =====================================
-// Carrega o menu.html em TODAS as páginas
-// Tenta vários caminhos (root, relativo, subpastas) e resolve automaticamente.
-// =====================================
+// =============================
+// menu.js – versão completa e estável
+// =============================
 
-async function fetchAny(pathCandidates, opts = {}) {
-  for (const p of pathCandidates) {
+// Tenta carregar menu.html de vários caminhos possíveis
+async function fetchAny(paths) {
+  for (const p of paths) {
     try {
-      const res = await fetch(p, opts);
-      if (res.ok) {
-        console.info('[menu] encontrado em:', p);
-        return { res, path: p };
-      } else {
-        console.debug('[menu] tentou e falhou (status):', p, res.status);
-      }
-    } catch (err) {
-      console.debug('[menu] erro ao tentar:', p, err && err.message);
+      const res = await fetch(p, { cache: "no-store" });
+      if (res.ok) return { res, path: p };
+    } catch (e) {
+      console.warn("Falha tentando:", p);
     }
   }
   return null;
 }
 
 async function carregarMenu() {
-  // Cria um <header> no topo da página (se já existir, não cria outra)
-  let header = document.querySelector('header[data-injected-menu="1"]');
+  console.log("[menu] iniciando carregamento…");
+
+  // Cria o header apenas 1 vez
+  let header = document.querySelector('header[data-menu]');
   if (!header) {
     header = document.createElement('header');
-    header.setAttribute('data-injected-menu', '1');
+    header.setAttribute('data-menu', '1');
     document.body.prepend(header);
   }
 
-  // caminhos a tentar (ordem: raiz absoluta, relativo à página, subpastas)
-  const candidates = [
-    '/menu.html',
-    'menu.html',
-    '../menu.html',
-    '../../menu.html',
-    '../../../menu.html'
+  // Tentativas de caminhos
+  const paths = [
+    "/menu.html",
+    "menu.html",
+    "../menu.html",
+    "../../menu.html"
   ];
 
-  // opção: sem cache para evitar resultados velhos
-  const found = await fetchAny(candidates, { cache: 'no-store' });
+  const found = await fetchAny(paths);
 
   if (!found) {
-    console.error('[menu] Não foi possível localizar menu.html. Verifique onde o arquivo está publicado e se o caminho /menu.html é acessível.');
-    header.innerHTML = ''; // garante que não fique conteúdo parcial
+    console.error("[menu] menu.html não encontrado.");
     return;
   }
 
-  try {
-    const html = await found.res.text();
-    header.innerHTML = html;
-    // opcional: marca do caminho para diagnóstico
-    header.setAttribute('data-menu-path-tried', found.path);
-    // ativa comportamento
-    inicializarMenu();
-  } catch (err) {
-    console.error('[menu] erro ao processar menu.html:', err);
+  console.log("[menu] encontrado em:", found.path);
+
+  const html = await found.res.text();
+  header.innerHTML = html;
+
+  // Agora podemos inicializar o menu
+  inicializarMenu();
+}
+
+// =============================
+// Função que controla o menu
+// =============================
+function inicializarMenu() {
+
+  console.log("[menu] inicializarMenu() executado");
+
+  const topMenu = document.getElementById("topMenu");
+  const hamburger = document.getElementById("hamburger");
+
+  if (!topMenu || !hamburger) {
+    console.error("[menu] elementos não encontrados no DOM.");
+    return;
   }
+
+  // MENU DESKTOP – APARECE NO SCROLL
+  window.addEventListener("scroll", () => {
+    const y = window.scrollY;
+    if (y > 100 && !topMenu.classList.contains("open")) {
+      topMenu.classList.add("visible");
+    } else if (y <= 100 && !topMenu.classList.contains("open")) {
+      topMenu.classList.remove("visible");
+    }
+  });
+
+  // MENU MOBILE
+  hamburger.addEventListener("click", (e) => {
+    e.stopPropagation();
+
+    const isOpen = topMenu.classList.contains("open");
+
+    if (!isOpen) {
+      topMenu.classList.add("open");
+      topMenu.classList.add("visible");
+      hamburger.setAttribute("aria-expanded", "true");
+    } else {
+      topMenu.classList.remove("open");
+      hamburger.setAttribute("aria-expanded", "false");
+      if (window.scrollY <= 100) {
+        topMenu.classList.remove("visible");
+      }
+    }
+  });
+
+  // Fecha o menu ao clicar fora
+  document.addEventListener("click", (e) => {
+    if (topMenu.classList.contains("open")) {
+      if (!topMenu.contains(e.target) && !hamburger.contains(e.target)) {
+        topMenu.classList.remove("open");
+        hamburger.setAttribute("aria-expanded", "false");
+      }
+    }
+  });
+
+  // Fecha ao clicar em links
+  topMenu.querySelectorAll("a").forEach((a) => {
+    a.addEventListener("click", () => {
+      if (topMenu.classList.contains("open")) {
+        topMenu.classList.remove("open");
+        hamburger.setAttribute("aria-expanded", "false");
+      }
+    });
+  });
+
 }
 
-// export para testes (opcional)
-if (typeof window !== 'undefined') {
-  window.carregarMenu = carregarMenu;
-}
-
+// =============================
+// Inicializa tudo
+// =============================
+document.addEventListener("DOMContentLoaded", carregarMenu);
