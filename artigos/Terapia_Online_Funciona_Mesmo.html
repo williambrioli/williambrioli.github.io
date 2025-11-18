@@ -988,7 +988,7 @@ if (waFab) {
 
       try {
         // Arquivo: /posts/posts.json (mesmo repositório, mesma branch GitHub Pages)
-        const response = await fetch('artigos/posts.json', { cache: 'no-store' });
+        const response = await fetch('post/posts.json', { cache: 'no-store' });
 
         if (!response.ok) {
           throw new Error('Não foi possível carregar a lista de artigos.');
