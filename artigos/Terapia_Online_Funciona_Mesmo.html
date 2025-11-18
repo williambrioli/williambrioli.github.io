@@ -1068,7 +1068,7 @@ if (waFab) {
     // Evento de clique → abre página HTML
     btn.addEventListener('click', () => {
       if (post.html) {
-        window.location.href = post.html; // redireciona
+        window.location.href = "artigos/" + post.html; // redireciona
       } else {
         console.warn('Este artigo não tem página HTML definida.');
       }
