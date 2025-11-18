@@ -116,6 +116,25 @@ function inicializarMenu() {
   });
 }
 
+
+// 🔒 Força links absolutos mesmo dentro da pasta /artigos/
+document.addEventListener('click', (e) => {
+  const link = e.target.closest('a.nav-link');
+  if (!link) return;
+
+  const href = link.getAttribute('href');
+
+  // Só executa para links que começam com "/"
+  if (href.startsWith('/')) {
+    e.preventDefault();
+    window.location.href = href; // Força ABSOLUTO
+  }
+});
+
+
+
+
+
 // Inicializa tudo quando a página terminar de carregar
 document.addEventListener('DOMContentLoaded', carregarMenu);
 
