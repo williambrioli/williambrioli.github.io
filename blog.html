@@ -1109,28 +1109,11 @@ if (waFab) {
   });
 </script>
 
+<script src="/js/menu.js"></script>
+<script src="/js/config-whatsapp.js"></script>
 <script src="/js/site-data.js"></script>
 <script src="/js/footer-inject.js"></script>
-<script src="/js/menu.js"></script>
 <script src="/js/author-bio.js"></script>
-
-<!-- CARREGA PRIMEIRO A CONFIG CORRETA  -->
-<script src="/js/blog-hero-config.js"></script>
-
-<!-- APLICA O HERO COM A CONFIG FINAL -->
-<script>
-document.addEventListener("DOMContentLoaded", () => {
-  const hero = window.BLOG_HERO;
-
-  const heroBox = document.querySelector(".blog-hero");
-  heroBox.style.backgroundImage =
-    `linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url("${hero.image}")`;
-
-  document.getElementById("heroTitle").textContent = hero.title;
-  document.getElementById("heroSubtitle").textContent = hero.subtitle;
-  document.getElementById("heroSmall").textContent = hero.small;
-});
-</script>
 
 <script>
   document.addEventListener("DOMContentLoaded", carregarMenu);
@@ -1139,3 +1122,4 @@ document.addEventListener("DOMContentLoaded", () => {
 
 </body>
 </html>
+
