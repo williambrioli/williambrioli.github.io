@@ -101,20 +101,25 @@ function inicializarMenu() {
     }
   });
 
-  // Scroll suave só para links que começam com "#"
-  document.querySelectorAll('a[href^="#"]').forEach(a => {
-    a.addEventListener('click', (e) => {
-      const href = a.getAttribute('href');
-      if (href && href.length > 1) {
-        const el = document.querySelector(href);
-        if (el) {
-          e.preventDefault();
-          el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }
+ // Scroll suave apenas para âncoras locais (href começa com "#")
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', (e) => {
+    const href = a.getAttribute('href');
+
+    // Se for um link ABSOLUTO + âncora → não mexe
+    if (href.startsWith('/')) return;
+
+    // Se for só âncora (#sobre, #duvidas) → scroll suave
+    if (href.length > 1) {
+      const el = document.querySelector(href);
+      if (el) {
+        e.preventDefault();
+        el.scrollIntoView({ behavior: 'smooth', block: 'start' });
       }
-    });
+    }
   });
-}
+});
+
 
 
 // 🔒 Força links absolutos mesmo dentro da pasta /artigos/
