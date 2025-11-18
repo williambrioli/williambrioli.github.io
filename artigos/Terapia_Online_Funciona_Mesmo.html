@@ -307,10 +307,10 @@
   padding: 48px 32px;
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
   color: #fff;
-  background: 
-    linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), /* sobreposição suave */
-    url("/img/HEROog.jpg") center/cover no-repeat; /* 🔹 sua imagem aqui */
-  overflow: hidden;
+  /* Remove o background fixo para permitir que o JS funcione */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
     .blog-hero h1 {
