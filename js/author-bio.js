@@ -1,6 +1,5 @@
 const authorBioHTML = `
-<p><h2><SOBRE O AUTOR:</h2></p>
-<p><strong>William Brioli</strong> é <strong>Psicanalista Clínico Integrativo</strong>, 
+<p><strong><SOBRE O AUTOR:</strong> William Brioli</strong> é <strong>Psicanalista Clínico Integrativo</strong>, 
 pós-graduado em <strong>Neurociência, Comunicação e Desenvolvimento Humano</strong>.<br>
 Atende presencialmente em <strong>Ilha Solteira (SP)</strong> e 
 <strong>online para todo o Brasil</strong>.<br>
