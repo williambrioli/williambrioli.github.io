@@ -214,49 +214,8 @@ document.addEventListener("DOMContentLoaded", () => {
     </article>
   </div>
 
-  <!-- ===================
-       SCRIPTS – BLOG + MINI CMS ESTÁTICO
-       =================== -->
   <script>
-    // ==========================
-    // CONFIGURAÇÕES GERAIS
-    // ==========================
-// WHATSAPP – links e botão flutuante (CORRIGIDO)
-// ==========================
-// NÃO declare function openWA aqui. Ela vem do config-whatsapp.js
-
-// Pega os elementos de forma segura
-const btnContact = document.getElementById('btnContact');
-const waFab = document.getElementById('waFab');
-
-// Botão de contato (footer)
-if (btnContact) {
-  btnContact.addEventListener('click', (e) => {
-    e.preventDefault();
-    if (typeof openWA === 'function') {
-      openWA('generic');
-    }
-  });
-}
-
-// Botão flutuante do WhatsApp
-if (waFab) {
-  waFab.addEventListener('click', (e) => {
-    e.preventDefault();
-    if (typeof openWA === 'function') {
-      openWA('generic');
-    }
-  });
-
-  if (waFab.parentElement) {
-    waFab.parentElement.addEventListener('click', (e) => {
-      e.preventDefault();
-      if (typeof openWA === 'function') {
-        openWA('generic');
-      }
-    });
-  }
-}
+    
 
 
     // ==========================
