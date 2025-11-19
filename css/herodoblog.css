@@ -330,12 +330,3 @@ footer.site-footer {
 .contact-list li {
   margin-bottom: 6px;
 }
-
-
-@media (max-width: 900px) {
-      .blog-hero-wrap {
-        margin-top: 90px;
-      }
-   }
-
-
