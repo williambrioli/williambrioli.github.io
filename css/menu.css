@@ -97,58 +97,49 @@
 /* ==========================================================
    📱 MENU MOBILE — Drawer estilo “cartão flutuante”
    ========================================================== */
+
 @media (max-width: 520px) {
 
-  /* Mostra o hambúrguer */
-  .hamburger {
-    display: block;
+  .top-menu {
+    display: none;
+    position: fixed;
+
+    /* posição SEM cortar */
+    top: 72px;                      /* aparece abaixo do botão hambúrguer */
+    left: 50%;                      /* centraliza */
+    transform: translateX(-50%);    /* evita corte no lado esquerdo */
+    
+    width: calc(100% - 24px);
+    max-width: 420px;
+    
+    background: #fff;
+    border-radius: 14px;
+    padding: 14px;
+    box-shadow: 0 14px 40px rgba(10,10,10,0.12);
+
+    flex-direction: column;
+    gap: 10px;
+    z-index: 2100;
   }
 
-  /* Menu fechado por padrão */
-
-  .top-menu {
-  display: none;
-  position: fixed;
-
-  top: 64px;            /* agora abre sempre abaixo do botão */
-  left: 0;
-  right: 0;
-  margin: 0 auto;
-  width: calc(100% - 24px);   /* garante que nunca vai vazar pra fora */
-  max-width: 420px;           /* limita para ficar bonito */
-
-  background: #fff;
-  border-radius: 14px;
-  padding: 14px;
-
-  box-shadow: 0 14px 40px rgba(10,10,10,0.12);
-
-  flex-direction: column;
-  gap: 10px;
-
-  z-index: 2100;
-}
-
-  /* Quando está aberto (classe adicionada via JS) */
+  /* Quando aberto */
   .top-menu.open {
     display: flex !important;
   }
 
-  /* Estilo dos links no mobile */
   .top-menu a {
     display: block;
     padding: 10px 12px;
     border-radius: 10px;
     white-space: nowrap;
-    color: #000 !important; /* texto escuro */
+    color: #000 !important;
   }
 
-  /* Efeito ao tocar */
   .top-menu a:active {
     background: rgba(46,125,126,0.15);
     transform: scale(0.97);
-    border-radius: 10px;
   }
+}
 
   /* Permite rolar caso tenha muitos links */
   .top-menu {
