@@ -1,0 +1,51 @@
+.whatsapp-fab {
+  position: fixed;
+  right: 18px;
+  bottom: 18px;
+  background: #25D366;
+  width: 64px;
+  height: 64px;
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 24px rgba(46, 125, 126, 0.25);
+  z-index: 2300;
+  cursor: pointer;
+  animation: waFloat 2.5s ease-in-out infinite;
+}
+
+.whatsapp-fab a {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+}
+
+.whatsapp-fab:hover {
+  transform: scale(1.08);
+  box-shadow: 0 12px 32px rgba(46, 125, 126, 0.35);
+}
+
+.whatsapp-label {
+  position: fixed;
+  right: 15px;
+  bottom: 5px;
+  background: rgba(255, 255, 255, 1);
+  color: #25D366;
+  padding: 2px 8px;
+  border-radius: 8px;
+  font-size: 10px;
+  font-weight: 600;
+  z-index: 2300;
+  backdrop-filter: blur(4px);
+  animation: waFloat 2.5s ease-in-out infinite;
+}
+
+@keyframes waFloat {
+  0%   { transform: translateY(0); }
+  50%  { transform: translateY(-4px); }
+  100% { transform: translateY(0); }
+}
