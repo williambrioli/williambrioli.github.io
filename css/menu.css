@@ -148,12 +148,6 @@
   }
 }
 
-/* MENU SEMPRE POR CIMA DE TUDO */
-.top-menu,
-.hamburger {
-  z-index: 5000 !important;
-}
-
 /* ==========================================================
    🧩 AJUSTES FINOS PARA TÍTULOS DENTRO DO FOOTER
    (mantidos aqui porque são dependentes do menu)
