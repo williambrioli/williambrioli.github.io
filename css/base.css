@@ -1,3 +1,17 @@
+/* ============================================================
+   CABEÇALHO GERAL: O que este arquivo faz no site
+   ------------------------------------------------------------
+   Este arquivo define as regras básicas de aparência do site.
+   Aqui temos:
+   - cores e medidas que o site usa (variáveis),
+   - correções básicas para navegadores,
+   - fontes e fundo da página,
+   - regras para imagens e links,
+   - e um container central que organiza o conteúdo.
+   Tudo isto deixa o visual do site consistente e bonito.
+   ============================================================ */
+
+
 /* ===============================================
    🎨 BASE GLOBAL DO SITE
    - Variáveis de cor
@@ -6,52 +20,61 @@
    - Layout básico
    =============================================== */
 
+
 /* 🔧 Variáveis globais do tema */
+/* O :root guarda valores que usamos em vários lugares.
+   Pense nelas como caixinhas com nomes que guardam cores e tamanhos. */
 :root {
-  --bg: #F3F8F8;           /* cor de fundo geral */
-  --card: #FFFFFF;         /* fundo de cartões */
-  --primary: #2E7D7E;      /* cor principal */
-  --primary-700: #1e5b5c;  /* variação mais escura */
-  --accent: #F3C78A;       /* cor de destaque */
-  --text: #1F2D2D;         /* texto padrão */
-  --muted: #000000;        /* texto suave */
-  --radius: 12px;          /* bordas arredondadas padrão */
-  --max-width: 1500px;     /* largura máxima dos containers */
+  --bg: #F3F8F8;           /* cor de fundo geral */ /* cor clara do fundo do site */
+  --card: #FFFFFF;         /* fundo de cartões */ /* cor branca para cartões/caixas */
+  --primary: #2E7D7E;      /* cor principal */ /* cor usada para ações principais */
+  --primary-700: #1e5b5c;  /* variação mais escura */ /* mesma cor, só mais escura */
+  --accent: #F3C78A;       /* cor de destaque */ /* cor usada para chamar atenção */
+  --text: #1F2D2D;         /* texto padrão */ /* cor padrão do texto */
+  --muted: #000000;        /* texto suave */ /* aqui está preto (pode ser usado para contraste) */
+  --radius: 12px;          /* bordas arredondadas padrão */ /* quanto arredondar cantos */
+  --max-width: 1500px;     /* largura máxima dos containers */ /* largura máxima da área principal */
 }
 
 /* 🔄 Reset: remove inconsistências entre navegadores */
+/* O * seleciona tudo. Aqui estamos dizendo para todos os elementos que
+   a caixa (box) deve calcular largura/altura incluindo bordas e padding. */
 * {
   box-sizing: border-box;
 }
 
 /* 📄 Padrões de tipografia e plano de fundo */
+/* Aplica regras ao html e ao body (a página toda) */
 html, body {
-  height: 100%;
-  margin: 0;
-  padding: 0;
+  height: 100%; /* faz a página ter 100% da altura da janela do navegador */
+  margin: 0;    /* tira a margem padrão que o navegador coloca */
+  padding: 0;   /* tira o espaçamento padrão que o navegador coloca */
   font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, 
-               "Helvetica Neue", Arial, sans-serif;
-  background: var(--bg);
-  color: var(--text);
+               "Helvetica Neue", Arial, sans-serif; /* lista de fontes que o site vai tentar usar */
+  background: var(--bg); /* usa a cor de fundo da variável --bg (aquela caixinha) */
+  color: var(--text);    /* usa a cor de texto da variável --text para o conteúdo */
 }
 
 /* 🖼 Imagens responsivas */
+/* Estilo aplicado a todas as imagens */
 img {
-  max-width: 100%;
-  height: auto;
-  display: block;
-  border-radius: 8px; /* estilo padrão */
+  max-width: 100%; /* a imagem nunca fica maior que seu contêiner */
+  height: auto;    /* mantém a proporção da imagem (não estica) */
+  display: block;  /* evita espaços embaixo da imagem (comportamento de bloco) */
+  border-radius: 8px; /* estilo padrão: cantos levemente arredondados */
 }
 
 /* 🔗 Links com herança de cor e sem sublinhado */
+/* Faz com que links não mudem a cor por padrão e não fiquem sublinhados */
 a {
-  color: inherit;
-  text-decoration: none;
+  color: inherit;        /* o link usa a mesma cor do elemento pai */
+  text-decoration: none; /* tira o risco (sublinhado) padrão dos links */
 }
 
 /* 📦 Container padronizado usado em todo o site */
+/* Classe .container usada para centralizar e limitar largura do conteúdo */
 .container {
-  max-width: var(--max-width);
-  margin: 0 auto;  /* centraliza */
-  padding: 0px 0px;
+  max-width: var(--max-width); /* largura máxima definida na variável --max-width */
+  margin: 0 auto;  /* centraliza horizontalmente (0 em cima/baixo, auto nas laterais) */
+  padding: 0px 0px; /* espaçamento interno (aqui, sem padding adicional) */
 }
