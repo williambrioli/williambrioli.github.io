@@ -72,7 +72,7 @@
     // Se encontrou resultados → monta cada <li> usando map().
     results.innerHTML = list.map(post => `
       <li class="result-item">
-        <a href="${post.html}">
+        <a href="/${post.html}">
           <strong>${post.title}</strong><br>
           <small>${post.excerpt || ""}</small>
         </a>
