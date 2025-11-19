@@ -1,14 +1,25 @@
 <!doctype html>
+<!--
+  Esta linha diz ao navegador que este documento é HTML5.
+  "doctype" não é visível no site, só diz ao navegador como interpretar.
+-->
 <html lang="pt-BR">
+<!--
+  Início do documento HTML.
+  lang="pt-BR" informa que o conteúdo está em português do Brasil.
+-->
 <head>
+  <!-- Cabeçalho do documento: aqui ficam configurações e coisas "invisíveis" -->
   <meta charset="utf-8" />
+  <!-- Define a codificação de caracteres (UTF-8) para que acentos funcionem corretamente -->
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <!-- Diz ao celular como dimensionar a página (responsividade) -->
 
 
 
   <!-- 
     Os links abaixo carregam arquivos CSS (estilos).
-    Eles deixam o site bonito, colorido, organizado, com fonte certa.
+    Eles deixam o site bonito, colorido, organizado, com a fonte certa.
   -->
 
   <link rel="stylesheet" href="/css/menu.css">
@@ -30,23 +41,49 @@
  <!-- ===================
      SEO – BLOG OTIMIZADO 2025
      =================== -->
+<!--
+  As próximas tags ajudam buscadores (Google, Bing) e redes sociais a entenderem
+  o que é a página: título, descrição, palavras-chave e imagens.
+-->
 
 <title>Blog | William Brioli – Psicanálise, Terapia, Saúde Emocional e Desenvolvimento Humano</title>
+<!-- Título que aparece na aba do navegador e resultados de busca -->
 
 <meta name="description" content="Blog de William Brioli, Psicanalista Clínico Integrativo. Artigos sobre psicanálise, terapia, saúde emocional, relacionamentos, carreira, empreendedorismo, autoconhecimento e qualidade de vida.">
+<!-- Resumo da página (usado por buscadores e quando a página é compartilhada) -->
+
 <meta name="keywords" content="blog psicanálise, terapia online, saúde emocional, autoconhecimento, desenvolvimento humano, psicanalista William Brioli, terapia para ansiedade, terapia de casal, psicoterapia, inteligência emocional, carreira e propósito, bem-estar mental, psicanálise clínica, terapia e autoconhecimento">
+<!-- Palavras-chave (antigamente mais usadas pelos buscadores; ainda útil em alguns contextos) -->
+
 <meta name="author" content="William Brioli">
+<!-- Informação sobre o autor da página -->
+
 <meta name="robots" content="index, follow">
+<!-- Diz aos motores de busca para indexar a página e seguir links -->
+
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Repetição do viewport (está ok manter, não altera comportamento) -->
 
 <!-- SEO local -->
 <meta name="geo.region" content="BR-SP">
+<!-- Estado/região para SEO local -->
+
 <meta name="geo.placename" content="Ilha Solteira">
+<!-- Cidade para SEO local -->
+
 <meta name="geo.position" content="-20.4299;-51.3426">
+<!-- Coordenadas para SEO local (latitude;longitude) -->
+
 <meta name="ICBM" content="-20.4299, -51.3426">
+<!-- Outro formato de coordenadas usado historicamente -->
 
 <!-- Canonical -->
 <link rel="canonical" href="https://williambrioli.com.br/img/HEROog.png">
+<!--
+  A tag canonical normalmente aponta para a URL "canônica" da página (a versão oficial).
+  Aqui está apontando para uma imagem — vale manter se foi intencional,
+  mas geralmente se usa a URL da própria página.
+-->
 
 <!-- Open Graph (Facebook, WhatsApp, LinkedIn) -->
 <meta property="og:title" content="Blog | William Brioli – Psicanálise, Terapia e Saúde Emocional">
@@ -56,14 +93,23 @@
 <meta property="og:url" content="https://williambrioli.github.io/blog.html">
 <meta property="og:site_name" content="William Brioli – Psicanalista Clínico Integrativo">
 <meta property="og:image" content="https://williambrioli.github.io/img/artigocnv.png">
+<!--
+  Essas tags definem como a página aparece quando compartilhada em redes sociais:
+  título, descrição, imagem, tipo de conteúdo, etc.
+-->
 
 <!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Blog | William Brioli – Psicanálise, Terapia e Saúde Emocional">
 <meta name="twitter:description" content="Artigos sobre psicanálise, terapia, saúde emocional, carreira e autoconhecimento.">
 <meta name="twitter:image" content="https://williambrioli.github.io/img/artigocnv.png">
+<!-- Tag específica para o Twitter: como mostrar o cartão/preview quando a página é compartilhada -->
 
 <!-- JSON-LD estruturado para Blog -->
+<!--
+  JSON-LD fornece dados estruturados para buscadores entenderem que isso é um Blog.
+  NÃO coloquei comentários dentro do JSON para não invalidar o formato.
+-->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -85,6 +131,7 @@
   <!-- ===================
        STYLES – mesmo padrão de cores do site principal
        =================== -->
+  <!-- Espaço reservado (estético) caso queira inserir estilos inline no futuro -->
   
 </head>
 <body>
@@ -93,36 +140,56 @@
        HERO DO BLOG
        =================== -->
   <main id="blog-top">
+    <!-- Área principal da página -->
     <section class="blog-hero-wrap">
       <div class="container">
         <div class="blog-hero">
          <h1 id="heroTitle"></h1>
-<p id="heroSubtitle"></p>
-<small id="heroSmall"></small>
+         <!-- Título principal do hero (preenchido por JS) -->
+         <p id="heroSubtitle"></p>
+         <!-- Subtítulo do hero (preenchido por JS) -->
+         <small id="heroSmall"></small>
+         <!-- Texto pequeno do hero (preenchido por JS) -->
         </div>
       </div>
     </section>
 
 
 <div id="searchContainer"></div>
+<!-- Espaço onde a barra de pesquisa será injetada por JS -->
 <script src="/js/search-data.js"></script>
+<!-- Dados de pesquisa (ex: lista de posts para buscar) -->
 <script src="/js/search-bar.js"></script>
+<!-- Script que cria a barra de pesquisa interativa -->
     
     <script src="/js/blog-hero-config.js"></script>
+    <!-- Script que define window.BLOG_HERO (imagem, título, etc.) -->
 
 <script>
+/*
+  SCRIPT: Aplica os textos e a imagem do HERO do blog.
+  Este bloco espera o carregamento da página e então pega dados (window.BLOG_HERO)
+  para preencher título, subtítulo, pequeno texto e imagem de fundo.
+*/
 document.addEventListener("DOMContentLoaded", () => {
   const hero = window.BLOG_HERO;
+  // Pega o objeto global BLOG_HERO (definido em blog-hero-config.js)
 
   // Aplica a imagem no background
   const heroBox = document.querySelector(".blog-hero");
   heroBox.style.backgroundImage =
     `linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url("${hero.image}")`;
+  // Define a imagem de fundo do bloco .blog-hero com um leve gradiente por cima
 
   // Textos
   document.getElementById("heroTitle").textContent = hero.title;
+  // Coloca o título no elemento com id heroTitle
+
   document.getElementById("heroSubtitle").textContent = hero.subtitle;
+  // Coloca o subtítulo no elemento com id heroSubtitle
+
   document.getElementById("heroSmall").textContent = hero.small;
+  // Coloca o texto pequeno no elemento com id heroSmall
 });
 </script>
 
@@ -138,12 +205,14 @@ document.addEventListener("DOMContentLoaded", () => {
     <div id="postsGrid" class="posts-grid">
       <!-- 
         Dentro deste grid, o JS cria vários "cards" de artigos dinamicamente.
+        Cada card representa um post (imagem, título, meta, resumo e botão).
       -->
     </div>
 
     <div id="postsMessage" class="posts-empty" style="display:none;"></div>
     <!-- 
       Esta mensagem aparece caso não existam artigos no arquivo JSON.
+      Inicialmente está escondida (display:none).
     -->
 
   </div>
@@ -169,13 +238,13 @@ document.addEventListener("DOMContentLoaded", () => {
 <div id="postModalBackdrop" class="modal-backdrop" aria-hidden="true">
 <!-- 
   Este é o fundo escuro que aparece atrás do modal.
-  aria-hidden="true" diz que ele começa invisível.
+  aria-hidden="true" diz que ele começa invisível (acessibilidade).
 -->
 
   <article class="modal" role="dialog" aria-modal="true" aria-labelledby="postModalTitle">
   <!-- 
     Aqui é a CAIXA do modal.
-    role="dialog" diz que é como uma janelinha de conversa.
+    role="dialog" e aria-modal são para acessibilidade (leitores de tela).
   -->
 
     <button class="modal-close" type="button" id="postModalClose" aria-label="Fechar artigo">×</button>
@@ -186,16 +255,16 @@ document.addEventListener("DOMContentLoaded", () => {
 
     <header class="modal-header">
       <h2 id="postModalTitle"></h2>
-      <!-- Título que aparece dentro do modal -->
+      <!-- Título que aparece dentro do modal (preenchido por JS) -->
 
       <div class="post-meta" id="postModalMeta"></div>
-      <!-- Aqui vai data + autor -->
+      <!-- Aqui vai data + autor (preenchido por JS) -->
     </header>
 
     <div class="modal-cover" id="postModalCover" style="display:none;"></div>
     <!-- 
       Aqui aparece a imagem de capa do artigo (se existir).
-      Começa escondido com "display:none".
+      Começa escondido com "display:none" e só aparece quando houver imagem.
     -->
 
     <section class="modal-content" id="postModalContent"></section>
@@ -233,24 +302,38 @@ document.addEventListener("DOMContentLoaded", () => {
    ========================================== */
 function simpleMarkdownToHtml(md) {
   if (!md) return '';
+  // Se não vier nenhum texto (md vazio), retorna string vazia
 
   // Troca quebras de linha antigas por novas
   let text = md.replace(/\r\n/g, '\n');
+  // Normaliza quebras de linha (Windows \r\n => \n)
 
   // Títulos de vários níveis
   text = text.replace(/^### (.*)$/gm, '<h3>$1</h3>');
+  // Converte linhas que começam com "### " para <h3>
+
   text = text.replace(/^## (.*)$/gm, '<h2>$1</h2>');
+  // Converte linhas que começam com "## " para <h2>
+
   text = text.replace(/^# (.*)$/gm, '<h2>$1</h2>');
+  // Converte linhas que começam com "# " para <h2> (vai tratar # como h2)
 
   // Negrito **
   text = text.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
+  // Converte **texto** para <strong>texto</strong> (negrito)
 
   // Itálico *
   text = text.replace(/\*(.+?)\*/g, '<em>$1</em>');
+  // Converte *texto* para <em>texto</em> (itálico)
+  // Atenção: essa regra também pode pegar partes já convertidas se houver
+  // sobreposição; funciona bem para markdown simples.
 
   // Transformar listas
   text = text.replace(/^[\-\*] (.*)$/gm, '<li>$1</li>');
+  // Converte linhas que começam com "- " ou "* " para itens <li>
+
   text = text.replace(/(<li>.*<\/li>\n?)+/gm, match => `<ul>${match}</ul>`);
+  // Agrupa itens <li> consecutivos dentro de uma lista <ul>
 
   // Transformar blocos separados por linha vazia em parágrafos
   const parts = text.split(/\n{2,}/).map(block => {
@@ -259,9 +342,15 @@ function simpleMarkdownToHtml(md) {
     }
     return `<p>${block.trim()}</p>`;
   });
+  // Divide por blocos (duas ou mais quebras de linha).
+  // Se o bloco já for um <h2>, <h3> ou <ul>, deixa como está.
+  // Senão, envolve em <p>...</p>.
 
   return parts.join('\n');
+  // Junta tudo de volta em uma string com quebras de linha
 }
+
+
 
 
 
@@ -277,39 +366,57 @@ function simpleMarkdownToHtml(md) {
    ========================================== */
 
 let POSTS_CACHE = [];
+// Variável global para guardar os posts carregados em memória
 
 async function loadPosts() {
   const grid = document.getElementById('postsGrid');
+  // Elemento onde os cards serão inseridos
+
   const msgEl = document.getElementById('postsMessage');
+  // Elemento para mostrar mensagens (ex: "Ainda não há artigos publicados.")
 
   if (!grid || !msgEl) return;
+  // Se algum dos elementos não existir, interrompe para evitar erros
 
   msgEl.style.display = 'none';
+  // Esconde a mensagem por padrão
+
   msgEl.textContent = '';
+  // Limpa o texto da mensagem
 
   try {
     // Busca o arquivo que contém os posts
     const response = await fetch('/posts/posts.json', { cache: 'no-store' });
+    // Faz requisição ao arquivo posts.json. cache: 'no-store' força buscar sempre.
 
     if (!response.ok) {
       throw new Error('Não foi possível carregar a lista de artigos.');
     }
+    // Se a resposta não for ok (404, 500, etc), lança um erro para cair no catch
 
     const posts = await response.json();
+    // Converte o corpo da resposta para objeto/array JavaScript
 
     if (!Array.isArray(posts) || posts.length === 0) {
       msgEl.style.display = 'block';
       msgEl.textContent = 'Ainda não há artigos publicados.';
       return;
     }
+    // Se não for um array ou estiver vazio, mostra mensagem apropriada
 
     POSTS_CACHE = posts;
+    // Guarda os posts no cache (variável global)
+
     renderPosts(posts, grid);
+    // Chama a função que cria os cards visualmente
 
   } catch (err) {
     console.error(err);
+    // Mostra o erro no console (útil para depuração)
+
     msgEl.style.display = 'block';
     msgEl.textContent = 'Ocorreu um problema ao carregar artigos.';
+    // Mostra mensagem amigável ao usuário
   }
 }
 
@@ -320,70 +427,99 @@ async function loadPosts() {
    ========================================== */
 function renderPosts(posts, container) {
   container.innerHTML = '';
+  // Limpa o container antes de inserir os cards
 
   posts.forEach(post => {
     const card = document.createElement('article');
+    // Cria um elemento <article> para cada post
+
     card.className = 'post-card';
+    // Adiciona a classe CSS para estilização
 
     // Capa
     if (post.cover) {
       const img = document.createElement('img');
       img.src = post.cover;
       img.alt = post.title || '';
+      // Define src e alt da imagem (alt ajuda acessibilidade e SEO)
+
       card.appendChild(img);
+      // Adiciona a imagem ao card
     }
 
     const body = document.createElement('div');
     body.className = 'post-card-body';
+    // Cria div que contém título, meta e resumo
 
     // Tag (ex: Psicologia)
     if (Array.isArray(post.tags) && post.tags.length > 0) {
       const tag = document.createElement('span');
       tag.className = 'post-tag';
       tag.textContent = post.tags[0];
+      // Usa a primeira tag do array para exibir no card
+
       body.appendChild(tag);
+      // Adiciona a tag ao corpo do card
     }
 
     // Título
     const h3 = document.createElement('h3');
     h3.textContent = post.title || 'Artigo sem título';
+    // Se não houver título, coloca texto padrão
+
     body.appendChild(h3);
+    // Adiciona o título ao corpo do card
 
     // Meta (data + autor)
     const meta = document.createElement('div');
     meta.className = 'post-meta';
     meta.textContent = formatPostMeta(post);
+    // formata data e autor e coloca no elemento meta
+
     body.appendChild(meta);
+    // Adiciona meta ao corpo do card
 
     // Resumo
     if (post.excerpt) {
       const excerpt = document.createElement('div');
       excerpt.className = 'post-excerpt';
       excerpt.textContent = post.excerpt;
+      // Coloca o resumo (excerpt) do post
+
       body.appendChild(excerpt);
+      // Adiciona o resumo ao corpo do card
     }
 
     // Botão do card
     const footer = document.createElement('div');
     footer.className = 'post-card-footer';
+    // Cria área de rodapé do card (botão)
 
     const btn = document.createElement('button');
     btn.type = 'button';
     btn.className = 'btn';
     btn.textContent = window.SITE_DATA.buttons.readMore;
-    // O texto vem do arquivo site-data.js
+    // O texto do botão vem do arquivo site-data.js (window.SITE_DATA)
 
     btn.addEventListener('click', () => {
       // abre a página do artigo
       if (post.html) {
         window.location.href = post.html;
       }
+      // Se o post tiver propriedade html (link para página), navega até lá
     });
 
     footer.appendChild(btn);
+    // Adiciona o botão ao footer do card
+
     body.appendChild(footer);
+    // Adiciona o footer ao corpo do card
+
     card.appendChild(body);
+    // Adiciona o corpo ao card
+
     container.appendChild(card);
+    // Adiciona o card ao container (grid)
   });
 }
 
@@ -394,24 +530,32 @@ function renderPosts(posts, container) {
    ========================================== */
 function formatPostMeta(post) {
   let parts = [];
+  // Array que vai guardar as partes da meta (data e autor)
 
   if (post.date) {
     const d = new Date(post.date);
+    // Cria objeto Date a partir do valor post.date
+
     if (!isNaN(d)) {
       const formatted = d.toLocaleDateString('pt-BR', {
         day: '2-digit',
         month: 'long',
         year: 'numeric'
       });
+      // Formata a data para algo como "01 janeiro 2025"
+
       parts.push(formatted);
+      // Adiciona a data formatada ao array parts
     }
   }
 
   if (post.author) {
     parts.push('por ' + post.author);
+    // Se houver autor, adiciona "por Nome do Autor"
   }
 
   return parts.join(' • ');
+  // Junta as partes com um ponto médio (por exemplo "01 janeiro 2025 • por Fulano")
 }
 
 
@@ -427,51 +571,78 @@ const modalContent = document.getElementById('postModalContent');
 const modalClose = document.getElementById('postModalClose');
 const modalCloseBottom = document.getElementById('postModalCloseBottom');
 const modalWhatsApp = document.getElementById('postModalWhatsApp');
+// Pega todos os elementos do modal para manipular depois
 
 async function openPostModal(post) {
   if (!post) return;
+  // Se não receber post, não faz nada
 
   modalTitle.textContent = post.title || '';
+  // Põe o título do post no modal
+
   modalMeta.textContent = formatPostMeta(post);
+  // Põe a data e autor no modal
 
   if (post.cover) {
     modalCover.style.display = 'block';
     modalCover.innerHTML = `<img src="${post.cover}">`;
+    // Se houver imagem de capa, mostra o container e insere a imagem
   } else {
     modalCover.style.display = 'none';
+    // Se não houver capa, esconde o container de capa
   }
 
   modalContent.innerHTML = '<p>Carregando conteúdo...</p>';
+  // Mensagem temporária enquanto carrega o conteúdo do post
 
   if (!post.file) {
     modalContent.innerHTML = '<p>Conteúdo não encontrado.</p>';
+    // Se não existir arquivo do post (post.file), mostra mensagem
   } else {
     try {
       const resp = await fetch(post.file, { cache: 'no-store' });
+      // Busca o arquivo markdown do post (por ex: /posts/minhapost.md)
+
       const md = await resp.text();
+      // Lê o conteúdo do arquivo como texto
+
       modalContent.innerHTML = simpleMarkdownToHtml(md);
+      // Converte markdown para HTML simples e insere no modal
     } catch {
       modalContent.innerHTML = '<p>Erro ao carregar conteúdo.</p>';
+      // Em caso de erro na requisição, mostra mensagem de erro
     }
   }
 
   modalWhatsApp.onclick = () => {
     window.open(waLink('generic'), '_blank');
   };
+  // Configura o botão de WhatsApp para abrir um link (função waLink deve existir em outro script)
 
   modalBackdrop.classList.add('open');
+  // Adiciona classe "open" para mostrar o modal (CSS controla animação/visibilidade)
+
   modalBackdrop.setAttribute('aria-hidden', 'false');
+  // Atualiza atributo de acessibilidade para indicar que o modal está visível
+
   document.body.style.overflow = 'hidden';
+  // Evita que a página atrás do modal role enquanto o modal está aberto
 }
 
 function closePostModal() {
   modalBackdrop.classList.remove('open');
+  // Remove classe que mostra o modal
+
   modalBackdrop.setAttribute('aria-hidden', 'true');
+  // Volta a marcar como oculto para leitores de tela
+
   document.body.style.overflow = '';
+  // Restaura a rolagem da página (padrão)
 }
 
 modalClose.addEventListener('click', closePostModal);
 modalCloseBottom.addEventListener('click', closePostModal);
+// Adiciona ouvintes de clique aos botões de fechar para chamar closePostModal
 
 
 /* ==========================================
@@ -480,6 +651,7 @@ modalCloseBottom.addEventListener('click', closePostModal);
 document.addEventListener('DOMContentLoaded', () => {
   loadPosts();
 });
+// Quando a página termina de carregar, chama loadPosts para popular os cards
 
     // ==========================
     // INICIALIZAÇÃO
@@ -487,13 +659,17 @@ document.addEventListener('DOMContentLoaded', () => {
     document.addEventListener('DOMContentLoaded', () => {
       loadPosts();
     });
-
+    // Observação: esse trecho está duplicado (dois listeners chamando loadPosts).
+    // Não altera o comportamento (apenas carrega os posts duas vezes rapidamente),
+    // mas foi mantido conforme seu arquivo original para não alterar nada.
+    // Se quiser, depois eu posso sugerir remover a duplicação — mas só se pedir.
   </script>
 
 
  
    <!-- Carrega o arquivo com textos e botões -->
 <script src="/js/site-data.js"></script>
+<!-- site-data.js define window.SITE_DATA com textos e labels usados na página -->
 
 
 <!-- ==========================================
@@ -503,20 +679,29 @@ document.addEventListener('DOMContentLoaded', () => {
 document.addEventListener("DOMContentLoaded", () => {
   // Botão final do artigo
   const btn = document.getElementById("btnAgendarAtendimento");
+  // Procura o botão com id btnAgendarAtendimento (pode não existir nesta página)
+
   if (btn && window.SITE_DATA?.buttons?.articleCTA) {
     btn.textContent = window.SITE_DATA.buttons.articleCTA;
+    // Se encontrar e tiver texto no SITE_DATA, define o texto do botão
   }
 
   // Botão do modal de WhatsApp
   const modalWA = document.getElementById("postModalWhatsApp");
+  // Procura o botão do modal (deveria existir na estrutura do modal)
+
   if (modalWA && window.SITE_DATA?.buttons?.modalCTA) {
     modalWA.textContent = window.SITE_DATA.buttons.modalCTA;
+    // Define o texto do botão de WhatsApp conforme SITE_DATA
   }
 
   // Botão inferior "Fechar"
   const modalCloseBtn = document.getElementById("postModalCloseBottom");
+  // Procura o botão de fechar no rodapé do modal
+
   if (modalCloseBtn && window.SITE_DATA?.buttons?.closeModal) {
     modalCloseBtn.textContent = window.SITE_DATA.buttons.closeModal;
+    // Define o texto do botão "Fechar" conforme SITE_DATA
   }
 });
 </script>
@@ -524,23 +709,24 @@ document.addEventListener("DOMContentLoaded", () => {
 
 <!-- Scripts complementares -->
 <script src="/js/load-whatsapp.js"></script>
+<!-- Script para carregar integração/funcionalidade do WhatsApp -->
+
 <script src="/js/config-whatsapp.js"></script>
+<!-- Script com configuração do WhatsApp (número, mensagens, etc.) -->
+
 <script src="/js/menu.js"></script>
+<!-- Script que injeta e controla o menu do site -->
+
 <script src="/js/footer-inject.js"></script>
+<!-- Script que injeta o conteúdo do rodapé (footer) -->
+
 <script src="/js/author-bio.js"></script>
+<!-- Script que injeta a bio do autor, se houver -->
 
 <script>
   document.addEventListener("DOMContentLoaded", carregarMenu);
-  // Faz o menu aparecer automaticamente
+  // Faz o menu aparecer automaticamente chamando a função carregarMenu definida em menu.js
 </script>
 
 </body>
 </html>
-
-
-
-
-
-
-
-
