@@ -6,7 +6,26 @@
 
 
 
+  <!-- 
+    Os links abaixo carregam arquivos CSS (estilos).
+    Eles deixam o site bonito, colorido, organizado, com fonte certa.
+  -->
+
+  <link rel="stylesheet" href="/css/menu.css">
+  <!-- Arquivo que estiliza o menu do site -->
+
   <link rel="stylesheet" href="/css/base.css">
+  <!-- Arquivo com estilos gerais usados no site todo -->
+
+  <link rel="stylesheet" href="/css/blog.css">
+  <!-- Arquivo que estiliza páginas de blog -->
+
+  <link rel="stylesheet" href="/css/whatsapp-fab.css">
+  <!-- Arquivo que estiliza o botão flutuante do WhatsApp -->
+
+  <link rel="stylesheet" href="/css/search-bar.css">
+  <!-- Arquivo que estiliza a barra de pesquisa -->
+  
 
  <!-- ===================
      SEO – BLOG OTIMIZADO 2025
@@ -66,642 +85,7 @@
   <!-- ===================
        STYLES – mesmo padrão de cores do site principal
        =================== -->
-  <style>
-   
-
-   
-
-   /* ==========================
-       TOPO / MENU (mesmo estilo)
-       ========================== */
-   .top-menu {
-      position: fixed;
-      left: 50%;
-      transform: translateX(-50%);
-      width: var(--max-width);
-      max-width: 100%;
-      top: 18px;
-      background: var(--primary);
-      backdrop-filter: blur(6px);
-      border-radius: 0;
-      padding: 8px 16px;
-      box-shadow: 0 6px 18px rgba(30, 30, 30, 0.08);
-      display: flex;
-      gap: 8px;
-      align-items: center;
-      justify-content: center;
-      z-index: 1200;
-      opacity: 0;
-      pointer-events: none;
-      transition: all .35s ease;
-    }
-
-
-     .top-menu a {
-     color: #fff !important;
-    }
-
   
-    
-    .top-menu.visible {
-      opacity: 1;
-      pointer-events: auto;
-    }
-
-
-    @media(max-width:520px){
-  .top-menu{
-    left: 10px !important;
-    right: 10px !important;
-    width: calc(100% - 20px);
-    transform: none !important;
-    flex-wrap: wrap;             /* permite quebrar linha */
-    justify-content: center;     /* centraliza todos os botões */
-    padding: 10px 12px;
-    gap: 6px;
-  }
-
-  .top-menu a{
-    padding: 8px 10px;
-    font-size: 13px;
-    flex-shrink: 0;              /* evita esmagar texto */
-    white-space: nowrap;         /* impede quebra dentro dos botões */
-    color:#000 !important;  /* texto preto no mobile */
-  }
-}
-
-/* Hover animado nos itens do menu */
-.top-menu a {
-  transition: 
-    background-color 0.25s ease,
-    color 0.25s ease,
-    transform 0.25s ease,
-    box-shadow 0.25s ease;
-}
-
-.top-menu a:hover {
-  background: rgba(46,125,126,0.15);   /* cor suave com sua cor primária */
-  color: var(--primary-700);
-  transform: translateY(-2px);         /* levanta levemente */
-  box-shadow: 0 4px 12px rgba(46,125,126,0.25); /* sombra elegante */
-  border-radius: 999px;                /* mantém o estilo */
-}
-    
-
-    /* ---------------------------
-   HAMBURGUER & menu mobile
-   --------------------------- */
-
-/* Estilo do botão hambúrguer (desktop: escondido) */
-.hamburger{
-  display: none;                   /* só aparece no mobile via media query */
-  position: fixed;
-  top: 14px;
-  left: 14px;
-  z-index: 2200;
-  background: rgba(255,255,255,0.95);
-  border: 0;
-  padding: 8px 10px;
-  border-radius: 10px;
-  font-size: 22px;
-  line-height: 1;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
-  cursor: pointer;
-}
-
-    /* Mobile behavior: mostra hambúrguer e converte top-menu em drawer */
-@media (max-width: 520px) {
-
-  /* mostra o botão */
-  .hamburger{ display: block; }
-
-  /* Esconde o top-menu por padrão no mobile — vai abrir ao clicar */
-  .top-menu{
-    display: none;
-    position: fixed;
-    top: 64px;               /* fica abaixo do hamburguer */
-    left: 10px;
-    right: 10px;
-    width: auto;
-    background: #fff;
-    border-radius: 12px;
-    padding: 12px;
-    box-shadow: 0 14px 40px rgba(10,10,10,0.12);
-    flex-direction: column;
-    gap: 8px;
-    z-index: 2100;
- 
-}
-
-     /* Efeito de “toque” nos itens do menu mobile */
-  .top-menu a {
-    transition: background-color 0.25s ease,
-                transform 0.2s ease;
-  }
-
-  .top-menu a:active {
-    background: rgba(46,125,126,0.15);    /* fundo suave */
-    transform: scale(0.97);               /* efeito de pressionado */
-    border-radius: 10px;
-  }
-}
-
-
-  /* Estado aberto do menu */
-  .top-menu.open{
-    display: flex !important;
-  }
-
-      /* Ajustes dos links dentro do drawer */
-  .top-menu a{
-    display: block;
-    padding: 10px 12px;
-    border-radius: 10px;
-    white-space: nowrap;
-  }
-
-      /* Permite rolagem caso tenha muitos itens */
-  .top-menu { 
-  max-height: calc(100vh - 120px); overflow:auto;
-}
-
-.hero__overlay {
-  padding: 48px 24px; /* espaçamento confortável */
-  width: 100%;
-  
-}
-
-.hero__text {
-  max-width: 600px; /* mantém o texto bonito e legível */
-  margin-left: 0;   /* garante alinhamento total à esquerda */
-  text-align: left; /* só para garantir */
-}
-
-
-    /* ==========================
-       HERO DO BLOG
-       ========================== */
-    .blog-hero-wrap {
-      margin-top: 0px; /* espaço para o menu flutuante */
-    }
-
-    .blog-hero-wrap .container {
-  padding-top: 0; /* remove o espaçamento superior */
-}
-    
-.blog-hero {
-  position: relative;
-  border-radius: 20px;
-  padding: 48px 32px;
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
-  color: #fff;
-  /* Remove o background fixo para permitir que o JS funcione */
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
-
-    .blog-hero h1 {
-      margin: 0 0 8px;
-      font-size: 28px;
-    }
-
-    .blog-hero p {
-      margin: 0;
-      max-width: 600px;
-      line-height: 1.6;
-      color: #f0f7f7;
-    }
-
-    .blog-hero small {
-      display: inline-block;
-      margin-top: 10px;
-      padding: 4px 10px;
-      border-radius: 999px;
-      background: rgba(0,0,0,0.18);
-      font-size: 12px;
-    }
-
-    /* ==========================
-       GRID DE POSTS
-       ========================== */
-    .blog-section {
-      margin-top: 24px;
-    }
-
-    .blog-section h2 {
-      margin: 0 0 16px;
-      font-size: 24px;
-      color: var(--primary-700);
-      text-align:center !important;
-    }
-
-    .posts-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 20px;
-    }
-
-    .post-card {
-      background: var(--card);
-      border-radius: var(--radius);
-      box-shadow: 0 6px 18px rgba(30, 30, 30, 0.06);
-      overflow: hidden;
-      display: flex;
-      flex-direction: column;
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-    }
-
-    .post-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 10px 24px rgba(30, 30, 30, 0.12);
-    }
-
-    .post-card img {
-      width: 100%;
-      height: 180px;
-      object-fit: cover;
-      border-radius: 0;
-    }
-
-    .post-card-body {
-      padding: 14px 16px 16px;
-      display: flex;
-      flex-direction: column;
-      height: 100%;
-    }
-
-    .post-tag {
-      display: inline-block;
-      font-size: 11px;
-      text-transform: uppercase;
-      letter-spacing: .04em;
-      padding: 3px 8px;
-      border-radius: 999px;
-      background: rgba(46, 125, 126, 0.12);
-      color: var(--primary-700);
-      margin-bottom: 8px;
-    }
-
-    .post-card h3 {
-      margin: 0 0 6px;
-      font-size: 18px;
-      color: var(--primary-700);
-    }
-
-    .post-meta {
-      font-size: 12px;
-      color: #555;
-      margin-bottom: 10px;
-    }
-
-    .post-excerpt {
-      font-size: 14px;
-      color: var(--muted);
-      line-height: 1.55;
-      margin-bottom: 10px;
-      flex: 1;
-    }
-
-    .post-card-footer {
-      margin-top: 4px;
-    }
-
-    .btn {
-      display: block;
-      width: max-content;
-      padding: 6px 14px;
-      border-radius: 999px;
-      background: var(--primary);
-      color: #fff;
-      font-weight: 700;
-      margin: 8px 0 0;
-      text-align: center;
-      font-size: 14px;
-      border: none;
-      cursor: pointer;
-      transition: all .25s ease-in-out;
-    }
-
-    .btn:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.18);
-      background: var(--primary-700);
-    }
-
-    .btn:active {
-      transform: scale(0.96);
-      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
-    }
-
-    .post-card .btn {
-      margin-top: 4px;
-    }
-
-    .posts-empty {
-      font-size: 14px;
-      color: #555;
-      padding: 16px;
-      background: rgba(255,255,255,0.8);
-      border-radius: var(--radius);
-    }
-
-    /* ==========================
-       MODAL DE LEITURA DO ARTIGO
-       ========================== */
-    .modal-backdrop {
-      position: fixed;
-      inset: 0;
-      background: rgba(0, 0, 0, 0.45);
-      display: none;
-      align-items: center;
-      justify-content: center;
-      z-index: 2000;
-      padding: 16px;
-    }
-
-    .modal-backdrop.open {
-      display: flex;
-    }
-
-    .modal {
-      background: var(--card);
-      max-width: 900px;
-      width: 100%;
-      max-height: 90vh;
-      overflow-y: auto;
-      border-radius: var(--radius);
-      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.35);
-      padding: 24px 22px 20px;
-      position: relative;
-    }
-
-    .modal-close {
-      position: absolute;
-      top: 10px;
-      right: 12px;
-      border: none;
-      background: transparent;
-      font-size: 22px;
-      cursor: pointer;
-      color: #666;
-    }
-
-    .modal-header {
-      margin-bottom: 8px;
-    }
-
-    .modal-header h2 {
-      margin: 0 0 4px;
-      font-size: 22px;
-      color: var(--primary-700);
-    }
-
-    .modal-header .post-meta {
-      margin-bottom: 0;
-    }
-
-    .modal-cover {
-      margin: 12px 0 14px;
-    }
-
-    .modal-content {
-      font-size: 15px;
-      line-height: 1.7;
-      color: var(--muted);
-    }
-
-    .modal-content h2,
-    .modal-content h3,
-    .modal-content h4 {
-      margin-top: 18px;
-      margin-bottom: 6px;
-      color: var(--primary-700);
-    }
-
-    .modal-content p {
-      margin: 0 0 10px;
-    }
-
-    .modal-footer {
-      margin-top: 16px;
-      border-top: 1px solid #eef2f2;
-      padding-top: 10px;
-      display: flex;
-      justify-content: flex-end;
-      gap: 8px;
-      flex-wrap: wrap;
-    }
-
-    .modal-footer .btn {
-      margin: 0;
-    }
-
-    /* ==========================
-       RODAPÉ / CONTATO (simples)
-       ========================== */
-    footer.site-footer {
-      padding: 24px 0 30px;
-      margin-top: 16px;
-    }
-
-    .footer-card {
-      background: var(--card);
-      border-radius: var(--radius);
-      padding: 20px 18px;
-      box-shadow: 0 6px 18px rgba(30,30,30,0.04);
-    }
-
-    .footer-card h2 {
-      margin: 0 0 10px;
-      font-size: 22px;
-      color: var(--primary-700);
-      text-align: left;
-    }
-
-    .contact-list {
-      list-style: none;
-      padding: 0;
-      margin: 0 0 8px;
-      font-size: 14px;
-    }
-
-    .contact-list li {
-      margin-bottom: 6px;
-    }
-
-    /* ==========================
-       BOTÃO WHATSAPP FLUTUANTE
-       ========================== */
-    .whatsapp-fab {
-      position: fixed;
-      right: 18px;
-      bottom: 18px;
-      background: #25D366;
-      width: 64px;
-      height: 64px;
-      border-radius: 999px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      box-shadow: 0 8px 24px rgba(46, 125, 126, 0.25);
-      z-index: 2300;
-      cursor: pointer;
-      animation: waFloat 2.5s ease-in-out infinite;
-    }
-
-    .whatsapp-fab a {
-      width: 100%;
-      height: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #fff;
-    }
-
-    .whatsapp-fab:hover {
-      transform: scale(1.08);
-      box-shadow: 0 12px 32px rgba(46, 125, 126, 0.35);
-    }
-
-    .whatsapp-label {
-      position: fixed;
-      right: 15px;
-      bottom: 5px;
-      background: rgba(255, 255, 255, 1);
-      color: #25D366;
-      padding: 2px 8px;
-      border-radius: 8px;
-      font-size: 10px;
-      font-weight: 600;
-      z-index: 2300;
-      backdrop-filter: blur(4px);
-      animation: waFloat 2.5s ease-in-out infinite;
-    }
-
-    @keyframes waFloat {
-      0%   { transform: translateY(0); }
-      50%  { transform: translateY(-4px); }
-      100% { transform: translateY(0); }
-    }
-
-    @media (max-width: 900px) {
-      .blog-hero-wrap {
-        margin-top: 90px;
-      }
-    }
-
- /* ==========================
-   AJUSTE: Botões do modal alinhados à esquerda
-   ========================== */
-
-
-/* ==== Ajuste dos botões do modal de artigo ==== */
-.modal-footer {
-  display: flex !important;
-  justify-content: flex-start !important;  /* Alinha à esquerda */
-  align-items: center;
-  gap: 8px;  /* Espaço entre os botões */
-  flex-wrap: wrap;  /* Evita quebra feia em telas pequenas */
-}
-
-/* Opcional: garante que o botão "Fechar" não fique atrás do WhatsApp */
-.modal-footer button,
-.modal-footer a {
-  z-index: 10;
-  position: relative;
-}
-   
-/* 🔧 Correção do espaçamento no topo do HERO (mobile) */
-@media (max-width: 520px) {
-  .blog-hero-wrap {
-    margin-top: 0 !important;
-    padding-top: 0 !important;
-  }
-
-  .blog-hero {
-    border-radius: 0 !important;
-  }
-
-  main#blog-top {
-    margin-top: 0 !important;
-    padding-top: 0 !important;
-  }
-}
-
-
-/* ==========================
-   REMOVER IMAGENS DOS CARDS DO BLOG
-   ========================== */
-.post-card img {
-  display: none !important;
-}
-
-.post-card {
-  padding-top: 20px; /* compensa o espaço vazio deixado pela imagem */
-}
-
-/* Força centralização do título da sessão CONTATO em todas as páginas */
-footer.site-footer .footer-card h2,
-#footerContainer .footer-card h2,
-footer.site-footer h2 {
-  text-align: center !important;
-  margin-left: auto !important;
-  margin-right: auto !important;
-  display: block;
-}
-
-
-
-.search-bar-wrap {
-  margin: 20px auto;
-  max-width: 600px;
-  position: relative;
-}
-
-.search-bar-wrap input {
-  width: 100%;
-  padding: 12px 16px;
-  font-size: 16px;
-  border-radius: 10px;
-  border: 1px solid #CBD5D6;
-  outline: none;
-}
-
-.search-results {
-  list-style: none;
-  margin: 6px 0 0;
-  padding: 0;
-  background: white;
-  border-radius: 10px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-  max-height: 300px;
-  overflow-y: auto;
-}
-
-.result-item a {
-  display: block;
-  padding: 10px 14px;
-  color: #1F2D2D;
-}
-
-.result-item a:hover {
-  background: #E7F3F3;
-}
-
-.no-results {
-  padding: 10px 14px;
-  color: #555;
-}
-
-
-
-
-
-    
-    
-  </style>
 </head>
 <body>
 
@@ -742,197 +126,206 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 </script>
 
-    <!-- ===================
-         LISTA DE ARTIGOS
-         =================== -->
-    <section class="blog-section">
-      <div class="container">
-        <h2>Artigos Recentes</h2>
+    <!-- ======================================
+     LISTA DE ARTIGOS (Artigos Recentes)
+     ====================================== -->
+<section class="blog-section">
+  <div class="container">
 
-        <!-- Container onde os cards serão injetados via JS -->
-        <div id="postsGrid" class="posts-grid">
-          <!-- Cards criados dinamicamente -->
-        </div>
+    <h2>Artigos Recentes</h2>
+    <!-- Título da seção onde aparecem outros posts -->
 
-        <!-- Mensagem de erro / vazio -->
-        <div id="postsMessage" class="posts-empty" style="display:none;"></div>
-      </div>
-    </section>
+    <div id="postsGrid" class="posts-grid">
+      <!-- 
+        Dentro deste grid, o JS cria vários "cards" de artigos dinamicamente.
+      -->
+    </div>
 
-    <!-- ===================
+    <div id="postsMessage" class="posts-empty" style="display:none;"></div>
+    <!-- 
+      Esta mensagem aparece caso não existam artigos no arquivo JSON.
+    -->
+
+  </div>
+</section>
+
+   <!-- ===================
          CONTATO / RODAPÉ
          =================== -->
     <footer id="contato" class="site-footer">
   <div class="container footer-card" id="footerContainer">
+
     <!-- Conteúdo será injetado via JS -->
   </div>
+</footer>
+  </main>
+
+     
+
+  <!-- ============================
+     MODAL DE LEITURA DO POST
+     (abre quando clica em um artigo na lista)
+     ============================ -->
+<div id="postModalBackdrop" class="modal-backdrop" aria-hidden="true">
+<!-- 
+  Este é o fundo escuro que aparece atrás do modal.
+  aria-hidden="true" diz que ele começa invisível.
+-->
+
+  <article class="modal" role="dialog" aria-modal="true" aria-labelledby="postModalTitle">
+  <!-- 
+    Aqui é a CAIXA do modal.
+    role="dialog" diz que é como uma janelinha de conversa.
+  -->
+
+    <button class="modal-close" type="button" id="postModalClose" aria-label="Fechar artigo">×</button>
+    <!-- 
+      Este é o X de fechar no canto superior.
+      O JS escuta o clique neste botão para esconder o modal.
+    -->
+
+    <header class="modal-header">
+      <h2 id="postModalTitle"></h2>
+      <!-- Título que aparece dentro do modal -->
+
+      <div class="post-meta" id="postModalMeta"></div>
+      <!-- Aqui vai data + autor -->
+    </header>
+
+    <div class="modal-cover" id="postModalCover" style="display:none;"></div>
+    <!-- 
+      Aqui aparece a imagem de capa do artigo (se existir).
+      Começa escondido com "display:none".
+    -->
+
+    <section class="modal-content" id="postModalContent"></section>
+    <!-- Aqui vai o conteúdo do artigo quando aberto dentro do modal -->
+
+    <footer class="modal-footer">
+      <button type="button" class="btn" id="postModalWhatsApp"></button>
+      <!-- Botão do WhatsApp dentro do modal (texto vem do SITE_DATA) -->
+
+      <button type="button" class="btn" id="postModalCloseBottom"></button>
+      <!-- Botão "Fechar" no rodapé do modal (texto vem do SITE_DATA) -->
     </footer>
+  </article>
+</div>
+
+  
+    
+
+  <!-- ============================
+     SCRIPT PRINCIPAL DO ARTIGO
+     ============================ -->
+<script>
+/*
+  Aqui começam várias funções importantes para fazer a página funcionar.
+  Elas cuidam de:
+  - transformar markdown em HTML
+  - carregar lista de posts
+  - abrir e fechar o modal
+  - inserir conteúdo na página
+*/
+
+/* ==========================================
+   FUNÇÃO: simpleMarkdownToHtml()
+   Serve para transformar markdown simples em HTML.
+   ========================================== */
+function simpleMarkdownToHtml(md) {
+  if (!md) return '';
+
+  // Troca quebras de linha antigas por novas
+  let text = md.replace(/\r\n/g, '\n');
+
+  // Títulos de vários níveis
+  text = text.replace(/^### (.*)$/gm, '<h3>$1</h3>');
+  text = text.replace(/^## (.*)$/gm, '<h2>$1</h2>');
+  text = text.replace(/^# (.*)$/gm, '<h2>$1</h2>');
+
+  // Negrito **
+  text = text.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
+
+  // Itálico *
+  text = text.replace(/\*(.+?)\*/g, '<em>$1</em>');
+
+  // Transformar listas
+  text = text.replace(/^[\-\*] (.*)$/gm, '<li>$1</li>');
+  text = text.replace(/(<li>.*<\/li>\n?)+/gm, match => `<ul>${match}</ul>`);
+
+  // Transformar blocos separados por linha vazia em parágrafos
+  const parts = text.split(/\n{2,}/).map(block => {
+    if (/^<h[23]>/.test(block) || /^<ul>/.test(block)) {
+      return block;
+    }
+    return `<p>${block.trim()}</p>`;
+  });
+
+  return parts.join('\n');
+}
+
+
+
+
+
 
 
     
-  </main>
 
-  <!-- ===================
-       BOTÃO WHATSAPP
-       =================== -->
-  <div class="whatsapp-label">Fale comigo</div>
-  <div class="whatsapp-fab" role="link" aria-label="Conversar pelo WhatsApp">
-    <a id="waFab" href="#" aria-label="WhatsApp">
-      <svg width="32" height="32" viewBox="0 0 32 32" fill="white" xmlns="http://www.w3.org/2000/svg">
-        <path d="M16.006 3C9.373 3 4 8.373 4 15.006c0 2.647.873 5.098 2.348 7.083L4 29l7.127-2.298A12.943 12.943 0 0016.006 27c6.632 0 12.006-5.373 12.006-11.994C28.012 8.373 22.638 3 16.006 3zm6.725 16.994c-.28.782-1.634 1.517-2.262 1.547-.58.03-1.31.042-2.113-.133-.488-.112-1.114-.362-1.93-.708-3.386-1.467-5.592-4.876-5.756-5.107-.165-.23-1.37-1.82-1.37-3.47 0-1.65.865-2.463 1.173-2.8.308-.338.675-.423.9-.423.226 0 .451.002.648.012.21.01.49-.08.768.588.28.668.953 2.305 1.036 2.472.082.166.137.362.026.592-.11.23-.165.362-.322.56-.165.197-.347.44-.495.59-.165.165-.337.345-.145.677.197.338.877 1.446 1.886 2.34 1.297 1.153 2.392 1.51 2.73 1.677.338.165.533.142.73-.085.197-.226.843-.983 1.067-1.32.226-.338.451-.28.768-.165.317.112 2.007.947 2.352 1.118.346.173.575.258.66.402.082.14.082.783-.197 1.565z"/>
-      </svg>
-    </a>
-  </div>
+    /* ==========================================
+   CARREGAMENTO DE POSTS
+   Lê o arquivo posts.json e cria os cards na página.
+   ========================================== */
 
-  <!-- ===================
-       MODAL DE LEITURA DO POST
-       =================== -->
-  <div id="postModalBackdrop" class="modal-backdrop" aria-hidden="true">
-    <article class="modal" role="dialog" aria-modal="true" aria-labelledby="postModalTitle">
-      <button class="modal-close" type="button" id="postModalClose" aria-label="Fechar artigo">×</button>
-      <header class="modal-header">
-        <h2 id="postModalTitle"></h2>
-        <div class="post-meta" id="postModalMeta"></div>
-      </header>
-      <div class="modal-cover" id="postModalCover" style="display:none;"></div>
-      <section class="modal-content" id="postModalContent"></section>
-      <footer class="modal-footer">
-        <button type="button" class="btn" id="postModalWhatsApp">Agendar atendimento</button>
-        <button type="button" class="btn" id="postModalCloseBottom">Fechar</button>
-      </footer>
-    </article>
-  </div>
+let POSTS_CACHE = [];
 
-  <!-- ===================
-       SCRIPTS – BLOG + MINI CMS ESTÁTICO
-       =================== -->
-  <script>
-       
-   
-// ==========================
-// WHATSAPP – links e botão flutuante (CORRIGIDO)
-// ==========================
-// NÃO declare function openWA aqui. Ela vem do config-whatsapp.js
+async function loadPosts() {
+  const grid = document.getElementById('postsGrid');
+  const msgEl = document.getElementById('postsMessage');
 
-// Pega os elementos de forma segura
-const btnContact = document.getElementById('btnContact');
-const waFab = document.getElementById('waFab');
+  if (!grid || !msgEl) return;
 
-// Botão de contato (footer)
-if (btnContact) {
-  btnContact.addEventListener('click', (e) => {
-    e.preventDefault();
-    if (typeof openWA === 'function') {
-      openWA('generic');
+  msgEl.style.display = 'none';
+  msgEl.textContent = '';
+
+  try {
+    // Busca o arquivo que contém os posts
+    const response = await fetch('/posts/posts.json', { cache: 'no-store' });
+
+    if (!response.ok) {
+      throw new Error('Não foi possível carregar a lista de artigos.');
     }
-  });
-}
 
-// Botão flutuante do WhatsApp
-if (waFab) {
-  waFab.addEventListener('click', (e) => {
-    e.preventDefault();
-    if (typeof openWA === 'function') {
-      openWA('generic');
+    const posts = await response.json();
+
+    if (!Array.isArray(posts) || posts.length === 0) {
+      msgEl.style.display = 'block';
+      msgEl.textContent = 'Ainda não há artigos publicados.';
+      return;
     }
-  });
 
-  if (waFab.parentElement) {
-    waFab.parentElement.addEventListener('click', (e) => {
-      e.preventDefault();
-      if (typeof openWA === 'function') {
-        openWA('generic');
-      }
-    });
+    POSTS_CACHE = posts;
+    renderPosts(posts, grid);
+
+  } catch (err) {
+    console.error(err);
+    msgEl.style.display = 'block';
+    msgEl.textContent = 'Ocorreu um problema ao carregar artigos.';
   }
 }
 
 
-
-
-
-    // ==========================
-    // MINI PARSER DE MARKDOWN (simplificado)
-    // ==========================
-    function simpleMarkdownToHtml(md) {
-      if (!md) return '';
-
-      // Normaliza quebras de linha
-      let text = md.replace(/\r\n/g, '\n');
-
-      // Títulos: #, ##, ###
-      text = text.replace(/^### (.*)$/gm, '<h3>$1</h3>');
-      text = text.replace(/^## (.*)$/gm, '<h2>$1</h2>');
-      text = text.replace(/^# (.*)$/gm, '<h2>$1</h2>');
-
-      // Negrito **texto**
-      text = text.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
-
-      // Itálico *texto*
-      text = text.replace(/\*(.+?)\*/g, '<em>$1</em>');
-
-      // Listas simples iniciadas por "- " ou "* "
-      text = text.replace(/^[\-\*] (.*)$/gm, '<li>$1</li>');
-      text = text.replace(/(<li>.*<\/li>\n?)+/gm, match => `<ul>${match}</ul>`);
-
-      // Quebra em parágrafos (duas quebras de linha)
-      const parts = text.split(/\n{2,}/).map(block => {
-        if (/^<h[23]>/.test(block) || /^<ul>/.test(block)) {
-          return block;
-        }
-        return `<p>${block.trim()}</p>`;
-      });
-
-      return parts.join('\n');
-    }
-
-    // ==========================
-    // CARREGAMENTO DE POSTS via JSON
-    // ==========================
-    let POSTS_CACHE = [];
-
-    async function loadPosts() {
-      const grid = document.getElementById('postsGrid');
-      const msgEl = document.getElementById('postsMessage');
-
-      if (!grid || !msgEl) return;
-
-      msgEl.style.display = 'none';
-      msgEl.textContent = '';
-
-      try {
-        // Arquivo: /posts/posts.json (mesmo repositório, mesma branch GitHub Pages)
-        const response = await fetch('posts/posts.json', { cache: 'no-store' });
-
-        if (!response.ok) {
-          throw new Error('Não foi possível carregar a lista de artigos.');
-        }
-
-        const posts = await response.json();
-        if (!Array.isArray(posts) || posts.length === 0) {
-          msgEl.style.display = 'block';
-          msgEl.textContent = 'Ainda não há artigos publicados. Em breve, novos conteúdos estarão disponíveis aqui.';
-          return;
-        }
-
-        POSTS_CACHE = posts;
-        renderPosts(posts, grid);
-
-      } catch (err) {
-        console.error(err);
-        msgEl.style.display = 'block';
-        msgEl.textContent = 'Ocorreu um problema ao carregar os artigos. Verifique se o arquivo "posts/posts.json" existe no repositório.';
-      }
-    }
-
-    function renderPosts(posts, container) {
+/* ==========================================
+   FUNÇÃO: renderPosts()
+   Cria os cards dinamicamente dentro do grid.
+   ========================================== */
+function renderPosts(posts, container) {
   container.innerHTML = '';
 
   posts.forEach(post => {
     const card = document.createElement('article');
     card.className = 'post-card';
 
-    // Imagem de capa
+    // Capa
     if (post.cover) {
       const img = document.createElement('img');
       img.src = post.cover;
@@ -943,7 +336,7 @@ if (waFab) {
     const body = document.createElement('div');
     body.className = 'post-card-body';
 
-    // Tag (primeira tag do array, se existir)
+    // Tag (ex: Psicologia)
     if (Array.isArray(post.tags) && post.tags.length > 0) {
       const tag = document.createElement('span');
       tag.className = 'post-tag';
@@ -956,7 +349,7 @@ if (waFab) {
     h3.textContent = post.title || 'Artigo sem título';
     body.appendChild(h3);
 
-    // Meta: data e autor
+    // Meta (data + autor)
     const meta = document.createElement('div');
     meta.className = 'post-meta';
     meta.textContent = formatPostMeta(post);
@@ -970,21 +363,20 @@ if (waFab) {
       body.appendChild(excerpt);
     }
 
-    // Botão "Ler artigo completo"
+    // Botão do card
     const footer = document.createElement('div');
     footer.className = 'post-card-footer';
 
     const btn = document.createElement('button');
     btn.type = 'button';
     btn.className = 'btn';
-    btn.textContent = 'Ler artigo completo';
+    btn.textContent = window.SITE_DATA.buttons.readMore;
+    // O texto vem do arquivo site-data.js
 
-    // Evento de clique → abre página HTML
     btn.addEventListener('click', () => {
+      // abre a página do artigo
       if (post.html) {
-        window.location.href = "artigos/" + post.html; // redireciona antes estava assim: window.location.href = post.html;
-      } else {
-        console.warn('Este artigo não tem página HTML definida.');
+        window.location.href = post.html;
       }
     });
 
@@ -992,111 +384,102 @@ if (waFab) {
     body.appendChild(footer);
     card.appendChild(body);
     container.appendChild(card);
-  }); // 👈 fecha o forEach
+  });
+}
 
-} // 👈 fecha a função renderPosts corretamente
 
+   /* ==========================================
+   FUNÇÃO: formatPostMeta()
+   Formata a data + autor do post
+   ========================================== */
+function formatPostMeta(post) {
+  let parts = [];
 
-    function formatPostMeta(post) {
-      let parts = [];
-      if (post.date) {
-        const d = new Date(post.date);
-        if (!isNaN(d)) {
-          const formatted = d.toLocaleDateString('pt-BR', {
-            day: '2-digit',
-            month: 'long',
-            year: 'numeric'
-          });
-          parts.push(formatted);
-        }
-      }
-      if (post.author) {
-        parts.push('por ' + post.author);
-      }
-      return parts.join(' • ');
+  if (post.date) {
+    const d = new Date(post.date);
+    if (!isNaN(d)) {
+      const formatted = d.toLocaleDateString('pt-BR', {
+        day: '2-digit',
+        month: 'long',
+        year: 'numeric'
+      });
+      parts.push(formatted);
     }
+  }
 
-    // ==========================
-    // MODAL – ABRIR ARTIGO COMPLETO
-    // ==========================
-    const modalBackdrop = document.getElementById('postModalBackdrop');
-    const modalTitle = document.getElementById('postModalTitle');
-    const modalMeta = document.getElementById('postModalMeta');
-    const modalCover = document.getElementById('postModalCover');
-    const modalContent = document.getElementById('postModalContent');
-    const modalClose = document.getElementById('postModalClose');
-    const modalCloseBottom = document.getElementById('postModalCloseBottom');
-    const modalWhatsApp = document.getElementById('postModalWhatsApp');
+  if (post.author) {
+    parts.push('por ' + post.author);
+  }
 
-    async function openPostModal(post) {
-      if (!post) return;
+  return parts.join(' • ');
+}
 
-      modalTitle.textContent = post.title || '';
-      modalMeta.textContent = formatPostMeta(post);
 
-      // Capa no modal
-      if (post.cover) {
-        modalCover.style.display = 'block';
-        modalCover.innerHTML = `<img src="${post.cover}" alt="${post.title || ''}">`;
-      } else {
-        modalCover.style.display = 'none';
-        modalCover.innerHTML = '';
-      }
+  
+    /* ==========================================
+   FUNÇÃO DO MODAL (abrir e fechar)
+   ========================================== */
+const modalBackdrop = document.getElementById('postModalBackdrop');
+const modalTitle = document.getElementById('postModalTitle');
+const modalMeta = document.getElementById('postModalMeta');
+const modalCover = document.getElementById('postModalCover');
+const modalContent = document.getElementById('postModalContent');
+const modalClose = document.getElementById('postModalClose');
+const modalCloseBottom = document.getElementById('postModalCloseBottom');
+const modalWhatsApp = document.getElementById('postModalWhatsApp');
 
-      // Carrega markdown do artigo
-      modalContent.innerHTML = '<p>Carregando conteúdo...</p>';
+async function openPostModal(post) {
+  if (!post) return;
 
-      if (!post.file) {
-        modalContent.innerHTML = '<p>Não foi possível localizar o conteúdo deste artigo. Verifique a propriedade <code>file</code> no JSON.</p>';
-      } else {
-        try {
-          const resp = await fetch(post.file, { cache: 'no-store' });
-          if (!resp.ok) {
-            throw new Error('Erro ao carregar arquivo Markdown.');
-          }
-          const md = await resp.text();
-          const html = simpleMarkdownToHtml(md);
-          modalContent.innerHTML = html || '<p>Conteúdo vazio.</p>';
-        } catch (err) {
-          console.error(err);
-          modalContent.innerHTML = '<p>Ocorreu um erro ao carregar o conteúdo deste artigo.</p>';
-        }
-      }
+  modalTitle.textContent = post.title || '';
+  modalMeta.textContent = formatPostMeta(post);
 
-      // Botão WhatsApp dentro do modal
-      modalWhatsApp.onclick = () => {
-        window.open(waLink('generic'), '_blank');
-      };
+  if (post.cover) {
+    modalCover.style.display = 'block';
+    modalCover.innerHTML = `<img src="${post.cover}">`;
+  } else {
+    modalCover.style.display = 'none';
+  }
 
-      modalBackdrop.classList.add('open');
-      modalBackdrop.setAttribute('aria-hidden', 'false');
-      document.body.style.overflow = 'hidden';
+  modalContent.innerHTML = '<p>Carregando conteúdo...</p>';
+
+  if (!post.file) {
+    modalContent.innerHTML = '<p>Conteúdo não encontrado.</p>';
+  } else {
+    try {
+      const resp = await fetch(post.file, { cache: 'no-store' });
+      const md = await resp.text();
+      modalContent.innerHTML = simpleMarkdownToHtml(md);
+    } catch {
+      modalContent.innerHTML = '<p>Erro ao carregar conteúdo.</p>';
     }
+  }
 
-    function closePostModal() {
-      modalBackdrop.classList.remove('open');
-      modalBackdrop.setAttribute('aria-hidden', 'true');
-      document.body.style.overflow = '';
-    }
+  modalWhatsApp.onclick = () => {
+    window.open(waLink('generic'), '_blank');
+  };
 
-    if (modalClose) {
-      modalClose.addEventListener('click', closePostModal);
-    }
-    if (modalCloseBottom) {
-      modalCloseBottom.addEventListener('click', closePostModal);
-    }
+  modalBackdrop.classList.add('open');
+  modalBackdrop.setAttribute('aria-hidden', 'false');
+  document.body.style.overflow = 'hidden';
+}
 
-    modalBackdrop.addEventListener('click', (e) => {
-      if (e.target === modalBackdrop) {
-        closePostModal();
-      }
-    });
+function closePostModal() {
+  modalBackdrop.classList.remove('open');
+  modalBackdrop.setAttribute('aria-hidden', 'true');
+  document.body.style.overflow = '';
+}
 
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' && modalBackdrop.classList.contains('open')) {
-        closePostModal();
-      }
-    });
+modalClose.addEventListener('click', closePostModal);
+modalCloseBottom.addEventListener('click', closePostModal);
+
+
+/* ==========================================
+   INICIALIZAÇÃO GERAL DA PÁGINA
+   ========================================== */
+document.addEventListener('DOMContentLoaded', () => {
+  loadPosts();
+});
 
     // ==========================
     // INICIALIZAÇÃO
@@ -1107,40 +490,53 @@ if (waFab) {
 
   </script>
 
+
  
+   <!-- Carrega o arquivo com textos e botões -->
+<script src="/js/site-data.js"></script>
 
-  
-<script src="js/config-whatsapp.js"></script>
-  
+
+<!-- ==========================================
+     SCRIPT QUE INJETA TEXTOS DOS BOTÕES DO SITE_DATA
+     ========================================== -->
 <script>
-  document.addEventListener("DOMContentLoaded", () => {
-    // 🔘 Exemplo de uso: botão flutuante
-    const waFab = document.getElementById("waFab");
-    if (waFab) waFab.addEventListener("click", () => openWA());
+document.addEventListener("DOMContentLoaded", () => {
+  // Botão final do artigo
+  const btn = document.getElementById("btnAgendarAtendimento");
+  if (btn && window.SITE_DATA?.buttons?.articleCTA) {
+    btn.textContent = window.SITE_DATA.buttons.articleCTA;
+  }
 
-    // 🔘 Exemplo de botão de contato
-    const btnContact = document.getElementById("btnContact");
-    if (btnContact) btnContact.addEventListener("click", () => openWA());
+  // Botão do modal de WhatsApp
+  const modalWA = document.getElementById("postModalWhatsApp");
+  if (modalWA && window.SITE_DATA?.buttons?.modalCTA) {
+    modalWA.textContent = window.SITE_DATA.buttons.modalCTA;
+  }
 
-    // 🔘 Exemplo no artigo
-    const btnAgendar = document.getElementById("btnAgendarAtendimento");
-    if (btnAgendar) btnAgendar.addEventListener("click", () => openWA());
-  });
+  // Botão inferior "Fechar"
+  const modalCloseBtn = document.getElementById("postModalCloseBottom");
+  if (modalCloseBtn && window.SITE_DATA?.buttons?.closeModal) {
+    modalCloseBtn.textContent = window.SITE_DATA.buttons.closeModal;
+  }
+});
 </script>
 
-<script src="/js/menu.js"></script>
+
+<!-- Scripts complementares -->
+<script src="/js/load-whatsapp.js"></script>
 <script src="/js/config-whatsapp.js"></script>
-<script src="/js/site-data.js"></script>
+<script src="/js/menu.js"></script>
 <script src="/js/footer-inject.js"></script>
 <script src="/js/author-bio.js"></script>
 
 <script>
   document.addEventListener("DOMContentLoaded", carregarMenu);
+  // Faz o menu aparecer automaticamente
 </script>
-  
 
 </body>
 </html>
+
 
 
 
