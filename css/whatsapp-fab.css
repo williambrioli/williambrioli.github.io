@@ -1,54 +1,75 @@
+/* ============================================================
+   CABEÇALHO GERAL: O que este arquivo faz no site
+   ------------------------------------------------------------
+   Este arquivo define o botão flutuante do WhatsApp (FAB):
+   - posição fixa no canto da tela,
+   - aparência do botão (cor, tamanho, sombra),
+   - animação suave que faz ele "flutuar",
+   - rótulo pequeno ao lado do botão.
+   Tudo comentado linha a linha para facilitar futuras alterações.
+   ============================================================ */
+
+
 /* ==========================
-       BOTÃO WHATSAPP FLUTUANTE
-       ========================== */
-    .whatsapp-fab {
-      position: fixed;
-      right: 18px;
-      bottom: 18px;
-      background: #25D366;
-      width: 64px;
-      height: 64px;
-      border-radius: 999px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      box-shadow: 0 8px 24px rgba(46, 125, 126, 0.25);
-      z-index: 2300;
-      cursor: pointer;
-      animation: waFloat 2.5s ease-in-out infinite;
-    }
+   BOTÃO WHATSAPP FLUTUANTE
+   ========================== */
+/* A classe .whatsapp-fab é a bolinha do WhatsApp que fica sobre o site */
+.whatsapp-fab {
+  position: fixed; /* fixa o botão na tela mesmo quando rola a página */
+  right: 18px;     /* distância da borda direita da tela */
+  bottom: 18px;    /* distância da borda inferior da tela */
+  background: #25D366; /* cor de fundo (verde WhatsApp) */
+  width: 64px;     /* largura do botão */
+  height: 64px;    /* altura do botão */
+  border-radius: 999px; /* deixa o botão totalmente redondo (pílula) */
+  display: flex;   /* usa flexbox para centralizar o ícone dentro */
+  align-items: center; /* alinha verticalmente o conteúdo ao centro */
+  justify-content: center; /* alinha horizontalmente o conteúdo ao centro */
+  box-shadow: 0 8px 24px rgba(46, 125, 126, 0.25); /* sombra para dar profundidade */
+  z-index: 2300;   /* garante que o botão fique acima da maioria dos elementos */
+  cursor: pointer; /* mostra a mãozinha quando passa o mouse (clicável) */
+  animation: waFloat 2.5s ease-in-out infinite; /* aplica a animação de flutuar de forma contínua */
+}
 
-    .whatsapp-fab a {
-      width: 100%;
-      height: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #fff;
-    }
+/* O link <a> dentro do botão ocupa todo o espaço e centraliza o ícone/texto */
+.whatsapp-fab a {
+  width: 100%;    /* ocupa toda a largura do botão */
+  height: 100%;   /* ocupa toda a altura do botão */
+  display: flex;  /* usa flexbox para centralizar o conteúdo */
+  align-items: center; /* centraliza verticalmente */
+  justify-content: center; /* centraliza horizontalmente */
+  color: #fff;    /* cor do ícone/texto dentro do botão (branco) */
+}
 
-    .whatsapp-fab:hover {
-      transform: scale(1.08);
-      box-shadow: 0 12px 32px rgba(46, 125, 126, 0.35);
-    }
+/* Efeito quando o mouse passa por cima do botão */
+.whatsapp-fab:hover {
+  transform: scale(1.08); /* aumenta ligeiramente o botão (efeito de destaque) */
+  box-shadow: 0 12px 32px rgba(46, 125, 126, 0.35); /* sombra mais forte ao hover */
+}
 
-    .whatsapp-label {
-      position: fixed;
-      right: 15px;
-      bottom: 5px;
-      background: rgba(255, 255, 255, 1);
-      color: #25D366;
-      padding: 2px 8px;
-      border-radius: 8px;
-      font-size: 10px;
-      font-weight: 600;
-      z-index: 2300;
-      backdrop-filter: blur(4px);
-      animation: waFloat 2.5s ease-in-out infinite;
-    }
+/* Rótulo pequeno que pode ficar próximo ao botão (ex.: "Fale conosco") */
+.whatsapp-label {
+  position: fixed; /* fixa o rótulo na tela */
+  right: 15px;     /* posição da borda direita (próximo ao botão) */
+  bottom: 5px;     /* posição vertical (um pouco acima/embaixo do botão conforme preferir) */
+  background: rgba(255, 255, 255, 1); /* fundo branco do rótulo */
+  color: #25D366;  /* cor do texto igual ao verde do WhatsApp */
+  padding: 2px 8px; /* espaço interno pequeno para o texto */
+  border-radius: 8px; /* cantos arredondados do rótulo */
+  font-size: 10px; /* texto bem pequeno */
+  font-weight: 600; /* texto um pouco mais forte */
+  z-index: 2300;   /* garante que fique acima da maioria dos elementos (mesmo nível do botão) */
+  backdrop-filter: blur(4px); /* efeito de desfoque por trás do rótulo (parece vidro) */
+  animation: waFloat 2.5s ease-in-out infinite; /* aplica a mesma animação de flutuar */
+}
 
-    @keyframes waFloat {
-      0%   { transform: translateY(0); }
-      50%  { transform: translateY(-4px); }
-      100% { transform: translateY(0); }
-    }
+/* ==========================
+   ANIMAÇÃO: FLUTUAR (WA FLOAT)
+   ========================== */
+/* Define os passos da animação chamada waFloat */
+@keyframes waFloat {
+  0%   { transform: translateY(0); }   /* no começo: posição normal */
+  50%  { transform: translateY(-4px); }/* no meio: sobe 4px (efeito de leve levantamento) */
+  100% { transform: translateY(0); }   /* no fim: volta à posição normal */
+}
+
