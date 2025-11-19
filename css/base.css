@@ -1,0 +1,57 @@
+/* ===============================================
+   🎨 BASE GLOBAL DO SITE
+   - Variáveis de cor
+   - Tipografia
+   - Reset inicial
+   - Layout básico
+   =============================================== */
+
+/* 🔧 Variáveis globais do tema */
+:root {
+  --bg: #F3F8F8;           /* cor de fundo geral */
+  --card: #FFFFFF;         /* fundo de cartões */
+  --primary: #2E7D7E;      /* cor principal */
+  --primary-700: #1e5b5c;  /* variação mais escura */
+  --accent: #F3C78A;       /* cor de destaque */
+  --text: #1F2D2D;         /* texto padrão */
+  --muted: #000000;        /* texto suave */
+  --radius: 12px;          /* bordas arredondadas padrão */
+  --max-width: 1500px;     /* largura máxima dos containers */
+}
+
+/* 🔄 Reset: remove inconsistências entre navegadores */
+* {
+  box-sizing: border-box;
+}
+
+/* 📄 Padrões de tipografia e plano de fundo */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, 
+               "Helvetica Neue", Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+/* 🖼 Imagens responsivas */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 8px; /* estilo padrão */
+}
+
+/* 🔗 Links com herança de cor e sem sublinhado */
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* 📦 Container padronizado usado em todo o site */
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;  /* centraliza */
+  padding: 0px 0px;
+}
