@@ -98,41 +98,54 @@
    📱 MENU MOBILE — Drawer estilo “cartão flutuante”
    ========================================================== */
 
+
 @media (max-width: 520px) {
 
-  .top-menu {
-    display: none;
-    position: fixed;
+  /* Mostra hambúrguer */
+  .hamburger {
+    display: block;
+  }
 
-    /* posição SEM cortar */
-    top: 72px;                      /* aparece abaixo do botão hambúrguer */
-    left: 50%;                      /* centraliza */
-    transform: translateX(-50%);    /* evita corte no lado esquerdo */
-    
+  /* MENU FECHADO */
+  .top-menu {
+    display: none;                /* escondido por padrão */
+    position: fixed;
+    top: 72px;                   /* abaixo do hambúrguer */
+    left: 50%;                   /* CENTRALIZA */
+    transform: translateX(-50%); /* evita corte lateral */
+
     width: calc(100% - 24px);
     max-width: 420px;
-    
+
     background: #fff;
     border-radius: 14px;
     padding: 14px;
+
     box-shadow: 0 14px 40px rgba(10,10,10,0.12);
 
     flex-direction: column;
     gap: 10px;
+
     z-index: 2100;
+
+    max-height: calc(100vh - 120px);
+    overflow-y: auto;
   }
 
-  /* Quando aberto */
+  /* MENU ABERTO */
   .top-menu.open {
     display: flex !important;
+    opacity: 1 !important;
+    pointer-events: auto !important;
   }
 
+  /* LINKS */
   .top-menu a {
     display: block;
-    padding: 10px 12px;
+    padding: 12px;
     border-radius: 10px;
-    white-space: nowrap;
     color: #000 !important;
+    white-space: nowrap;
   }
 
   .top-menu a:active {
@@ -140,14 +153,6 @@
     transform: scale(0.97);
   }
 }
-
-  /* Permite rolar caso tenha muitos links */
-  .top-menu {
-    max-height: calc(100vh - 120px);
-    overflow: auto;
-  }
-}
-
 /* ==========================================================
    🧩 AJUSTES FINOS PARA TÍTULOS DENTRO DO FOOTER
    (mantidos aqui porque são dependentes do menu)
