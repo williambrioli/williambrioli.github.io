@@ -150,13 +150,16 @@ document.addEventListener("DOMContentLoaded", () => {
 
       <!-- 🔘 BOTÃO AO FINAL DO ARTIGO -->
       <div class="article-footer">
+      
+        
         <button 
   type="button" 
   class="btn" 
   id="btnAgendarAtendimento"
   onclick="openWA('generic')">
-  Agendar atendimento
 </button>
+     
+      
       </div>
     </article>
   </div>
@@ -208,8 +211,8 @@ document.addEventListener("DOMContentLoaded", () => {
       <div class="modal-cover" id="postModalCover" style="display:none;"></div>
       <section class="modal-content" id="postModalContent"></section>
       <footer class="modal-footer">
-        <button type="button" class="btn" id="postModalWhatsApp">Agendar atendimento</button>
-        <button type="button" class="btn" id="postModalCloseBottom">Fechar</button>
+        <button type="button" class="btn" id="postModalWhatsApp"></button>
+        <button type="button" class="btn" id="postModalCloseBottom"></button>
       </footer>
     </article>
   </div>
@@ -344,7 +347,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const btn = document.createElement('button');
     btn.type = 'button';
     btn.className = 'btn';
-    btn.textContent = 'Ler artigo completo';
+    btn.textContent = window.SITE_DATA.buttons.readMore;
 
     // Evento de clique → abre página HTML
     btn.addEventListener('click', () => {
@@ -508,6 +511,33 @@ if (ARTICLE.showCover && ARTICLE.cover && ARTICLE.cover.trim() !== "") {
 
  </script>
 
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  // Botão final do artigo
+  const btn = document.getElementById("btnAgendarAtendimento");
+  if (btn && window.SITE_DATA?.buttons?.articleCTA) {
+    btn.textContent = window.SITE_DATA.buttons.articleCTA;
+  }
+
+
+  // Botão do modal (WhatsApp)
+  const modalWA = document.getElementById("postModalWhatsApp");
+  if (modalWA && window.SITE_DATA?.buttons?.modalCTA) {
+    modalWA.textContent = window.SITE_DATA.buttons.modalCTA;
+  }
+
+  // Botão inferior "Fechar" do modal
+  const modalCloseBtn = document.getElementById("postModalCloseBottom");
+  if (modalCloseBtn && window.SITE_DATA?.buttons?.closeModal) {
+    modalCloseBtn.textContent = window.SITE_DATA.buttons.closeModal;
+  }
+  
+});
+</script>
+
+  
+  
 
 <script src="/js/load-whatsapp.js"></script>
 <script src="/js/site-data.js"></script>
