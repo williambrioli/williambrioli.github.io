@@ -46,3 +46,14 @@
   font-size: 15px;
   transition: all 0.25s ease;
 }
+
+
+.article-footer .btn:hover {
+  background: var(--primary-700);
+  transform: translateY(-2px);
+}
+
+/* Remove espaço extra quando o artigo não tem imagem */
+.article .article-cover[style*="display: none"] + h1 {
+  margin-top: 0;
+}
