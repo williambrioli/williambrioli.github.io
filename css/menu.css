@@ -1,11 +1,16 @@
 /* ==========================================================
    📌 MENU PRINCIPAL — CABEÇALHO FLUTUANTE (desktop + mobile)
    Arquivo: /css/menu.css
-   Este CSS controla:
-   - menu fixo do topo
-   - aparência dos links
-   - animações de hover
-   - comportamento no mobile com hambúrguer
+   ----------------------------------------------------------
+   Este arquivo controla todo o menu do seu site, tanto no
+   computador quanto no celular. Ele define:
+   - como o menu aparece no topo flutuando,
+   - como os links ficam,
+   - os efeitos quando passa o mouse,
+   - o botão de hambúrguer no celular,
+   - o menu estilo “cartão” que abre no mobile,
+   - e ajustes finos no footer.
+   Tudo aqui deixa o menu bonito, suave e moderno.
    ========================================================== */
 
 
@@ -14,56 +19,57 @@
    🌐 MENU PRINCIPAL — DESKTOP
    ========================================================== */
 
+/* A caixa do menu que fica no topo do site */
 .top-menu {
-  position: fixed;
-  left: 50%;
-  transform: translateX(-50%);
-  width: var(--max-width);
-  max-width: 100%;
-  top: 18px;
+  position: fixed;              /* menu fica grudado na tela mesmo rolando */
+  left: 50%;                    /* coloca o menu no meio da tela */
+  transform: translateX(-50%);  /* ajusta para realmente centralizar */
+  width: var(--max-width);      /* usa largura máxima definida no tema */
+  max-width: 100%;              /* nunca ultrapassa a tela */
+  top: 18px;                    /* distância do topo da tela */
 
-  background: var(--primary);
-  backdrop-filter: blur(6px);
-  border-radius: 0;
+  background: var(--primary);   /* cor do fundo do menu */
+  backdrop-filter: blur(6px);   /* efeito de vidro fosco */
+  border-radius: 0;             /* cantos quadrados */
 
-  padding: 8px 16px;
-  box-shadow: 0 6px 18px rgba(30, 30, 30, 0.08);
+  padding: 8px 16px;            /* espaço interno do menu */
+  box-shadow: 0 6px 18px rgba(30, 30, 30, 0.08); /* sombra suave */
 
-  display: flex;
-  gap: 8px;
-  align-items: center;
-  justify-content: center;
+  display: flex;                /* ativa o layout flex */
+  gap: 8px;                     /* espaço entre os itens */
+  align-items: center;          /* alinha itens verticalmente */
+  justify-content: center;      /* centraliza todos os links */
 
-  z-index: 1200;
+  z-index: 1200;                /* deixa o menu acima de quase tudo */
 
-  opacity: 0;             /* escondido inicialmente */
-  pointer-events: none;
-  transition: all .35s ease;
+  opacity: 0;                   /* começa invisível */
+  pointer-events: none;         /* não pode clicar enquanto invisível */
+  transition: all .35s ease;    /* animação suave ao aparecer */
 }
 
-/* Quando o menu deve aparecer */
+/* Quando o menu deve ficar visível (classe adicionada via JS) */
 .top-menu.visible {
-  opacity: 1;
-  pointer-events: auto;
+  opacity: 1;             /* aparece */
+  pointer-events: auto;   /* pode clicar */
 }
 
-/* Aparência dos links */
+/* Aparência dos links dentro do menu */
 .top-menu a {
-  color: #fff !important;
+  color: #fff !important; /* links brancos */
   transition:
-    background-color 0.25s ease,
-    color 0.25s ease,
-    transform 0.25s ease,
-    box-shadow 0.25s ease;
+    background-color 0.25s ease,  /* mudança suave no fundo */
+    color 0.25s ease,             /* mudança suave na cor */
+    transform 0.25s ease,         /* animação ao subir */
+    box-shadow 0.25s ease;        /* sombra ao passar o mouse */
 }
 
-/* Efeito hover elegante */
+/* Efeito quando passa o mouse no link */
 .top-menu a:hover {
-  background: rgba(46,125,126,0.15);
-  color: var(--primary-700);
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(46,125,126,0.25);
-  border-radius: 999px;
+  background: rgba(46,125,126,0.15); /* fundo levinho */
+  color: var(--primary-700);         /* texto muda pra cor escura */
+  transform: translateY(-2px);       /* o link sobe um pouquinho */
+  box-shadow: 0 4px 12px rgba(46,125,126,0.25); /* sombra mais forte */
+  border-radius: 999px;              /* deixa o link arredondado */
 }
 
 
@@ -72,24 +78,24 @@
    📱 BOTÃO HAMBÚRGUER (apenas mobile)
    ========================================================== */
 
-/* Escondido no desktop */
+/* Por padrão, o hambúrguer NÃO aparece no desktop */
 .hamburger {
-  display: none;
-  position: fixed;
-  top: 14px;
-  left: 14px;
-  z-index: 2200;
+  display: none;                     /* fica escondido */
+  position: fixed;                   /* fica parado no canto da tela */
+  top: 14px;                         /* posição vertical */
+  left: 14px;                        /* posição horizontal */
+  z-index: 2200;                     /* fica acima do menu */
 
-  background: rgba(255,255,255,0.95);
-  border: 0;
-  padding: 8px 10px;
-  border-radius: 10px;
+  background: rgba(255,255,255,0.95); /* fundo branco quase opaco */
+  border: 0;                          /* sem borda */
+  padding: 8px 10px;                  /* espaço interno */
+  border-radius: 10px;                /* cantos arredondados */
 
-  font-size: 22px;
-  line-height: 1;
+  font-size: 22px;                    /* tamanho do ícone (três linhas) */
+  line-height: 1;                     /* altura do texto */
 
-  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
-  cursor: pointer;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08); /* sombra suave */
+  cursor: pointer;                    /* vira mãozinha ao passar o mouse */
 }
 
 
@@ -98,71 +104,74 @@
    📱 MENU MOBILE — Drawer estilo “cartão flutuante”
    ========================================================== */
 
+@media (max-width: 520px) {  /* tudo aqui vale apenas no celular */
 
-@media (max-width: 520px) {
-
-  /* Mostra hambúrguer */
+  /* Mostra o botão hambúrguer no mobile */
   .hamburger {
     display: block;
   }
 
-  /* MENU FECHADO */
+  /* MENU FECHADO (padrão no mobile) */
   .top-menu {
-    display: none;                /* escondido por padrão */
-    position: fixed;
-    top: 72px;                   /* abaixo do hambúrguer */
-    left: 50%;                   /* CENTRALIZA */
-    transform: translateX(-50%); /* evita corte lateral */
+    display: none;                 /* escondido inicialmente */
+    position: fixed;               /* fica travado no topo */
+    top: 72px;                     /* abaixo do hambúrguer */
+    left: 50%;                     /* centralizado horizontalmente */
+    transform: translateX(-50%);   /* evita ficar torto no centro */
 
-    width: calc(100% - 24px);
-    max-width: 420px;
+    width: calc(100% - 24px);      /* largura quase total da tela */
+    max-width: 420px;              /* limite máximo para não ficar gigante */
 
-    background: #fff;
-    border-radius: 14px;
-    padding: 14px;
+    background: #fff;              /* fundo branco */
+    border-radius: 14px;           /* cantos redondos estilo cartão */
+    padding: 14px;                 /* espaço interno */
 
-    box-shadow: 0 14px 40px rgba(10,10,10,0.12);
+    box-shadow: 0 14px 40px rgba(10,10,10,0.12); /* sombra forte */
 
-    flex-direction: column;
-    gap: 10px;
+    flex-direction: column;        /* links ficam um embaixo do outro */
+    gap: 10px;                     /* espaço entre os links */
 
-    z-index: 2100;
+    z-index: 2100;                 /* menu fica acima do conteúdo */
 
-    max-height: calc(100vh - 120px);
-    overflow-y: auto;
+    max-height: calc(100vh - 120px); /* altura máxima */
+    overflow-y: auto;              /* permite rolar se ficar grande */
   }
 
-  /* MENU ABERTO */
+  /* MENU ABERTO (classe adicionada via JS) */
   .top-menu.open {
-    display: flex !important;
-    opacity: 1 !important;
-    pointer-events: auto !important;
+    display: flex !important;        /* força exibir */
+    opacity: 1 !important;           /* força aparecer */
+    pointer-events: auto !important; /* permite clicar */
   }
 
-  /* LINKS */
+  /* Aparência dos links dentro do menu mobile */
   .top-menu a {
-    display: block;
-    padding: 12px;
-    border-radius: 10px;
-    color: #000 !important;
-    white-space: nowrap;
+    display: block;            /* vira um bloco inteiro clicável */
+    padding: 12px;             /* espaço interno grande */
+    border-radius: 10px;       /* cantos arredondados */
+    color: #000 !important;    /* texto preto */
+    white-space: nowrap;       /* impede quebrar texto */
   }
 
+  /* Quando o link é pressionado no mobile */
   .top-menu a:active {
-    background: rgba(46,125,126,0.15);
-    transform: scale(0.97);
+    background: rgba(46,125,126,0.15); /* fundo suave */
+    transform: scale(0.97);            /* diminui um pouquinho */
   }
 }
+
+
+
 /* ==========================================================
    🧩 AJUSTES FINOS PARA TÍTULOS DENTRO DO FOOTER
    (mantidos aqui porque são dependentes do menu)
    ========================================================== */
+
 footer.site-footer .footer-card h2,
 #footerContainer .footer-card h2,
 footer.site-footer h2 {
-  text-align: center !important;
-  margin-left: auto !important;
-  margin-right: auto !important;
-  display: block;
+  text-align: center !important;  /* força título do footer ficar centralizado */
+  margin-left: auto !important;   /* centraliza horizontalmente */
+  margin-right: auto !important;  /* centraliza horizontalmente */
+  display: block;                 /* garante que ocupa toda a linha */
 }
-
