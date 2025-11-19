@@ -311,3 +311,10 @@ footer.site-footer {
 }
 
 
+@media (max-width: 900px) {
+      .blog-hero-wrap {
+        margin-top: 90px;
+      }
+   }
+
+
