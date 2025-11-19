@@ -274,3 +274,40 @@
 .modal-footer .btn {
   margin: 0;
 }
+
+
+
+/* ==========================
+   RODAPÉ / CONTATO (simples)
+   ========================== */
+footer.site-footer {
+  padding: 24px 0 30px;
+  margin-top: 16px;
+}
+
+.footer-card {
+  background: var(--card);
+  border-radius: var(--radius);
+  padding: 20px 18px;
+  box-shadow: 0 6px 18px rgba(30,30,30,0.04);
+}
+
+.footer-card h2 {
+  margin: 0 0 10px;
+  font-size: 22px;
+  color: var(--primary-700);
+  text-align: left;
+}
+
+.contact-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 8px;
+  font-size: 14px;
+}
+
+.contact-list li {
+  margin-bottom: 6px;
+}
+
+
