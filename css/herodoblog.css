@@ -271,11 +271,24 @@
   flex-wrap: wrap;
 }
 
+
 .modal-footer .btn {
   margin: 0;
 }
 
+.modal-footer {
+  display: flex !important;
+  justify-content: flex-start !important;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
 
+.modal-footer button,
+.modal-footer a {
+  z-index: 10;
+  position: relative;
+}
 
 /* ==========================
    RODAPÉ / CONTATO (simples)
