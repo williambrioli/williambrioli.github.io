@@ -1,0 +1,171 @@
+/* ==========================================================
+   📌 MENU PRINCIPAL — CABEÇALHO FLUTUANTE (desktop + mobile)
+   Arquivo: /css/menu.css
+   Este CSS controla:
+   - menu fixo do topo
+   - aparência dos links
+   - animações de hover
+   - comportamento no mobile com hambúrguer
+   ========================================================== */
+
+
+
+/* ==========================================================
+   🌐 MENU PRINCIPAL — DESKTOP
+   ========================================================== */
+
+.top-menu {
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
+  width: var(--max-width);
+  max-width: 100%;
+  top: 18px;
+
+  background: var(--primary);
+  backdrop-filter: blur(6px);
+  border-radius: 0;
+
+  padding: 8px 16px;
+  box-shadow: 0 6px 18px rgba(30, 30, 30, 0.08);
+
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  justify-content: center;
+
+  z-index: 1200;
+
+  opacity: 0;             /* escondido inicialmente */
+  pointer-events: none;
+  transition: all .35s ease;
+}
+
+/* Quando o menu deve aparecer */
+.top-menu.visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Aparência dos links */
+.top-menu a {
+  color: #fff !important;
+  transition:
+    background-color 0.25s ease,
+    color 0.25s ease,
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+/* Efeito hover elegante */
+.top-menu a:hover {
+  background: rgba(46,125,126,0.15);
+  color: var(--primary-700);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(46,125,126,0.25);
+  border-radius: 999px;
+}
+
+
+
+/* ==========================================================
+   📱 BOTÃO HAMBÚRGUER (apenas mobile)
+   ========================================================== */
+
+/* Escondido no desktop */
+.hamburger {
+  display: none;
+  position: fixed;
+  top: 14px;
+  left: 14px;
+  z-index: 2200;
+
+  background: rgba(255,255,255,0.95);
+  border: 0;
+  padding: 8px 10px;
+  border-radius: 10px;
+
+  font-size: 22px;
+  line-height: 1;
+
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+  cursor: pointer;
+}
+
+
+
+/* ==========================================================
+   📱 MENU MOBILE — Drawer estilo “cartão flutuante”
+   ========================================================== */
+@media (max-width: 520px) {
+
+  /* Mostra o hambúrguer */
+  .hamburger {
+    display: block;
+  }
+
+  /* Menu fechado por padrão */
+  .top-menu {
+    display: none;
+    position: fixed;
+
+    top: 64px; /* abaixo do botão */
+    left: 10px;
+    right: 10px;
+    width: auto;
+
+    background: #fff;
+    border-radius: 12px;
+    padding: 12px;
+
+    box-shadow: 0 14px 40px rgba(10,10,10,0.12);
+
+    flex-direction: column;
+    gap: 8px;
+
+    z-index: 2100;
+  }
+
+  /* Quando está aberto (classe adicionada via JS) */
+  .top-menu.open {
+    display: flex !important;
+  }
+
+  /* Estilo dos links no mobile */
+  .top-menu a {
+    display: block;
+    padding: 10px 12px;
+    border-radius: 10px;
+    white-space: nowrap;
+    color: #000 !important; /* texto escuro */
+  }
+
+  /* Efeito ao tocar */
+  .top-menu a:active {
+    background: rgba(46,125,126,0.15);
+    transform: scale(0.97);
+    border-radius: 10px;
+  }
+
+  /* Permite rolar caso tenha muitos links */
+  .top-menu {
+    max-height: calc(100vh - 120px);
+    overflow: auto;
+  }
+}
+
+
+
+/* ==========================================================
+   🧩 AJUSTES FINOS PARA TÍTULOS DENTRO DO FOOTER
+   (mantidos aqui porque são dependentes do menu)
+   ========================================================== */
+footer.site-footer .footer-card h2,
+#footerContainer .footer-card h2,
+footer.site-footer h2 {
+  text-align: center !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  display: block;
+}
+
