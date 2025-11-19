@@ -1,59 +1,107 @@
+/* ============================================================
+   CABEÇALHO GERAL: O que este arquivo faz no site
+   ------------------------------------------------------------
+   Este arquivo contém estilos (visual) para a página de artigo
+   individual. Ele define como o cartão do post, título, meta
+   (data/autor), imagem de capa e o botão ao final do artigo
+   devem aparecer. Os comentários explicam cada linha como se
+   fosse para uma criança entender — não alterei nenhuma regra.
+   ============================================================ */
+
+
 /* ==========================
-   AJUSTE VISUAL DO ARTIGO INDIVIDUAL
+   INÍCIO DO BLOCO: AJUSTE VISUAL DO ARTIGO INDIVIDUAL
    ========================== */
+
+/* seleciona o elemento com classe "post-card" dentro de "article" */
 .article .post-card {
+  /* define a cor de fundo do cartão usando a variável --card */
   background: var(--card);
+  /* arredonda os cantos do cartão usando a variável --radius */
   border-radius: var(--radius);
+  /* cria sombra sob o cartão para parecer elevado (x y blur cor) */
   box-shadow: 0 6px 18px rgba(30, 30, 30, 0.06);
+  /* espaço interno (topo/baixo e esquerda/direita) dentro do cartão */
   padding: 32px 28px;
+  /* distância do topo em relação ao elemento anterior */
   margin-top: 32px;
+  /* altura da linha do texto (espaçamento entre linhas) */
   line-height: 1.7;
 }
 
+/* seleciona o elemento <h1> dentro de .article .post-card (título do artigo) */
 .article .post-card h1 {
+  /* cor do texto do título usando a variável --primary-700 */
   color: var(--primary-700);
+  /* tamanho da fonte do título em pixels */
   font-size: 28px;
+  /* distância abaixo do título para o próximo elemento */
   margin-bottom: 12px;
 }
 
+/* seleciona o elemento com classe "article-meta" dentro do post-card (data/autor) */
 .article .post-card .article-meta {
+  /* define o tamanho da fonte do texto meta (ex.: data, autor) */
   font-size: 14px;
+  /* cor do texto do meta (cinza escuro) */
   color: #555;
+  /* espaço abaixo do bloco meta para o próximo elemento */
   margin-bottom: 20px;
 }
 
+/* seleciona imagens com a classe "article-cover" dentro do post-card */
 .article .post-card img.article-cover {
+  /* arredonda os cantos da imagem usando a mesma variável --radius */
   border-radius: var(--radius);
+  /* espaço abaixo da imagem antes do próximo conteúdo */
   margin-bottom: 24px;
 }
 
 
 /* ==========================
-   BOTÃO AO FINAL DO ARTIGO
+   INÍCIO DO BLOCO: BOTÃO AO FINAL DO ARTIGO
    ========================== */
+
+/* seleciona a área de rodapé do artigo (onde pode ficar um botão) */
 .article-footer {
+  /* distância acima desta área, separando do conteúdo anterior */
   margin-top: 32px;
+  /* alinhamento do texto: à esquerda; comentário diz que pode ser centralizado */
   text-align: left; /* ou center se quiser centralizado */
 }
 
+/* seleciona elementos com classe "btn" dentro de .article-footer (o botão) */
 .article-footer .btn {
+  /* exibe o botão como um bloco inline (comportamento de botão) */
   display: inline-block;
+  /* cor de fundo do botão usando variável --primary */
   background: var(--primary);
+  /* cor do texto dentro do botão (branco) */
   color: #fff;
+  /* espaço interno do botão (topo/baixo, esquerda/direita) */
   padding: 10px 20px;
+  /* deixa o botão com cantos totalmente arredondados (pílula) */
   border-radius: 999px;
+  /* deixa o texto do botão mais forte (negrito suave) */
   font-weight: 600;
+  /* tamanho da fonte do texto do botão */
   font-size: 15px;
+  /* faz transições suaves de todas as propriedades que mudarem (hover) */
   transition: all 0.25s ease;
 }
 
-
+/* estilo aplicado ao botão quando o mouse passa por cima (hover) */
 .article-footer .btn:hover {
+  /* altera a cor de fundo usando a variável --primary-700 */
   background: var(--primary-700);
+  /* levanta ligeiramente o botão para dar efeito de clique/elevação */
   transform: translateY(-2px);
 }
 
+/* comentário explicativo: cobre um caso quando a imagem da capa está escondida */
 /* Remove espaço extra quando o artigo não tem imagem */
+/* seleciona um h1 que vem imediatamente depois de uma .article-cover com style contendo "display: none" */
 .article .article-cover[style*="display: none"] + h1 {
+  /* remove a margem superior do título (já que a imagem sumiu) */
   margin-top: 0;
 }
