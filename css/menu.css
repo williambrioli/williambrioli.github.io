@@ -76,8 +76,8 @@
 .hamburger {
   display: none;
   position: fixed;
-  top: 18px;
-  left: 18px;
+  top: 14px;
+  left: 14px;
   z-index: 2200;
 
   background: rgba(255,255,255,0.95);
