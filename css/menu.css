@@ -105,26 +105,29 @@
   }
 
   /* Menu fechado por padrão */
+
   .top-menu {
-    display: none;
-    position: fixed;
+  display: none;
+  position: fixed;
 
-    top: 40px; /* abaixo do botão */
-    left: 10px;
-    right: 10px;
-    width: auto;
+  top: 64px;            /* agora abre sempre abaixo do botão */
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  width: calc(100% - 24px);   /* garante que nunca vai vazar pra fora */
+  max-width: 420px;           /* limita para ficar bonito */
 
-    background: #fff;
-    border-radius: 12px;
-    padding: 12px;
+  background: #fff;
+  border-radius: 14px;
+  padding: 14px;
 
-    box-shadow: 0 14px 40px rgba(10,10,10,0.12);
+  box-shadow: 0 14px 40px rgba(10,10,10,0.12);
 
-    flex-direction: column;
-    gap: 8px;
+  flex-direction: column;
+  gap: 10px;
 
-    z-index: 2100;
-  }
+  z-index: 2100;
+}
 
   /* Quando está aberto (classe adicionada via JS) */
   .top-menu.open {
