@@ -1,333 +1,399 @@
+/* ============================================================
+   CABEÇALHO GERAL: O que este arquivo faz no site
+   ------------------------------------------------------------
+   Este arquivo controla a aparência da página do blog:
+   - o "hero" (a parte de cima grande com título),
+   - a grade de posts (cards),
+   - o bloco de introdução acima dos cards,
+   - o modal de leitura dos artigos (janela grande sobre o site),
+   - e o rodapé/contato.
+   Cada linha abaixo tem um comentário simples explicando o que faz.
+   ============================================================ */
+
+
 /* ==========================
    HERO DO BLOG
    ========================== */
+
+/* .blog-hero-wrap: envolve a área de topo do blog */
 .blog-hero-wrap {
   margin-top: 0px; /* espaço para o menu flutuante */
 }
 
+/* .blog-hero: a caixa principal do topo do blog (onde fica o título grande) */
 .blog-hero {
-  position: relative;
-  border-radius: 0 !important;
-  overflow:visible !important;
-  padding: 48px 32px;
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
-  color: #fff;
+  position: relative; /* posiciona relativo para permitir elementos internos posicionados */
+  border-radius: 0 !important; /* força cantos quadrados (sobrepõe outros estilos) */
+  overflow:visible !important; /* permite que elementos saiam da caixa (não escondê-los) */
+  padding: 48px 32px; /* espaço interno: 48px em cima/baixo e 32px nas laterais */
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08); /* sombra grande abaixo para destacar */
+  color: #fff; /* cor do texto dentro do hero (branco) */
   /* Remove o background fixo para permitir que o JS funcione */
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+  background-size: cover; /* faz a imagem de fundo cobrir toda a área */
+  background-position: center; /* centraliza a imagem de fundo */
+  background-repeat: no-repeat; /* evita repetição da imagem de fundo */
 }
+
 
 /* ==========================
    GRID DE POSTS
    ========================== */
+
+/* .blog-section: seção que contém os posts */
 .blog-section {
-  margin-top: 24px;
+  margin-top: 24px; /* espaço acima da seção de posts */
 }
 
+/* título da seção de posts (h2) */
 .blog-section h2 {
-  margin: 0 0 16px;
-  font-size: 24px;
-  color: var(--primary-700);
-  text-align:center !important;
+  margin: 0 0 16px; /* sem margem em cima, 16px embaixo */
+  font-size: 24px; /* tamanho da fonte do título da seção */
+  color: var(--primary-700); /* usa cor primária escura definida nas variáveis */
+  text-align:center !important; /* centraliza o texto (força mesmo que outro estilo tente mudar) */
 }
 
+/* .posts-grid: grade que organiza os cards dos posts */
 .posts-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 20px;
+  display: grid; /* usa layout em grade (grid) */
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); /* colunas responsivas: vai criando colunas até o mínimo de 260px */
+  gap: 20px; /* espaço entre os cards */
 }
 
+/* .post-card: cada cartão de post */
 .post-card {
-  background: var(--card);
-  border-radius: var(--radius);
-  box-shadow: 0 6px 18px rgba(30, 30, 30, 0.06);
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  background: var(--card); /* fundo do card usando variável --card */
+  border-radius: var(--radius); /* cantos arredondados usando variável --radius */
+  box-shadow: 0 6px 18px rgba(30, 30, 30, 0.06); /* sombra suave para dar profundidade */
+  overflow: hidden; /* esconde o que ultrapassar a caixa (bordas arredondadas limpam visual) */
+  display: flex; /* usa flexbox para organizar conteúdo */
+  flex-direction: column; /* empilha conteúdo verticalmente (de cima para baixo) */
+  transition: transform 0.2s ease, box-shadow 0.2s ease; /* animação suave quando hover/mudar */
 }
 
+/* efeito quando o mouse passa sobre o card */
 .post-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 10px 24px rgba(30, 30, 30, 0.12);
+  transform: translateY(-4px); /* levanta o card 4px para cima */
+  box-shadow: 0 10px 24px rgba(30, 30, 30, 0.12); /* sombra maior para reforçar o destaque */
 }
 
+/* imagens dentro do card */
 .post-card img {
-  width: 100%;
-  height: 180px;
-  object-fit: cover;
-  border-radius: 0;
-}
-.post-card img {
-  display: none !important;
+  width: 100%; /* imagem ocupa toda a largura do card */
+  height: 180px; /* altura fixa da imagem (corta se necessário) */
+  object-fit: cover; /* corta ou ajusta a imagem para cobrir sem deformar */
+  border-radius: 0; /* sem cantos arredondados na imagem */
 }
 
+/* Segunda regra para imagens dentro do card (sobrepõe exibição) */
+.post-card img {
+  display: none !important; /* esconde imagens do card (forçado) */
+}
+
+/* .post-card (continuação): adiciona espaço interno no topo do card */
 .post-card {
-  padding-top: 20px;
+  padding-top: 20px; /* espaço interno acima do conteúdo do card */
 }
 
 
+/* .post-card-body: corpo do card (onde ficam título, excerpt, etc.) */
 .post-card-body {
-  padding: 14px 16px 16px;
-  display: flex;
-  flex-direction: column;
-  height: 100%;
+  padding: 14px 16px 16px; /* espaço interno: 14px em cima, 16px laterais e embaixo */
+  display: flex; /* usa flexbox para organizar conteúdo */
+  flex-direction: column; /* empilha itens verticalmente */
+  height: 100%; /* faz o corpo ocupar toda a altura disponível do card */
 }
 
+/* .post-tag: etiqueta do post (categoria ou tag pequena) */
 .post-tag {
-  display: inline-block;
-  font-size: 11px;
-  text-transform: uppercase;
-  letter-spacing: .04em;
-  padding: 3px 8px;
-  border-radius: 999px;
-  background: rgba(46, 125, 126, 0.12);
-  color: var(--primary-700);
-  margin-bottom: 8px;
+  display: inline-block; /* permite definir padding e ficar com tamanho do conteúdo */
+  font-size: 11px; /* texto bem pequeno */
+  text-transform: uppercase; /* deixa as letras em maiúsculas */
+  letter-spacing: .04em; /* espaçamento entre letras para ficar mais legível */
+  padding: 3px 8px; /* espaço interno da tag (em cima/baixo e nas laterais) */
+  border-radius: 999px; /* arredonda totalmente, ficando em formato de pílula */
+  background: rgba(46, 125, 126, 0.12); /* fundo levemente colorido transparente */
+  color: var(--primary-700); /* cor do texto usando a variável primária escura */
+  margin-bottom: 8px; /* espaço abaixo da tag */
 }
 
+/* título do post dentro do card (h3) */
 .post-card h3 {
-  margin: 0 0 6px;
-  font-size: 18px;
-  color: var(--primary-700);
+  margin: 0 0 6px; /* sem margem em cima, 6px embaixo */
+  font-size: 18px; /* tamanho da fonte do título do post */
+  color: var(--primary-700); /* cor do título usando a variável primária escura */
 }
 
+/* .post-meta: informações como data/autor */
 .post-meta {
-  font-size: 12px;
-  color: #555;
-  margin-bottom: 10px;
+  font-size: 12px; /* texto pequeno para meta */
+  color: #555; /* cinza escuro para não competir com o título */
+  margin-bottom: 10px; /* espaço abaixo do meta */
 }
 
+/* .post-excerpt: resumo do post */
 .post-excerpt {
-  font-size: 14px;
-  color: var(--muted);
-  line-height: 1.55;
-  margin-bottom: 10px;
-  flex: 1;
+  font-size: 14px; /* tamanho da fonte do resumo */
+  color: var(--muted); /* cor do texto usando variável --muted */
+  line-height: 1.55; /* espaço entre linhas para leitura */
+  margin-bottom: 10px; /* espaço abaixo do resumo */
+  flex: 1; /* faz o excerpt crescer para ocupar o espaço restante dentro do card */
 }
 
+/* .post-card-footer: rodapé do card (botões, links) */
 .post-card-footer {
-  margin-top: 4px;
+  margin-top: 4px; /* pequeno espaço acima do rodapé do card */
 }
 
+/* .btn: estilo geral de botões usados nos cards e no site */
 .btn {
-  display: block;
-  width: max-content;
-  padding: 6px 14px;
-  border-radius: 999px;
-  background: var(--primary);
-  color: #fff;
-  font-weight: 700;
-  margin: 8px 0 0;
-  text-align: center;
-  font-size: 14px;
-  border: none;
-  cursor: pointer;
-  transition: all .25s ease-in-out;
+  display: block; /* botão se comporta como bloco (ocupa só o necessário na largura) */
+  width: max-content; /* largura mínima que comporte o conteúdo */
+  padding: 6px 14px; /* espaço interno do botão */
+  border-radius: 999px; /* deixa o botão em formato pílula */
+  background: var(--primary); /* cor de fundo do botão usando variável --primary */
+  color: #fff; /* texto branco dentro do botão */
+  font-weight: 700; /* texto mais pesado (negrito) */
+  margin: 8px 0 0; /* margem: 8px em cima, 0 nas laterais e embaixo */
+  text-align: center; /* centraliza o texto dentro do botão */
+  font-size: 14px; /* tamanho da fonte do botão */
+  border: none; /* remove borda padrão */
+  cursor: pointer; /* cursor mãozinha quando passar por cima */
+  transition: all .25s ease-in-out; /* transição suave para mudanças visuais */
 }
 
+/* efeito ao passar o mouse no botão */
 .btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.18);
-  background: var(--primary-700);
+  transform: translateY(-2px); /* eleva o botão um pouco */
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.18); /* sombra maior para dar destaque */
+  background: var(--primary-700); /* altera a cor do botão para a variação mais escura */
 }
 
+/* efeito quando o botão é clicado (ativo) */
 .btn:active {
-  transform: scale(0.96);
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+  transform: scale(0.96); /* encolhe ligeiramente para efeito de clique */
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15); /* sombra menor durante o clique */
 }
 
+/* botão especificamente dentro do .post-card */
 .post-card .btn {
-  margin-top: 4px;
+  margin-top: 4px; /* reduz a margem superior para se ajustar ao layout do card */
 }
 
+/* .posts-empty: estado quando não há posts para mostrar */
 .posts-empty {
-  font-size: 14px;
-  color: #555;
-  padding: 16px;
-  background: rgba(255,255,255,0.8);
-  border-radius: var(--radius);
+  font-size: 14px; /* tamanho do texto para mensagem vazia */
+  color: #555; /* cor cinza para o texto */
+  padding: 16px; /* espaço interno */
+  background: rgba(255,255,255,0.8); /* fundo branco semi-transparente */
+  border-radius: var(--radius); /* cantos arredondados usando variável --radius */
 }
 
 
 /* ==========================
    BLOCO DE INTRODUÇÃO (acima dos cards)
    ========================== */
+
+/* .blog-intro-card: caixa de introdução antes dos cards */
 .blog-intro-card {
-  background: var(--card);
-  border-radius: var(--radius);
-  box-shadow: 0 6px 18px rgba(30, 30, 30, 0.06);
-  padding: 24px 28px;
-  line-height: 1.7;
-  font-size: 16px;
-  color: var(--muted);
-  margin-bottom: 28px;
+  background: var(--card); /* fundo do card usando variável --card */
+  border-radius: var(--radius); /* cantos arredondados padrão */
+  box-shadow: 0 6px 18px rgba(30, 30, 30, 0.06); /* sombra suave */
+  padding: 24px 28px; /* espaço interno: 24px em cima/baixo, 28px nas laterais */
+  line-height: 1.7; /* altura de linha para boa leitura */
+  font-size: 16px; /* tamanho da fonte do texto da introdução */
+  color: var(--muted); /* cor do texto usando variável --muted */
+  margin-bottom: 28px; /* espaço abaixo da caixa de introdução */
 }
 
+/* títulos dentro da introdução (h3 e h4) */
 .blog-intro-card h3,
 .blog-intro-card h4 {
-  color: var(--primary-700);
-  margin-top: 0;
+  color: var(--primary-700); /* usa cor primária escura para títulos */
+  margin-top: 0; /* remove margem superior para ficar colado ao topo interno */
 }
 
+/* título grande dentro do hero (h1) */
 .blog-hero h1 {
-  margin: 0 0 8px;
-  font-size: 28px;
+  margin: 0 0 8px; /* sem margem em cima, 8px embaixo */
+  font-size: 28px; /* tamanho grande para o título principal do blog */
 }
 
+/* parágrafos dentro do hero */
 .blog-hero p {
-  margin: 0;
-  max-width: 600px;
-  line-height: 1.6;
-  color: #f0f7f7;
+  margin: 0; /* sem margem padrão */
+  max-width: 600px; /* largura máxima do parágrafo para facilitar leitura */
+  line-height: 1.6; /* espaço entre linhas */
+  color: #f0f7f7; /* cor clarinha para texto sobre o fundo escuro do hero */
 }
 
+/* small dentro do hero (pequena etiqueta) */
 .blog-hero small {
-  display: inline-block;
-  margin-top: 10px;
-  padding: 4px 10px;
-  border-radius: 999px;
-  background: rgba(0,0,0,0.18);
-  font-size: 12px;
+  display: inline-block; /* comporta-se como bloco inline para padding */
+  margin-top: 10px; /* espaço acima da etiqueta */
+  padding: 4px 10px; /* espaço interno da etiqueta */
+  border-radius: 999px; /* deixa a etiqueta em formato pílula */
+  background: rgba(0,0,0,0.18); /* fundo semitransparente escuro */
+  font-size: 12px; /* texto pequeno */
 }
 
 
 /* ==========================
    MODAL DE LEITURA DO ARTIGO
    ========================== */
+
+/* .modal-backdrop: fundo escuro que aparece por trás do modal */
 .modal-backdrop {
-  position: fixed;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.45);
-  display: none;
-  align-items: center;
-  justify-content: center;
-  z-index: 2000;
-  padding: 16px;
+  position: fixed; /* fixa na tela (sempre visível mesmo ao rolar) */
+  inset: 0; /* ocupa toda a tela (topo, direita, baixo, esquerda = 0) */
+  background: rgba(0, 0, 0, 0.45); /* fundo escuro semi-transparente */
+  display: none; /* escondido por padrão */
+  align-items: center; /* centraliza verticalmente o conteúdo flex */
+  justify-content: center; /* centraliza horizontalmente o conteúdo flex */
+  z-index: 2000; /* fica acima da maioria dos elementos */
+  padding: 16px; /* espaço interno ao redor do modal */
 }
 
+/* quando o backdrop tem a classe .open, ele é exibido */
 .modal-backdrop.open {
-  display: flex;
+  display: flex; /* mostra o backdrop e centraliza o modal */
 }
 
+/* .modal: a janela que aparece para leitura do artigo */
 .modal {
-  background: var(--card);
-  max-width: 900px;
-  width: 100%;
-  max-height: 90vh;
-  overflow-y: auto;
-  border-radius: var(--radius);
-  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.35);
-  padding: 24px 22px 20px;
-  position: relative;
+  background: var(--card); /* fundo do modal com a cor de card */
+  max-width: 900px; /* largura máxima do modal */
+  width: 100%; /* ocupa 100% do espaço disponível até o max-width */
+  max-height: 90vh; /* altura máxima: 90% da altura da janela */
+  overflow-y: auto; /* permite rolar verticalmente se o conteúdo for maior */
+  border-radius: var(--radius); /* cantos arredondados */
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.35); /* sombra forte para destacar */
+  padding: 24px 22px 20px; /* espaçamento interno do modal */
+  position: relative; /* posição relativa para posicionar o botão de fechar */
 }
 
+/* .modal-close: botão X para fechar o modal */
 .modal-close {
-  position: absolute;
-  top: 10px;
-  right: 12px;
-  border: none;
-  background: transparent;
-  font-size: 22px;
-  cursor: pointer;
-  color: #666;
+  position: absolute; /* posicionado em relação ao modal */
+  top: 10px; /* 10px do topo do modal */
+  right: 12px; /* 12px da direita do modal */
+  border: none; /* sem borda */
+  background: transparent; /* fundo transparente */
+  font-size: 22px; /* tamanho do X */
+  cursor: pointer; /* cursor em forma de mãozinha */
+  color: #666; /* cor cinza para o X */
 }
 
+/* .modal-header: topo do modal (título e meta) */
 .modal-header {
-  margin-bottom: 8px;
+  margin-bottom: 8px; /* espaço abaixo do cabeçalho do modal */
 }
 
+/* título maior dentro do header do modal */
 .modal-header h2 {
-  margin: 0 0 4px;
-  font-size: 22px;
-  color: var(--primary-700);
+  margin: 0 0 4px; /* sem margem em cima, 4px embaixo */
+  font-size: 22px; /* tamanho do título do modal */
+  color: var(--primary-700); /* cor do título usando variável primária escura */
 }
 
+/* meta dentro do header do modal: usa estilo .post-meta */
 .modal-header .post-meta {
-  margin-bottom: 0;
+  margin-bottom: 0; /* remove margem inferior para ficar ajustado ao header */
 }
 
+/* .modal-cover: espaço para imagem de capa dentro do modal */
 .modal-cover {
-  margin: 12px 0 14px;
+  margin: 12px 0 14px; /* margem: 12px em cima, 14px embaixo */
 }
 
+/* conteúdo do modal (texto do artigo) */
 .modal-content {
-  font-size: 15px;
-  line-height: 1.7;
-  color: var(--muted);
+  font-size: 15px; /* tamanho do texto do artigo */
+  line-height: 1.7; /* altura de linha para fácil leitura */
+  color: var(--muted); /* cor do texto usando variável --muted */
 }
 
+/* títulos dentro do conteúdo do modal (h2, h3, h4) */
 .modal-content h2,
 .modal-content h3,
 .modal-content h4 {
-  margin-top: 18px;
-  margin-bottom: 6px;
-  color: var(--primary-700);
+  margin-top: 18px; /* espaço acima do título */
+  margin-bottom: 6px; /* espaço abaixo do título */
+  color: var(--primary-700); /* cor dos títulos usando variável primária escura */
 }
 
+/* parágrafos dentro do modal */
 .modal-content p {
-  margin: 0 0 10px;
+  margin: 0 0 10px; /* sem margem em cima, 10px embaixo para separar parágrafos */
 }
 
+/* .modal-footer: rodapé do modal (botões de ação) */
 .modal-footer {
-  margin-top: 16px;
-  border-top: 1px solid #eef2f2;
-  padding-top: 10px;
-  display: flex;
-  justify-content: flex-end;
-  gap: 8px;
-  flex-wrap: wrap;
+  margin-top: 16px; /* espaço acima do rodapé */
+  border-top: 1px solid #eef2f2; /* linha fina separando do conteúdo */
+  padding-top: 10px; /* espaço interno acima dos botões */
+  display: flex; /* usa flexbox para organizar os botões */
+  justify-content: flex-end; /* alinha os botões à direita */
+  gap: 8px; /* espaço entre os botões */
+  flex-wrap: wrap; /* permite quebra em várias linhas em telas pequenas */
 }
 
-
+/* botão dentro do modal-footer: remove margem padrão */
 .modal-footer .btn {
-  margin: 0;
+  margin: 0; /* zera margem para alinhamento perfeito */
 }
 
+/* Reforça exibição como flex, mas mudando alinhamentos (pode sobrepor regras anteriores) */
 .modal-footer {
-  display: flex !important;
-  justify-content: flex-start !important;
-  align-items: center;
-  gap: 8px;
-  flex-wrap: wrap;
+  display: flex !important; /* força exibição em flex */
+  justify-content: flex-start !important; /* força alinhamento à esquerda */
+  align-items: center; /* alinha itens verticalmente ao centro */
+  gap: 8px; /* espaço entre itens */
+  flex-wrap: wrap; /* permite quebrar linhas quando necessário */
 }
 
+/* garante que botões e links no footer fiquem acima de outros elementos */
 .modal-footer button,
 .modal-footer a {
-  z-index: 10;
-  position: relative;
+  z-index: 10; /* prioridade de empilhamento */
+  position: relative; /* posição relativa para controles visuais */
 }
+
 
 /* ==========================
    RODAPÉ / CONTATO (simples)
    ========================== */
+
+/* estilo do footer principal do site */
 footer.site-footer {
-  padding: 24px 0 30px;
-  margin-top: 16px;
+  padding: 24px 0 30px; /* espaço interno: 24px em cima, 30px embaixo */
+  margin-top: 16px; /* espaço acima do rodapé */
 }
 
+/* .footer-card: caixa dentro do rodapé para informações de contato */
 .footer-card {
-  background: var(--card);
-  border-radius: var(--radius);
-  padding: 20px 18px;
-  box-shadow: 0 6px 18px rgba(30,30,30,0.04);
+  background: var(--card); /* fundo branco (ou conforme variável) */
+  border-radius: var(--radius); /* cantos arredondados */
+  padding: 20px 18px; /* espaço interno */
+  box-shadow: 0 6px 18px rgba(30,30,30,0.04); /* sombra suave */
 }
 
+/* título dentro do footer-card */
 .footer-card h2 {
-  margin: 0 0 10px;
-  font-size: 22px;
-  color: var(--primary-700);
-  text-align: left;
+  margin: 0 0 10px; /* sem margem em cima, 10px embaixo */
+  font-size: 22px; /* tamanho da fonte do título do footer */
+  color: var(--primary-700); /* cor do título usando variável primária */
+  text-align: left; /* alinhamento do texto à esquerda */
 }
 
+/* lista de contatos: remove marcadores e margens padrões */
 .contact-list {
-  list-style: none;
-  padding: 0;
-  margin: 0 0 8px;
-  font-size: 14px;
+  list-style: none; /* tira os pontos/bolinhas da lista */
+  padding: 0; /* remove padding padrão da lista */
+  margin: 0 0 8px; /* margem inferior de 8px */
+  font-size: 14px; /* tamanho do texto da lista */
 }
 
+/* itens da lista de contato */
 .contact-list li {
-  margin-bottom: 6px;
+  margin-bottom: 6px; /* espaço entre itens da lista */
 }
