@@ -24,7 +24,7 @@ window.SITE_DATA = { // Cria um objeto global chamado SITE_DATA no objeto window
 
   // 🔘 NOVO BLOCO: textos de botões do site
   buttons: { // Inicio do bloco "buttons": guarda todos os textos usados em botões do site, centralizando alterações.
-    articleCTA: "Agendar atendimento",            // botão no final do artigo — CTA (call to action) que convida o leitor a agendar.
+    articleCTA: "Teste de botão site",            // botão no final do artigo — CTA (call to action) que convida o leitor a agendar.
     modalCTA: "Agendar atendimento",              // botão dentro do modal — texto exibido no botão do modal.
     readMore: "Ler artigo completo",              // texto do botão "ler mais" nos cards da home/blog.
     closeModal: "Fechar"                          // texto do botão para fechar modais.
