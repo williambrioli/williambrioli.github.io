@@ -941,6 +941,7 @@ Na abordagem psicanalítica clínica integrativa, o atendimento costuma acontece
      ========================================== -->
 <script>
 document.addEventListener("DOMContentLoaded", () => {
+
   // Botão final do artigo
   const btn = document.getElementById("btnAgendarAtendimento");
   if (btn && window.SITE_DATA?.buttons?.articleCTA) {
@@ -959,15 +960,17 @@ document.addEventListener("DOMContentLoaded", () => {
     modalCloseBtn.textContent = window.SITE_DATA.buttons.closeModal;
   }
 
- // 🔥 NOVO: Preencher **todos** os botões de WhatsApp nos accordions
+  // Preenche todos os botões WhatsApp nos accordions
   const waButtons = document.querySelectorAll(".wa-btn");
   waButtons.forEach(button => {
     if (window.SITE_DATA?.buttons?.whatsappGeneric) {
       button.textContent = window.SITE_DATA.buttons.whatsappGeneric;
     }
-  
-});
+  });
+
+}); // ← ESTA CHAVE ESTAVA FALTANDO
 </script>
+
 
   
 
