@@ -21,7 +21,7 @@
   background-size: cover; /* faz a imagem de fundo cobrir toda a área */
   background-position: center; /* centraliza a imagem de fundo */
   background-repeat: no-repeat; /* evita repetição da imagem de fundo */
-  display: flex;
+  
   align-items: flex-end;   /* desce o texto para o rodapé */
   justify-content: flex-start; /* deixa o texto na esquerda */
 
@@ -38,7 +38,8 @@
 .hero__overlay {
   position: relative;
   z-index: 5;
-  width: 100%; padding: 24px 24px 32px 24px; /* deixa mais espaço só embaixo */
+  width: 100%; 
+  padding: 24px 24px 32px 24px; /* deixa mais espaço só embaixo */
 
 }
 
