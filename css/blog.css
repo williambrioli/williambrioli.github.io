@@ -398,21 +398,22 @@ footer.site-footer {
   margin-bottom: 6px; /* espaço entre itens da lista */
 }
 
-
-/* ============================
-   AJUSTE DO HERO NO MOBILE
-   ============================ */
+/* === HERO — Ajuste Mobile: liberar posição + descer texto === */
 @media (max-width: 899px) {
 
-  /* Desce o texto sem mexer na imagem */
-  .hero__overlay {
-    padding-top: 120px !important; /* ajuste como quiser: 60px, 80px, 120px */
+  /* Libera o flex que estava colando no rodapé */
+  .hero {
+    align-items: flex-start !important;
   }
 
-  /* garante alinhamento à esquerda */
-  .hero {
-    align-items: flex-end !important;
-    justify-content: flex-start !important;
+  /* Agora podemos descer o bloco do texto */
+  .hero__overlay {
+    margin-top: 240px !important; /* ajuste como quiser */
+  }
+
+  /* Alinhamento à esquerda garantido */
+  .hero__text {
+    text-align: left !important;
   }
 }
 
