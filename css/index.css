@@ -12,8 +12,22 @@
   .hero__overlay {
     padding: 0 0 28px 0 !important;
   }
-
 }
+
+/* ============================================================
+   CORREÇÃO — EMPURRAR O HERO PARA BAIXO NO MOBILE
+   (resolve o texto colando no topo e o menu cobrindo a imagem)
+   ============================================================ */
+
+@media (max-width: 899px) {
+  .hero,
+  .hero-wrap {
+    margin-top: 80px !important; /* ajuste se sua barra for maior/menor */
+  }
+}
+
+
+
 
 /* ============================================================
    HERO PRINCIPAL
