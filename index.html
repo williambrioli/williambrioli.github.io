@@ -1,8 +1,50 @@
 <!doctype html>
+<!-- 
+  Esta linha diz para o navegador: 
+  "Oi, eu sou um documento HTML moderno!"
+-->
 <html lang="pt-BR">
+<!-- 
+  Aqui começa o documento HTML.
+  O atributo lang="pt-BR" fala que o site está em português do Brasil.
+-->
 <head>
+  <!-- 
+    Dentro do <head> ficam coisas IMPORTANTES:
+    - configurações
+    - dados invisíveis para o usuário
+    - links para arquivos CSS
+    - meta informações
+  -->
+
   <meta charset="utf-8" />
+  <!-- 
+    Diz que o texto usa caracteres modernos (acento, ç, etc.)
+    Sem isso, tudo pode ficar estranho.
+  -->
+
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <!-- 
+    Diz para o navegador no celular:
+    "Mostre o site do tamanho certinho da tela!"
+    Isso deixa o site responsivo.
+  -->
+
+
+  <!-- 
+    Os links abaixo carregam arquivos CSS (estilos).
+    Eles deixam o site bonito, colorido, organizado, com fonte certa.
+  -->
+
+  <link rel="stylesheet" href="/css/menu.css">
+  <!-- Arquivo que estiliza o menu do site -->
+
+  <link rel="stylesheet" href="/css/whatsapp-fab.css">
+  <!-- Arquivo que estiliza o botão flutuante do WhatsApp -->
+
+  <link rel="stylesheet" href="/css/search-bar.css">
+  <!-- Arquivo que estiliza a barra de pesquisa -->
+  
 
   <!-- ===================
        SEO – OTIMIZADO (2025)
@@ -1395,17 +1437,7 @@ Na abordagem psicanalítica clínica integrativa, o atendimento costuma acontece
 
   </main>
 
-  <!-- WhatsApp floating button -->
-  <div class="whatsapp-label">Fale comigo</div>
-  <div class="whatsapp-fab" role="link" aria-label="Conversar pelo WhatsApp">
-    <a id="waFab" href="#" aria-label="WhatsApp">
-  <svg width="50" height="50" viewBox="0 0 32 32" fill="white" xmlns="http://www.w3.org/2000/svg">
-    <path d="M16.006 3C9.373 3 4 8.373 4 15.006c0 2.647.873 5.098 2.348 7.083L4 29l7.127-2.298A12.943 12.943 0 0016.006 27c6.632 0 12.006-5.373 12.006-11.994C28.012 8.373 22.638 3 16.006 3zm6.725 16.994c-.28.782-1.634 1.517-2.262 1.547-.58.03-1.31.042-2.113-.133-.488-.112-1.114-.362-1.93-.708-3.386-1.467-5.592-4.876-5.756-5.107-.165-.23-1.37-1.82-1.37-3.47 0-1.65.865-2.463 1.173-2.8.308-.338.675-.423.9-.423.226 0 .451.002.648.012.21.01.49-.08.768.588.28.668.953 2.305 1.036 2.472.082.166.137.362.026.592-.11.23-.165.362-.322.56-.165.197-.347.44-.495.59-.165.165-.337.345-.145.677.197.338.877 1.446 1.886 2.34 1.297 1.153 2.392 1.51 2.73 1.677.338.165.533.142.73-.085.197-.226.843-.983 1.067-1.32.226-.338.451-.28.768-.165.317.112 2.007.947 2.352 1.118.346.173.575.258.66.402.082.14.082.783-.197 1.565z"/>
-  </svg>
-</a>
-
-  </div>
-
+  
 
   <!-- ===================
        SCRIPTS - behavior & injection
@@ -1813,41 +1845,43 @@ Na abordagem psicanalítica clínica integrativa, o atendimento costuma acontece
 </script>
 
 
-  
+<!-- Carrega o arquivo com textos e botões -->
+<script src="/js/site-data.js"></script>
 
 
-<script src="js/config-whatsapp.js"></script>
+<!-- ==========================================
+     SCRIPT QUE INJETA TEXTOS DOS BOTÕES DO SITE_DATA
+     ========================================== -->
 <script>
-  document.addEventListener("DOMContentLoaded", () => {
-    // 🔘 Exemplo de uso: botão flutuante
-    const waFab = document.getElementById("waFab");
-    if (waFab) waFab.addEventListener("click", () => openWA());
-
-    // 🔘 Exemplo de botão de contato
-    const btnContact = document.getElementById("btnContact");
-    if (btnContact) btnContact.addEventListener("click", () => openWA());
-
-    // 🔘 Exemplo no artigo
-    const btnAgendar = document.getElementById("btnAgendarAtendimento");
-    if (btnAgendar) btnAgendar.addEventListener("click", () => openWA());
-  });
-</script>  
-
-  <script>
 document.addEventListener("DOMContentLoaded", () => {
-  document.querySelectorAll("[data-wa-msg]").forEach(btn => {
-    btn.addEventListener("click", e => {
-      e.preventDefault();
-      const key = btn.getAttribute("data-wa-msg") || "generic";
-      openWA(key);
-    });
-  });
+  // Botão final do artigo
+  const btn = document.getElementById("btnAgendarAtendimento");
+  if (btn && window.SITE_DATA?.buttons?.articleCTA) {
+    btn.textContent = window.SITE_DATA.buttons.articleCTA;
+  }
+
+  // Botão do modal de WhatsApp
+  const modalWA = document.getElementById("postModalWhatsApp");
+  if (modalWA && window.SITE_DATA?.buttons?.modalCTA) {
+    modalWA.textContent = window.SITE_DATA.buttons.modalCTA;
+  }
+
+  // Botão inferior "Fechar"
+  const modalCloseBtn = document.getElementById("postModalCloseBottom");
+  if (modalCloseBtn && window.SITE_DATA?.buttons?.closeModal) {
+    modalCloseBtn.textContent = window.SITE_DATA.buttons.closeModal;
+  }
 });
 </script>
 
-<script src="/js/site-data.js"></script>
-<script src="/js/footer-inject.js"></script>
+
+<!-- Scripts complementares -->
+<script src="/js/load-whatsapp.js"></script>
+<script src="/js/config-whatsapp.js"></script>
 <script src="/js/menu.js"></script>
+<script src="/js/footer-inject.js"></script>
+<script src="/js/author-bio.js"></script>
+
 
 <script>
   document.addEventListener("DOMContentLoaded", carregarMenu);
