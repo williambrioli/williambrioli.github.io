@@ -684,11 +684,22 @@ footer.site-footer {
   .hero {
     align-items: flex-end !important;
     justify-content: flex-start !important;
-  }
+    
+ }
 
   /* Desce o texto um pouco sem alterar o tamanho do hero */
   .hero__overlay {
     transform: translateY(80px); /* ajuste fino */
+    padding-left: 0 !important; 
   }
 
+.hero__text {
+    margin-left: 0 !important;
+    padding-left: 16px !important;
+    text-align: left !important;
+   
 }
+
+}
+
+
