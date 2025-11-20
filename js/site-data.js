@@ -28,6 +28,19 @@ window.SITE_DATA = { // Cria um objeto global chamado SITE_DATA no objeto window
     modalCTA: "Agendar atendimento",              // botão dentro do modal — texto exibido no botão do modal.
     readMore: "Ler artigo completo",              // texto do botão "ler mais" nos cards da home/blog.
     closeModal: "Fechar",                          // texto do botão para fechar modais.
-    whatsappGeneric: "Agendar Atendimento"        // 🔥 novos botões globais que alterar os boões dos ACOORDIONS Como te ajudo e Dúvidas.
+    psicoterapiaindividual: "Agendar Atendimento",        // 🔥 novos botões globais que alterar os boões dos ACOORDIONS Como te ajudo.
+    psicoterapiabreve: "Agendar Atendimento",       // 🔥 novos botões globais que alterar os boões dos ACOORDIONS Como te ajudo.
+    sessaounica: "Agendar Atendimento",        // 🔥 novos botões globais que alterar os boões dos ACOORDIONS Como te ajudo.
+    terapiadecasal: "Agendar Atendimento",        // 🔥 novos botões globais que alterar os boões dos ACOORDIONS Como te ajudo.
+    terapiaparaempreendedores: "Agendar Atendimento",        // 🔥 novos botões globais que alterar os boões dos ACOORDIONS Como te ajudo.
+    orientacaoetransicaodecarreira: "Agendar Atendimento",        // 🔥 novos botões globais que alterar os boões dos ACOORDIONS Como te ajudo.
+    orientacaofinanceira: "Agendar Atendimento",        // 🔥 novos botões globais que alterar os boões dos ACOORDIONS Como te ajudo.
+    nr1: "Quero saber mais",        // 🔥 novos botões globais que alterar os boões dos ACOORDIONS Como te ajudo.
+    planosaude: "Quero saber mais",        // 🔥 novos botões globais que alterar os boões dos ACOORDIONS Dúvidas.
+    horariofuncionamento: "Quero saber mais",        // 🔥 novos botões globais que alterar os boões dos ACOORDIONS Dúvidas.
+    precisoterapia: "Quero saber mais",        // 🔥 novos botões globais que alterar os boões dos ACOORDIONS Dúvidas.
+    comofuncionaterapia: "Quero saber mais",        // 🔥 novos botões globais que alterar os boões dos ACOORDIONS Dúvidas.
+    palestras: "Quero saber mais"        // 🔥 novos botões globais que alterar os boões Palestras.
+    
   } // Fim do bloco "buttons"
 }; // Fecha o objeto window.SITE_DATA
