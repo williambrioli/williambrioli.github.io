@@ -11,7 +11,7 @@
 // A seguir criamos uma variável que contém o texto HTML do "Sobre o Autor".
 // Tudo entre as crases (`) é texto bruto com marcações HTML.
 const authorBioHTML = `
-<p><br><h2>Sobre o autor</h2><br>
+<p><h2>Sobre o autor</h2><br>
 <strong>William Brioli</strong> é <strong>Psicanalista Clínico Integrativo</strong>, 
 pós-graduado em <strong>Neurociência, Comunicação e Desenvolvimento Humano</strong>.
 Atende presencialmente em <strong>Ilha Solteira (SP)</strong> e 
