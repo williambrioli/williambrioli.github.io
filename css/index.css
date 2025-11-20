@@ -5,12 +5,12 @@
 
   /* Remove padding vertical do bloco inteiro */
   .hero {
-    padding: 0 24px; 
+    padding: 0 24px !important; 
   }
 
   /* Mantém o espaço de respiro SOMENTE embaixo do texto */
   .hero__overlay {
-    padding: 0 0 28px 0;
+    padding: 0 0 28px 0 !important;
   }
 
 }
