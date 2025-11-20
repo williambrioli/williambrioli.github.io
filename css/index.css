@@ -52,6 +52,14 @@
   margin-top: 8px;
 }
 
+/* Hero responsivo para mobile */
+@media (max-width: 580px) {
+  .hero {
+    height: 420px; /* valor ideal para mobile */
+    min-height: 420px;
+  }
+
+
 /* --- HERO Desktop: alinhamento com largura do site --- */
 @media (min-width: 900px) {
   .hero {
