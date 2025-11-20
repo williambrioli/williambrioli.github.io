@@ -2,14 +2,25 @@
    HERO PRINCIPAL
    ============================================================ */
 
+
+
+/* .blog-hero-wrap: envolve a área de topo do blog */
+.hero-wrap {
+  margin-top: 0px; /* espaço para o menu flutuante */
+}
+
+/* hero: a caixa principal do topo do index (onde fica o título grande) */
 .hero {
-  position: relative;
-  height: 900px;
-  min-height: 420px;
-  display: flex;
-  align-items: flex-end;
-  border-radius: 0 0 20px 20px;
-  overflow: hidden;
+  position: relative; /* posiciona relativo para permitir elementos internos posicionados */
+  border-radius: 0 !important; /* força cantos quadrados (sobrepõe outros estilos) */
+  overflow:visible !important; /* permite que elementos saiam da caixa (não escondê-los) */
+  padding: 48px 32px; /* espaço interno: 48px em cima/baixo e 32px nas laterais */
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08); /* sombra grande abaixo para destacar */
+  color: #fff; /* cor do texto dentro do hero (branco) */
+  /* Remove o background fixo para permitir que o JS funcione */
+  background-size: cover; /* faz a imagem de fundo cobrir toda a área */
+  background-position: center; /* centraliza a imagem de fundo */
+  background-repeat: no-repeat; /* evita repetição da imagem de fundo */
 }
 
 .hero__img {
@@ -51,14 +62,6 @@
   color: rgba(255,255,255,0.9);
   margin-top: 8px;
 }
-
-/* Hero responsivo para mobile */
-@media (max-width: 580px) {
-  .hero {
-    height: 420px; /* valor ideal para mobile */
-    min-height: 420px;
-  }
-
 
 /* --- HERO Desktop: alinhamento com largura do site --- */
 @media (min-width: 900px) {
