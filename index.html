@@ -734,6 +734,15 @@ Na abordagem psicanalítica clínica integrativa, o atendimento costuma acontece
   btn.addEventListener('click', () => {
       if (!expanded) {
           resumo.innerHTML = textoCompleto;
+
+// Depois que o botão nasceu, damos o texto para ele
+document.querySelectorAll("[data-btn]").forEach(button => {
+  const key = button.getAttribute("data-btn");
+  if (window.SITE_DATA?.buttons?.[key]) {
+    button.textContent = window.SITE_DATA.buttons[key];
+  }
+});
+        
           btn.textContent = "Mostrar menos";
           expanded = true;
       } 
