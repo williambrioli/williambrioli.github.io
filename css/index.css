@@ -1,7 +1,22 @@
+
+/* ============================================================
+   HERO — CORREÇÃO DE ALINHAMENTO NO MOBILE
+   ============================================================ */
+@media (max-width: 899px) {
+  .hero {
+    display: flex;
+    align-items: flex-end;   /* texto no rodapé */
+    justify-content: flex-start; /* alinhado à esquerda */
+  }
+
+  .hero__overlay {
+    padding: 24px 24px 32px 24px; /* espaço controlado embaixo */
+  }
+}
+
 /* ============================================================
    HERO PRINCIPAL
    ============================================================ */
-
 
 
 /* .blog-hero-wrap: envolve a área de topo do blog */
