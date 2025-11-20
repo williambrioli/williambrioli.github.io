@@ -398,4 +398,21 @@ footer.site-footer {
   margin-bottom: 6px; /* espaço entre itens da lista */
 }
 
+
+/* ============================
+   AJUSTE DO HERO NO MOBILE
+   ============================ */
+@media (max-width: 899px) {
+
+  /* Desce o texto sem mexer na imagem */
+  .hero__overlay {
+    padding-top: 120px !important; /* ajuste como quiser: 60px, 80px, 120px */
+  }
+
+  /* garante alinhamento à esquerda */
+  .hero {
+    align-items: flex-end !important;
+    justify-content: flex-start !important;
+  }
 }
+
