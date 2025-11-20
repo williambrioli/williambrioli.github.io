@@ -688,7 +688,7 @@ footer.site-footer {
 
   /* Desce o texto um pouco sem alterar o tamanho do hero */
   .hero__overlay {
-    transform: translateY(50px); /* ajuste fino */
+    transform: translateY(70px); /* ajuste fino */
   }
 
 }
