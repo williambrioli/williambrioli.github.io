@@ -1,17 +1,18 @@
-
 /* ============================================================
-   HERO — CORREÇÃO DE ALINHAMENTO NO MOBILE
+   HERO — CORREÇÃO DEFINITIVA NO MOBILE
    ============================================================ */
 @media (max-width: 899px) {
+
+  /* Remove padding vertical do bloco inteiro */
   .hero {
-    display: flex;
-    align-items: flex-end;   /* texto no rodapé */
-    justify-content: flex-start; /* alinhado à esquerda */
+    padding: 0 24px; 
   }
 
+  /* Mantém o espaço de respiro SOMENTE embaixo do texto */
   .hero__overlay {
-    padding: 24px 24px 32px 24px; /* espaço controlado embaixo */
+    padding: 0 0 28px 0;
   }
+
 }
 
 /* ============================================================
