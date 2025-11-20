@@ -397,23 +397,5 @@ footer.site-footer {
 .contact-list li {
   margin-bottom: 6px; /* espaço entre itens da lista */
 }
-
-/* === HERO — Ajuste Mobile: liberar posição + descer texto === */
-@media (max-width: 899px) {
-
-  /* Libera o flex que estava colando no rodapé */
-  .hero {
-    align-items: flex-start !important;
-  }
-
-  /* Agora podemos descer o bloco do texto */
-  .hero__overlay {
-    margin-top: 240px !important; /* ajuste como quiser */
-  }
-
-  /* Alinhamento à esquerda garantido */
-  .hero__text {
-    text-align: left !important;
-  }
 }
 
