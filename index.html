@@ -444,7 +444,17 @@ Na abordagem psicanalítica clínica integrativa, o atendimento costuma acontece
 <p>Esses recursos não substituem o processo terapêutico, mas o enriquecem, sempre de acordo com o que faz sentido para cada caso.</p>
 <p>Cada paciente é acompanhado de forma individualizada, respeitando seu tempo, sua história e suas possibilidades. A terapia é um espaço seguro para olhar para dentro, elaborar o que dói e construir caminhos mais conscientes para a sua vida.</p>
 
-            <p><a class="btn" href="#" data-wa-msg="generic">Agendar Consulta</a></p></div>
+          
+
+<button 
+          type="button" 
+          class="btn" 
+          id="btnAgendarAtendimento"
+          onclick="openWA('generic')">
+        </button>
+            </div>
+        
+            
           </div>
 
         </div>
@@ -515,7 +525,6 @@ Na abordagem psicanalítica clínica integrativa, o atendimento costuma acontece
 
 
 
-
     <!-- CONTATO / RODAPÉ -->
     <footer id="contato" class="site-footer">
   <div class="container section-card" id="footerContainer">
@@ -525,23 +534,9 @@ Na abordagem psicanalítica clínica integrativa, o atendimento costuma acontece
 
   </main>
 
-  <!-- WhatsApp floating button -->
-  <div class="whatsapp-label">Fale comigo</div>
-  <div class="whatsapp-fab" role="link" aria-label="Conversar pelo WhatsApp">
-    <a id="waFab" href="#" aria-label="WhatsApp">
-  <svg width="50" height="50" viewBox="0 0 32 32" fill="white" xmlns="http://www.w3.org/2000/svg">
-    <path d="M16.006 3C9.373 3 4 8.373 4 15.006c0 2.647.873 5.098 2.348 7.083L4 29l7.127-2.298A12.943 12.943 0 0016.006 27c6.632 0 12.006-5.373 12.006-11.994C28.012 8.373 22.638 3 16.006 3zm6.725 16.994c-.28.782-1.634 1.517-2.262 1.547-.58.03-1.31.042-2.113-.133-.488-.112-1.114-.362-1.93-.708-3.386-1.467-5.592-4.876-5.756-5.107-.165-.23-1.37-1.82-1.37-3.47 0-1.65.865-2.463 1.173-2.8.308-.338.675-.423.9-.423.226 0 .451.002.648.012.21.01.49-.08.768.588.28.668.953 2.305 1.036 2.472.082.166.137.362.026.592-.11.23-.165.362-.322.56-.165.197-.347.44-.495.59-.165.165-.337.345-.145.677.197.338.877 1.446 1.886 2.34 1.297 1.153 2.392 1.51 2.73 1.677.338.165.533.142.73-.085.197-.226.843-.983 1.067-1.32.226-.338.451-.28.768-.165.317.112 2.007.947 2.352 1.118.346.173.575.258.66.402.082.14.082.783-.197 1.565z"/>
-  </svg>
-</a>
-
-  </div>
-
-
-  <!-- ===================
-       SCRIPTS - behavior & injection
-       =================== -->
+  
+ 
   <script>
-    
 
 /* ======= HERO IMAGE LOADER (FUNCIONA) ======= */
 (function(){
@@ -943,44 +938,59 @@ Na abordagem psicanalítica clínica integrativa, o atendimento costuma acontece
 </script>
 
 
-  
+<!-- Carrega o arquivo com textos e botões -->
+<script src="/js/site-data.js"></script>
 
 
-<script src="js/config-whatsapp.js"></script>
+<!-- ==========================================
+     SCRIPT QUE INJETA TEXTOS DOS BOTÕES DO SITE_DATA
+     ========================================== -->
 <script>
-  document.addEventListener("DOMContentLoaded", () => {
-    // 🔘 Exemplo de uso: botão flutuante
-    const waFab = document.getElementById("waFab");
-    if (waFab) waFab.addEventListener("click", () => openWA());
+document.addEventListener("DOMContentLoaded", () => {
+  // Botão final do artigo
+  const btn = document.getElementById("btnAgendarAtendimento");
+  if (btn && window.SITE_DATA?.buttons?.articleCTA) {
+    btn.textContent = window.SITE_DATA.buttons.articleCTA;
+  }
 
-    // 🔘 Exemplo de botão de contato
-    const btnContact = document.getElementById("btnContact");
-    if (btnContact) btnContact.addEventListener("click", () => openWA());
+  // Botão do modal de WhatsApp
+  const modalWA = document.getElementById("postModalWhatsApp");
+  if (modalWA && window.SITE_DATA?.buttons?.modalCTA) {
+    modalWA.textContent = window.SITE_DATA.buttons.modalCTA;
+  }
 
-    // 🔘 Exemplo no artigo
-    const btnAgendar = document.getElementById("btnAgendarAtendimento");
-    if (btnAgendar) btnAgendar.addEventListener("click", () => openWA());
-  });
+  // Botão inferior "Fechar"
+  const modalCloseBtn = document.getElementById("postModalCloseBottom");
+  if (modalCloseBtn && window.SITE_DATA?.buttons?.closeModal) {
+    modalCloseBtn.textContent = window.SITE_DATA.buttons.closeModal;
+  }
+});
 </script>  
 
-  <script>
-document.addEventListener("DOMContentLoaded", () => {
-  document.querySelectorAll("[data-wa-msg]").forEach(btn => {
-    btn.addEventListener("click", e => {
-      e.preventDefault();
-      const key = btn.getAttribute("data-wa-msg") || "generic";
-      openWA(key);
-    });
-  });
-});
-</script>
 
-<script src="/js/site-data.js"></script>
-<script src="/js/footer-inject.js"></script>
+
+
+  
+
+<!-- Scripts complementares -->
+<script src="/js/load-whatsapp.js"></script>
+<!-- Script para carregar integração/funcionalidade do WhatsApp -->
+
+<script src="/js/config-whatsapp.js"></script>
+<!-- Script com configuração do WhatsApp (número, mensagens, etc.) -->
+
 <script src="/js/menu.js"></script>
+<!-- Script que injeta e controla o menu do site -->
+
+<script src="/js/footer-inject.js"></script>
+<!-- Script que injeta o conteúdo do rodapé (footer) -->
+
+<script src="/js/author-bio.js"></script>
+<!-- Script que injeta a bio do autor, se houver -->
 
 <script>
   document.addEventListener("DOMContentLoaded", carregarMenu);
+  // Faz o menu aparecer automaticamente chamando a função carregarMenu definida em menu.js
 </script>
   
 </body>
