@@ -682,7 +682,7 @@ footer.site-footer {
 
   /* Desce SOMENTE o bloco de texto */
   .hero__text {
-    margin-bottom: 32px !important; /* ajuste fino — pode aumentar para 40, 50, 60 */
+    margin-bottom: 80px !important; /* ajuste fino — pode aumentar para 40, 50, 60 */
   }
 
 }
