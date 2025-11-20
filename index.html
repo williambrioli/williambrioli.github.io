@@ -4,6 +4,13 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
+
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/menu.css">
+<link rel="stylesheet" href="css/index.css">
+<link rel="stylesheet" href="css/search-bar.css">
+<link rel="stylesheet" href="css/whatsapp-fab.css">
+
   <!-- ===================
        SEO – OTIMIZADO (2025)
        =================== -->
@@ -124,61 +131,8 @@ terapia emocional online, terapia para ansiedade, terapia para depressão, autoe
        STYLES - edit colors easily in :root below
        =================== -->
   <style>
-    :root{
-      --bg: #F3F8F8;                     /* page background */
-      --card: #FFFFFF;                   /* cards and sections */
-      --primary: #2E7D7E;                /* clinical teal */
-      --primary-700: #1e5b5c;
-      --accent: #F3C78A;                 /* soft warm accent */
-      --text: #1F2D2D;
-      --muted: #000000;
-      --radius: 12px;
-      --max-width: 1500px;
-    }
-
-    /* Reset & base */
-    *{box-sizing:border-box}
-    html,body{height:100%;margin:0;padding:0;font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; background:var(--bg); color:var(--text);}
-    img{max-width:100%;height:auto;display:block;border-radius:8px}
-    a{color:inherit;text-decoration:none}
-
-    /* Layout wrapper */
-    .container{max-width:var(--max-width);margin:0 auto;padding:24px}
-
-    /* Floating top menu - hidden initially, appears on scroll */
-
-.top-menu {
-  position:fixed;
-  left:50%;
-  transform:translateX(-50%);
-  width: var(--max-width);     /* NOVO */
-  max-width: 100%;             /* NOVO */
-  top:18px;
-  background: var(--primary);
-  backdrop-filter: blur(6px);
-  border-radius:0px;
-  padding:8px 16px;
-  box-shadow:0 6px 18px rgba(30,30,30,0.08);
-  display:flex;
-  gap:8px;
-  align-items:center;
-  justify-content:center;   /* ← CENTRALIZA */
-  z-index:1200;
-  opacity:0;
-  pointer-events:none;
-  transition:all .35s ease;
-}
-
-.top-menu a {
-  color: #fff !important;
-}
-
-.top-menu.visible{
-  opacity: 1;
-  pointer-events: auto;
-}
-
-
+    
+   
     /* Hero */
     .hero{position:relative;height:900px;min-height:420px;display:flex;align-items:flex-end;border-radius:0 0 20px 20px;overflow:hidden}
     .hero__img{position:absolute;inset:0;background-size:cover;background-position:center center;filter:none}
@@ -316,24 +270,8 @@ terapia emocional online, terapia para ansiedade, terapia para depressão, autoe
     .contact-list{list-style:none;padding:0;margin:0}
     .contact-list li{margin-bottom:6px}
 
-    /* WhatsApp floating button */
-    .whatsapp-fab{position:fixed;right:18px;bottom:18px;background: #25D366; width:64px;height:64px;border-radius:999px;display:flex;align-items:center;justify-content:center;box-shadow:0 8px 24px rgba(46,125,126,0.25);z-index:1300; animation: waFloat 2.5s ease-in-out infinite;}
-
-/* Hover (desktop) */
-.whatsapp-fab:hover {
-  transform: scale(1.08);
-  box-shadow: 0 12px 32px rgba(46,125,126,0.35);
-}
-    .whatsapp-fab a{color:#fff;font-weight:700}
-
-    /* Responsive */
-    @media(max-width:900px){
-      .top-menu{left:16px;transform:none;top:16px}
-      .testimonials{grid-template-columns:repeat(2,1fr)}
-      .consultorio{grid-template-columns:repeat(2,1fr)}
-      .hero{height:64vh;min-height:420px}
-    }
     
+
 
 
 /* ============================
@@ -548,187 +486,12 @@ terapia emocional online, terapia para ansiedade, terapia para depressão, autoe
 }
 
 
-
-
-
-
-
-
-@media(max-width:520px){
-  .top-menu{
-    left: 10px !important;
-    right: 10px !important;
-    width: calc(100% - 20px);
-    transform: none !important;
-    flex-wrap: wrap;             /* permite quebrar linha */
-    justify-content: center;     /* centraliza todos os botões */
-    padding: 10px 12px;
-    gap: 6px;
-  }
-
-  .top-menu a{
-    padding: 8px 10px;
-    font-size: 13px;
-    flex-shrink: 0;              /* evita esmagar texto */
-    white-space: nowrap;         /* impede quebra dentro dos botões */
-    color:#000 !important;  /* texto preto no mobile */
-  }
-}
-
-/* Hover animado nos itens do menu */
-.top-menu a {
-  transition: 
-    background-color 0.25s ease,
-    color 0.25s ease,
-    transform 0.25s ease,
-    box-shadow 0.25s ease;
-}
-
-.top-menu a:hover {
-  background: rgba(46,125,126,0.15);   /* cor suave com sua cor primária */
-  color: var(--primary-700);
-  transform: translateY(-2px);         /* levanta levemente */
-  box-shadow: 0 4px 12px rgba(46,125,126,0.25); /* sombra elegante */
-  border-radius: 999px;                /* mantém o estilo */
-}
-
-/* ---------------------------
-   HAMBURGUER & menu mobile
-   --------------------------- */
-
-/* Estilo do botão hambúrguer (desktop: escondido) */
-.hamburger{
-  display: none;                   /* só aparece no mobile via media query */
-  position: fixed;
-  top: 14px;
-  left: 14px;
-  z-index: 2200;
-  background: rgba(255,255,255,0.95);
-  border: 0;
-  padding: 8px 10px;
-  border-radius: 10px;
-  font-size: 22px;
-  line-height: 1;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
-  cursor: pointer;
-}
-
-/* Mobile behavior: mostra hambúrguer e converte top-menu em drawer */
-@media (max-width: 520px) {
-
-  /* mostra o botão */
-  .hamburger{ display: block; }
-
-  /* Esconde o top-menu por padrão no mobile — vai abrir ao clicar */
-  .top-menu{
-    display: none;
-    position: fixed;
-    top: 64px;               /* fica abaixo do hamburguer */
-    left: 10px;
-    right: 10px;
-    width: auto;
-    background: #fff;
-    border-radius: 12px;
-    padding: 12px;
-    box-shadow: 0 14px 40px rgba(10,10,10,0.12);
-    flex-direction: column;
-    gap: 8px;
-    z-index: 2100;
- 
-}
-
-/* Efeito de “toque” nos itens do menu mobile */
-  .top-menu a {
-    transition: background-color 0.25s ease,
-                transform 0.2s ease;
-  }
-
-  .top-menu a:active {
-    background: rgba(46,125,126,0.15);    /* fundo suave */
-    transform: scale(0.97);               /* efeito de pressionado */
-    border-radius: 10px;
-  }
-}
-
-
-  /* Estado aberto do menu */
-  .top-menu.open{
-    display: flex !important;
-  }
-
-  /* Ajustes dos links dentro do drawer */
-  .top-menu a{
-    display: block;
-    padding: 10px 12px;
-    border-radius: 10px;
-    white-space: nowrap;
-  }
-
-  /* Permite rolagem caso tenha muitos itens */
-  .top-menu { max-height: calc(100vh - 120px); overflow:auto; }
-}
-
-.hero__overlay {
-  padding: 48px 24px; /* espaçamento confortável */
-  width: 100%;
-  
-}
-
-.hero__text {
-  max-width: 600px; /* mantém o texto bonito e legível */
-  margin-left: 0;   /* garante alinhamento total à esquerda */
-  text-align: left; /* só para garantir */
-}
-
-
-/* Contorno elegante no título e subtítulo do HERO */
-/*.hero__text h1, */
-/*.hero__text .lead { */
-/*  -webkit-text-stroke: 0.5px var(--primary); */ /* contorno verde primário */
-/*  text-stroke: 1px var(--primary); */
-
-/*  color: #fff; /* mantém o texto branco */
-/*} */
-
-
-
 /* Botão da sessão Contato alinhado à esquerda */
 #btnContact {
   margin-left: 0 !important;
   margin-right: auto !important;
 }
 
-
-.whatsapp-fab a {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-
-/* Texto flutuante acima do botão do WhatsApp */
-.whatsapp-label {
-  position: fixed;
-  right: 15px;
-  bottom: 5px; /* fica acima do botão */
-  background: rgba(255,255,255,255.255);
-  color: #25D366;
-  padding: 2px 8px;
-  border-radius: 8px;
-  font-size: 10px;
-  font-weight: 600;
-  z-index: 1300;
-  backdrop-filter: blur(4px);
-  animation: waFloat 2.5s ease-in-out infinite;
-}
-
-/* Animação suave de flutuação */
-@keyframes waFloat {
-  0%   { transform: translateY(0); }
-  50%  { transform: translateY(-4px); }
-  100% { transform: translateY(0); }
 }
 
 #meConhecaBtn {
@@ -916,46 +679,6 @@ button.btn {
 }
 
 
-.search-bar-wrap {
-  margin: 20px auto;
-  max-width: 600px;
-  position: relative;
-}
-
-.search-bar-wrap input {
-  width: 100%;
-  padding: 12px 16px;
-  font-size: 16px;
-  border-radius: 10px;
-  border: 1px solid #CBD5D6;
-  outline: none;
-}
-
-.search-results {
-  list-style: none;
-  margin: 6px 0 0;
-  padding: 0;
-  background: white;
-  border-radius: 10px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-  max-height: 300px;
-  overflow-y: auto;
-}
-
-.result-item a {
-  display: block;
-  padding: 10px 14px;
-  color: #1F2D2D;
-}
-
-.result-item a:hover {
-  background: #E7F3F3;
-}
-
-.no-results {
-  padding: 10px 14px;
-  color: #555;
-}
 
 
 /* SETAS DO CARROSSEL DO CONSULTÓRIO — corrigidas */
