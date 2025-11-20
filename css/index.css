@@ -677,3 +677,12 @@ footer.site-footer {
   margin: 24px auto 0;
   text-align: center;
 }
+
+@media (max-width: 899px) {
+
+  /* Desce SOMENTE o bloco de texto */
+  .hero__text {
+    margin-bottom: 32px !important; /* ajuste fino — pode aumentar para 40, 50, 60 */
+  }
+
+}
