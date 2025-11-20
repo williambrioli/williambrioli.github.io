@@ -680,9 +680,15 @@ footer.site-footer {
 
 @media (max-width: 899px) {
 
-  /* Desce SOMENTE o bloco de texto */
-  .hero__text {
-    margin-bottom: 80px !important; /* ajuste fino — pode aumentar para 40, 50, 60 */
+  /* Deixa o texto no rodapé sem esticar o hero */
+  .hero {
+    align-items: flex-end !important;
+    justify-content: flex-start !important;
+  }
+
+  /* Desce o texto um pouco sem alterar o tamanho do hero */
+  .hero__overlay {
+    transform: translateY(25px); /* ajuste fino */
   }
 
 }
