@@ -1,0 +1,663 @@
+/* ============================================================
+   HERO PRINCIPAL
+   ============================================================ */
+
+.hero {
+  position: relative;
+  height: 900px;
+  min-height: 420px;
+  display: flex;
+  align-items: flex-end;
+  border-radius: 0 0 20px 20px;
+  overflow: hidden;
+}
+
+.hero__img {
+  position: absolute;
+  inset: 0;
+  background-size: cover !important;
+  background-position: center center !important;
+  filter: none;
+}
+
+.hero__overlay {
+  position: relative;
+  z-index: 5;
+  width: 100%;
+  padding: 48px;
+}
+
+.hero__text {
+  max-width: 640px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.02));
+  padding: 16px;
+  border-radius: 10px;
+}
+
+.hero h1 {
+  margin: 0;
+  font-size: 28px;
+  color: #fff;
+}
+
+.hero p.lead {
+  margin: 8px 0 0;
+  color: #f7f7f7;
+  font-weight: 600;
+}
+
+.hero small {
+  display: block;
+  color: rgba(255,255,255,0.9);
+  margin-top: 8px;
+}
+
+/* --- HERO Desktop: alinhamento com largura do site --- */
+@media (min-width: 900px) {
+  .hero {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    height: 800px;
+    border-radius: 20px;
+    overflow: hidden;
+  }
+
+  .hero__img {
+    border-radius: 20px;
+  }
+}
+
+/* Footer interno do hero */
+.hero-footer {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 14px;
+  background: rgba(255,255,255,0.95);
+  padding: 10px 14px;
+  border-radius: 999px;
+  display: flex;
+  gap: 8px;
+  z-index: 9;
+}
+
+.hero-footer a {
+  padding: 8px 12px;
+  border-radius: 999px;
+  font-weight: 600;
+  color: var(--primary-700);
+}
+
+/* ============================================================
+   SEÇÕES GERAIS
+   ============================================================ */
+
+section {
+  padding: 8px 0;
+}
+
+.section-card {
+  background: var(--card);
+  border-radius: var(--radius);
+  padding: 28px;
+  box-shadow: 0 6px 18px rgba(30,30,30,0.04);
+}
+
+h2 {
+  margin: 0 0 12px;
+  font-size: 28px;
+  color: var(--primary-700);
+  text-align: center;
+}
+
+p {
+  line-height: 1.55;
+  color: var(--muted);
+}
+
+/* ============================================================
+   BOTÃO GLOBAL
+   ============================================================ */
+
+.btn {
+  display: block;
+  width: max-content;
+  padding: 5px 14px;
+  border-radius: 999px;
+  background: var(--primary);
+  color: #fff;
+  font-weight: 700;
+  margin: 12px auto;
+  text-align: center;
+  transition: all .25s ease-in-out;
+}
+
+.btn:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.18);
+  background: var(--primary-700);
+}
+
+.btn:active {
+  transform: scale(0.96);
+  box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+}
+
+/* Botões no index que são <button> */
+button.btn {
+  font-size: inherit !important;
+  font-family: inherit !important;
+  line-height: normal !important;
+  appearance: none !important;
+  border: none !important;
+  background: var(--primary) !important;
+  padding: 8px 14px !important;
+  border-radius: 999px !important;
+  display: block !important;
+  width: max-content !important;
+  margin: 8px auto !important;
+  color: #fff !important;
+  font-weight: 700 !important;
+}
+
+/* Ajustes de botões específicos */
+#btnContact {
+  margin-left: 0 !important;
+  margin-right: auto !important;
+}
+
+#meConhecaBtn {
+  outline: none !important;
+  border: none !important;
+  margin: 12px auto;
+}
+
+/* ============================================================
+   ACCORDION
+   ============================================================ */
+
+.accordion {
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.acc-item {
+  border-bottom: 1px solid #eef2f2;
+}
+
+.acc-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px;
+  cursor: pointer;
+  transition: background-color .25s ease, transform .25s ease;
+}
+
+.acc-header:hover {
+  background: rgba(46,125,126,0.08);
+  transform: translateY(-2px);
+  border-radius: 10px;
+}
+
+.acc-header h3 {
+  margin: 0;
+  font-size: 16px;
+}
+
+.acc-body {
+  padding: 0 18px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height .45s ease;
+  color: var(--muted);
+}
+
+.acc-item.open .acc-body {
+  max-height: 2000px;
+  padding-bottom: 18px;
+}
+
+.acc-item.open {
+  background: rgba(46,125,126,0.10);
+  border-radius: 10px;
+  transition: background .3s ease;
+}
+
+.acc-item.open .acc-header h3 {
+  color: var(--primary);
+  font-weight: 700;
+}
+
+.acc-item.open .acc-header span {
+  transform: rotate(45deg);
+  transition: transform .25s ease;
+}
+
+/* ============================================================
+   TESTEMUNHOS (GRID)
+   ============================================================ */
+
+.testimonials {
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  gap: 12px;
+}
+
+.testimonial img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.testimonial .caption {
+  margin-top: 8px;
+  font-size: 14px;
+  color: var(--muted);
+  text-align: center;
+}
+
+/* ============================================================
+   CONSULTÓRIO – GRID
+   ============================================================ */
+
+.consultorio {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 12px;
+}
+
+.consultorio .card {
+  position: relative;
+}
+
+.consultorio .card p {
+  position: absolute;
+  left: 8px;
+  bottom: 8px;
+  color: #fff;
+  background: rgba(0,0,0,0.45);
+  padding: 6px 8px;
+  border-radius: 6px;
+}
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+
+footer.site-footer {
+  padding: 28px 0;
+  background: transparent;
+}
+
+.contact-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.contact-list li {
+  margin-bottom: 6px;
+}
+
+/* ============================================================
+   CARROSSEL — CONSULTÓRIO
+   ============================================================ */
+
+.consultorio-carousel {
+  position: relative;
+  width: 100%;
+  max-width: 800px;
+  margin: 16px auto 0;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+
+.cc-track {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 360px;
+  border-radius: 12px;
+  background: #fff;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.04);
+}
+
+.cc-slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transform: translateX(20px) scale(.98);
+  transition: all .45s cubic-bezier(.2,.8,.2,1);
+}
+
+.cc-slide.active {
+  opacity: 1;
+  transform: translateX(0) scale(1);
+}
+
+.cc-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  background: #ffffff;
+  border-radius: 12px;
+}
+
+.cc-btn {
+  background: #fff;
+  border: 0;
+  width: 44px;
+  height: 44px;
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 26px;
+  cursor: pointer;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+  transition: all .25s ease;
+  z-index: 20;
+}
+
+.cc-btn:hover {
+  transform: scale(1.12);
+}
+
+.cc-dots {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  margin-top: 12px;
+}
+
+.cc-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  background: rgba(0,0,0,0.15);
+  transition: .25s;
+  cursor: pointer;
+}
+
+.cc-dot.active {
+  width: 28px;
+  background: var(--primary);
+}
+
+/* Setas posicionadas externamente */
+#consultorioCarousel .cc-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+#consultorioCarousel .cc-prev {
+  left: -20px;
+}
+
+#consultorioCarousel .cc-next {
+  right: -20px;
+}
+
+/* ============================================================
+   CARROSSEL — DEPOIMENTOS
+   ============================================================ */
+
+.testimonials-carousel {
+  position: relative;
+  width: 100%;
+  max-width: 800px;
+  margin: 16px auto 0;
+  display: block;
+}
+
+#testimonials .tc-prev,
+#testimonials .tc-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+#testimonials .tc-prev { left: -20px; }
+#testimonials .tc-next { right: -20px; }
+
+.tc-track {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 360px;
+  border-radius: 12px;
+  background: #fff;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.04);
+}
+
+.tc-slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transform: translateX(20px) scale(.98);
+  transition: all .45s cubic-bezier(.2,.8,.2,1);
+}
+
+.tc-slide.active {
+  opacity: 1;
+  transform: translateX(0) scale(1);
+}
+
+.tc-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  background: #ffffff;
+  border-radius: 12px;
+}
+
+.tc-btn {
+  background: #fff;
+  border: 0;
+  width: 44px;
+  height: 44px;
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 26px;
+  cursor: pointer;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+  transition: all .25s ease;
+  z-index: 20;
+}
+
+.tc-btn:hover {
+  transform: scale(1.12);
+}
+
+.tc-dots {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  margin-top: 12px;
+}
+
+.tc-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  background: rgba(0,0,0,0.15);
+  transition: .25s;
+  cursor: pointer;
+}
+
+.tc-dot.active {
+  width: 28px;
+  background: var(--primary);
+}
+
+/* ============================================================
+   PALESTRAS — IMAGEM
+   ============================================================ */
+
+#palestraImg {
+  width: 100%;
+  max-width: 520px;
+  margin: 0 auto 20px;
+  display: block;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+@media (min-width: 900px) {
+  #palestras-flex {
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center;
+  }
+}
+
+/* ============================================================
+   CARROSSEL — PALESTRAS
+   ============================================================ */
+
+.palestras-carousel {
+  position: relative;
+  width: 100%;
+  max-width: 800px;
+  margin: 16px auto 0;
+}
+
+.pc-track {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 360px;
+  border-radius: 12px;
+  background: #fff;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.04);
+}
+
+.pc-slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transform: translateX(20px) scale(.98);
+  transition: all .45s cubic-bezier(.2,.8,.2,1);
+}
+
+.pc-slide.active {
+  opacity: 1;
+  transform: translateX(0) scale(1);
+}
+
+.pc-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+/* Setas */
+.pc-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #fff;
+  border: 0;
+  width: 44px;
+  height: 44px;
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 26px;
+  cursor: pointer;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+  transition: all .25s ease;
+  z-index: 20;
+}
+
+.pc-btn.pc-prev {
+  left: -20px;
+}
+
+.pc-btn.pc-next {
+  right: -20px;
+}
+
+.pc-btn:hover {
+  transform: translateY(-50%) scale(1.12);
+}
+
+/* Dots */
+.pc-dots {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.pc-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  background: rgba(0,0,0,0.15);
+  transition: .25s;
+  cursor: pointer;
+}
+
+.pc-dot.active {
+  width: 28px;
+  background: var(--primary);
+}
+
+/* ============================================================
+   SEÇÃO BLOG
+   ============================================================ */
+
+#blog {
+  background: var(--bg);
+  padding: 0;
+}
+
+#blog .container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 28px;
+  background: var(--card);
+  border-radius: var(--radius);
+  box-shadow: 0 6px 18px rgba(30,30,30,0.04);
+}
+
+#blog h2 {
+  font-size: 28px;
+  margin-bottom: 16px;
+  color: var(--primary-700);
+  text-align: center;
+}
+
+#blog p {
+  max-width: 100% !important;
+  margin: 0 auto 16px;
+  line-height: 1.6;
+  font-size: 1.05rem;
+  color: var(--muted);
+  text-align: left;
+}
+
+#blog .btn {
+  display: block;
+  margin: 24px auto 0;
+  text-align: center;
+}
