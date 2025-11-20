@@ -14,7 +14,7 @@
   position: relative; /* posiciona relativo para permitir elementos internos posicionados */
   border-radius: 0 !important; /* força cantos quadrados (sobrepõe outros estilos) */
   overflow:visible !important; /* permite que elementos saiam da caixa (não escondê-los) */
-  padding: 0; /* espaço interno: 48px em cima/baixo e 32px nas laterais */
+  padding: 48px 32px; /* espaço interno: 48px em cima/baixo e 32px nas laterais */
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08); /* sombra grande abaixo para destacar */
   color: #fff; /* cor do texto dentro do hero (branco) */
   /* Remove o background fixo para permitir que o JS funcione */
