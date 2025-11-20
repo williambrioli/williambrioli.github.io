@@ -28,6 +28,6 @@ window.SITE_DATA = { // Cria um objeto global chamado SITE_DATA no objeto window
     modalCTA: "Agendar atendimento",              // botão dentro do modal — texto exibido no botão do modal.
     readMore: "Ler artigo completo",              // texto do botão "ler mais" nos cards da home/blog.
     closeModal: "Fechar",                          // texto do botão para fechar modais.
-    whatsappGeneric: "Falar com o Psicanalista"    // 🔥 novos botões globais
+    whatsappGeneric: "Agendar Atendimento"        // 🔥 novos botões globais que alterar os boões dos ACOORDIONS Como te ajudo e Dúvidas.
   } // Fim do bloco "buttons"
 }; // Fecha o objeto window.SITE_DATA
