@@ -1,23 +1,28 @@
 [
   {
-    "id": "Terapia Online Funciona Mesmo",
+    "title": "Liderança e Alta Performance: O Que “O Monge e o Executivo”, “Poder Sem Limites” e “Atitude Mental Positiva” Têm em Comum",
+    "date": "2025-11-09",
+    "author": "William Brioli",
+    "cover": "https://williambrioli.com.br/img/HEROog.jpg",
+    "excerpt": "O estudo sobre liderança e desenvolvimento humano tem ganhado destaque nas últimas décadas, especialmente diante das transformações intensas no ambiente corporativo. Obras consagradas como <em>O Monge e o Executivo</em> (Hunter, 1998), <em>Poder Sem Limites</em> (Robbins, 1986) e <em>Atitude Mental Positiva</em> (Hill & Stone, 1959)...",
+    "html": "artigos/Lideranca_e_Alta_Performance_O_Que_o_Monge_e_o_Executivo_Poder_Sem_Limites_e_Atitude Mental Positiva_Tem_em_Comum.html"
+   
+  },
+  {
     "title": "Terapia Online Funciona Mesmo?",
     "date": "2025-11-18",
     "author": "William Brioli",
     "cover": "https://williambrioli.com.br/img/artigocnv.png",
-    "excerpt": "Este artigo apresenta uma análise das evidências científicas sobre a eficácia da psicoterapia realizada em formato on-line, comparando-a aos modelos presenciais e descrevendo seus impactos na saúde mental, adesão ao tratamento e resultados clínicos.",
-    "file": "posts/Terapia_Online_Funciona_Mesmo.md",
+    "excerpt": "Este artigo apresenta uma análise das evidências científicas sobre a eficácia da psicoterapia realizada em formato on-line, comparando-a aos modelos presenciais e descrevendo seus impactos na saúde mental, adesão ao tratamento e resultados clínicos...",
     "html": "artigos/Terapia_Online_Funciona_Mesmo.html"
    
   },
   {
-    "id": "O_Impacto_da_Comunicação_Não_Violenta_na_Vida_Profissional",
     "title": "O Impacto da Comunicação Não Violenta na Vida Profissional",
     "date": "2024-01-28",
     "author": "William Brioli",
     "cover": "https://williambrioli.com.br/img/artigocnv.png",
-    "excerpt": "Descubra como a Comunicação Não Violenta pode transformar sua forma de se relacionar no trabalho, reduzir conflitos e desenvolver uma liderança mais empática e consciente.",
-    "file": "posts/O_Impacto_da_Comunicação_Não_Violenta_na_Vida_Profissional.md",
+    "excerpt": "Descubra como a Comunicação Não Violenta pode transformar sua forma de se relacionar no trabalho, reduzir conflitos e desenvolver uma liderança mais empática e consciente...",
     "html": "artigos/O_Impacto_da_Comunicação_Não_Violenta_na_Vida_Profissional.html"
    
   },
@@ -27,7 +32,7 @@
     "date": "2025-10-10",
     "author": "William Brioli",
     "cover": "https://williambrioli.com.br/img/terapiaepsicanalise.png",
-    "excerpt": "Muitas pessoas chegam ao consultório com uma dúvida comum: 'Afinal, que tipo de terapia o psicanalista faz?' Essa é uma pergunta legítima, já que a psicanálise, embora muito conhecida, ainda é cercada de mitos e interpretações equivocadas.",
+    "excerpt": "Muitas pessoas chegam ao consultório com uma dúvida comum: 'Afinal, que tipo de terapia o psicanalista faz?' Essa é uma pergunta legítima, já que a psicanálise, embora muito conhecida, ainda é cercada de mitos e interpretações equivocadas...",
     "file": "posts/Que_tipo_de_terapia_o_psicanalista_faz.md",
     "html": "artigos/Que_tipo_de_terapia_o_psicanalista_faz.html"
     
@@ -37,7 +42,7 @@
     "date": "2024-01-10",
     "author": "William Brioli",
     "cover": "https://williambrioli.com.br/img/terapiaepsicanalise.png",
-    "excerpt": "A psicoterapia é amplamente reconhecida como uma prática científica destinada à promoção da saúde mental, ao desenvolvimento emocional e à transformação de padrões cognitivos e comportamentais.",
+    "excerpt": "A psicoterapia é amplamente reconhecida como uma prática científica destinada à promoção da saúde mental, ao desenvolvimento emocional e à transformação de padrões cognitivos e comportamentais...",
     "html": "artigos/O_Que_Muda_na_Vida_de_Quem_Faz_Terapia_Por_6_Meses.html"
     
   }
