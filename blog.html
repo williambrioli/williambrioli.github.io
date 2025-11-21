@@ -404,11 +404,11 @@ async function loadPosts() {
     }
     // Se não for um array ou estiver vazio, mostra mensagem apropriada
 
-    POSTS_CACHE = posts;
-    // Guarda os posts no cache (variável global)
+    // Ordena do mais recente para o mais antigo
+posts.sort((a, b) => new Date(b.date) - new Date(a.date));
 
-    renderPosts(posts, grid);
-    // Chama a função que cria os cards visualmente
+POSTS_CACHE = posts;
+renderPosts(posts, grid);
 
   } catch (err) {
     console.error(err);
@@ -730,3 +730,4 @@ document.addEventListener("DOMContentLoaded", () => {
 
 </body>
 </html>
+
