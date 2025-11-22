@@ -3,7 +3,10 @@ name: Gerar e atualizar sitemap.xml automaticamente
 on:
   schedule:
     - cron: "0 6 * * *"   # Executa todos os dias às 6h UTC (3h da manhã no Brasil)
-  workflow_dispatch:      # Permite rodar manualmente
+  workflow_dispatch:
+
+permissions:
+  contents: write   # ✅ Permite que o Actions faça commit e push
 
 jobs:
   gerar-sitemap:
@@ -19,7 +22,9 @@ jobs:
           node-version: '18'
 
       - name: 📦 Instalar dependências
-        run: npm install node-fetch@2
+        run: |
+          npm init -y
+          npm install node-fetch@2
 
       - name: 🧩 Gerar sitemap automático
         run: node gerar-sitemap.js
