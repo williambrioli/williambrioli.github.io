@@ -60,47 +60,18 @@
        É como um "cartão de dados" só desse artigo.
        É editável e seguro.
        ===================================================== -->
-  <script>
+
+<script>
+  const ARTICLE = {
     
-      // Aqui começamos um bloco de JavaScript.
-     // Ele cria um objeto chamado ARTICLE que guarda
-    // TUDO sobre esse artigo específico.
-   
-    const ARTICLE = {
-      title: "Que tipo de terapia o psicanalista faz? Entenda a prática, objetivos e como funciona na prática clínica",
-      /* Título do artigo. Vai aparecer no topo e no SEO. */
+    
+    title: "Como a Comunicação Não Violenta Transforma a Liderança e Reduz Conflitos no Ambiente de Trabalho",
+         
+  
+       
+// 📝 Conteúdo do artigo (TEXTO DO ARTIGO FICA AQUI) /*
         
-      description: "Um texto claro e fundamentado que explica — em linguagem acessível — o que faz um psicanalista, quais são os objetivos da psicanálise, como se organiza uma sessão e quando essa abordagem é recomendada, com referências clássicas e aplicabilidade prática para quem busca psicoterapia.",
-      /* Título do artigo. Vai aparecer no topo e no SEO. */
-        
-      /* Data de publicação */
-      date: "2024-01-28",
-      
-      
-      author: "William Brioli",
-      /* Nome do autor que aparece na página */
-      
-      cover: "https://williambrioli.com.br/img/HEROog.png",
-      /* Imagem de capa do artigo. Pode ser um link externo. */
-        
-      showCover: false,
-      /* 
-        true  = mostra a capa no topo do artigo
-        false = esconde a capa
-      */
-        
-      alt: "Que tipo de terapia o psicanalista faz? Entenda a prática, objetivos e como funciona na prática clínica",
-      /* Texto alternativo da imagem para acessibilidade e SEO */
-        
-      canonical: "https://williambrioli.com.br/artigos/Que_tipo_de_terapia_o_psicanalista_faz_Entenda_a_pratica_objetivos_e_como_funciona na_pratica_clinica.html",
-      /* 
-        Link oficial do artigo para evitar conteúdo duplicado e ajudar o Google a saber qual é a página original. */
-
-        
-      // 📝 Conteúdo do artigo (TEXTO DO ARTIGO FICA AQUI) /*
-        
-      content: `
-
+    content: `
 
 
 <p>
@@ -245,6 +216,8 @@ O psicanalista faz uma terapia centrada na exploração das dinâmicas inconscie
     
      </script>
 
+  <!-- Novo script de preenchimento automático -->
+<script src="/js/article-auto-fill.js" defer></script>
     
        <!-- =========================
        SEO / META TAGS 
@@ -257,7 +230,7 @@ O psicanalista faz uma terapia centrada na exploração das dinâmicas inconscie
   <meta name="description" id="metaDescription" content="">
   <!-- Descrição interna preenchida dinamicamente -->
 
-  <meta name="author" content="William Brioli">
+  <meta name="author" id="metaAuthor" content="">
   <!-- Nome do autor da página -->
 
   <meta property="og:title" id="ogTitle" content="">
