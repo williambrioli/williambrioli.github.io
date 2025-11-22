@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>Gerar Sitemap</title>
+<style>
+body { font-family: sans-serif; padding: 40px; background: #f5f5f5; }
+button { padding: 12px 20px; font-size: 16px; border-radius: 6px; cursor: pointer; }
+</style>
+</head>
+<body>
+<h2>Gerar sitemap.xml automaticamente</h2>
+<p>Clique abaixo para gerar o sitemap atualizado a partir do posts.json.</p>
+<button onclick="gerarSitemap()">Gerar e Baixar Sitemap</button>
+
+<script>
+async function gerarSitemap() {
+  const response = await fetch('/posts/posts.json');
+  const posts = await response.json();
+
+  const urls = posts.map(p => `
+  <url>
+    <loc>https://williambrioli.com.br/${p.html}</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>`).join('\n');
+
+  const xml = `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://williambrioli.com.br/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://williambrioli.com.br/blog.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  ${urls}
+</urlset>`;
+
+  const blob = new Blob([xml], { type: "application/xml" });
+  const link = document.createElement("a");
+  link.href = URL.createObjectURL(blob);
+  link.download = "sitemap.xml";
+  link.click();
+}
+</script>
+</body>
+</html>
