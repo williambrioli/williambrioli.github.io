@@ -58,6 +58,45 @@
 }
 
 
+/* =================================================================
+   AJUSTE VISUAL DOS LINKS DE ARTIGOS INLINE ABAIXO DE REFERENCIAS
+   ================================================================= */
+
+.artigos-relacionados-inline {
+  margin-top: 2rem;
+  padding: 1.5rem;
+  background: #f9fafb;
+  border-left: 4px solid #1a7f64;
+  border-radius: 8px;
+}
+
+.artigos-relacionados-inline .rel-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+  color: #1a7f64;
+}
+
+.artigos-relacionados-inline .rel-list {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.artigos-relacionados-inline .rel-list li {
+  margin-bottom: 0.4rem;
+}
+
+.artigos-relacionados-inline .rel-list a {
+  color: #0d3b32;
+  text-decoration: none;
+}
+
+.artigos-relacionados-inline .rel-list a:hover {
+  text-decoration: underline;
+  color: #1a7f64;
+}
+
 /* ==========================
    INÍCIO DO BLOCO: BOTÃO AO FINAL DO ARTIGO
    ========================== */
