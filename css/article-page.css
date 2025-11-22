@@ -71,11 +71,10 @@
 }
 
 .artigos-relacionados-inline .rel-title {
-  font-size: inherit;       /* usa o mesmo tamanho do contexto (igual ao H2) */
-  font-weight: 600;         /* mantém o peso forte */
-  margin-top: 1.5rem;
+  font-size: 1.1rem;
+  font-weight: 600;
   margin-bottom: 0.75rem;
-  color: inherit;           /* herda a cor padrão do texto ou do H2 */
+  color: #1a7f64;
 }
 
 .artigos-relacionados-inline .rel-list {
