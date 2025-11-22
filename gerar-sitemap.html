@@ -11,20 +11,20 @@ pre { background: #fff; padding: 15px; border-radius: 6px; overflow-x: auto; }
 </head>
 <body>
 <h2>Gerar sitemap.xml automaticamente</h2>
-<p>Clique abaixo para gerar o sitemap atualizado a partir do <code>posts.json</code>.</p>
-<button onclick="gerarSitemap()">Gerar e Baixar Sitemap</button>
+<p>Clique abaixo para gerar o sitemap atualizado a partir do <code>posts.json</code> e notificar o Google.</p>
+<button onclick="gerarSitemap()">Gerar, Baixar e Enviar Sitemap ao Google</button>
 
 <script>
 async function gerarSitemap() {
   try {
-    // Obtém o arquivo de posts
+    // === 1️⃣ Lê o arquivo posts.json ===
     const response = await fetch('/posts/posts.json');
     const posts = await response.json();
 
-    // Gera a data atual no formato ISO (ex: 2025-11-22)
+    // === 2️⃣ Cria a data atual em formato ISO (YYYY-MM-DD) ===
     const hoje = new Date().toISOString().split('T')[0];
 
-    // Gera URLs dos posts com <lastmod> automático
+    // === 3️⃣ Gera os blocos <url> para cada post ===
     const urls = posts.map(p => `
   <url>
     <loc>https://williambrioli.com.br/${p.html}</loc>
@@ -33,7 +33,7 @@ async function gerarSitemap() {
     <priority>0.9</priority>
   </url>`).join('\n');
 
-    // Monta o XML completo
+    // === 4️⃣ Monta o XML completo ===
     const xml = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
@@ -49,16 +49,29 @@ async function gerarSitemap() {
     <priority>0.9</priority>
   </url>
   ${urls}
-</urlset>`;
+</urlset>`.trim();
 
-    // Cria o arquivo e dispara o download
-    const blob = new Blob([xml.trim()], { type: "application/xml" });
+    // === 5️⃣ Cria o arquivo e dispara o download ===
+    const blob = new Blob([xml], { type: "application/xml" });
     const link = document.createElement("a");
     link.href = URL.createObjectURL(blob);
     link.download = "sitemap.xml";
     link.click();
 
-    alert("✅ Sitemap gerado com sucesso!\nO arquivo já foi baixado.");
+    // === 6️⃣ Envia o ping para o Google (avisa sobre o novo sitemap) ===
+    const sitemapURL = encodeURIComponent('https://williambrioli.com.br/sitemap.xml');
+    const pingURL = `https://www.google.com/ping?sitemap=${sitemapURL}`;
+    
+    // Faz a chamada para o Google (não precisa esperar resposta)
+    fetch(pingURL).then(() => {
+      console.log("Ping enviado para o Google com sucesso!");
+    }).catch(err => {
+      console.warn("Falha ao enviar ping:", err);
+    });
+
+    // === 7️⃣ Alerta visual de sucesso ===
+    alert("✅ Sitemap gerado, baixado e o Google foi notificado com sucesso!");
+
   } catch (error) {
     console.error("Erro ao gerar sitemap:", error);
     alert("❌ Ocorreu um erro ao gerar o sitemap. Veja o console para detalhes.");
