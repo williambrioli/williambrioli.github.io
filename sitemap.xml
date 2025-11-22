@@ -5,9 +5,20 @@
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
-
   <url>
     <loc>https://williambrioli.com.br/blog.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  
+  <url>
+    <loc>https://williambrioli.com.br/artigos/Lideranca_e_Alta_Performance_O_Que_os_Grandes_Classicos_do_Desenvolvimento_Humano_Ensinam_Sobre_Formar_Lideres_do_Futuro.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://williambrioli.com.br/artigos/Terapia_Online_Funciona_Mesmo_Evidencias_Cientificas_Beneficios_e_Limites_do_Atendimento_a_Distancia.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -18,37 +29,21 @@
     <priority>0.9</priority>
   </url>
 
-<url>
+  <url>
+    <loc>https://williambrioli.com.br/artigos/As_Maiores_Mentiras_Que_Contam_Sobre_Psicoterapia_e_o_Que_a_Ciencia_Diz_de_Verdade.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
     <loc>https://williambrioli.com.br/artigos/Que_tipo_de_terapia_o_psicanalista_faz_Entenda_a_pratica_objetivos_e_como_funciona na_pratica_clinica.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
-
-
-  <url>
-    <loc>https://williambrioli.com.br/artigos/Terapia_Online_Funciona_Mesmo_Evidencias_Cientificas_Beneficios_e_Limites_do_Atendimento_a_Distancia.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
 
   <url>
     <loc>https://williambrioli.com.br/artigos/O_Que_Muda_na_Vida_de_Quem_Faz_Terapia_Por_6_Meses.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
-
-  <url>
-    <loc>https://williambrioli.com.br/artigos/Lideranca_e_Alta_Performance_O_Que_os_Grandes_Classicos_do_Desenvolvimento_Humano_Ensinam_Sobre_Formar_Lideres_do_Futuro.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <url>
-    <loc>https://williambrioli.com.br/artigos/As_Maiores_Mentiras_Que_Contam_Sobre_Psicoterapia_e_o_Que_a_Ciencia_Diz_de_Verdade.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  
-  
 </urlset>
