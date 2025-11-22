@@ -34,14 +34,18 @@ document.addEventListener("DOMContentLoaded", async () => {
     if (relacionados.length === 0) return;
 
     // 🧱 Cria bloco inline de relacionados
+    const base = "https://williambrioli.com.br/";
     const bloco = document.createElement("div");
     bloco.className = "artigos-relacionados-inline";
     bloco.innerHTML = `
       <h3 class="rel-title">Se você gostou deste tema, leia também:</h3>
       <ul class="rel-list">
-        ${relacionados.map(p => `
-          <li><a href="/${p.html}">${p.title}</a></li>
-        `).join("")}
+        ${relacionados.map(p => {
+          const href = p.html.startsWith("http")
+            ? p.html
+            : base + p.html.replace(/^\/+/, "");
+          return `<li><a href="${href}">${p.title}</a></li>`;
+        }).join("")}
       </ul>
     `;
 
