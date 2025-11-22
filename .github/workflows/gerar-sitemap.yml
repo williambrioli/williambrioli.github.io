@@ -1,0 +1,33 @@
+name: Gerar e atualizar sitemap.xml automaticamente
+
+on:
+  schedule:
+    - cron: "0 6 * * *"   # Executa todos os dias às 6h UTC (3h da manhã no Brasil)
+  workflow_dispatch:      # Permite rodar manualmente no GitHub
+
+jobs:
+  gerar-sitemap:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 🔄 Clonar repositório
+        uses: actions/checkout@v4
+
+      - name: 🟢 Configurar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+
+      - name: 📦 Instalar dependências
+        run: npm install node-fetch@2
+
+      - name: 🧩 Gerar sitemap
+        run: node gerar-sitemap.js
+
+      - name: 💾 Fazer commit do novo sitemap.xml
+        run: |
+          git config user.name "GitHub Actions"
+          git config user.email "actions@github.com"
+          git add sitemap.xml
+          git commit -m "🤖 Atualização automática do sitemap em $(date '+%Y-%m-%d %H:%M')" || echo "Nada para commitar"
+          git push
