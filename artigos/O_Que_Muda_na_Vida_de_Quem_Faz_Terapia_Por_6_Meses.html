@@ -54,52 +54,24 @@
   <!-- Arquivo que estiliza a barra de pesquisa -->
 
 
-  <!-- =====================================================
+ <!-- =====================================================
        🔧 BLOCO DE CONFIGURAÇÃO DO ARTIGO
        Aqui você PREENCHE informações do artigo específico.
        É como um "cartão de dados" só desse artigo.
        É editável e seguro.
        ===================================================== -->
-  <script>
-    
-      // Aqui começamos um bloco de JavaScript.
-     // Ele cria um objeto chamado ARTICLE que guarda
-    // TUDO sobre esse artigo específico.
-   
-    const ARTICLE = {
-      title: "O Que Muda na Vida de Quem Faz Terapia Por 6 Meses? Benefícios Reais, Efeitos Emocionais e Comprovação Científica",
-      /* Título do artigo. Vai aparecer no topo e no SEO. */
-        
-      description: "Seis meses de terapia podem mudar mais do que emoções — podem mudar o modo de ver a vida. Este é um artigo fundamentado em evidências científicas que explica as principais mudanças observadas após seis meses de psicoterapia — incluindo ganhos emocionais, cognitivos e relacionais — com linguagem acessível e análise profissional sobre o que acontece no cérebro e na vida de quem se permite esse processo.",
-      /* Título do artigo. Vai aparecer no topo e no SEO. */
-        
-      /* Data de publicação */
-      date: "2024-01-10",
-      
-      
-      author: "William Brioli",
-      /* Nome do autor que aparece na página */
-      
-      cover: "https://williambrioli.com.br/img/HEROog.png",
-      /* Imagem de capa do artigo. Pode ser um link externo. */
-        
-      showCover: false,
-      /* 
-        true  = mostra a capa no topo do artigo
-        false = esconde a capa
-      */
-        
-      alt: "O Que Muda na Vida de Quem Faz Terapia Por 6 Meses? Benefícios Reais, Efeitos Emocionais e Comprovação Científica",
-      /* Texto alternativo da imagem para acessibilidade e SEO */
-        
-      canonical: "https://williambrioli.com.br/artigos/O_Que_Muda_na_Vida_de_Quem_Faz_Terapia_Por_6_Meses.html",
-      /* 
-        Link oficial do artigo para evitar conteúdo duplicado e ajudar o Google a saber qual é a página original. */
 
+<script>
+  const ARTICLE = {
+    
+    
+    title: "Como a Comunicação Não Violenta Transforma a Liderança e Reduz Conflitos no Ambiente de Trabalho",
+         
+  
+       
+// 📝 Conteúdo do artigo (TEXTO DO ARTIGO FICA AQUI) /*
         
-      // 📝 Conteúdo do artigo (TEXTO DO ARTIGO FICA AQUI) /*
-        
-      content: `
+    content: `
 
 
 <p>
@@ -233,7 +205,9 @@ Fazer terapia é um processo de autoconhecimento, não de correção. E como tod
     
      </script>
 
-    
+<!-- Novo script de preenchimento automático -->
+<script src="/js/article-auto-fill.js" defer></script>
+  
        <!-- =========================
        SEO / META TAGS 
        Estas linhas ajudam o Google e redes sociais a entenderem a página.
@@ -245,7 +219,7 @@ Fazer terapia é um processo de autoconhecimento, não de correção. E como tod
   <meta name="description" id="metaDescription" content="">
   <!-- Descrição interna preenchida dinamicamente -->
 
-  <meta name="author" content="William Brioli">
+  <meta name="author" id="metaAuthor" content="">
   <!-- Nome do autor da página -->
 
   <meta property="og:title" id="ogTitle" content="">
