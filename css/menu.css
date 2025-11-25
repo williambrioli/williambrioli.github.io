@@ -27,16 +27,18 @@
   width: var(--max-width);      /* usa largura máxima definida no tema */
   max-width: 100%;              /* nunca ultrapassa a tela */
   top: 18px;                    /* distância do topo da tela */
-
+  
+  
+   
   background: var(--primary);   /* cor do fundo do menu */
   backdrop-filter: blur(6px);   /* efeito de vidro fosco */
   border-radius: 0;             /* cantos quadrados */
 
-  padding: 8px 16px;            /* espaço interno do menu */
+  padding: 14px 28px;            /* espaço interno do menu */
   box-shadow: 0 6px 18px rgba(30, 30, 30, 0.08); /* sombra suave */
 
   display: flex;                /* ativa o layout flex */
-  gap: 8px;                     /* espaço entre os itens */
+  gap: 28px;                     /* espaço entre os itens */
   align-items: center;          /* alinha itens verticalmente */
   justify-content: center;      /* centraliza todos os links */
 
