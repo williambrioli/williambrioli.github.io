@@ -800,9 +800,11 @@ Na abordagem psicanalítica clínica integrativa, o atendimento costuma acontece
 
     // 'Me conheça mais' expands text (replaces content with the extended text)
     (function(){
-      const btn = document.getElementById('meConhecaBtn');
-      const sobreText = document.getElementById('sobreText');
-      const extended = `<p><strong>Bem-vindo à minha trajetória profissional!</strong> Sou <strong>William Brioli</strong>, <em>Psicanalista Clínico Integrativo</em>, e há <strong>22 anos</strong> dedico minha carreira ao <strong>desenvolvimento humano</strong> — ajudando pessoas, casais, líderes e equipes corporativas a compreenderem suas emoções, fortalecerem seus vínculos e alcançarem equilíbrio entre vida e trabalho.</p>
+  const btn = document.getElementById('meConhecaBtn');
+  const sobreText = document.getElementById('sobreText');
+
+  const original = sobreText.innerHTML; // salva o conteúdo original
+  const extended = `<p><strong>Bem-vindo à minha trajetória profissional!</strong> Sou <strong>William Brioli</strong>, <em>Psicanalista Clínico Integrativo</em>, e há <strong>22 anos</strong> dedico minha carreira ao <strong>desenvolvimento humano</strong> — ajudando pessoas, casais, líderes e equipes corporativas a compreenderem suas emoções, fortalecerem seus vínculos e alcançarem equilíbrio entre vida e trabalho.</p>
 
   <p>Atendo <strong>adultos, casais e setores corporativos</strong> em meu consultório localizado em <strong>Ilha Solteira – SP</strong>, com sessões <strong>presenciais e online</strong>. Cada encontro é conduzido em um ambiente <strong>seguro, ético e acolhedor</strong>, onde o principal objetivo é promover autoconhecimento e transformação genuína.</p>
 
@@ -836,11 +838,19 @@ Na abordagem psicanalítica clínica integrativa, o atendimento costuma acontece
   
 `;
       let expanded = false;
-      btn.addEventListener('click', ()=>{
-        if(!expanded){ sobreText.innerHTML = extended; btn.textContent = 'Mostrar menos'; expanded = true; }
-        else { location.reload(); }
-      });
-    })();
+
+  btn.addEventListener('click', () => {
+    if (!expanded) {
+      sobreText.innerHTML = extended;
+      btn.textContent = 'Mostrar menos';
+      expanded = true;
+    } else {
+      sobreText.innerHTML = original;
+      btn.textContent = 'Me conheça mais';
+      expanded = false;
+    }
+  });
+})();
 
     // Accessibility: smooth scroll for anchor links
     (function(){
