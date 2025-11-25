@@ -41,6 +41,7 @@ window.SITE_DATA = { // Cria um objeto global chamado SITE_DATA no objeto window
     precisoterapia: "Agendar Consulta",        // 🔥 novos botões globais que alterar os boões dos ACOORDIONS Dúvidas.
     comofuncionaterapia: "Agendar Consulta",        // 🔥 novos botões globais que alterar os boões dos ACOORDIONS Dúvidas.
     palestras: "Contratar Palestrante",        // 🔥 novos botões globais que alterar os boões Palestras.
+    mediadorextrajudicial: "Agendar Atendimento",        // 🔥 novos botões globais que alterar os boões Palestras.
     depoimentos: "Agendar Atendimento"
     
   } // Fim do bloco "buttons"
