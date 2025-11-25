@@ -34,11 +34,11 @@
   backdrop-filter: blur(6px);   /* efeito de vidro fosco */
   border-radius: 0;             /* cantos quadrados */
 
-  padding: 14px 28px;            /* espaço interno do menu */
+  padding: 15px 30px;            /* espaço interno do menu */
   box-shadow: 0 6px 18px rgba(30, 30, 30, 0.08); /* sombra suave */
 
   display: flex;                /* ativa o layout flex */
-  gap: 35px;                     /* espaço entre os itens */
+  gap: 40px;                     /* espaço entre os itens */
   align-items: center;          /* alinha itens verticalmente */
   justify-content: center;      /* centraliza todos os links */
 
@@ -64,8 +64,8 @@
     transform 0.25s ease,         /* animação ao subir */
     box-shadow 0.25s ease;        /* sombra ao passar o mouse */
 
-    font-size: 1.05rem;            /* aumenta o tamanho da fonte */
-    font-weight: 500;              /* dá mais presença visual */
+    font-size: 1.09rem;            /* aumenta o tamanho da fonte */
+    font-weight: 600;              /* dá mais presença visual */
     letter-spacing: 0.5px;         /* pequeno espaçamento entre letras */
 }
 
