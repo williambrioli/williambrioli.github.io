@@ -26,7 +26,7 @@
   transform: translateX(-50%);  /* ajusta para realmente centralizar */
   width: var(--max-width);      /* usa largura máxima definida no tema */
   max-width: 100%;              /* nunca ultrapassa a tela */
-  top: 18px;                    /* distância do topo da tela */
+  top: 20px;                    /* distância do topo da tela */
   
   
    
@@ -38,7 +38,7 @@
   box-shadow: 0 6px 18px rgba(30, 30, 30, 0.08); /* sombra suave */
 
   display: flex;                /* ativa o layout flex */
-  gap: 28px;                     /* espaço entre os itens */
+  gap: 35px;                     /* espaço entre os itens */
   align-items: center;          /* alinha itens verticalmente */
   justify-content: center;      /* centraliza todos os links */
 
@@ -63,6 +63,10 @@
     color 0.25s ease,             /* mudança suave na cor */
     transform 0.25s ease,         /* animação ao subir */
     box-shadow 0.25s ease;        /* sombra ao passar o mouse */
+
+    font-size: 1.05rem;            /* aumenta o tamanho da fonte */
+    font-weight: 500;              /* dá mais presença visual */
+    letter-spacing: 0.5px;         /* pequeno espaçamento entre letras */
 }
 
 /* Efeito quando passa o mouse no link */
