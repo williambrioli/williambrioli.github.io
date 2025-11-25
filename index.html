@@ -844,18 +844,20 @@ Na abordagem psicanalítica clínica integrativa, o atendimento costuma acontece
       let aberto = false;
 
   botao.addEventListener("click", function() {
+    // evita duplicação limpando antes de reescrever
+    texto.innerHTML = "";
+
     if (!aberto) {
-      texto.innerHTML = textoCompleto;
+      texto.insertAdjacentHTML("beforeend", textoCompleto);
       botao.textContent = "Mostrar menos";
       aberto = true;
     } else {
-      texto.innerHTML = textoOriginal;
+      texto.insertAdjacentHTML("beforeend", textoOriginal);
       botao.textContent = "Me conheça mais";
       aberto = false;
     }
   });
-
-}); // ✅ fecha o addEventListener principal AQUI!
+});
     
     // Accessibility: smooth scroll for anchor links
     (function(){
