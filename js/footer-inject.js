@@ -76,6 +76,15 @@
         const contactButtonWA =
           cfg && cfg.contactButtonWA ? cfg.contactButtonWA : "rodapegeneric";
 
+
+
+         // normaliza a chave para evitar cair no "generic"
+         const waKey = String(contactButtonWA || "rodapegeneric")
+        .toLowerCase()
+        .trim()
+        .replace(/\s+/g, "");
+
+
         // Se o telefone não tiver texto para exibir,
         // simplesmente não mostramos o bloco <li>.
         const phoneBlock = phoneDisplay
@@ -109,37 +118,39 @@
           </div>
         `;
 
-        // --- BLOCO: REATIVAR O BOTÃO DO WHATSAPP ---
-        // Pegamos o botão pelo ID.
-        const btn = document.getElementById("btnContact");
+       // --- BLOCO: REATIVAR O BOTÃO DO WHATSAPP ---
+const btn = document.getElementById("btnContact");
 
-        // Se existir, adicionamos o evento de clique.
-        if (btn) {
-          btn.addEventListener("click", (e) => {
-            e.preventDefault(); // ← impede que o navegador vá direto para o link
-
-            // Verifica se a função openWA existe.
-            if (typeof openWA === "function") {
-              try {
-                // Tenta abrir o WhatsApp com a chave configurada.
-                openWA(contactButtonWA || "rodapegeneric");
-              } catch (err) {
-                // Se openWA falhar, loga o erro e abre o link direto como fallback.
-                console.warn("openWA falhou:", err);
-                window.location.href = phoneHref;
-              }
-            } else {
-              // Se openWA não existir, cai no link direto.
-              window.location.href = phoneHref;
-            }
-          });
-        }
-      } catch (innerErr) {
-        // Se algum erro ocorrer dentro de init(),
-        // mostramos no console, mas sem quebrar a página.
-        console.error("footer-inject.js (init) erro:", innerErr);
-      }
+if (btn) {
+  // prepara o href com a mensagem certa — funciona mesmo sem openWA
+  try {
+    if (typeof window.waLink === "function") {
+      btn.setAttribute("href", window.waLink(waKey || "rodapegeneric"));
+    } else {
+      btn.setAttribute("href", phoneHref);
     }
+  } catch {
+    btn.setAttribute("href", phoneHref);
+  }
+
+  btn.addEventListener("click", (e) => {
+    e.preventDefault(); // impede navegação direta
+
+    if (typeof window.openWA === "function") {
+      try {
+        window.openWA(waKey || "rodapegeneric"); // usa a chave normalizada
+      } catch (err) {
+        console.warn("openWA falhou:", err);
+        // fallback: segue o href já com a mensagem correta
+        window.location.href = btn.getAttribute("href") || phoneHref;
+      }
+    } else {
+      // sem openWA: segue o href já preparado
+      window.location.href = btn.getAttribute("href") || phoneHref;
+    }
+  });
+}
+
 
     // --- BLOCO: FUNÇÃO QUE ESCAPA TEXTO PARA HTML ---
     // Isso impede que alguém quebre o HTML usando caracteres especiais.
