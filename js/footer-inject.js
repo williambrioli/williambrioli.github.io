@@ -122,32 +122,28 @@
 const btn = document.getElementById("btnContact");
 
 if (btn) {
-  // prepara o href com a mensagem certa — funciona mesmo sem openWA
+  // chave já existente no seu código
+  const key = contactButtonWA || "rodapegeneric";
+
+  // sempre prepara o href com a mensagem correta (mesmo sem openWA)
   try {
     if (typeof window.waLink === "function") {
-      btn.setAttribute("href", window.waLink(waKey || "rodapegeneric"));
+      btn.setAttribute("href", window.waLink(key));
     } else {
-      btn.setAttribute("href", phoneHref);
+      btn.setAttribute("href", phoneHref || "#");
     }
   } catch {
-    btn.setAttribute("href", phoneHref);
+    btn.setAttribute("href", phoneHref || "#");
   }
 
   btn.addEventListener("click", (e) => {
-    e.preventDefault(); // impede navegação direta
+    e.preventDefault();
+    // 🔥 correção pontual: não usamos openWA aqui
+    const url = (typeof window.waLink === "function")
+      ? window.waLink(key)
+      : (btn.getAttribute("href") || phoneHref || "#");
 
-    if (typeof window.openWA === "function") {
-      try {
-        window.openWA(waKey || "rodapegeneric"); // usa a chave normalizada
-      } catch (err) {
-        console.warn("openWA falhou:", err);
-        // fallback: segue o href já com a mensagem correta
-        window.location.href = btn.getAttribute("href") || phoneHref;
-      }
-    } else {
-      // sem openWA: segue o href já preparado
-      window.location.href = btn.getAttribute("href") || phoneHref;
-    }
+    window.open(url, "_blank");
   });
 }
 
