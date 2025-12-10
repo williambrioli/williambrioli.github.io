@@ -196,3 +196,69 @@ function inicializarMenu() {
 // BLOCO: Inicia tudo quando a página carregar
 // =============================
 document.addEventListener("DOMContentLoaded", carregarMenu);
+
+
+
+
+
+// ==== FIX GLOBAL: datas dos cards sem erro de fuso ====
+// Lê "YYYY-MM-DD" e mostra no formato PT-BR sem usar new Date() (que dá problema de fuso)
+(function () {
+  function formatDateFromIso(iso) {
+    if (!iso) return '';
+    const base = String(iso).split('T')[0];           // pega só a parte da data
+    const m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(base);
+    if (!m) return iso;                                // se vier em outro formato, devolve como está
+    const y = +m[1], mo = +m[2], d = +m[3];
+    const meses = ['janeiro','fevereiro','março','abril','maio','junho',
+                   'julho','agosto','setembro','outubro','novembro','dezembro'];
+    return `${String(d).padStart(2,'0')} de ${meses[mo - 1]} de ${y}`;
+  }
+
+  function patchFormatPostMeta() {
+    // Se a página definiu formatPostMeta, substituímos só a parte da data
+    if (typeof window.formatPostMeta === 'function') {
+      window.formatPostMeta = function (post) {
+        const parts = [];
+        if (post?.date) parts.push(formatDateFromIso(post.date)); // <- sem new Date()
+        if (post?.author) parts.push('por ' + post.author);
+        return parts.join(' • ');
+      };
+    }
+  }
+
+  // Executa já ou quando o DOM carregar
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', patchFormatPostMeta);
+  } else {
+    patchFormatPostMeta();
+  }
+})();
+
+
+(function () {
+  function patchSort() {
+    if (typeof window.loadPosts === 'function') {
+      const orig = window.loadPosts;
+      window.loadPosts = async function () {
+        // chama a original
+        await orig();
+        // reordena o cache se existir, por comparação de string ISO (estável e sem fuso)
+        if (Array.isArray(window.POSTS_CACHE)) {
+          window.POSTS_CACHE.sort((a, b) => (b.date || '').localeCompare(a.date || ''));
+          // re-renderiza se houver grid
+          const grid = document.getElementById('postsGrid');
+          if (grid && typeof window.renderPosts === 'function') {
+            window.renderPosts(window.POSTS_CACHE, grid);
+          }
+        }
+      };
+    }
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', patchSort);
+  } else {
+    patchSort();
+  }
+})();
+
