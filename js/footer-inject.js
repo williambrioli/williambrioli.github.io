@@ -122,7 +122,7 @@
             if (typeof openWA === "function") {
               try {
                 // Tenta abrir o WhatsApp com a chave configurada.
-                openWA(contactButtonWA || "generic");
+                openWA(contactButtonWA || "rodapegeneric");
               } catch (err) {
                 // Se openWA falhar, loga o erro e abre o link direto como fallback.
                 console.warn("openWA falhou:", err);
