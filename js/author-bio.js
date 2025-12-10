@@ -12,12 +12,12 @@
 // Tudo entre as crases (`) é texto bruto com marcações HTML.
 const authorBioHTML = `
 <p><h2>Sobre o autor</h2>
-<strong>William Brioli</strong> é <strong>Psicanalista Clínico Integrativo</strong>, 
-pós-graduado em <strong>Neurociência, Comunicação e Desenvolvimento Humano</strong>.
-Atende presencialmente em <strong>Ilha Solteira (SP)</strong> e 
-<strong>online para todo o Brasil</strong>.
-Atua com <strong>psicoterapia individual, terapia de casal, empreendedorismo, carreira 
-e desenvolvimento emocional</strong>.
+
+<strong>William Brioli</strong> é <em>Psicanalista Clínico Integrativo</em> e Bacharel em Psicologia (EBWU – EUA). Há <strong>22 anos</strong> ajuda adultos, casais, líderes e equipes a compreenderem emoções, fortalecerem vínculos e encontrarem equilíbrio entre vida e trabalho.
+Atende <strong>presencialmente em Ilha Solteira (SP)</strong> e <strong>online para todo o Brasil</strong>. Seu método integra psicanálise clássica com ferramentas modernas (TCC, PNL, Neurociências, CNV e Hipnose Ericksoniana), unindo profundidade emocional e resultados práticos.
+Atua em: psicoterapia individual, terapia de casal, desenvolvimento emocional, carreira & liderança e soluções para ambientes corporativos.
+<em>“Minha missão é te ajudar a ressignificar histórias, organizar pensamentos e construir um caminho mais leve, consciente e possível.”</em>
+
 </p>
 `;
 // Linha acima (a variável authorBioHTML) guarda uma string grande que contém
