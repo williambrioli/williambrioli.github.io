@@ -35,8 +35,10 @@
     messages: {
       // Mensagem padrão ("generic").
       // Essa é usada caso nenhuma outra mensagem seja especificada.
-      generic: "Olá, William! Encontrei seu site e gostaria de conversar sobre atendimento."
+      generic: "Olá, William! Encontrei seu site e gostaria de conversar sobre atendimento.",
+      psicoterapiaindividuall: "Olá, William! Quero falar sobre Psicoterapia Individual."
 
+      
       // Exemplos de mensagens adicionais (comentadas).
       // Se quiser criar mais mensagens, basta copiar e alterar:
       // blog: "Olá, William! Li um artigo no seu blog e gostaria de falar sobre terapia.",
