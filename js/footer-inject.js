@@ -74,7 +74,7 @@
 
         // Chave da mensagem do WhatsApp (generic, blog, artigo…)
         const contactButtonWA =
-          cfg && cfg.contactButtonWA ? cfg.contactButtonWA : "generic";
+          cfg && cfg.contactButtonWA ? cfg.contactButtonWA : "rodapegeneric";
 
         // Se o telefone não tiver texto para exibir,
         // simplesmente não mostramos o bloco <li>.
