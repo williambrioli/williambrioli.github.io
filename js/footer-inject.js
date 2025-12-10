@@ -74,17 +74,9 @@
 
         // Chave da mensagem do WhatsApp (generic, blog, artigo…)
         const contactButtonWA =
-          cfg && cfg.contactButtonWA ? cfg.contactButtonWA : "rodapegeneric";
+          cfg && cfg.contactButtonWA ? cfg.contactButtonWA : "generic";
 
-
-
-         // normaliza a chave para evitar cair no "generic"
-         const waKey = String(contactButtonWA || "rodapegeneric")
-        .toLowerCase()
-        .trim()
-        .replace(/\s+/g, "");
-
-
+         
         // Se o telefone não tiver texto para exibir,
         // simplesmente não mostramos o bloco <li>.
         const phoneBlock = phoneDisplay
@@ -119,32 +111,37 @@
         `;
 
        // --- BLOCO: REATIVAR O BOTÃO DO WHATSAPP ---
+// Pegamos o botão pelo ID.
 const btn = document.getElementById("btnContact");
 
+// Se existir, adicionamos o evento de clique.
 if (btn) {
-  // chave já existente no seu código
-  const key = contactButtonWA || "rodapegeneric";
-
-  // sempre prepara o href com a mensagem correta (mesmo sem openWA)
-  try {
-    if (typeof window.waLink === "function") {
-      btn.setAttribute("href", window.waLink(key));
-    } else {
-      btn.setAttribute("href", phoneHref || "#");
-    }
-  } catch {
-    btn.setAttribute("href", phoneHref || "#");
-  }
-
   btn.addEventListener("click", (e) => {
-    e.preventDefault();
-    // 🔥 correção pontual: não usamos openWA aqui
-    const url = (typeof window.waLink === "function")
-      ? window.waLink(key)
-      : (btn.getAttribute("href") || phoneHref || "#");
+    e.preventDefault(); // ← impede que o navegador vá direto para o link
 
-    window.open(url, "_blank");
+    // Verifica se a função openWA existe.
+    if (typeof openWA === "function") {
+      try {
+        // Tenta abrir o WhatsApp com a chave configurada.
+        openWA(contactButtonWA || "rodapegeneric");
+      } catch (err) {
+        // Se openWA falhar, loga o erro e abre o link direto como fallback.
+        console.warn("openWA falhou:", err);
+        window.location.href = phoneHref;
+      }
+    } else {
+      // Se openWA não existir, cai no link direto.
+      window.location.href = phoneHref;
+    }
   });
+}
+
+} catch (innerErr) {
+  // Se algum erro ocorrer dentro de init(),
+  // mostramos no console, mas sem quebrar a página.
+  console.error("footer-inject.js (init) erro:", innerErr);
+}
+
 }
 
 
