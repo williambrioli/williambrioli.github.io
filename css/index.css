@@ -39,7 +39,7 @@
   position: relative;
   z-index: 5;
   width: 100%; 
-  padding: 14px 14px 48px 14px; /* deixa mais espaço só embaixo */
+  padding: 24px 24px 32px 24px; /* deixa mais espaço só embaixo */
 
 }
 
