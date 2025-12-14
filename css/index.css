@@ -46,8 +46,8 @@
 .hero__text {
   max-width: 750px;
   background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.02));
-  padding: 10px;
-  border-radius: 8px;
+  padding: 5px;
+  border-radius: 5px;
 }
 
 .hero h1 {
@@ -59,7 +59,7 @@
 .hero p.lead {
   margin: 8px 0 0;
   color: #f7f7f7;
-  font-weight: 700;
+  font-weight: 750;
   font-size: 12px; /* ou 18px se quiser equilibrar */
 }
 
