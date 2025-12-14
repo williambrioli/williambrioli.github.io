@@ -39,7 +39,7 @@
   position: relative;
   z-index: 5;
   width: 100%; 
-  padding: 4px 4px 48px 4px; /* deixa mais espaço só embaixo */
+  padding: 14px 14px 48px 14px; /* deixa mais espaço só embaixo */
 
 }
 
@@ -52,7 +52,7 @@
 
 .hero h1 {
   margin: 0;
-  font-size: 25px;
+  font-size: 26px;
   color: #fff;
 }
 
@@ -60,7 +60,7 @@
   margin: 8px 0 0;
   color: #f7f7f7;
   font-weight: 899;
-  font-size: 16px; /* ou 18px se quiser equilibrar */
+  font-size: 18px; /* ou 18px se quiser equilibrar */
 }
 
 .hero small {
