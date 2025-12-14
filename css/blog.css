@@ -215,13 +215,13 @@
 /* título grande dentro do hero (h1) */
 .blog-hero h1 {
   margin: 0 0 8px; /* sem margem em cima, 8px embaixo */
-  font-size: 28px; /* tamanho grande para o título principal do blog */
+  font-size: 26px; /* tamanho grande para o título principal do blog */
 }
 
 /* parágrafos dentro do hero */
 .blog-hero p {
   margin: 0; /* sem margem padrão */
-  max-width: 899px; /* largura máxima do parágrafo para facilitar leitura */
+  max-width: 800px; /* largura máxima do parágrafo para facilitar leitura */
   line-height: 1.6; /* espaço entre linhas */
   color: #f0f7f7; /* cor clarinha para texto sobre o fundo escuro do hero */
 }
