@@ -221,7 +221,7 @@
 /* parágrafos dentro do hero */
 .blog-hero p {
   margin: 0; /* sem margem padrão */
-  max-width: 600px; /* largura máxima do parágrafo para facilitar leitura */
+  max-width: 899px; /* largura máxima do parágrafo para facilitar leitura */
   line-height: 1.6; /* espaço entre linhas */
   color: #f0f7f7; /* cor clarinha para texto sobre o fundo escuro do hero */
 }
