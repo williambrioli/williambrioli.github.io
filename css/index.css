@@ -691,13 +691,13 @@ footer.site-footer {
   /* Desce o texto um pouco sem alterar o tamanho do hero */
   .hero__overlay {
     transform: translateY(80px); /* ajuste fino */
-    padding: 0 8px 24px 8px !important; /* diminui margens laterais *
+    padding: 0 !important; /* remove qualquer espaço lateral extra */
   }
-
 .hero__text {
     margin-left: 0 !important;
     padding-left: 8px !important;
     text-align: left !important;
+    padding: 0 8px !important; /* controla o espaço lateral: 8px por lado */
    
 }
 
