@@ -44,7 +44,7 @@
 }
 
 .hero__text {
-  max-width: 800px;
+  max-width: 899px;
   background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.02));
   padding: 16px;
   border-radius: 10px;
@@ -52,15 +52,15 @@
 
 .hero h1 {
   margin: 0;
-  font-size: 20px;
+  font-size: 22px;
   color: #fff;
 }
 
 .hero p.lead {
   margin: 8px 0 0;
   color: #f7f7f7;
-  font-weight: 750;
-  font-size: 12px; /* ou 18px se quiser equilibrar */
+  font-weight: 899;
+  font-size: 14px; /* ou 18px se quiser equilibrar */
 }
 
 .hero small {
@@ -697,7 +697,7 @@ footer.site-footer {
     margin-left: 0 !important;
     padding-left: 8px !important;
     text-align: left !important;
-    padding: 18 8px !important; /* controla o espaço lateral: 8px por lado */
+    padding : 32 2px !important; /* controla o espaço lateral: 8px por lado */
    
 }
 
