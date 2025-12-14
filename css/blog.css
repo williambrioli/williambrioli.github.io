@@ -215,7 +215,7 @@
 /* título grande dentro do hero (h1) */
 .blog-hero h1 {
   margin: 0 0 8px; /* sem margem em cima, 8px embaixo */
-  font-size: 26px; /* tamanho grande para o título principal do blog */
+  font-size: 28px; /* tamanho grande para o título principal do blog */
 }
 
 /* parágrafos dentro do hero */
@@ -233,7 +233,7 @@
   padding: 4px 10px; /* espaço interno da etiqueta */
   border-radius: 999px; /* deixa a etiqueta em formato pílula */
   background: rgba(0,0,0,0.18); /* fundo semitransparente escuro */
-  font-size: 12px; /* texto pequeno */
+  font-size: 13px; /* texto pequeno */
 }
 
 
