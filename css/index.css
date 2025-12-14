@@ -60,7 +60,7 @@
   margin: 8px 0 0;
   color: #f7f7f7;
   font-weight: 899;
-  font-size: 15px; /* ou 18px se quiser equilibrar */
+  font-size: 14px; /* ou 18px se quiser equilibrar */
 }
 
 .hero small {
@@ -690,7 +690,7 @@ footer.site-footer {
 
   /* Desce o texto um pouco sem alterar o tamanho do hero */
   .hero__overlay {
-    transform: translateY(60px); /* ajuste fino */
+    transform: translateY(50px); /* ajuste fino */
     padding: 0 !important; /* remove qualquer espaço lateral extra */
   }
 .hero__text {
