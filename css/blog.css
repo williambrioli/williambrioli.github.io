@@ -25,7 +25,7 @@
   position: relative; /* posiciona relativo para permitir elementos internos posicionados */
   border-radius: 0 !important; /* força cantos quadrados (sobrepõe outros estilos) */
   overflow:visible !important; /* permite que elementos saiam da caixa (não escondê-los) */
-  padding: 50px 10px; /* espaço interno: 48px em cima/baixo e 32px nas laterais */
+  padding: 90px 10px; /* espaço interno: 48px em cima/baixo e 32px nas laterais */
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08); /* sombra grande abaixo para destacar */
   color: #fff; /* cor do texto dentro do hero (branco) */
   /* Remove o background fixo para permitir que o JS funcione */
@@ -397,16 +397,6 @@ footer.site-footer {
 .contact-list li {
   margin-bottom: 6px; /* espaço entre itens da lista */
 }
-
-/* ============================================================
-   AJUSTE DE ALTURA DO HERO — SOMENTE DESKTOP
-   ============================================================ */
-@media screen and (min-width: 992px) {
-  .blog-hero {
-    padding-top: 120px;   /* aumenta o espaço acima (antes era 50px) */
-    padding-bottom: 120px; /* aumenta o espaço abaixo */
-    background-position: center top; /* sobe um pouco a imagem pra mostrar mais da cabeça */
-  }
 
 }
 
