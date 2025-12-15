@@ -74,7 +74,7 @@
   .hero {
     max-width: var(--max-width);
     margin: 0 auto;
-    height: 600px;
+    height: 700px;
     border-radius: 20px;
     overflow: hidden;
   }
