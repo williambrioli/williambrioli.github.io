@@ -397,5 +397,16 @@ footer.site-footer {
 .contact-list li {
   margin-bottom: 6px; /* espaço entre itens da lista */
 }
+
+/* ============================================================
+   AJUSTE DE ALTURA DO HERO — SOMENTE DESKTOP
+   ============================================================ */
+@media screen and (min-width: 992px) {
+  .blog-hero {
+    padding-top: 120px;   /* aumenta o espaço acima (antes era 50px) */
+    padding-bottom: 120px; /* aumenta o espaço abaixo */
+    background-position: center top; /* sobe um pouco a imagem pra mostrar mais da cabeça */
+  }
+
 }
 
