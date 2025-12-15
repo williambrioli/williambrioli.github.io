@@ -32,10 +32,7 @@
   background-size: cover; /* faz a imagem de fundo cobrir toda a área */
   background-position: center; /* centraliza a imagem de fundo */
   background-repeat: no-repeat; /* evita repetição da imagem de fundo */
-  display: flex;
-  align-items: flex-end;   /* desce o texto para o rodapé */
-  justify-content: flex-start; /* deixa o texto na esquerda */
-  
+ 
 }
 
 
@@ -407,9 +404,7 @@ footer.site-footer {
    ============================================================ */
 @media screen and (min-width: 992px) {
   .blog-hero {
-    padding: 180px 30px;   /* aumenta o espaço acima (antes era 50px) */
-    align-items: flex-end;   /* desce o texto para o rodapé */
-    justify-content: flex-start; /* deixa o texto na esquerda */
+    padding: 250px 30px;   /* aumenta o espaço acima (antes era 50px) */
     border-radius: 20px;   
   }
 }
