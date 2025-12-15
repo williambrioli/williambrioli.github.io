@@ -413,7 +413,7 @@ footer.site-footer {
     padding: 80px 30px 48px;    /* top | lados | bottom (deixa respiro embaixo) */
 
     background-size: cover;
-    background-position: center 15%; /* mostra mais a parte de cima da foto */
+    background-position: center 5%; /* mostra mais a parte de cima da foto */
     border-radius: 20px;        /* se quiser mesmo com cantos arredondados */
     overflow: hidden;
   }
