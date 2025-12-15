@@ -82,20 +82,7 @@
   .hero__img {
     border-radius: 20px;
   }
-
-   .hero h1 {
-  margin: 0;
-  font-size: 38px;
-  color: #fff;
-}
-
-.hero p.lead {
-  margin: 8px 0 0;
-  color: #f7f7f7;
-  font-weight: 899;
-  font-size: 20px; /* ou 18px se quiser equilibrar */
-}
-   
+ 
 }
 
 /* Footer interno do hero */
