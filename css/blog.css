@@ -400,14 +400,24 @@ footer.site-footer {
 }
 
 /* ============================================================
-   AJUSTE DE ALTURA DO HERO — SOMENTE DESKTOP
+   HERO no rodapé — somente desktop
    ============================================================ */
 @media screen and (min-width: 992px) {
   .blog-hero {
-    padding: 300px 30px;   /* aumenta o espaço acima (antes era 50px) */
-    border-radius: 20px;
-    align-items: flex-end;   /* desce o texto para o rodapé */
-    justify-content: flex-start; /* deixa o texto na esquerda */
+    display: flex;
+    flex-direction: column;     /* empilha título + textos */
+    justify-content: flex-end;  /* desce tudo pro rodapé do hero */
+    align-items: flex-start;    /* mantém alinhado à esquerda */
+    
+    min-height: 600px;          /* altura do bloco */
+    padding: 80px 30px 48px;    /* top | lados | bottom (deixa respiro embaixo) */
+
+    background-size: cover;
+    background-position: center 15%; /* mostra mais a parte de cima da foto */
+    border-radius: 20px;        /* se quiser mesmo com cantos arredondados */
+    overflow: hidden;
   }
+}
+
 }
 
