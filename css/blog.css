@@ -405,7 +405,12 @@ footer.site-footer {
 @media screen and (min-width: 992px) {
   .blog-hero {
     padding: 250px 30px;   /* aumenta o espaço acima (antes era 50px) */
-    border-radius: 20px;   
+    border-radius: 20px;
+    max-width: var(--max-width);
+    margin: 0 auto;
+    height: 600px;
+    border-radius: 999px;
+    overflow: hidden;
   }
 }
 
