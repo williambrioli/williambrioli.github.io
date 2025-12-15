@@ -34,6 +34,7 @@
   background-repeat: no-repeat; /* evita repetição da imagem de fundo */
   align-items: flex-end;   /* desce o texto para o rodapé */
   justify-content: flex-start; /* deixa o texto na esquerda */
+  border-radius: 20px;
 }
 
 
