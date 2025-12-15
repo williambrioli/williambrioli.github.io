@@ -409,12 +409,12 @@ footer.site-footer {
     justify-content: flex-end;  /* desce tudo pro rodapé do hero */
     align-items: flex-start;    /* mantém alinhado à esquerda */
     
-    min-height: 600px;          /* altura do bloco */
+    min-height: 700px;          /* altura do bloco */
     padding: 80px 30px 48px;    /* top | lados | bottom (deixa respiro embaixo) */
 
     background-size: cover;
-    background-position: center 5%; /* mostra mais a parte de cima da foto */
-    border-radius: 20px;        /* se quiser mesmo com cantos arredondados */
+    background-position: center; /* mostra mais a parte de cima da foto */
+    border-radius: 20px !important;  /* força a aplicação do raio */
     overflow: hidden;
   }
 }
