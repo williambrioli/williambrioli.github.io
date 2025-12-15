@@ -79,6 +79,21 @@
     overflow: hidden;
   }
 
+  .hero h1 {
+    font-size: 42px;      /* título maior e mais legível */
+    line-height: 1.3;
+  }
+
+  .hero p.lead {
+    font-size: 20px;      /* subtítulo equilibrado */
+    line-height: 1.7;
+    font-weight: 700;     /* mantém o destaque, sem exagerar */
+  }
+
+  .hero small {
+    font-size: 15px;      /* etiqueta levemente maior */
+  } 
+
   .hero__img {
     border-radius: 20px;
   }
