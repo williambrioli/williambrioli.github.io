@@ -417,6 +417,21 @@ footer.site-footer {
     border-radius: 20px !important;  /* força a aplicação do raio */
     overflow: hidden;
   }
+
+   .blog-hero h1 {
+    font-size: 38px;   /* antes era 28px — ajuste à vontade */
+    line-height: 1.3;
+  }
+
+  .blog-hero p {
+    font-size: 18px;   /* aumenta um pouco o texto do subtítulo */
+    line-height: 1.7;
+  }
+
+  .blog-hero small {
+    font-size: 20px;   /* etiqueta menor, mas ainda proporcional */
+  }
+   
 }
 
 }
