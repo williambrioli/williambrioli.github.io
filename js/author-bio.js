@@ -13,7 +13,7 @@
 const authorBioHTML = `
 <p><h2>Sobre o autor</h2>
 
-<strong>William Brioli</strong> é <em>Psicanalista Clínico Integrativo</em>, <em>Bacharel em Psicologia (EBWU – EUA)</em>, <em>Master Trainer</em> e <em>Consultor Empresarial</em> do IGC Treinamentos. Há <strong>22 anos</strong> ajuda adultos, casais, líderes e equipes a compreenderem emoções, fortalecerem vínculos e encontrarem equilíbrio entre vida e trabalho.
+<strong>William Brioli</strong> é <em>Psicanalista Clínico Integrativo</em>, <em>Bacharel em Psicologia (EBWU – EUA)</em>, <em>Master Trainer</em> e <em>Consultor Empresarial</em>. Há <strong>22 anos</strong> ajuda adultos, casais, líderes e equipes a compreenderem emoções, fortalecerem vínculos e encontrarem equilíbrio entre vida e trabalho.
 Atende <strong>presencialmente em Ilha Solteira (SP)</strong> e <strong>online para todo o Brasil</strong>. Seu método integra psicanálise clássica com ferramentas modernas (TCC, PNL, Neurociências, CNV e Hipnose Ericksoniana), unindo profundidade emocional e resultados práticos.
 Atua em: psicoterapia individual, terapia de casal, desenvolvimento emocional, carreira & liderança e <strong>programas corporativos de consultoria e palestras em desenvolvimento humano e saúde mental para empresas e equipes.</strong>
 <em>“Minha missão é te ajudar a ressignificar histórias, organizar pensamentos e construir um caminho mais leve, consciente e possível.”</em>
