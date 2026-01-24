@@ -4,9 +4,6 @@
   <meta charset="UTF-8">
   <title>Emissão de Certificado</title>
 
-  <!-- Redireciona após 2 segundos -->
-  <meta http-equiv="refresh" content="2;url=https://forms.gle/qquiRLbLLjHUnWr47">
-
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -20,25 +17,57 @@
     .box {
       background: #fff;
       padding: 40px;
-      max-width: 500px;
+      max-width: 520px;
       text-align: center;
       border-radius: 8px;
       box-shadow: 0 10px 30px rgba(0,0,0,.1);
     }
     h1 {
-      color: #1f3c88; /* cor próxima da sua identidade */
+      color: #1f3c88;
     }
     p {
       color: #555;
     }
+    .expired {
+      color: #b00020;
+      font-weight: bold;
+    }
   </style>
+
+  <script>
+    // 🔴 CONFIGURAÇÃO ÚNICA (MUDA SÓ AQUI)
+    const DATA_EXPIRACAO = new Date("2026-01-23T23:59:00");
+    const LINK_FORM = "https://forms.gle/qquiRLbLLjHUnWr47";
+
+    const agora = new Date();
+
+    if (agora < DATA_EXPIRACAO) {
+      // Redireciona após 3 segundos
+      setTimeout(() => {
+        window.location.href = LINK_FORM;
+      }, 3000);
+    }
+  </script>
 </head>
 
 <body>
   <div class="box">
     <h1>Emissão de Certificado</h1>
-    <p>Você será redirecionado automaticamente para o formulário.</p>
-    <p>Se não for redirecionado, <a href="https://forms.gle/qquiRLbLLjHUnWr47">clique aqui</a>.</p>
+
+    <script>
+      if (agora < DATA_EXPIRACAO) {
+        document.write(`
+          <p>Você será redirecionado automaticamente para o formulário.</p>
+          <p>Se não for redirecionado, <a href="${LINK_FORM}">clique aqui</a>.</p>
+        `);
+      } else {
+        document.write(`
+          <p class="expired">O prazo para emissão de certificados foi encerrado.</p>
+          <p>Para mais informações, entre em contato pelo site williambrioli.com.br.</p>
+        `);
+      }
+    </script>
   </div>
 </body>
 </html>
+
