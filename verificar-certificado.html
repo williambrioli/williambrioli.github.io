@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-  <meta charset="UTF-8">
-  <title>Verificação de Certificado</title>
+<meta charset="UTF-8">
+<title>Verificação de Certificado</title>
 </head>
 <body>
 
@@ -17,22 +17,22 @@
 function verificar() {
   const cpf = document.getElementById("cpf").value;
 
-  google.script.run
-    .withSuccessHandler(resposta => {
+  fetch("https://script.google.com/macros/s/AKfycbzFWBWjhlRemezzx97CcT2ZgORihF3kcgqEVL4ePU-6iItWhDtz15VBddMf4G9DXQh7/exec?cpf=" + cpf)
+    .then(res => res.json())
+    .then(data => {
       const div = document.getElementById("resultado");
 
-      if (!resposta.valido) {
-        div.innerHTML = `<p style="color:red">${resposta.mensagem}</p>`;
+      if (!data.valido) {
+        div.innerHTML = `<p style="color:red">${data.mensagem}</p>`;
       } else {
         div.innerHTML = `
           <p><strong>Certificado válido ✔</strong></p>
-          <p>Nome: ${resposta.nome}</p>
-          <p>Data de emissão: ${resposta.data}</p>
-          <p><a href="${resposta.link}" target="_blank">Visualizar certificado</a></p>
+          <p>Nome: ${data.nome}</p>
+          <p>Data: ${data.data}</p>
+          <p><a href="${data.link}" target="_blank">Abrir certificado</a></p>
         `;
       }
-    })
-    .verificarCertificado(cpf);
+    });
 }
 </script>
 
