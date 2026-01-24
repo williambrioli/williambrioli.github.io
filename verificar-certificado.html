@@ -15,10 +15,16 @@
 
 <script>
 function verificar() {
-  const cpf = document.getElementById("cpf").value;
+  const cpf = document.getElementById("cpf").value.trim();
+
+  if (!cpf) {
+    document.getElementById("resultado").innerHTML =
+      "<p style='color:red'>Informe o CPF.</p>";
+    return;
+  }
 
   fetch("https://script.google.com/macros/s/AKfycbzFWBWjhlRemezzx97CcT2ZgORihF3kcgqEVL4ePU-6iItWhDtz15VBddMf4G9DXQh7/exec?cpf=" + cpf)
-    .then(res => res.json())
+    .then(response => response.json())
     .then(data => {
       const div = document.getElementById("resultado");
 
@@ -28,13 +34,23 @@ function verificar() {
         div.innerHTML = `
           <p><strong>Certificado válido ✔</strong></p>
           <p>Nome: ${data.nome}</p>
-          <p>Data: ${data.data}</p>
-          <p><a href="${data.link}" target="_blank">Abrir certificado</a></p>
+          <p>Data de emissão: ${data.data}</p>
+          <p><a href="${data.link}" target="_blank">Visualizar certificado</a></p>
         `;
       }
+    })
+    .catch(err => {
+      document.getElementById("resultado").innerHTML =
+        "<p style='color:red'>Erro ao verificar certificado.</p>";
+      console.error(err);
     });
 }
 </script>
 
 </body>
 </html>
+
+
+
+
+
