@@ -50,7 +50,16 @@
       treinadorfinanc: "Olá, William! Quero falar sobre Orientação e Transição de Carreira.",
       nr1: "Olá, William! Quero falar sobre implementação de NR-1.",
       depoimentogeneric: "Olá, William! Vi o conteúdo do seu site e depoimento dos clientes e quero falar sobre atendimento com você.",
-      palestrageneric: "Olá, William! Vi que você é palestrante e quero falar sobre palestras."
+      palestrageneric: "Olá, William! Vi que você é palestrante e quero falar sobre palestras.",
+      posturagerencial: "Olá, William! Quero falar sobre Desenvolvimento de Postura Gerencial.",
+      liderancapratica: "Olá, William! Quero falar sobre Desenvolvimento de Lideranças na Prática.",
+      acompanhargestores: "Olá, William! Quero falar sobre Acompanhamento de Gestores e Executivos.",
+      alinhamentoorganizacional: "Olá, William! Quero falar sobre Alinhamento de Equipes e Cultura Organizacional."
+
+
+      
+
+      
       
       
       // Exemplos de mensagens adicionais (comentadas).
