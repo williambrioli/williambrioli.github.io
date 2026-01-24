@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Verificação de Certificado</title>
+</head>
+<body>
+
+<h2>Verificar Certificado</h2>
+
+<input type="text" id="cpf" placeholder="Digite o CPF">
+<button onclick="verificar()">Verificar</button>
+
+<div id="resultado"></div>
+
+<script>
+function verificar() {
+  const cpf = document.getElementById("cpf").value;
+
+  google.script.run
+    .withSuccessHandler(resposta => {
+      const div = document.getElementById("resultado");
+
+      if (!resposta.valido) {
+        div.innerHTML = `<p style="color:red">${resposta.mensagem}</p>`;
+      } else {
+        div.innerHTML = `
+          <p><strong>Certificado válido ✔</strong></p>
+          <p>Nome: ${resposta.nome}</p>
+          <p>Data de emissão: ${resposta.data}</p>
+          <p><a href="${resposta.link}" target="_blank">Visualizar certificado</a></p>
+        `;
+      }
+    })
+    .verificarCertificado(cpf);
+}
+</script>
+
+</body>
+</html>
