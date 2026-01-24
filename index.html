@@ -371,7 +371,7 @@
 
 
           <!-- Mediação Extrajudical -->
-          <div class="acc-item" data-key="terapia-empreendedores">
+          <div class="acc-item" data-key="mediação-extrajudicial">
             <div class="acc-header" tabindex="0">
               <h3>Mediação Extrajudical</h3>
               <span>+</span>
@@ -408,7 +408,7 @@
           </div>
           
 <!-- Consultor em Desenvolvimento Humano e Organizacional -->
-          <div class="acc-item" data-key="terapia-empreendedores">
+          <div class="acc-item" data-key="consultor-desenvolvimento-humano">
             <div class="acc-header" tabindex="0">
               <h3>Consultor em Desenvolvimento Humano e Organizacional</h3>
               <span>+</span>
@@ -440,7 +440,7 @@ Mais do que consultoria, ofereço uma jornada de evolução que conecta <em>auto
 
 
 <!-- Estratégia Comercial e Atitude de Vendas -->
-          <div class="acc-item" data-key="terapia-empreendedores">
+          <div class="acc-item" data-key="estrategia-comercial">
             <div class="acc-header" tabindex="0">
               <h3>Estratégia Comercial e Atitude de Vendas</h3>
               <span>+</span>
@@ -469,7 +469,7 @@ O resultado é uma <strong>atuação comercial mais consistente</strong>, com <e
 
 
 
-              <button class="btn wa-btn" data-btn="estrategiavendas" onclick="openWA('estrategiavendass')"></button>
+              <button class="btn wa-btn" data-btn="estrategiacomercialevendas" onclick="openWA('estrategiacomercialevendas')"></button>
             </div>
           </div>          
           
@@ -1223,7 +1223,23 @@ document.querySelectorAll("[data-btn]").forEach(button => {
 
 
 
+<!-- ==========================================
+     SCRIPT QUE INJETA TEXTOS DOS BOTÕES DO SITE_DATA
+     ========================================== -->
+<script>
+document.addEventListener("DOMContentLoaded", () => {
 
+  
+  // Preenche botões com textos ESPECÍFICOS via data-btn
+const specialButtons = document.querySelectorAll("[data-btn]");
+specialButtons.forEach(button => {
+  const key = button.getAttribute("data-btn");
+  if (window.SITE_DATA?.buttons?.[key]) {
+    button.textContent = window.SITE_DATA.buttons[key];
+  }
+  });
+}); // ← ESTA CHAVE ESTAVA FALTANDO
+</script>  
 
 
 
@@ -1258,23 +1274,7 @@ document.querySelectorAll("[data-btn]").forEach(button => {
 <script src="/js/site-data.js"></script>
 
 
-<!-- ==========================================
-     SCRIPT QUE INJETA TEXTOS DOS BOTÕES DO SITE_DATA
-     ========================================== -->
-<script>
-document.addEventListener("DOMContentLoaded", () => {
 
-  
-  // Preenche botões com textos ESPECÍFICOS via data-btn
-const specialButtons = document.querySelectorAll("[data-btn]");
-specialButtons.forEach(button => {
-  const key = button.getAttribute("data-btn");
-  if (window.SITE_DATA?.buttons?.[key]) {
-    button.textContent = window.SITE_DATA.buttons[key];
-  }
-  });
-}); // ← ESTA CHAVE ESTAVA FALTANDO
-</script>  
 
   
   
