@@ -43,7 +43,8 @@ window.SITE_DATA = { // Cria um objeto global chamado SITE_DATA no objeto window
     palestras: "Contratar Palestrante",        // 🔥 novos botões globais que alterar os boões Palestras.
     mediadorextrajudicial: "Agendar Atendimento",       
     consultor: "Agendar Atendimento",        
-    depoimentos: "Agendar Atendimento"
+    depoimentos: "Agendar Atendimento",
+    estrategiavendas: "Falar com o Consultor"
     
   } // Fim do bloco "buttons"
 }; // Fecha o objeto window.SITE_DATA
