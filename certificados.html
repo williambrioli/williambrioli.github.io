@@ -36,7 +36,7 @@
 
   <script>
     // 🔴 CONFIGURAÇÃO ÚNICA (MUDA SÓ AQUI)
-    const DATA_EXPIRACAO = new Date("2026-01-24T23:59:00");
+    const DATA_EXPIRACAO = new Date("2026-01-23T23:59:00");
     const LINK_FORM = "https://forms.gle/qquiRLbLLjHUnWr47";
 
     const agora = new Date();
@@ -57,7 +57,7 @@
     <script>
       if (agora < DATA_EXPIRACAO) {
         document.write(`
-          <p>Você será redirecionado automaticamente para o formulário.</p>
+          <p>Você será redirecionado automaticamente para o formulário de emissão.</p>
           <p>Se não for redirecionado, <a href="${LINK_FORM}">clique aqui</a>.</p>
         `);
       } else {
