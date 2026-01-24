@@ -36,7 +36,7 @@ window.SITE_DATA = { // Cria um objeto global chamado SITE_DATA no objeto window
     orientacaoetransicaodecarreira: "Agendar Atendimento",        // 🔥 novos botões globais que alterar os boões dos ACOORDIONS Como te ajudo.
     orientacaofinanceira: "Agendar Atendimento",        // 🔥 novos botões globais que alterar os boões dos ACOORDIONS Como te ajudo.
     nr1: "Contratar Serviço",        // 🔥 novos botões globais que alterar os boões dos ACOORDIONS Como te ajudo.
-    planosaude: "Agendar Consulta",        // 🔥 novos botões globais que alterar os boões dos ACOORDIONS Dúvidas.
+    planosaude: "Agendar Atendimento",        // 🔥 novos botões globais que alterar os boões dos ACOORDIONS Dúvidas.
     horariofuncionamento: "Agendar Atendimento",        // 🔥 novos botões globais que alterar os boões dos ACOORDIONS Dúvidas.
     precisoterapia: "Agendar Consulta",        // 🔥 novos botões globais que alterar os boões dos ACOORDIONS Dúvidas.
     comofuncionaterapia: "Agendar Consulta",        // 🔥 novos botões globais que alterar os boões dos ACOORDIONS Dúvidas.
