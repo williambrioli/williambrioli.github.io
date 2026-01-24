@@ -45,10 +45,10 @@ window.SITE_DATA = { // Cria um objeto global chamado SITE_DATA no objeto window
     consultor: "Agendar Atendimento",        
     depoimentos: "Agendar Atendimento",
     estrategiacomercialevendas: "Falar com o Consultor",
-    posturagerencial: "Agendar Atendimento".
+    posturagerencial: "Agendar Atendimento",
     liderancapratica: "Agendar Atendimento",
     acompanhargestores: "Agendar Atendimento",
-    alinhamentoorganizacional: "Agendar Atendimento
+    alinhamentoorganizacional: "Agendar Atendimento"
 
     
     
