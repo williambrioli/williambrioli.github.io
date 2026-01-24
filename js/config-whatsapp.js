@@ -45,6 +45,7 @@
       terapiaparaempreendedoress: "Olá, William! Quero falar sobre Terapia para empreendedores.",
       mediadorextrajudiciall: "Olá, William! Quero falar sobre Mediação Extrajudicial.",
       consultoriadesenvolvimentohumanoo: "Olá, William! Quero falar sobre Consultoria em Desenvolvimento Humano e Organizacional.",
+      estrategiacomercialevendas: "Olá, William! Quero falar sobre Estratégia Comercial e Atitude de Vendas...",
       transicaocarreira: "Olá, William! Quero falar sobre Orientação e Transição de Carreira.",
       treinadorfinanc: "Olá, William! Quero falar sobre Orientação e Transição de Carreira.",
       nr1: "Olá, William! Quero falar sobre implementação de NR-1.",
