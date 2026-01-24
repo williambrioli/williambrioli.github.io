@@ -44,7 +44,13 @@ window.SITE_DATA = { // Cria um objeto global chamado SITE_DATA no objeto window
     mediadorextrajudicial: "Agendar Atendimento",       
     consultor: "Agendar Atendimento",        
     depoimentos: "Agendar Atendimento",
-    estrategiacomercialevendas: "Falar com o Consultor"
+    estrategiacomercialevendas: "Falar com o Consultor",
+    posturagerencial: "Agendar Atendimento".
+    liderancapratica: "Agendar Atendimento",
+    acompanhargestores: "Agendar Atendimento",
+    alinhamentoorganizacional: "Agendar Atendimento
+
+    
     
   } // Fim do bloco "buttons"
 }; // Fecha o objeto window.SITE_DATA
