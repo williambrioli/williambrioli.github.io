@@ -1224,23 +1224,7 @@ document.querySelectorAll("[data-btn]").forEach(button => {
 
 
 
-<!-- ==========================================
-     SCRIPT QUE INJETA TEXTOS DOS BOTÕES DO SITE_DATA
-     ========================================== -->
-<script>
-document.addEventListener("DOMContentLoaded", () => {
 
-  
-  // Preenche botões com textos ESPECÍFICOS via data-btn
-const specialButtons = document.querySelectorAll("[data-btn]");
-specialButtons.forEach(button => {
-  const key = button.getAttribute("data-btn");
-  if (window.SITE_DATA?.buttons?.[key]) {
-    button.textContent = window.SITE_DATA.buttons[key];
-  }
-  });
-}); // ← ESTA CHAVE ESTAVA FALTANDO
-</script>
 
 
   
@@ -1273,6 +1257,26 @@ specialButtons.forEach(button => {
 <!-- Carrega o arquivo com textos e botões -->
 <script src="/js/site-data.js"></script>
 
+
+<!-- ==========================================
+     SCRIPT QUE INJETA TEXTOS DOS BOTÕES DO SITE_DATA
+     ========================================== -->
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+
+  
+  // Preenche botões com textos ESPECÍFICOS via data-btn
+const specialButtons = document.querySelectorAll("[data-btn]");
+specialButtons.forEach(button => {
+  const key = button.getAttribute("data-btn");
+  if (window.SITE_DATA?.buttons?.[key]) {
+    button.textContent = window.SITE_DATA.buttons[key];
+  }
+  });
+}); // ← ESTA CHAVE ESTAVA FALTANDO
+</script>  
+
+  
   
 </body>
 </html>
