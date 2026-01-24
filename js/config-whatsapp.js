@@ -49,7 +49,8 @@
       treinadorfinanc: "Olá, William! Quero falar sobre Orientação e Transição de Carreira.",
       nr1: "Olá, William! Quero falar sobre implementação de NR-1.",
       depoimentogeneric: "Olá, William! Vi o conteúdo do seu site e depoimento dos clientes e quero falar sobre atendimento com você.",
-      palestrageneric: "Olá, William! Vi que você é palestrante e quero falar sobre palestras."
+      palestrageneric: "Olá, William! Vi que você é palestrante e quero falar sobre palestras.",
+      estrategiavendass: "Olá, William! Vi que você é Consultor e Palestrante em Estratégia de Comercial e Atitude de Vendas. Quero falar sobre"
       
       
       // Exemplos de mensagens adicionais (comentadas).
