@@ -14,7 +14,7 @@
 window.SITE_DATA = { // Cria um objeto global chamado SITE_DATA no objeto window (acessível em qualquer lugar do site).
   contact: { // Inicio do bloco "contact": guarda dados de contato (nome, título, telefone, horário, textos do botão).
     name: "William Brioli", // O nome que será exibido no site (por exemplo no cabeçalho ou seção de contato).
-    title: "Psicanalista Clínico Integrativo | Consultor Empresarial | Master Trainer em Desenvolvimento Humano de Gestores, Líderes e Equipes | Bacharel em Psicologia pela EBWU (Miami, Flórida - EUA)", // O título ou profissão que será exibido junto do nome.
+    title: "Psicanalista Clínico Integrativo | Consultor Empresarial | Master Trainer em Desenvolvimento Humano de Gestores, Líderes e Equipes | Bacharel em Psicologia (EBWU – Miami, EUA) | Pós-graduações em Neurociências, CNV, PNL, TCC e áreas afins." // O título ou profissão que será exibido junto do nome.
     hoursHTML: "Segunda à sexta-feira — 8h00 às 22h00 (consulte agenda)", // Texto com o horário de atendimento; pode conter HTML se necessário.
     phoneDisplay: "", // Texto para exibir o telefone (visível para o usuário). Está vazio aqui — preencha se quiser mostrar o número.
     phoneHref: "", // Valor para usar em links (ex: "tel:+5511999999999"). Está vazio — preencha para tornar o telefone clicável.
