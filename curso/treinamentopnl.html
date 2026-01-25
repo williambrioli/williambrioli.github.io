@@ -29,13 +29,24 @@ input, button {
   border-radius: 8px;
   border: 1px solid #ccc;
 }
+
 button {
-  background: #1f3c88;
+  background: linear-gradient(135deg, #1f3c88, #2f55d4);
   color: #fff;
   border: none;
   font-size: 16px;
+  padding: 14px;
+  border-radius: 12px;
+  font-weight: bold;
+  letter-spacing: .3px;
 }
-button:hover { opacity: .9; cursor: pointer; }
+
+button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 8px 20px rgba(47,85,212,.35);
+}
+
+  
 .modal {
   display: none;
   position: fixed;
@@ -51,20 +62,56 @@ button:hover { opacity: .9; cursor: pointer; }
   max-width: 420px;
   text-align: center;
 }
+
+
+input, select {
+  width: 100%;
+  padding: 14px;
+  margin-bottom: 14px;
+  border-radius: 10px;
+  border: 1px solid #d0d5dd;
+  font-size: 15px;
+  transition: all .2s ease;
+}
+
+input:focus, select:focus {
+  outline: none;
+  border-color: #1f3c88;
+  box-shadow: 0 0 0 3px rgba(31,60,136,.15);
+}
+
+select {
+  background: #fff;
+  appearance: none;
+}
+  
+
+  
 </style>
 </head>
 
 <body>
 
 <div class="card">
-  <h2>Inscrição</h2>
+  <h2>Inscrição - ${NOME_CURSO} </h2>
 
-  <input id="nome" placeholder="NOME COMPLETO">
-  <input id="cpf" placeholder="CPF (somente números)">
-  <input id="email" placeholder="SEU MELHOR E-MAIL">
-  <input id="telefone" placeholder="TELEFONE (WHATSAPP)">
-  <input id="cidade" placeholder="CIDADE">
-  <input id="estado" placeholder="ESTADO">
+<input id="nome" placeholder="NOME COMPLETO" oninput="upper(this)">
+<input id="cpf" placeholder="CPF (somente números)" inputmode="numeric">
+<input id="email" placeholder="SEU MELHOR E-MAIL" oninput="lower(this)">
+<input id="telefone" placeholder="TELEFONE (WHATSAPP)" oninput="upper(this)">
+<input id="cidade" placeholder="CIDADE" oninput="upper(this)">
+
+  <select id="estado">
+  <option value="">ESTADO</option>
+  <option>AC</option><option>AL</option><option>AP</option><option>AM</option>
+  <option>BA</option><option>CE</option><option>DF</option><option>ES</option>
+  <option>GO</option><option>MA</option><option>MT</option><option>MS</option>
+  <option>MG</option><option>PA</option><option>PB</option><option>PR</option>
+  <option>PE</option><option>PI</option><option>RJ</option><option>RN</option>
+  <option>RS</option><option>RO</option><option>RR</option><option>SC</option>
+  <option>SP</option><option>SE</option><option>TO</option>
+</select>
+
 
   <button onclick="finalizar()">FINALIZAR CADASTRO</button>
 </div>
@@ -109,6 +156,16 @@ function finalizar() {
     `;
     modal.style.display = "flex";
   });
+}
+</script>
+
+<script>
+function upper(el) {
+  el.value = el.value.toUpperCase();
+}
+
+function lower(el) {
+  el.value = el.value.toLowerCase();
 }
 </script>
 
