@@ -166,10 +166,6 @@ function verificar() {
   const curso = cursoSelect.value;
   const resultado = document.getElementById("resultado");
 
-  cursoSelect.style.display = "none";
-  cursoSelect.innerHTML = "";
-
-
   if (!cpf) {
     resultado.innerHTML = "<div class='erro'>Informe o CPF.</div>";
     return;
@@ -177,8 +173,8 @@ function verificar() {
 
   resultado.innerHTML = "<div class='loading'>🔍 Verificando...</div>";
 
-  // 🔹 Se ainda não escolheu curso → buscar cursos
-  if (!cursoSelect.style.display || cursoSelect.style.display === "none") {
+  // 🔹 PRIMEIRA ETAPA: buscar cursos
+  if (cursoSelect.options.length === 0) {
 
     fetch(`${API}?cpf=${cpf}`)
       .then(r => r.json())
@@ -204,14 +200,14 @@ function verificar() {
     return;
   }
 
+  // 🔹 SEGUNDA ETAPA: curso não selecionado
   if (!curso) {
-  resultado.innerHTML =
-    "<div class='erro'>Selecione o curso para continuar.</div>";
-  return;
-}
+    resultado.innerHTML =
+      "<div class='erro'>Selecione o curso para continuar.</div>";
+    return;
+  }
 
-  
-  // 🔹 Validar CPF + CURSO
+  // 🔹 TERCEIRA ETAPA: validar CPF + CURSO
   fetch(`${API}?cpf=${cpf}&curso=${encodeURIComponent(curso)}`)
     .then(r => r.json())
     .then(data => {
