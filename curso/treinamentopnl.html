@@ -140,14 +140,14 @@ select:focus {
 <div class="card">
   <h2 id="titulo"></h2>
 
-<input id="nome" placeholder="Seu Nome Completo" oninput="upper(this)">
-<input id="cpf" placeholder="Seu CPF (somente números)" inputmode="numeric">
-<input id="email" placeholder="Seu Melhor E-mail" oninput="lower(this)">
-<input id="telefone" placeholder="Telefone / WhatsApp (Somente números com DDD)" oninput="upper(this)">
-<input id="cidade" placeholder="Sua Cidade" oninput="upper(this)">
+<input id="nome" placeholder="Seu Nome Completo" oninput="upper(this)" required>
+<input id="cpf" placeholder="Seu CPF (somente números)" inputmode="numeric" required>
+<input id="email" placeholder="Seu Melhor E-mail" oninput="lower(this)" required>
+<input id="telefone" placeholder="Telefone / WhatsApp (Somente números com DDD)" oninput="upper(this)" required>
+<input id="cidade" placeholder="Sua Cidade" oninput="upper(this)" required>
 
   <div class="select-wrapper">
-  <select id="estado">
+  <select id="estado" required>
     <option value="" disabled selected>Estado</option>
     <option>AC</option><option>AL</option><option>AP</option><option>AM</option>
     <option>BA</option><option>CE</option><option>DF</option><option>ES</option>
@@ -180,7 +180,21 @@ document.getElementById("titulo").innerText =
   `Inscrição – ${NOME_CURSO}`;
   
 function finalizar() {
-  const payload = {
+ 
+ if (
+    !nome.value.trim() ||
+    !cpf.value.trim() ||
+    !email.value.trim() ||
+    !telefone.value.trim() ||
+    !cidade.value.trim() ||
+    !estado.value
+  ) {
+    alert("⚠️ Por favor, preencha todos os campos obrigatórios.");
+    return;
+  }
+ 
+  
+ const payload = {
     nome: nome.value.toUpperCase(),
     cpf: cpf.value.replace(/\D/g,''),
     email: email.value.toLowerCase(),
