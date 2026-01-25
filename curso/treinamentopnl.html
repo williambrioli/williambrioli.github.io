@@ -169,6 +169,15 @@ select:focus {
 </div>
 
 <script>
+
+const params = new URLSearchParams(window.location.search);
+const TOKEN = params.get("token");
+
+if (!TOKEN) {
+  document.body.innerHTML = "<h2>Link inválido ou expirado.</h2>";
+}
+
+ 
 const NOME_CURSO = "PROGRAMAÇÃO NEUROLINGUÍSTICA";
 const CARGA_HORARIA = "16 HORAS";
 const LOCAL_CURSO = "HOTEL OT, RUA PRATA N100 -TRÊS LAGOAS - MS";
@@ -195,6 +204,7 @@ function finalizar() {
  
   
  const payload = {
+    token: TOKEN,
     nome: nome.value.toUpperCase(),
     cpf: cpf.value.replace(/\D/g,''),
     email: email.value.toLowerCase(),
