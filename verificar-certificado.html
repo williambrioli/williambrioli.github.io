@@ -139,6 +139,20 @@
   cursor: pointer;
 }
 
+.select-wrapper {
+  position: relative;
+}
+
+.select-wrapper::after {
+  content: "▾";
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  color: #666;
+  font-size: 14px;
+}
 
     
   </style>
@@ -161,7 +175,11 @@
       placeholder="Digite o CPF (somente números)"
     >
 
-     <select id="curso" style="display:none; margin-bottom:15px;"></select>
+     <div class="select-wrapper">
+  <select id="curso" style="display:none;">
+    <!-- opções -->
+  </select>
+</div>
 
     
     <button onclick="verificar()">Verificar certificado</button>
