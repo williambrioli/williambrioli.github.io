@@ -76,7 +76,7 @@ button:hover { opacity: .9; cursor: pointer; }
 <script>
 const NOME_CURSO = "PROGRAMAÇÃO NEUROLINGUÍSTICA";
 const CARGA_HORARIA = "16 HORAS";
-const LOCAL_CURSO = "TRÊS LAGOAS - MS";
+const LOCAL_CURSO = "HOTEL OT, RUA PRATA N100 -TRÊS LAGOAS - MS";
 const DATA_HORARIO_CURSO = "25 e 26/01/2026 • 08h às 17h";
 const ENDPOINT = "https://script.google.com/macros/s/AKfycbwgDM97eLfonIEqaCE3nWO0Qlj6XfUm0fdUaKfFMDV5kdA9Nz4kgXfFNlv8M-nna86e-w/exec";
 
@@ -101,7 +101,7 @@ function finalizar() {
   .then(r => r.json())
   .then(() => {
     modalContent.innerHTML = `
-      <h3>🎉 Inscrição confirmada!</h3>
+      <h3>🎉 Inscrição confirmada em IGC ${NOME_CURSO}</h3>
       <p><b>Curso:</b> ${NOME_CURSO}</p>
       <p><b>Carga horária:</b> ${CARGA_HORARIA}</p>
       <p><b>Local:</b> ${LOCAL_CURSO}</p>
