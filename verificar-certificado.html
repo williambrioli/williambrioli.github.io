@@ -167,7 +167,7 @@ function verificar() {
   resultado.innerHTML =
     "<div class='loading'>🔍 Verificando certificado...</div>";
 
-  fetch("https://script.google.com/macros/s/AKfycbzFWBWjhlRemezzx97CcT2ZgORihF3kcgqEVL4ePU-6iItWhDtz15VBddMf4G9DXQh7/exec?cpf=" + cpf)
+  fetch("https://script.google.com/macros/s/AKfycbyauqEvkxJ-QNTgQu5cxUVVrjnK5B5WyU8wvvWmHgRSGbNlgfNGVE9_sxV8A7palimmBg/exec?cpf=" + cpf)
     .then(response => response.json())
     .then(data => {
       if (!data.valido) {
