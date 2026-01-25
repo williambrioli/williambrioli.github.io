@@ -258,7 +258,11 @@ function verificar() {
           <strong>✅ Certificado válido</strong>
           <p><b>Nome:</b> ${data.nome}</p>
           <p><b>Curso:</b> ${data.curso}</p>
-          <p><b>Data:</b> ${data.data}</p>
+          <p><b>Data:</b> ${
+  new Date(data.data).toLocaleString("pt-BR", {
+    timeZone: "America/Sao_Paulo"
+  })
+}</p>
           <a href="${data.link}" target="_blank">📄 Visualizar certificado</a>
         </div>
       `;
