@@ -143,6 +143,9 @@
       placeholder="Digite o CPF (somente números)"
     >
 
+     <select id="curso" style="display:none; margin-bottom:15px;"></select>
+
+    
     <button onclick="verificar()">Verificar certificado</button>
 
     <div id="resultado" class="resultado"></div>
@@ -154,43 +157,72 @@
   </div>
 
 <script>
+const API =
+  "https://script.google.com/macros/s/AKfycbyauqEvkxJ-QNTgQu5cxUVVrjnK5B5WyU8wvvWmHgRSGbNlgfNGVE9_sxV8A7palimmBg/exec";
+
 function verificar() {
   const cpf = document.getElementById("cpf").value.trim();
+  const cursoSelect = document.getElementById("curso");
+  const curso = cursoSelect.value;
   const resultado = document.getElementById("resultado");
 
   if (!cpf) {
-    resultado.innerHTML =
-      "<div class='erro'>Por favor, informe o CPF.</div>";
+    resultado.innerHTML = "<div class='erro'>Informe o CPF.</div>";
     return;
   }
 
-  resultado.innerHTML =
-    "<div class='loading'>🔍 Verificando certificado...</div>";
+  resultado.innerHTML = "<div class='loading'>🔍 Verificando...</div>";
 
-  fetch("https://script.google.com/macros/s/AKfycbyauqEvkxJ-QNTgQu5cxUVVrjnK5B5WyU8wvvWmHgRSGbNlgfNGVE9_sxV8A7palimmBg/exec?cpf=" + cpf)
-    .then(response => response.json())
-    .then(data => {
-      if (!data.valido) {
+  // 🔹 Se ainda não escolheu curso → buscar cursos
+  if (!cursoSelect.style.display || cursoSelect.style.display === "none") {
+
+    fetch(`${API}?cpf=${cpf}`)
+      .then(r => r.json())
+      .then(data => {
+
+        if (!data.valido) {
+          resultado.innerHTML = `<div class="erro">${data.mensagem}</div>`;
+          return;
+        }
+
+        cursoSelect.innerHTML =
+          `<option value="">Selecione o curso</option>` +
+          data.cursos.map(c =>
+            `<option value="${c}">${c}</option>`
+          ).join("");
+
+        cursoSelect.style.display = "block";
+
         resultado.innerHTML =
-          `<div class="erro">${data.mensagem}</div>`;
-      } else {
-        resultado.innerHTML = `
-          <div class="sucesso">
-            <strong>✅ Certificado válido</strong>
-            <p><b>Nome:</b> ${data.nome}</p>
-            <p><b>Data de emissão:</b> ${data.data}</p>
-            <a href="${data.link}" target="_blank">📄 Visualizar certificado</a>
-          </div>
-        `;
+          "<div class='sucesso'>Selecione o curso para validar o certificado.</div>";
+      });
+
+    return;
+  }
+
+  // 🔹 Validar CPF + CURSO
+  fetch(`${API}?cpf=${cpf}&curso=${encodeURIComponent(curso)}`)
+    .then(r => r.json())
+    .then(data => {
+
+      if (!data.valido) {
+        resultado.innerHTML = `<div class="erro">${data.mensagem}</div>`;
+        return;
       }
-    })
-    .catch(err => {
-      console.error(err);
-      resultado.innerHTML =
-        "<div class='erro'>Erro ao verificar certificado. Tente novamente.</div>";
+
+      resultado.innerHTML = `
+        <div class="sucesso">
+          <strong>✅ Certificado válido</strong>
+          <p><b>Nome:</b> ${data.nome}</p>
+          <p><b>Curso:</b> ${data.curso}</p>
+          <p><b>Data:</b> ${data.data}</p>
+          <a href="${data.link}" target="_blank">📄 Visualizar certificado</a>
+        </div>
+      `;
     });
 }
 </script>
+
 
 </body>
 </html>
