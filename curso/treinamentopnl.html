@@ -223,7 +223,11 @@ function finalizar() {
     body: JSON.stringify(payload)
   })
   .then(r => r.json())
-  .then(() => {
+  .then(res => {
+  if (!res.sucesso) {
+    alert("❌ " + res.erro);
+    return;
+  }
     modalContent.innerHTML = `
       <h3>🎉 Inscrição confirmada - ${NOME_CURSO}</h3>
       <p><b>Curso:</b> ${NOME_CURSO}</p>
