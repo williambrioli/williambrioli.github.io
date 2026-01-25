@@ -173,6 +173,7 @@ const NOME_CURSO = "PROGRAMAÇÃO NEUROLINGUÍSTICA";
 const CARGA_HORARIA = "16 HORAS";
 const LOCAL_CURSO = "HOTEL OT, RUA PRATA N100 -TRÊS LAGOAS - MS";
 const DATA_HORARIO_CURSO = "25 e 26/01/2026 • 08h às 17h";
+const TURMA = "JANEIRO 2026 – TL 01";
 const ENDPOINT = "https://script.google.com/macros/s/AKfycbwgDM97eLfonIEqaCE3nWO0Qlj6XfUm0fdUaKfFMDV5kdA9Nz4kgXfFNlv8M-nna86e-w/exec";
 
 document.getElementById("titulo").innerText =
@@ -190,6 +191,7 @@ function finalizar() {
     cargaHoraria: CARGA_HORARIA,
     localCurso: LOCAL_CURSO,
     dataHorarioCurso: DATA_HORARIO_CURSO
+    turma: TURMA
   };
 
   fetch(ENDPOINT, {
@@ -201,6 +203,7 @@ function finalizar() {
     modalContent.innerHTML = `
       <h3>🎉 Inscrição confirmada - ${NOME_CURSO}</h3>
       <p><b>Curso:</b> ${NOME_CURSO}</p>
+      <p><b>Turma:</b> ${TURMA}</p>
       <p><b>Carga horária:</b> ${CARGA_HORARIA}</p>
       <p><b>Local:</b> ${LOCAL_CURSO}</p>
       <p><b>Dia(s):</b> ${DATA_HORARIO_CURSO}</p>
