@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Inscrição</title>
+
+<style>
+body {
+  font-family: Arial, sans-serif;
+  background: #f4f6f8;
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+.card {
+  background: #fff;
+  padding: 25px;
+  max-width: 420px;
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0,0,0,.1);
+}
+h2 { text-align: center; margin-bottom: 20px; }
+input, button {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 12px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+button {
+  background: #1f3c88;
+  color: #fff;
+  border: none;
+  font-size: 16px;
+}
+button:hover { opacity: .9; cursor: pointer; }
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.5);
+  align-items: center;
+  justify-content: center;
+}
+.modal-content {
+  background: #fff;
+  padding: 25px;
+  border-radius: 10px;
+  max-width: 420px;
+  text-align: center;
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+  <h2>Inscrição</h2>
+
+  <input id="nome" placeholder="NOME COMPLETO">
+  <input id="cpf" placeholder="CPF (somente números)">
+  <input id="email" placeholder="SEU MELHOR E-MAIL">
+  <input id="telefone" placeholder="TELEFONE (WHATSAPP)">
+  <input id="cidade" placeholder="CIDADE">
+  <input id="estado" placeholder="ESTADO">
+
+  <button onclick="finalizar()">FINALIZAR CADASTRO</button>
+</div>
+
+<div class="modal" id="modal">
+  <div class="modal-content" id="modalContent"></div>
+</div>
+
+<script>
+const NOME_CURSO = "PROGRAMAÇÃO NEUROLINGUÍSTICA";
+const CARGA_HORARIA = "16 HORAS";
+const LOCAL_CURSO = "TRÊS LAGOAS - MS";
+const DATA_HORARIO_CURSO = "25 e 26/01/2026 • 08h às 17h";
+const ENDPOINT = "https://script.google.com/macros/s/AKfycbyMZOqb6ZTaE3UcicfGcg62ixQj9Q73Kc7o3BoQp7RATbWSMmcl58KgB9e8P_bQ-FUcNA/exec";
+
+function finalizar() {
+  const payload = {
+    nome: nome.value.toUpperCase(),
+    cpf: cpf.value.replace(/\D/g,''),
+    email: email.value.toLowerCase(),
+    telefone: telefone.value,
+    cidade: cidade.value.toUpperCase(),
+    estado: estado.value.toUpperCase(),
+    nomeCurso: NOME_CURSO,
+    cargaHoraria: CARGA_HORARIA,
+    localCurso: LOCAL_CURSO,
+    dataHorarioCurso: DATA_HORARIO_CURSO
+  };
+
+  fetch(ENDPOINT, {
+    method: "POST",
+    body: JSON.stringify(payload)
+  })
+  .then(r => r.json())
+  .then(() => {
+    modalContent.innerHTML = `
+      <h3>🎉 Inscrição confirmada!</h3>
+      <p><b>Curso:</b> ${NOME_CURSO}</p>
+      <p><b>Carga horária:</b> ${CARGA_HORARIA}</p>
+      <p><b>Local:</b> ${LOCAL_CURSO}</p>
+      <p><b>Dia(s):</b> ${DATA_HORARIO_CURSO}</p>
+    `;
+    modal.style.display = "flex";
+  });
+}
+</script>
+
+</body>
+</html>
