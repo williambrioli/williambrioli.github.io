@@ -64,6 +64,16 @@ const state = {
   autorizacao: ""
 };
 
+
+// 🔹 CONTEXTO DO CERTIFICADO ATUAL
+let CURSO_ATUAL = "";
+let TURMA_ATUAL = "";
+
+const params = new URLSearchParams(window.location.search);
+
+CURSO_ATUAL = params.get("curso")?.toUpperCase() || "";
+TURMA_ATUAL = params.get("turma")?.toUpperCase() || "";
+  
 const app = document.getElementById("app");
 
 /* ===== ETAPAS ===== */
@@ -79,7 +89,10 @@ function etapaCPF() {
 }
 
 function salvarCPF() {
-  state.cpf = document.getElementById("cpf").value.replace(/\D/g,'');
+  state.cpf   = document.getElementById("cpf").value.replace(/\D/g,'');
+  state.curso = CURSO_ATUAL;
+  state.turma = TURMA_ATUAL;
+
   etapaNPS();
 }
 
@@ -182,6 +195,8 @@ function salvarContato() {
   enviar();
 }
 
+
+  
 function enviar() {
   fetch(ENDPOINT, {
     method: "POST",
