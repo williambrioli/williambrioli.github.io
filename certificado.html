@@ -203,10 +203,10 @@ function salvarContato() {
 
   
 function enviar() {
-  fetch(ENDPOINT, {
+  fetch(ENDPOINT + "?criarEmissao=1", {
   method: "POST",
   body: JSON.stringify(state)
-})
+});
   .then(() => {
     app.innerHTML = `
       <h2>🎉 Obrigado!</h2>
