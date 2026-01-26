@@ -3,13 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <title>Emissão de Certificado</title>
+
 <style>
 body {
   font-family: Arial, sans-serif;
   background: #f4f6f8;
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
   height: 100vh;
 }
 .modal {
@@ -17,18 +18,26 @@ body {
   padding: 30px;
   width: 100%;
   max-width: 520px;
-  border-radius: 10px;
-  box-shadow: 0 10px 30px rgba(0,0,0,.15);
+  border-radius: 12px;
+  box-shadow: 0 15px 40px rgba(0,0,0,.15);
 }
 button {
   margin-top: 20px;
-  padding: 12px;
   width: 100%;
+  padding: 14px;
+  font-size: 16px;
   background: #1f3c88;
   color: #fff;
   border: none;
-  border-radius: 6px;
-  font-size: 16px;
+  border-radius: 8px;
+}
+select, input, textarea {
+  width: 100%;
+  padding: 12px;
+  margin-top: 10px;
+}
+small {
+  color: #666;
 }
 </style>
 </head>
@@ -40,7 +49,8 @@ button {
 <script>
 const ENDPOINT = "https://script.google.com/macros/s/AKfycbyjL1PnP8DyDTC5YaH-2ib9T-JP9Mvx7OZdvlnwmXH_H2NUfkb2pI80zCteL9dlAs2rPg/exec";
 
-let state = {
+const state = {
+  modo: "certificado",
   cpf: "",
   npsNota: "",
   npsMotivo: "",
@@ -54,12 +64,14 @@ let state = {
 
 const app = document.getElementById("app");
 
+/* ===== ETAPAS ===== */
+
 function etapaCPF() {
   app.innerHTML = `
     <h2>Emissão de Certificado</h2>
-    <p>Informe seu CPF (somente números)</p>
+    <p>Digite seu CPF (somente números)</p>
     <input id="cpf" placeholder="CPF">
-    <p><i>Pessoas que indicam costumam se beneficiar de condições especiais.</i></p>
+    <small>Pessoas que indicam costumam se beneficiar de condições especiais em treinamentos futuros.</small>
     <button onclick="salvarCPF()">Avançar</button>
   `;
 }
@@ -90,32 +102,92 @@ function etapaMotivo() {
   app.innerHTML = `
     <h2>O que mais contribuiu para essa nota?</h2>
     <select id="motivo">
-      <option>Conteúdo prático</option>
-      <option>Didática</option>
+      <option>Conteúdo prático e aplicável</option>
+      <option>Clareza na explicação</option>
+      <option>Didática do instrutor</option>
       <option>Exemplos do dia a dia</option>
-      <option>Superou expectativas</option>
-      <option>Não atendeu expectativas</option>
+      <option>Superou minhas expectativas</option>
+      <option>Não atendeu totalmente minhas expectativas</option>
       <option>Outro</option>
     </select>
     <textarea id="outro" placeholder="Se outro, descreva"></textarea>
-    <button onclick="finalizar()">Finalizar</button>
+    <button onclick="decidirFluxo()">Avançar</button>
   `;
 }
 
-function finalizar() {
+function decidirFluxo() {
   state.npsMotivo = document.getElementById("motivo").value;
   state.npsOutro = document.getElementById("outro").value;
 
+  if (parseInt(state.npsNota) <= 3) {
+    enviar();
+  } else {
+    etapaFrase();
+  }
+}
+
+function etapaFrase() {
+  app.innerHTML = `
+    <h2>Em uma frase, o que mais fez diferença para você?</h2>
+    <textarea id="frase" maxlength="600"></textarea>
+    <button onclick="salvarFrase()">Avançar</button>
+  `;
+}
+
+function salvarFrase() {
+  state.npsFrase = document.getElementById("frase").value;
+  etapaIndicacao();
+}
+
+function etapaIndicacao() {
+  app.innerHTML = `
+    <h2>Você conhece alguém que se beneficiaria deste treinamento?</h2>
+    <select id="indicou">
+      <option value="NÃO">Não</option>
+      <option value="SIM">Sim</option>
+    </select>
+    <button onclick="salvarIndicacao()">Avançar</button>
+  `;
+}
+
+function salvarIndicacao() {
+  state.indicou = document.getElementById("indicou").value;
+  if (state.indicou === "SIM") {
+    etapaContato();
+  } else {
+    enviar();
+  }
+}
+
+function etapaContato() {
+  app.innerHTML = `
+    <h2>Indicação</h2>
+    <input id="nomeIndicado" placeholder="Nome">
+    <input id="foneIndicado" placeholder="Telefone">
+    <select id="autorizacao">
+      <option value="com_nome">Pode mencionar meu nome</option>
+      <option value="sem_nome">Sem mencionar meu nome</option>
+      <option value="nao">Prefiro não autorizar</option>
+    </select>
+    <button onclick="salvarContato()">Finalizar</button>
+  `;
+}
+
+function salvarContato() {
+  state.indicadoNome = document.getElementById("nomeIndicado").value;
+  state.indicadoTelefone = document.getElementById("foneIndicado").value;
+  state.autorizacao = document.getElementById("autorizacao").value;
+  enviar();
+}
+
+function enviar() {
   fetch(ENDPOINT, {
     method: "POST",
-    body: JSON.stringify({
-      modo: "certificado",
-      ...state
-    })
+    body: JSON.stringify(state)
   }).then(() => {
     app.innerHTML = `
-      <h2>Obrigado!</h2>
-      <p>Seu certificado será enviado em até 20 minutos.</p>
+      <h2>🎉 Obrigado!</h2>
+      <p>Você receberá seu certificado em até 20 minutos.</p>
       <p>
         <a href="https://paulotakahashi.com.br">paulotakahashi.com.br</a><br>
         <a href="https://williambrioli.com.br">williambrioli.com.br</a>
