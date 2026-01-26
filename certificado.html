@@ -196,24 +196,24 @@ function salvarContato() {
 
   
 function enviar() {
-  fetch(ENDPOINT + "?criarEmissao=1", {
+  fetch(ENDPOINT, {
     method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
     body: JSON.stringify(state)
   })
   .then(() => {
     app.innerHTML = `
       <h2>🎉 Obrigado!</h2>
       <p>Você receberá seu certificado em até 20 minutos.</p>
-      <p>
-        <a href="https://paulotakahashi.com.br">paulotakahashi.com.br</a><br>
-        <a href="https://williambrioli.com.br">williambrioli.com.br</a>
-      </p>
     `;
   })
   .catch(() => {
     alert("Erro ao enviar dados. Tente novamente.");
   });
 }
+
 
 
 
