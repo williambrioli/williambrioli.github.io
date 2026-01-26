@@ -183,12 +183,9 @@ function salvarContato() {
 function enviar() {
   fetch(ENDPOINT, {
     method: "POST",
-    headers: {
-      "Content-Type": "application/json"
-    },
+    mode: "no-cors",          // ← ESSENCIAL
     body: JSON.stringify(state)
   })
-  .then(r => r.json())
   .then(() => {
     app.innerHTML = `
       <h2>🎉 Obrigado!</h2>
@@ -199,9 +196,8 @@ function enviar() {
       </p>
     `;
   })
-  .catch(err => {
+  .catch(() => {
     alert("Erro ao enviar dados. Tente novamente.");
-    console.error(err);
   });
 }
 
