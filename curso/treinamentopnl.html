@@ -162,7 +162,7 @@ select:focus {
 
 
 
-  <button onclick="finalizar()">FINALIZAR CADASTRO</button>
+  <button id="btnFinalizar" onclick="finalizar()" disabled>FINALIZAR CADASTRO</button>
 </div>
 
 <div class="modal" id="modal">
@@ -179,15 +179,38 @@ if (!TOKEN) {
 }
 
  
-const NOME_CURSO = "PROGRAMAÇÃO NEUROLINGUÍSTICA";
-const CARGA_HORARIA = "8 HORAS";
-const LOCAL_CURSO = "HOTEL OT, RUA PRATA N100 -TRÊS LAGOAS - MS";
-const DATA_HORARIO_CURSO = "25 e 26/01/2026 • 08h às 17h";
-const TURMA = "JANEIRO 2026 – TL 01";
-const ENDPOINT = "https://script.google.com/macros/s/AKfycbzudLTAvTLS1Aze5LfIlIgGjIKpZWN3NsS2nQqg7j5TxT-9Lgd6HtIdluoQ9uKzx_K-iw/exec";
+let NOME_CURSO = "";
+let CARGA_HORARIA = "";
+let LOCAL_CURSO = "";
+let DATA_HORARIO_CURSO = "";
+let TURMA = "";
+let ENDPOINT = "";
 
-document.getElementById("titulo").innerText =
-  `Inscrição – ${NOME_CURSO}`;
+ fetch(`https://script.google.com/macros/s/AKfycbzudLTAvTLS1Aze5LfIlIgGjIKpZWN3NsS2nQqg7j5TxT-9Lgd6HtIdluoQ9uKzx_K-iw/exec?token=${TOKEN}`)
+  .then(r => r.json())
+  .then(data => {
+
+    if (!data.sucesso) {
+      document.body.innerHTML = "<h2>Link inválido ou expirado.</h2>";
+      return;
+    }
+
+    NOME_CURSO = data.nomeCurso;
+    CARGA_HORARIA = data.cargaHoraria;
+    LOCAL_CURSO = data.localCurso;
+    DATA_HORARIO_CURSO = data.dataHorarioCurso;
+    TURMA = data.turma;
+    ENDPOINT = data.endpoint;
+
+    document.getElementById("titulo").innerText =
+      `Inscrição – ${NOME_CURSO}`;
+
+    document.getElementById("btnFinalizar").disabled = false;
+   
+  });
+
+
+
   
 function finalizar() {
  
