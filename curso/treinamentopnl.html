@@ -102,7 +102,7 @@ input:focus, select:focus {
 }
 
 select {
-  width: 100%;
+  max-width: 100%;
   padding: 12px;
   border-radius: 10px;
   border: 1px solid #ccc;
@@ -115,6 +115,10 @@ select {
   color: #555;
 }
 
+select option {
+  white-space: normal;
+}
+ 
 select:focus {
   outline: none;
   border-color: #1f3c88;
