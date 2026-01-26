@@ -196,10 +196,9 @@ function salvarContato() {
   
 function enviar() {
   fetch(ENDPOINT, {
-    method: "POST",
-    mode: "no-cors",          // ← ESSENCIAL
-    body: JSON.stringify(state)
-  })
+  method: "POST",
+  body: JSON.stringify(state)
+})
   .then(() => {
     app.innerHTML = `
       <h2>🎉 Obrigado!</h2>
