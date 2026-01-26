@@ -183,8 +183,13 @@ function salvarContato() {
 function enviar() {
   fetch(ENDPOINT, {
     method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
     body: JSON.stringify(state)
-  }).then(() => {
+  })
+  .then(r => r.json())
+  .then(() => {
     app.innerHTML = `
       <h2>🎉 Obrigado!</h2>
       <p>Você receberá seu certificado em até 20 minutos.</p>
@@ -193,8 +198,13 @@ function enviar() {
         <a href="https://williambrioli.com.br">williambrioli.com.br</a>
       </p>
     `;
+  })
+  .catch(err => {
+    alert("Erro ao enviar dados. Tente novamente.");
+    console.error(err);
   });
 }
+
 
 etapaCPF();
 </script>
