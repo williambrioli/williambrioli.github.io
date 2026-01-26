@@ -204,9 +204,9 @@ function salvarContato() {
   
 function enviar() {
   fetch(ENDPOINT + "?criarEmissao=1", {
-  method: "POST",
-  body: JSON.stringify(state)
-});
+    method: "POST",
+    body: JSON.stringify(state)
+  })
   .then(() => {
     app.innerHTML = `
       <h2>🎉 Obrigado!</h2>
@@ -221,6 +221,7 @@ function enviar() {
     alert("Erro ao enviar dados. Tente novamente.");
   });
 }
+
 
 
 etapaCPF();
