@@ -224,8 +224,10 @@ function verificar() {
         cursoSelect.innerHTML =
           `<option value="">Selecione o curso</option>` +
           data.cursos.map(c =>
-            `<option value="${c}">${c}</option>`
-          ).join("");
+         `<option value="${c.curso}|${c.turma}">
+         ${c.curso} ${c.turma ? "– " + c.turma : ""}
+         </option>`
+        )
 
         cursoSelect.style.display = "block";
 
