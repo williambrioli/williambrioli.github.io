@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<title>Emissão de Certificado</title>
+
+<style>
+body {
+  font-family: Arial, sans-serif;
+  background: #f4f6f8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+.modal {
+  background: #fff;
+  padding: 30px;
+  width: 100%;
+  max-width: 520px;
+  border-radius: 12px;
+  box-shadow: 0 15px 40px rgba(0,0,0,.15);
+}
+button {
+  margin-top: 20px;
+  width: 100%;
+  padding: 14px;
+  font-size: 16px;
+  background: #1f3c88;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+}
+select, input, textarea {
+  width: 100%;
+  padding: 12px;
+  margin-top: 10px;
+}
+small {
+  color: #666;
+}
+</style>
+</head>
+
+<body>
+
+<div class="modal" id="app"></div>
+
+<script>
+const ENDPOINT = "https://script.google.com/macros/s/AKfycbzr_hu-7laVvJekzSM3_6cgRSbV-ZMRM6w028uySRH4QGen4KT2CBes4qo2j0bEUsZG2A/exec";
+
+const state = {
+  modo: "certificado",
+  cpf: "",
+  curso: "",        
+  turma: "",        
+  npsNota: "",
+  npsMotivo: "",
+  npsOutro: "",
+  npsFrase: "",
+  indicou: "NÃO",
+  indicadoNome: "",
+  indicadoTelefone: "",
+  autorizacao: ""
+};
+
+
+// 🔹 CONTEXTO DO CERTIFICADO ATUAL
+let CURSO_ATUAL = "";
+let TURMA_ATUAL = "";
+
+const params = new URLSearchParams(window.location.search);
+
+CURSO_ATUAL = params.get("curso")?.toUpperCase() || "";
+TURMA_ATUAL = params.get("turma")?.toUpperCase() || "";
+  
+const app = document.getElementById("app");
+
+/* ===== ETAPAS ===== */
+
+function etapaCPF() {
+  app.innerHTML = `
+    <h2>Emissão de Certificado</h2>
+    <p>Digite seu CPF (somente números)</p>
+    <input id="cpf" placeholder="CPF">
+    <small>Pessoas que indicam costumam se beneficiar de condições especiais em treinamentos futuros.</small>
+    <button onclick="salvarCPF()">Avançar</button>
+  `;
+}
+
+  function salvarCPF() {
+  state.cpf = document.getElementById("cpf").value.replace(/\D/g,'');
+
+  fetch(ENDPOINT + "?criarEmissao=1", {
+    method: "POST",
+    mode: "no-cors",
+    body: JSON.stringify({
+      cpf: state.cpf
+    })
+  });
+
+  etapaNPS();
+}
+
+
+function etapaNPS() {
+  app.innerHTML = `
+    <h2>De 0 a 5, o quanto você recomendaria este treinamento?</h2>
+    <select id="nota">
+      <option value="">Selecione</option>
+      <option>0</option><option>1</option><option>2</option>
+      <option>3</option><option>4</option><option>5</option>
+    </select>
+    <button onclick="salvarNPS()">Avançar</button>
+  `;
+}
+
+function salvarNPS() {
+  state.npsNota = document.getElementById("nota").value;
+  etapaMotivo();
+}
+
+function etapaMotivo() {
+  app.innerHTML = `
+    <h2>O que mais contribuiu para essa nota?</h2>
+    <select id="motivo">
+      <option>Conteúdo prático e aplicável</option>
+      <option>Clareza na explicação</option>
+      <option>Didática do instrutor</option>
+      <option>Exemplos do dia a dia</option>
+      <option>Superou minhas expectativas</option>
+      <option>Não atendeu totalmente minhas expectativas</option>
+      <option>Outro</option>
+    </select>
+    <textarea id="outro" placeholder="Se outro, descreva"></textarea>
+    <button onclick="decidirFluxo()">Avançar</button>
+  `;
+}
+
+function decidirFluxo() {
+  state.npsMotivo = document.getElementById("motivo").value;
+  state.npsOutro = document.getElementById("outro").value;
+
+  if (parseInt(state.npsNota) <= 3) {
+    enviar();
+  } else {
+    etapaFrase();
+  }
+}
+
+function etapaFrase() {
+  app.innerHTML = `
+    <h2>Em uma frase, o que mais fez diferença para você?</h2>
+    <textarea id="frase" maxlength="600"></textarea>
+    <button onclick="salvarFrase()">Avançar</button>
+  `;
+}
+
+function salvarFrase() {
+  state.npsFrase = document.getElementById("frase").value;
+  etapaIndicacao();
+}
+
+function etapaIndicacao() {
+  app.innerHTML = `
+    <h2>Você conhece alguém que se beneficiaria deste treinamento?</h2>
+    <select id="indicou">
+      <option value="NÃO">Não</option>
+      <option value="SIM">Sim</option>
+    </select>
+    <button onclick="salvarIndicacao()">Avançar</button>
+  `;
+}
+
+function salvarIndicacao() {
+  state.indicou = document.getElementById("indicou").value;
+  if (state.indicou === "SIM") {
+    etapaContato();
+  } else {
+    enviar();
+  }
+}
+
+function etapaContato() {
+  app.innerHTML = `
+    <h2>Indicação</h2>
+    <input id="nomeIndicado" placeholder="Nome">
+    <input id="foneIndicado" placeholder="Telefone">
+    <select id="autorizacao">
+      <option value="com_nome">Pode mencionar meu nome</option>
+      <option value="sem_nome">Sem mencionar meu nome</option>
+      <option value="nao">Prefiro não autorizar</option>
+    </select>
+    <button onclick="salvarContato()">Finalizar</button>
+  `;
+}
+
+function salvarContato() {
+  state.indicadoNome = document.getElementById("nomeIndicado").value;
+  state.indicadoTelefone = document.getElementById("foneIndicado").value;
+  state.autorizacao = document.getElementById("autorizacao").value;
+  enviar();
+}
+
+
+  
+function enviar() {
+  fetch(ENDPOINT, {
+    method: "POST",
+    mode: "no-cors",          // ← ESSENCIAL
+    body: JSON.stringify(state)
+  })
+  .then(() => {
+    app.innerHTML = `
+      <h2>🎉 Obrigado!</h2>
+      <p>Você receberá seu certificado em até 20 minutos.</p>
+      <p>
+        <a href="https://paulotakahashi.com.br">paulotakahashi.com.br</a><br>
+        <a href="https://williambrioli.com.br">williambrioli.com.br</a>
+      </p>
+    `;
+  })
+  .catch(() => {
+    alert("Erro ao enviar dados. Tente novamente.");
+  });
+}
+
+
+etapaCPF();
+</script>
+
+</body>
+</html>
