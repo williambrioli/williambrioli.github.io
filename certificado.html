@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<title>Emissão de Certificado</title>
+<style>
+body {
+  font-family: Arial, sans-serif;
+  background: #f4f6f8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.modal {
+  background: #fff;
+  padding: 30px;
+  width: 100%;
+  max-width: 520px;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0,0,0,.15);
+}
+button {
+  margin-top: 20px;
+  padding: 12px;
+  width: 100%;
+  background: #1f3c88;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="modal" id="app"></div>
+
+<script>
+const ENDPOINT = "https://script.google.com/macros/s/AKfycbxamlGACZp7eMQ_ZeAUYDA4qWAeut-2IZrk8EBptsXVXDtNCT008h28MTXTGvZnKpiJcQ/exec";
+
+let state = {
+  cpf: "",
+  npsNota: "",
+  npsMotivo: "",
+  npsOutro: "",
+  npsFrase: "",
+  indicou: "NÃO",
+  indicadoNome: "",
+  indicadoTelefone: "",
+  autorizacao: ""
+};
+
+const app = document.getElementById("app");
+
+function etapaCPF() {
+  app.innerHTML = `
+    <h2>Emissão de Certificado</h2>
+    <p>Informe seu CPF (somente números)</p>
+    <input id="cpf" placeholder="CPF">
+    <p><i>Pessoas que indicam costumam se beneficiar de condições especiais.</i></p>
+    <button onclick="salvarCPF()">Avançar</button>
+  `;
+}
+
+function salvarCPF() {
+  state.cpf = document.getElementById("cpf").value.replace(/\D/g,'');
+  etapaNPS();
+}
+
+function etapaNPS() {
+  app.innerHTML = `
+    <h2>De 0 a 5, o quanto você recomendaria este treinamento?</h2>
+    <select id="nota">
+      <option value="">Selecione</option>
+      <option>0</option><option>1</option><option>2</option>
+      <option>3</option><option>4</option><option>5</option>
+    </select>
+    <button onclick="salvarNPS()">Avançar</button>
+  `;
+}
+
+function salvarNPS() {
+  state.npsNota = document.getElementById("nota").value;
+  etapaMotivo();
+}
+
+function etapaMotivo() {
+  app.innerHTML = `
+    <h2>O que mais contribuiu para essa nota?</h2>
+    <select id="motivo">
+      <option>Conteúdo prático</option>
+      <option>Didática</option>
+      <option>Exemplos do dia a dia</option>
+      <option>Superou expectativas</option>
+      <option>Não atendeu expectativas</option>
+      <option>Outro</option>
+    </select>
+    <textarea id="outro" placeholder="Se outro, descreva"></textarea>
+    <button onclick="finalizar()">Finalizar</button>
+  `;
+}
+
+function finalizar() {
+  state.npsMotivo = document.getElementById("motivo").value;
+  state.npsOutro = document.getElementById("outro").value;
+
+  fetch(ENDPOINT, {
+    method: "POST",
+    body: JSON.stringify({
+      modo: "certificado",
+      ...state
+    })
+  }).then(() => {
+    app.innerHTML = `
+      <h2>Obrigado!</h2>
+      <p>Seu certificado será enviado em até 20 minutos.</p>
+      <p>
+        <a href="https://paulotakahashi.com.br">paulotakahashi.com.br</a><br>
+        <a href="https://williambrioli.com.br">williambrioli.com.br</a>
+      </p>
+    `;
+  });
+}
+
+etapaCPF();
+</script>
+
+</body>
+</html>
