@@ -130,6 +130,10 @@ fetch(`https://script.google.com/macros/s/AKfycbzr_hu-7laVvJekzSM3_6cgRSbV-ZMRM6
     }
 
     NOME_CURSO = data.nomeCurso;
+    CARGA_HORARIA = data.cargaHoraria;
+    LOCAL_CURSO = data.localCurso;
+    DATA_HORARIO_CURSO = data.dataHorarioCurso;
+    TURMA = data.turma;
     ENDPOINT = data.endpoint;
 
     document.getElementById("titulo").innerText = `Inscrição – ${NOME_CURSO}`;
