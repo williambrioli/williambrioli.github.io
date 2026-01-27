@@ -195,6 +195,9 @@ let ENDPOINT = "";
       return;
     }
 
+   document.getElementById("titulo").innerText =
+      `Inscrição – ${NOME_CURSO}`;
+   
     NOME_CURSO = data.nomeCurso;
     CARGA_HORARIA = data.cargaHoraria;
     LOCAL_CURSO = data.localCurso;
@@ -202,8 +205,7 @@ let ENDPOINT = "";
     TURMA = data.turma;
     ENDPOINT = data.endpoint;
 
-    document.getElementById("titulo").innerText =
-      `Inscrição – ${NOME_CURSO}`;
+    
 
     document.getElementById("btnFinalizar").disabled = false;
    
@@ -259,6 +261,7 @@ function finalizar() {
       <p><b>Carga horária:</b> ${CARGA_HORARIA}</p>
       <p><b>Local:</b> ${LOCAL_CURSO}</p>
       <p><b>Dia(s):</b> ${DATA_HORARIO_CURSO}</p>
+      <p><b>Você vai receber seu voucher de participação no e-mail</b> ${email} em poucos minutos</p>
     `;
     modal.style.display = "flex";
   });
