@@ -1,27 +1,76 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <meta charset="utf-8">
+    <title>Pesquisa de Satisfação</title>
+  </head>
+
   <body>
     <h2>Pesquisa de Satisfação</h2>
 
-    <label>Nota (0 a 10)</label><br>
-    <input type="number" id="nota"><br><br>
+    <!-- NOTA -->
+    <label>De 0 a 10, o quanto você indicaria este treinamento?</label><br>
+    <input type="number" id="nota" min="0" max="10"><br><br>
 
-    <label>Motivo</label><br>
+    <!-- MOTIVO -->
+    <label>Por que você deu essa nota?</label><br>
     <textarea id="motivo"></textarea><br><br>
 
-    <button onclick="enviar()">Enviar</button>
+    <!-- OUTRO -->
+    <label>Algo mais que gostaria de comentar?</label><br>
+    <textarea id="outro"></textarea><br><br>
+
+    <!-- INDICAÇÃO -->
+    <label>Você indicaria alguém?</label><br>
+    <select id="indicou">
+      <option value="">Selecione</option>
+      <option value="SIM">SIM</option>
+      <option value="NÃO">NÃO</option>
+    </select><br><br>
+
+    <div id="indicacaoBox" style="display:none">
+      <label>Nome do indicado</label><br>
+      <input type="text" id="indicadoNome"><br><br>
+
+      <label>Telefone do indicado</label><br>
+      <input type="text" id="indicadoTel"><br><br>
+    </div>
+
+    <!-- AUTORIZAÇÃO -->
+    <label>
+      <input type="checkbox" id="autorizacao">
+      Autorizo o contato para fins educacionais
+    </label><br><br>
+
+    <button onclick="enviar()">Enviar pesquisa</button>
 
     <script>
+      document.getElementById("indicou").addEventListener("change", e => {
+        document.getElementById("indicacaoBox").style.display =
+          e.target.value === "SIM" ? "block" : "none";
+      });
+
       function enviar() {
 
+        const nota = document.getElementById("nota").value;
+
         const dados = {
-          npsNota: document.getElementById("nota").value,
-          npsMotivo: document.getElementById("motivo").value
+          npsNota: nota,
+          npsMotivo: document.getElementById("motivo").value,
+          npsOutro: document.getElementById("outro").value,
+          npsFrase: nota >= 9 ? "PROMOTOR" : nota >= 7 ? "NEUTRO" : "DETRATOR",
+          indicou: document.getElementById("indicou").value,
+          indicadoNome: document.getElementById("indicadoNome").value,
+          indicadoTel: document.getElementById("indicadoTel").value,
+          autorizacao: document.getElementById("autorizacao").checked ? "SIM" : "NÃO"
         };
 
         google.script.run
           .withSuccessHandler(idTemp => {
             window.location.href = `cpf.html?id=${idTemp}`;
+          })
+          .withFailureHandler(err => {
+            alert(err.message);
           })
           .salvarPesquisaTemp(dados);
       }
