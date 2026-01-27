@@ -212,6 +212,17 @@ function validarCPF(cpf) {
 }
 
 function finalizar() {
+
+if (!nomeEl.value.trim()) {
+  alert("⚠️ Informe o nome do participante.");
+  nomeEl.classList.add("erro");
+  nomeEl.focus();
+  return;
+} else {
+  nomeEl.classList.remove("erro");
+}
+
+  
   if (document.querySelector(".erro")) {
     alert("⚠️ Corrija os campos destacados.");
     return;
