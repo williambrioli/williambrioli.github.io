@@ -185,8 +185,16 @@ cidadeEl.oninput = e => e.target.value = e.target.value.replace(/[^A-Za-zÀ-ÿ ]
 telefoneEl.oninput = e => e.target.value = e.target.value.replace(/\D/g,'');
 
 cpfEl.onblur = () => cpfEl.classList.toggle("erro", !validarCPF(cpfEl.value));
-emailEl.onblur = () => emailEl.classList.toggle("erro", !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailEl.value));
+emailEl.oninput = e => {
+  e.target.value = e.target.value.toLowerCase();
+};
 
+emailEl.onblur = () => {
+  emailEl.classList.toggle(
+    "erro",
+    !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailEl.value)
+  );
+};
 
 function validarCPF(cpf) {
   cpf = cpf.replace(/\D/g,'');
