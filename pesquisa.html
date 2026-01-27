@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <h2>Pesquisa de Satisfação</h2>
+
+    <label>Nota (0 a 10)</label><br>
+    <input type="number" id="nota"><br><br>
+
+    <label>Motivo</label><br>
+    <textarea id="motivo"></textarea><br><br>
+
+    <button onclick="enviar()">Enviar</button>
+
+    <script>
+      function enviar() {
+
+        const dados = {
+          npsNota: document.getElementById("nota").value,
+          npsMotivo: document.getElementById("motivo").value
+        };
+
+        google.script.run
+          .withSuccessHandler(idTemp => {
+            window.location.href = `cpf.html?id=${idTemp}`;
+          })
+          .salvarPesquisaTemp(dados);
+      }
+    </script>
+  </body>
+</html>
