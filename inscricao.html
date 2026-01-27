@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Inscrição</title>
+
+<style>
+* { box-sizing: border-box; }
+body {
+  font-family: Arial, sans-serif;
+  background: #f4f6f8;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card {
+  display: none;
+  background: #fff;
+  padding: 25px;
+  max-width: 420px;
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0,0,0,.1);
+}
+
+.loader {
+  font-size: 18px;
+  color: #1f3c88;
+}
+
+input, select, button {
+  width: 100%;
+  padding: 14px;
+  margin-bottom: 12px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+}
+
+input.erro {
+  border-color: red;
+}
+
+button {
+  background: linear-gradient(135deg, #1f3c88, #2f55d4);
+  color: #fff;
+  border: none;
+  font-weight: bold;
+}
+</style>
+</head>
+
+<body>
+
+<div class="loader" id="loader">🔎 Validando inscrição…</div>
+
+<div class="card" id="formCard">
+  <h2 id="titulo"></h2>
+
+  <input id="nome" placeholder="Seu Nome Completo">
+  <input id="cpf" placeholder="CPF (somente números)">
+  <input id="email" placeholder="Seu Melhor E-mail">
+  <input id="telefone" placeholder="Telefone/WhatsApp">
+  <input id="cidade" placeholder="Cidade">
+
+  <select id="estado">
+    <option value="">Estado</option>
+    <option>SP</option><option>RJ</option><option>MG</option>
+  </select>
+
+  <button onclick="finalizar()">FINALIZAR CADASTRO</button>
+</div>
+
+<script>
+const params = new URLSearchParams(location.search);
+const TOKEN = params.get("token");
+
+if (!TOKEN) {
+  document.body.innerHTML = "<h2>Link inválido ou expirado.</h2>";
+}
+
+let ENDPOINT="", NOME_CURSO="", CARGA_HORARIA="", LOCAL_CURSO="", DATA_HORARIO_CURSO="", TURMA="";
+
+fetch(`https://script.google.com/macros/s/AKfycbzr_hu-7laVvJekzSM3_6cgRSbV-ZMRM6w028uySRH4QGen4KT2CBes4qo2j0bEUsZG2A/exec?token=${TOKEN}`)
+.then(r => r.json())
+.then(data => {
+  if (!data.sucesso) {
+    document.body.innerHTML = "<h2>Link inválido ou expirado.</h2>";
+    return;
+  }
+
+  NOME_CURSO = data.nomeCurso;
+  ENDPOINT = data.endpoint;
+
+  document.getElementById("titulo").innerText = `Inscrição – ${NOME_CURSO}`;
+  document.getElementById("loader").style.display = "none";
+  document.getElementById("formCard").style.display = "block";
+});
+
+// ===== VALIDAÇÕES =====
+
+nome.oninput = e => e.target.value = e.target.value.replace(/[^A-Za-zÀ-ÿ ]/g,'').toUpperCase();
+cidade.oninput = e => e.target.value = e.target.value.replace(/[^A-Za-zÀ-ÿ ]/g,'').toUpperCase();
+telefone.oninput = e => e.target.value = e.target.value.replace(/\D/g,'');
+
+cpf.onblur = () => cpf.classList.toggle("erro", !validarCPF(cpf.value));
+email.onblur = () => email.classList.toggle("erro", !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value));
+
+function validarCPF(cpf) {
+  cpf = cpf.replace(/\D/g,'');
+  if (cpf.length !== 11 || /^(\d)\1+$/.test(cpf)) return false;
+  let soma = 0, resto;
+  for (let i=1;i<=9;i++) soma += parseInt(cpf[i-1])*(11-i);
+  resto = (soma*10)%11;
+  if (resto===10) resto=0;
+  if (resto!=cpf[9]) return false;
+  soma=0;
+  for (let i=1;i<=10;i++) soma += parseInt(cpf[i-1])*(12-i);
+  resto = (soma*10)%11;
+  if (resto===10) resto=0;
+  return resto==cpf[10];
+}
+
+function finalizar() {
+  if (document.querySelector(".erro")) {
+    alert("⚠️ Corrija os campos destacados.");
+    return;
+  }
+
+  fetch(ENDPOINT, {
+    method: "POST",
+    body: JSON.stringify({
+      token: TOKEN,
+      nome: nome.value,
+      cpf: cpf.value,
+      email: email.value,
+      telefone: telefone.value,
+      cidade: cidade.value,
+      estado: estado.value
+    })
+  })
+  .then(r=>r.json())
+  .then(res=>{
+    if(res.sucesso){
+      alert("🎉 Inscrição confirmada! Você receberá o voucher por e-mail.");
+    }
+  });
+}
+</script>
+
+</body>
+</html>
