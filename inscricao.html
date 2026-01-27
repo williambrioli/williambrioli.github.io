@@ -143,12 +143,20 @@ fetch(`https://script.google.com/macros/s/AKfycbzr_hu-7laVvJekzSM3_6cgRSbV-ZMRM6
 
 // ===== VALIDAÇÕES =====
 
-nome.oninput = e => e.target.value = e.target.value.replace(/[^A-Za-zÀ-ÿ ]/g,'').toUpperCase();
-cidade.oninput = e => e.target.value = e.target.value.replace(/[^A-Za-zÀ-ÿ ]/g,'').toUpperCase();
-telefone.oninput = e => e.target.value = e.target.value.replace(/\D/g,'');
+const nomeEl = document.getElementById("nome");
+const cpfEl = document.getElementById("cpf");
+const emailEl = document.getElementById("email");
+const telefoneEl = document.getElementById("telefone");
+const cidadeEl = document.getElementById("cidade");
+const estadoEl = document.getElementById("estado");
 
-cpf.onblur = () => cpf.classList.toggle("erro", !validarCPF(cpf.value));
-email.onblur = () => email.classList.toggle("erro", !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value));
+nomeEl.oninput = e => e.target.value = e.target.value.replace(/[^A-Za-zÀ-ÿ ]/g,'').toUpperCase();
+cidadeEl.oninput = e => e.target.value = e.target.value.replace(/[^A-Za-zÀ-ÿ ]/g,'').toUpperCase();
+telefoneEl.oninput = e => e.target.value = e.target.value.replace(/\D/g,'');
+
+cpfEl.onblur = () => cpfEl.classList.toggle("erro", !validarCPF(cpfEl.value));
+emailEl.onblur = () => emailEl.classList.toggle("erro", !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailEl.value));
+
 
 function validarCPF(cpf) {
   cpf = cpf.replace(/\D/g,'');
@@ -175,18 +183,18 @@ function finalizar() {
   method: "POST",
   body: JSON.stringify({
     token: TOKEN,
-    nome: nome.value,
-    cpf: cpf.value,
-    email: email.value,
-    telefone: telefone.value,
-    cidade: cidade.value,
-    estado: estado.value
+    nome: nomeEl.value,
+    cpf: cpfEl.value,
+    email: emailEl.value,
+    telefone: telefoneEl.value,
+    cidade: cidadeEl.value,
+    estado: estadoEl.value
   })
 })
 .then(r => r.json())
 .then(res => {
   if (res.sucesso) {
-    document.getElementById("mNome").innerText = nome.value;
+    document.getElementById("mNome").innerText = nomeEl.value;
     document.getElementById("mCurso").innerText = NOME_CURSO;
     document.getElementById("mTurma").innerText = TURMA || "-";
     document.getElementById("mCarga").innerText = CARGA_HORARIA || "-";
