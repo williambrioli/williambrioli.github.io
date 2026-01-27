@@ -51,8 +51,8 @@ button {
 }
 
 
-<style>
-/* === MODAL CONFIRMAÇÃO === */
+
+
 .modal {
   display: none;
   position: fixed;
@@ -86,8 +86,6 @@ button {
   from { opacity: 0; transform: scale(.95); }
   to { opacity: 1; transform: scale(1); }
 }
-</style>
-
   
 </style>
 </head>
@@ -170,19 +168,20 @@ function finalizar() {
   }
 
   fetch(ENDPOINT, {
-    method: "POST",
-    body: JSON.stringify({
-      token: TOKEN,
-      nome: nome.value,
-      cpf: cpf.value,
-      email: email.value,
-      telefone: telefone.value,
-      cidade: cidade.value,
-      estado: estado.value
-    })
+  method: "POST",
+  body: JSON.stringify({
+    token: TOKEN,
+    nome: nome.value,
+    cpf: cpf.value,
+    email: email.value,
+    telefone: telefone.value,
+    cidade: cidade.value,
+    estado: estado.value
   })
-  .then(res=>{
-  if(res.sucesso){
+})
+.then(r => r.json())
+.then(res => {
+  if (res.sucesso) {
     document.getElementById("mNome").innerText = nome.value;
     document.getElementById("mCurso").innerText = NOME_CURSO;
     document.getElementById("mTurma").innerText = TURMA || "-";
@@ -192,8 +191,8 @@ function finalizar() {
 
     document.getElementById("modal").style.display = "flex";
   }
-  });
-}
+});
+
 
   
 </script>
