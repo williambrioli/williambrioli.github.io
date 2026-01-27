@@ -232,12 +232,19 @@ if (!nomeEl.value.trim()) {
   method: "POST",
   body: JSON.stringify({
     token: TOKEN,
-    nome: nomeEl.value,
-    cpf: cpfEl.value,
-    email: emailEl.value,
+    nome: nomeEl.value.toUpperCase(),
+    cpf: cpfEl.value.replace(/\D/g,''),
+    email: emailEl.value.toLowerCase(),
     telefone: telefoneEl.value,
-    cidade: cidadeEl.value,
-    estado: estadoEl.value
+    cidade: cidadeEl.value.toUpperCase(),
+    estado: estadoEl.value,
+
+    // 🔴 CAMPOS QUE ALIMENTAM H → O (OBRIGATÓRIOS)
+    nomeCurso: NOME_CURSO,
+    cargaHoraria: CARGA_HORARIA,
+    localCurso: LOCAL_CURSO,
+    dataHorarioCurso: DATA_HORARIO_CURSO,
+    turma: TURMA
   })
 })
 .then(r => r.json())
