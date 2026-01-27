@@ -122,20 +122,24 @@ if (!TOKEN) {
 let ENDPOINT="", NOME_CURSO="", CARGA_HORARIA="", LOCAL_CURSO="", DATA_HORARIO_CURSO="", TURMA="";
 
 fetch(`https://script.google.com/macros/s/AKfycbzr_hu-7laVvJekzSM3_6cgRSbV-ZMRM6w028uySRH4QGen4KT2CBes4qo2j0bEUsZG2A/exec?token=${TOKEN}`)
-.then(r => r.json())
-.then(data => {
-  if (!data.sucesso) {
-    document.body.innerHTML = "<h2>Link inválido ou expirado.</h2>";
-    return;
-  }
+  .then(r => r.json())
+  .then(data => {
+    if (!data.sucesso) {
+      document.body.innerHTML = "<h2>Link inválido ou expirado.</h2>";
+      return;
+    }
 
-  NOME_CURSO = data.nomeCurso;
-  ENDPOINT = data.endpoint;
+    NOME_CURSO = data.nomeCurso;
+    ENDPOINT = data.endpoint;
 
-  document.getElementById("titulo").innerText = `Inscrição – ${NOME_CURSO}`;
-  document.getElementById("loader").style.display = "none";
-  document.getElementById("formCard").style.display = "block";
-});
+    document.getElementById("titulo").innerText = `Inscrição – ${NOME_CURSO}`;
+    document.getElementById("loader").style.display = "none";
+    document.getElementById("formCard").style.display = "block";
+  })
+  .catch(err => {
+    console.error("Erro na validação:", err);
+    document.body.innerHTML = "<h2>Erro ao validar inscrição. Tente novamente.</h2>";
+  });
 
 // ===== VALIDAÇÕES =====
 
