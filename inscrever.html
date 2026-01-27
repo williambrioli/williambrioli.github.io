@@ -195,8 +195,7 @@ let ENDPOINT = "";
       return;
     }
 
-   document.getElementById("titulo").innerText =
-      `Inscrição – ${NOME_CURSO}`;
+   
    
     NOME_CURSO = data.nomeCurso;
     CARGA_HORARIA = data.cargaHoraria;
@@ -205,7 +204,8 @@ let ENDPOINT = "";
     TURMA = data.turma;
     ENDPOINT = data.endpoint;
 
-    
+   document.getElementById("titulo").innerText =
+      `Inscrição – ${NOME_CURSO}`; 
 
     document.getElementById("btnFinalizar").disabled = false;
    
