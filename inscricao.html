@@ -281,9 +281,16 @@ if (!nomeEl.value.trim()) {
 
 <script>
 function fecharModal() {
+  // Fecha o modal
   document.getElementById("modal").style.display = "none";
+
+  // Recarrega a página após fechar o modal
+  setTimeout(function () {
+    window.location.reload();
+  }, 200);
 }
 </script>
+
 
 <div class="modal" id="modal">
   <div class="modal-content">
