@@ -160,7 +160,7 @@ if (!TOKEN) {
 
 let ENDPOINT="", NOME_CURSO="", CARGA_HORARIA="", LOCAL_CURSO="", DATA_HORARIO_CURSO="", TURMA="";
 
-fetch(`https://script.google.com/macros/s/AKfycbxVDr7y-OdBp6wMkBxdWa2-TlYNpVBs4RTy3r35NbvrpFJNH66wEHg-c7dW9xTnk7ss7Q/exec?token=${TOKEN}`)
+fetch(`https://script.google.com/macros/s/AKfycbzBBVP195XUSljqa-uyXbIeSyT0wlQaefBuXOvyWNZot7T_WEsUiKaB5jlcuU8bc11hyA/exec?token=${TOKEN}`)
   .then(r => r.json())
   .then(data => {
     if (!data.sucesso) {
