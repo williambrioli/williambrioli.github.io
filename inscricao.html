@@ -284,6 +284,32 @@ estadoEl.onchange = () => {
    
 function finalizar() {
 
+
+// 🔴 VALIDA PAÍS
+if (!paisEl.value) {
+  alert("⚠️ Selecione o país.");
+  paisEl.focus();
+  return;
+}
+
+// 🔴 VALIDA ESTADO / PREFEITURA / DEPARTAMENTO
+if (!estadoEl.value) {
+  alert("⚠️ Selecione o estado / prefeitura / departamento.");
+  estadoEl.focus();
+  return;
+}
+
+// 🔴 VALIDA CIDADE
+if (!cidadeEl.value.trim()) {
+  alert("⚠️ Informe a cidade.");
+  cidadeEl.classList.add("erro");
+  cidadeEl.focus();
+  return;
+} else {
+  cidadeEl.classList.remove("erro");
+}
+
+
 if (!nomeEl.value.trim()) {
   alert("⚠️ Informe o nome do participante.");
   nomeEl.classList.add("erro");
