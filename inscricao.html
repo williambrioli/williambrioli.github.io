@@ -338,7 +338,27 @@ if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailEl.value)) {
 } else {
   emailEl.classList.remove("erro");
 }
-  
+
+
+
+// 🔴 VALIDA TELEFONE (OBRIGATÓRIO)
+if (!telefoneEl.value.trim()) {
+  alert("⚠️ Informe o telefone / WhatsApp.");
+  telefoneEl.classList.add("erro");
+  telefoneEl.focus();
+  return;
+}
+
+// mínimo 10 dígitos (DDD + número)
+if (telefoneEl.value.length < 10) {
+  alert("⚠️ Informe um telefone válido com DDD.");
+  telefoneEl.classList.add("erro");
+  telefoneEl.focus();
+  return;
+} else {
+  telefoneEl.classList.remove("erro");
+}
+
   
   if (document.querySelector(".erro")) {
     alert("⚠️ Corrija os campos destacados.");
