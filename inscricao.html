@@ -114,39 +114,25 @@ button:active,
   <input id="cpf" placeholder="CPF (somente números)">
   <input id="email" placeholder="Seu Melhor E-mail">
   <input id="telefone" placeholder="Telefone/WhatsApp">
-  <input id="cidade" placeholder="Cidade">
+  
 
-  <select id="estado">
-  <option value="">Estado</option>
-  <option value="AC">AC</option>
-  <option value="AL">AL</option>
-  <option value="AP">AP</option>
-  <option value="AM">AM</option>
-  <option value="BA">BA</option>
-  <option value="CE">CE</option>
-  <option value="DF">DF</option>
-  <option value="ES">ES</option>
-  <option value="GO">GO</option>
-  <option value="MA">MA</option>
-  <option value="MT">MT</option>
-  <option value="MS">MS</option>
-  <option value="MG">MG</option>
-  <option value="PA">PA</option>
-  <option value="PB">PB</option>
-  <option value="PR">PR</option>
-  <option value="PE">PE</option>
-  <option value="PI">PI</option>
-  <option value="RJ">RJ</option>
-  <option value="RN">RN</option>
-  <option value="RS">RS</option>
-  <option value="RO">RO</option>
-  <option value="RR">RR</option>
-  <option value="SC">SC</option>
-  <option value="SP">SP</option>
-  <option value="SE">SE</option>
-  <option value="TO">TO</option>
+
+<select id="pais">
+  <option value="">País</option>
+  <option value="BR">Brasil</option>
+  <option value="JP">Japão</option>
+  <option value="PY">Paraguai</option>
 </select>
 
+
+  
+  <select id="estado" disabled>
+  <option value="">Estado / Região</option>
+  </select>
+
+
+<input id="cidade" placeholder="Cidade" disabled>  
+  
   <button onclick="finalizar()">CONFIRMAR INSCRIÇÃO</button>
 </div>
 
@@ -190,8 +176,33 @@ const nomeEl = document.getElementById("nome");
 const cpfEl = document.getElementById("cpf");
 const emailEl = document.getElementById("email");
 const telefoneEl = document.getElementById("telefone");
-const cidadeEl = document.getElementById("cidade");
+const paisEl = document.getElementById("pais");
 const estadoEl = document.getElementById("estado");
+const cidadeEl = document.getElementById("cidade");
+
+const ESTADOS = {
+  BR: [
+    ["AC","AC"],["AL","AL"],["AP","AP"],["AM","AM"],["BA","BA"],
+    ["CE","CE"],["DF","DF"],["ES","ES"],["GO","GO"],["MA","MA"],
+    ["MT","MT"],["MS","MS"],["MG","MG"],["PA","PA"],["PB","PB"],
+    ["PR","PR"],["PE","PE"],["PI","PI"],["RJ","RJ"],["RN","RN"],
+    ["RS","RS"],["RO","RO"],["RR","RR"],["SC","SC"],["SP","SP"],
+    ["SE","SE"],["TO","TO"]
+  ],
+
+  JP: [
+    ["Tokyo","Tokyo"],["Osaka","Osaka"],["Aichi","Aichi"],
+    ["Kanagawa","Kanagawa"],["Hokkaido","Hokkaido"],
+    ["Fukuoka","Fukuoka"],["Kyoto","Kyoto"]
+  ],
+
+  PY: [
+    ["Central","Central"],["Asunción","Asunción"],
+    ["Alto Paraná","Alto Paraná"],["Itapúa","Itapúa"],
+    ["Caaguazú","Caaguazú"]
+  ]
+};
+
 
 nomeEl.oninput = e => e.target.value = e.target.value.replace(/[^A-Za-zÀ-ÿ ]/g,'').toUpperCase();
 cidadeEl.oninput = e => e.target.value = e.target.value.replace(/[^A-Za-zÀ-ÿ ]/g,'').toUpperCase();
@@ -224,6 +235,45 @@ function validarCPF(cpf) {
   return resto==cpf[10];
 }
 
+
+
+ paisEl.onchange = () => {
+   
+estadoEl.innerHTML = `<option value="">Estado / Região</option>`;
+
+
+
+   
+  cidadeEl.value = "";
+  cidadeEl.disabled = true;
+
+  const lista = ESTADOS[paisEl.value];
+
+  if (!lista) {
+    estadoEl.disabled = true;
+    return;
+  }
+
+  lista.forEach(([valor, nome]) => {
+    const opt = document.createElement("option");
+    opt.value = valor;
+    opt.textContent = nome;
+    estadoEl.appendChild(opt);
+  });
+
+  estadoEl.disabled = false;
+};
+ 
+  
+// 👇 muda o rótulo conforme o país
+  estadoEl.innerHTML =
+    paisEl.value === "JP"
+      ? `<option value="">Prefeitura</option>`
+      : paisEl.value === "PY"
+      ? `<option value="">Departamento</option>`
+      : `<option value="">Estado</option>`;
+
+   
 function finalizar() {
 
 if (!nomeEl.value.trim()) {
