@@ -288,6 +288,61 @@ estadoEl.onchange = () => {
 function finalizar() {
 
 
+// 🔴 VALIDA NOME (OBRIGATÓRIO)
+  
+ if (!nomeEl.value.trim()) {
+  alert("⚠️ Informe o nome do participante.");
+  nomeEl.classList.add("erro");
+  nomeEl.focus();
+  return;
+} else {
+  nomeEl.classList.remove("erro");
+}
+  
+  
+  
+  
+  // 🔴 VALIDA EMAIL (OBRIGATÓRIO)
+if (!emailEl.value.trim()) {
+  alert("⚠️ Informe o e-mail.");
+  emailEl.classList.add("erro");
+  emailEl.focus();
+  return;
+}
+
+if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailEl.value)) {
+  alert("⚠️ Informe um e-mail válido.");
+  emailEl.classList.add("erro");
+  emailEl.focus();
+  return;
+} else {
+  emailEl.classList.remove("erro");
+}
+  
+  
+    
+  
+  // 🔴 VALIDA TELEFONE (OBRIGATÓRIO)
+if (!telefoneEl.value.trim()) {
+  alert("⚠️ Informe o telefone / WhatsApp.");
+  telefoneEl.classList.add("erro");
+  telefoneEl.focus();
+  return;
+}
+
+// mínimo 10 dígitos (DDD + número)
+if (telefoneEl.value.length < 10) {
+  alert("⚠️ Informe um telefone válido com DDD.");
+  telefoneEl.classList.add("erro");
+  telefoneEl.focus();
+  return;
+} else {
+  telefoneEl.classList.remove("erro");
+} 
+
+
+  
+  
 // 🔴 VALIDA PAÍS
 if (!paisEl.value) {
   alert("⚠️ Selecione o país.");
@@ -313,51 +368,6 @@ if (!cidadeEl.value.trim()) {
 }
 
 
-if (!nomeEl.value.trim()) {
-  alert("⚠️ Informe o nome do participante.");
-  nomeEl.classList.add("erro");
-  nomeEl.focus();
-  return;
-} else {
-  nomeEl.classList.remove("erro");
-}
-
-// 🔴 VALIDA EMAIL (OBRIGATÓRIO)
-if (!emailEl.value.trim()) {
-  alert("⚠️ Informe o e-mail.");
-  emailEl.classList.add("erro");
-  emailEl.focus();
-  return;
-}
-
-if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailEl.value)) {
-  alert("⚠️ Informe um e-mail válido.");
-  emailEl.classList.add("erro");
-  emailEl.focus();
-  return;
-} else {
-  emailEl.classList.remove("erro");
-}
-
-
-
-// 🔴 VALIDA TELEFONE (OBRIGATÓRIO)
-if (!telefoneEl.value.trim()) {
-  alert("⚠️ Informe o telefone / WhatsApp.");
-  telefoneEl.classList.add("erro");
-  telefoneEl.focus();
-  return;
-}
-
-// mínimo 10 dígitos (DDD + número)
-if (telefoneEl.value.length < 10) {
-  alert("⚠️ Informe um telefone válido com DDD.");
-  telefoneEl.classList.add("erro");
-  telefoneEl.focus();
-  return;
-} else {
-  telefoneEl.classList.remove("erro");
-}
 
   
   if (document.querySelector(".erro")) {
