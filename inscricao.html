@@ -238,21 +238,22 @@ function validarCPF(cpf) {
 
 
  paisEl.onchange = () => {
-   
-estadoEl.innerHTML = `<option value="">Estado / Região</option>`;
 
+  // 🔹 define o rótulo correto conforme o país
+  estadoEl.innerHTML =
+    paisEl.value === "JP"
+      ? `<option value="">Prefeitura</option>`
+      : paisEl.value === "PY"
+      ? `<option value="">Departamento</option>`
+      : `<option value="">Estado</option>`;
 
-
-   
+  estadoEl.disabled = true;
   cidadeEl.value = "";
   cidadeEl.disabled = true;
 
   const lista = ESTADOS[paisEl.value];
 
-  if (!lista) {
-    estadoEl.disabled = true;
-    return;
-  }
+  if (!lista) return;
 
   lista.forEach(([valor, nome]) => {
     const opt = document.createElement("option");
@@ -263,15 +264,10 @@ estadoEl.innerHTML = `<option value="">Estado / Região</option>`;
 
   estadoEl.disabled = false;
 };
+
  
   
-// 👇 muda o rótulo conforme o país
-  estadoEl.innerHTML =
-    paisEl.value === "JP"
-      ? `<option value="">Prefeitura</option>`
-      : paisEl.value === "PY"
-      ? `<option value="">Departamento</option>`
-      : `<option value="">Estado</option>`;
+
 
    
 function finalizar() {
