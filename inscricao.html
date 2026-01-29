@@ -266,7 +266,9 @@ function validarCPF(cpf) {
 };
 
  
-  
+estadoEl.onchange = () => {
+  cidadeEl.disabled = !estadoEl.value;
+};  
 
 
    
