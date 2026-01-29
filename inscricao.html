@@ -322,6 +322,23 @@ if (!nomeEl.value.trim()) {
   nomeEl.classList.remove("erro");
 }
 
+// 🔴 VALIDA EMAIL (OBRIGATÓRIO)
+if (!emailEl.value.trim()) {
+  alert("⚠️ Informe o e-mail.");
+  emailEl.classList.add("erro");
+  emailEl.focus();
+  return;
+}
+
+if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailEl.value)) {
+  alert("⚠️ Informe um e-mail válido.");
+  emailEl.classList.add("erro");
+  emailEl.focus();
+  return;
+} else {
+  emailEl.classList.remove("erro");
+}
+  
   
   if (document.querySelector(".erro")) {
     alert("⚠️ Corrija os campos destacados.");
