@@ -247,6 +247,16 @@ function validarCPF(cpf) {
       ? `<option value="">Departamento</option>`
       : `<option value="">Estado</option>`;
 
+
+// 🔹 rótulo da CIDADE conforme o país
+cidadeEl.placeholder =
+  paisEl.value === "JP"
+    ? "市 (Cidade)"
+    : paisEl.value === "PY"
+    ? "Ciudad"
+    : "Cidade";
+   
+
   estadoEl.disabled = true;
   cidadeEl.value = "";
   cidadeEl.disabled = true;
