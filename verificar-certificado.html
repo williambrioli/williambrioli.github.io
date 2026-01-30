@@ -195,11 +195,19 @@
     </footer>
   </div>
 
+
+
+
+  
+<script src="/js/igc-config.js"></script>
 <script>
-const API =
-  "https://script.google.com/macros/s/AKfycbxB6mH2EqLyjQaUtMPMyx-GNLzHColazB0awBetRDG_Un3lCvYaF0tHRATIWOa7Iu6HsQ/exec";
+const API = window.IGC_CONFIG.APPS_SCRIPT_BASE;
 </script>
 
+
+
+
+  
 <script>
 function validarCPF(cpf) {
   if (cpf.length !== 11 || /^(\d)\1+$/.test(cpf)) return false;
