@@ -133,7 +133,7 @@ button:active,
 <input
   id="estadoOutro"
   placeholder="Digite o estado / região"
-  style="display:none"
+  style="display:none">
 
 
 <select id="cidade" disabled>
@@ -319,14 +319,15 @@ cidadeEl.placeholder =
     opt.value = valor;
     opt.textContent = nome;
     estadoEl.appendChild(opt);
+  
+  });
 
     const optOutroEstado = document.createElement("option");
     optOutroEstado.value = "OUTRO";
     optOutroEstado.textContent = "OUTRO";
     estadoEl.appendChild(optOutroEstado);
-    
-  });
 
+   
   estadoEl.disabled = false;
 };
 
