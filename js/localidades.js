@@ -9,10 +9,54 @@ const ESTADOS = {
   ],
 
   JP: [
-    ["Tokyo","Tokyo"],["Osaka","Osaka"],["Aichi","Aichi"],
-    ["Kanagawa","Kanagawa"],["Hokkaido","Hokkaido"],
-    ["Fukuoka","Fukuoka"],["Kyoto","Kyoto"]
-  ],
+  ["AICHI","AICHI"],
+  ["AKITA","AKITA"],
+  ["AOMORI","AOMORI"],
+  ["CHIBA","CHIBA"],
+  ["EHIME","EHIME"],
+  ["FUKUI","FUKUI"],
+  ["FUKUOKA","FUKUOKA"],
+  ["FUKUSHIMA","FUKUSHIMA"],
+  ["GIFU","GIFU"],
+  ["GUNMA","GUNMA"],
+  ["HIROSHIMA","HIROSHIMA"],
+  ["HOKKAIDO","HOKKAIDO"],
+  ["HYOGO","HYOGO"],
+  ["IBARAKI","IBARAKI"],
+  ["ISHIKAWA","ISHIKAWA"],
+  ["IWATE","IWATE"],
+  ["KAGAWA","KAGAWA"],
+  ["KAGOSHIMA","KAGOSHIMA"],
+  ["KANAGAWA","KANAGAWA"],
+  ["KOCHI","KOCHI"],
+  ["KUMAMOTO","KUMAMOTO"],
+  ["KYOTO","KYOTO"],
+  ["MIE","MIE"],
+  ["MIYAGI","MIYAGI"],
+  ["MIYAZAKI","MIYAZAKI"],
+  ["NAGANO","NAGANO"],
+  ["NAGASAKI","NAGASAKI"],
+  ["NARA","NARA"],
+  ["NIIGATA","NIIGATA"],
+  ["OITA","OITA"],
+  ["OKAYAMA","OKAYAMA"],
+  ["OKINAWA","OKINAWA"],
+  ["OSAKA","OSAKA"],
+  ["SAGA","SAGA"],
+  ["SAITAMA","SAITAMA"],
+  ["SHIGA","SHIGA"],
+  ["SHIMANE","SHIMANE"],
+  ["SHIZUOKA","SHIZUOKA"],
+  ["TOCHIGI","TOCHIGI"],
+  ["TOKUSHIMA","TOKUSHIMA"],
+  ["TOKYO","TOKYO"],
+  ["TOTTORI","TOTTORI"],
+  ["TOYAMA","TOYAMA"],
+  ["WAKAYAMA","WAKAYAMA"],
+  ["YAMAGATA","YAMAGATA"],
+  ["YAMAGUCHI","YAMAGUCHI"],
+  ["YAMANASHI","YAMANASHI"]
+],
 
   PY: [
     ["ALTO PARAGUAY","ALTO PARAGUAY"],["ALTO PARANÁ","ALTO PARANÁ"],
@@ -1338,8 +1382,942 @@ TO: [
     
 
   JP: {
-    Tokyo: ["SHINJUKU","SHIBUYA","AKIHABARA"],
-    Osaka: ["OSAKA","SAKAI"],
-    Aichi: ["NAGOYA","TOYOTA"]
+    AICHI: [
+  "NAGOYA",
+  "TOYOHASHI",
+  "OKAZAKI",
+  "ICHINOMIYA",
+  "SETO",
+  "HANDA",
+  "KASUGAI",
+  "TOYOTA",
+  "ANJO",
+  "NISHIO",
+  "GAMAGORI",
+  "INUYAMA",
+  "TOKONAME",
+  "KONAN",
+  "KOMAKI",
+  "INAZAWA",
+  "SHINSHIRO",
+  "TOKAI",
+  "OBU",
+  "CHITA",
+  "KARIYA",
+  "CHIRYU",
+  "OWARIASAHI",
+  "TAKAHAMA",
+  "IWAKURA",
+  "TOYOAKE",
+  "NISSHIN",
+  "TAHARA",
+  "AISAI",
+  "KIYOSU",
+  "KITANAGOYA",
+  "YATOMI",
+  "MIYOSHI",
+  "AMA",
+  "HEKINAN",
+  "TOYOKAWA",
+  "NAGAKUTE"
+],
+
+AKITA: [
+  "AKITA",
+  "NOSHIRO",
+  "YOKOTE",
+  "ODATE",
+  "OGA",
+  "KATAGAMI",
+  "YURIHONJO",
+  "DAISEN",
+  "KAZUNO",
+  "NIKAHO",
+  "SEMBOKU",
+  "KITAAKITA"
+],
+
+AOMORI: [
+  "AOMORI",
+  "HACHINOHE",
+  "HIROSAKI",
+  "TOWADA",
+  "MISAWA",
+  "MUTSU",
+  "GOSHOGAWARA",
+  "TSUGARU",
+  "HIRAKAWA",
+  "KUROISHI"
+],
+
+
+
+CHIBA: [
+  "CHIBA",
+  "CHOSHI",
+  "ICHIKAWA",
+  "FUNABASHI",
+  "KISARAZU",
+  "MATSUDO",
+  "NODA",
+  "MOBARA",
+  "NARITA",
+  "SAKURA",
+  "TOGANE",
+  "ASAHI",
+  "NARASHINO",
+  "KASHIWA",
+  "KATSUURA",
+  "ICHINOMIYA",
+  "YACHIYO",
+  "ABIKO",
+  "KAMOGAWA",
+  "KIMITSU",
+  "FUTTSU",
+  "URAYASU",
+  "YOTSUURA",
+  "SODEGAURA",
+  "YACHIMATA",
+  "INZAI",
+  "SHIROI",
+  "TOMISATO",
+  "MINAMIBOSO",
+  "SOSA",
+  "KATORI",
+  "SANMU",
+  "ISUMI",
+  "OIAMI SHIRASATO"
+],
+    
+
+EHIME: [
+  "MATSUYAMA",
+  "IMABARI",
+  "UWAJIMA",
+  "YAWATAHAMA",
+  "NIIHAMA",
+  "SAIJO",
+  "OZU",
+  "IYO",
+  "SHIKOKUCHUO",
+  "SEIYO",
+  "TOON"
+],
+
+
+FUKUI: [
+  "FUKUI",
+  "TSURUGA",
+  "OBAMA",
+  "ONO",
+  "KATSUYAMA",
+  "SABAE",
+  "AWARA",
+  "ECHIZEN",
+  "SAKAI"
+],
+  
+
+FUKUOKA: [
+  "FUKUOKA",
+  "KITAKYUSHU",
+  "KURUME",
+  "OMUTA",
+  "IIZUKA",
+  "TAGAWA",
+  "YANAGAWA",
+  "YAME",
+  "CHIKUGO",
+  "OKAWA",
+  "YUKUHASHI",
+  "BUZEN",
+  "NAKAMA",
+  "NOGATA",
+  "KAMA",
+  "MIYAWAKA",
+  "ASAKURA",
+  "UKIHA",
+  "ITOSHIMA",
+  "KOGA",
+  "FUKUTSU",
+  "OGORI",
+  "CHIKUSHINO",
+  "KASUGA",
+  "ONOJO",
+  "MUNAKATA",
+  "DAZAIFU",
+  "MIYAMA",
+  "NAKAGAWA"
+],
+
+
+FUKUSHIMA: [
+  "FUKUSHIMA",
+  "AIZUWAKAMATSU",
+  "KORIYAMA",
+  "IWAKI",
+  "SHIRAKAWA",
+  "SUKAGAWA",
+  "SOMA",
+  "NIHONMATSU",
+  "TAMURA",
+  "MINAMISOMA",
+  "DATE",
+  "KITAKATA",
+  "MOTOMIYA"
+],
+
+
+GIFU: [
+  "GIFU",
+  "OGAKI",
+  "TAKAYAMA",
+  "TAJIMI",
+  "SEKI",
+  "NAKATSUGAWA",
+  "MINO",
+  "MIZUNAMI",
+  "HASHIMA",
+  "ENA",
+  "MINOKAMO",
+  "TOKI",
+  "KAKAMIGAHARA",
+  "GUJO",
+  "GERO",
+  "KAIZU",
+  "MOTOSU",
+  "HIDA",
+  "KANI",
+  "MIZUHO"
+],
+  
+
+GUNMA: [
+  "MAEBASHI",
+  "TAKASAKI",
+  "KIRYU",
+  "ISESAKI",
+  "OTA",
+  "NUMATA",
+  "TATEBAYASHI",
+  "SHIBUKAWA",
+  "FUJIOKA",
+  "ANNNAKA",
+  "TOMIOKA",
+  "MIDORI"
+],
+
+
+HIROSHIMA: [
+  "HIROSHIMA",
+  "FUKUYAMA",
+  "KURE",
+  "ONOMICHI",
+  "MIHARA",
+  "FUCHU",
+  "MIYOSHI",
+  "SHOBARA",
+  "OTAKE",
+  "TAKEHARA",
+  "HATSUKAICHI",
+  "HIGASHIHIROSHIMA",
+  "AKITAKATA",
+  "ETAJIMA"
+],
+
+
+HOKKAIDO: [
+  "SAPPORO",
+  "HAKODATE",
+  "OTARU",
+  "ASAHIKAWA",
+  "MURORAN",
+  "KUSHIRO",
+  "OBIHIRO",
+  "KITAMI",
+  "YUBARI",
+  "IWAMIZAWA",
+  "ABASHIRI",
+  "RUMOI",
+  "TOMAKOMAI",
+  "WAKKANAI",
+  "BIBAI",
+  "ASHIBETSU",
+  "EBETSU",
+  "AKABIRA",
+  "MONBETSU",
+  "SHIBETSU",
+  "NAYORO",
+  "MIKASA",
+  "NEMURO",
+  "CHITOSE",
+  "TAKIKAWA",
+  "SUNAGAWA",
+  "UTASHINAI",
+  "FUKAGAWA",
+  "FURANO",
+  "NOBORIBETSU",
+  "ENIWA",
+  "DATE",
+  "KITAHIROSHIMA",
+  "ISHIKARI",
+  "HOKUTO"
+],
+
+
+HYOGO: [
+  "KOBE",
+  "HIMEJI",
+  "AMAGASAKI",
+  "AKASHI",
+  "NISHINOMIYA",
+  "ASHIYA",
+  "ITAMI",
+  "AIOI",
+  "TOYOOKA",
+  "KAKOGAWA",
+  "TATSUNO",
+  "TAKARAZUKA",
+  "MIKI",
+  "TAKASAGO",
+  "KAWANISHI",
+  "ONO",
+  "SANDA",
+  "KASAI",
+  "TAMBA",
+  "TAMBASASAYAMA",
+  "MINAMIAWAJI",
+  "ASAGO",
+  "AWAJI",
+  "SHISO",
+  "YABU",
+  "SUMOTO"
+],
+
+
+IBARAKI: [
+  "MITO",
+  "HITACHI",
+  "TSUCHIURA",
+  "KOGA",
+  "ISHIOKA",
+  "YUKI",
+  "RYUGASAKI",
+  "SHIMOTSUMA",
+  "JOSO",
+  "HITACHINAKA",
+  "KASHIMA",
+  "ITAKO",
+  "MORIYA",
+  "HITACHIOTA",
+  "NAKA",
+  "CHIKUSEI",
+  "BANDO",
+  "INASHIKI",
+  "KASAMA",
+  "TORIDE",
+  "USHIKU",
+  "TSUKUBA",
+  "HITACHIOMIYA",
+  "KAMISU",
+  "NAMEGATA",
+  "HOKOTA",
+  "TSUKUBAMIRAI",
+  "OMITAMA",
+  "SAKURAGAWA",
+  "KITAIBARAKI"
+],
+
+
+ISHIKAWA: [
+  "KANAZAWA",
+  "NANAO",
+  "KOMATSU",
+  "WAJIMA",
+  "SUZU",
+  "KAGA",
+  "HAKUSAN",
+  "NOMI",
+  "KAHOKU",
+  "HAKUI"
+],
+
+
+IWATE: [
+  "MORIOKA",
+  "MIYAKO",
+  "OFUNATO",
+  "HANAMAKI",
+  "KITAKAMI",
+  "KUJI",
+  "TONO",
+  "ICHINOSEKI",
+  "RIKUZENTAKATA",
+  "KAMAISHI",
+  "NINOHE",
+  "OSHU",
+  "HACHIMANTAI",
+  "TAKIZAWA"
+],
+
+    
+KAGAWA: [
+  "TAKAMATSU",
+  "MARUGAME",
+  "SAKAIDE",
+  "ZENTSUJI",
+  "KANONJI",
+  "SANUKI",
+  "HIGASHIKAGAWA",
+  "MITOYO"
+],
+
+
+KAGOSHIMA: [
+  "KAGOSHIMA",
+  "KANOYA",
+  "MAKURAZAKI",
+  "AKUNE",
+  "IZUMI",
+  "IBUSUKI",
+  "NISHINOOOMOTE",
+  "TARUMIZU",
+  "SATSUMASENDAI",
+  "HIOKI",
+  "SOO",
+  "KIRISHIMA",
+  "ICHIKIKUSHIKINO",
+  "MINAMISATSUMA",
+  "SHIBUSHI",
+  "AMAMI"
+],
+
+
+
+KANAGAWA: [
+  "YOKOHAMA",
+  "KAWASAKI",
+  "SAGAMIHARA",
+  "YOKOSUKA",
+  "HIRATSUKA",
+  "KAMAKURA",
+  "FUJISAWA",
+  "ODAWARA",
+  "CHIGASAKI",
+  "ZUSHI",
+  "MIURA",
+  "HADANO",
+  "ATSUGI",
+  "YAMATO",
+  "ISEHARA",
+  "EBINA",
+  "ZAMA",
+  "MINAMIASHIGARA",
+  "AYASE"
+],
+
+
+KOCHI: [
+  "KOCHI",
+  "AKI",
+  "MUROTO",
+  "NANKOKU",
+  "SUSAKI",
+  "TOSA",
+  "SUKUMO",
+  "SHIMANTO",
+  "TOSASHIMIZU",
+  "KONAN",
+  "KAMI"
+],
+    
+KUMAMOTO: [
+  "KUMAMOTO",
+  "YATSUSHIRO",
+  "HITAYOSHI",
+  "ARA0",
+  "MINAMATA",
+  "TAMANA",
+  "YAMAGA",
+  "UTO",
+  "UKI",
+  "ASO",
+  "KOSHI",
+  "AMAKUSA",
+  "KIKUCHI"
+],
+
+
+KYOTO: [
+  "KYOTO",
+  "FUKUCHIYAMA",
+  "MAIZURU",
+  "AYABE",
+  "UJI",
+  "MIYAZU",
+  "KAMEOKA",
+  "JOYO",
+  "MUKO",
+  "NAGAOKAKYO",
+  "YAWATA",
+  "KYOTANABE",
+  "KYOTANGO",
+  "NANTAN",
+  "KIZUGAWA"
+],
+
+
+    
+MIE: [
+  "TSU",
+  "YOKKAICHI",
+  "ISE",
+  "MATSUSAKA",
+  "KUWANA",
+  "SUZUKA",
+  "NABARI",
+  "OWASE",
+  "KAMEYAMA",
+  "Toba",
+  "INABE",
+  "SHIMA",
+  "IGA"
+],
+
+
+MIYAGI: [
+  "SENDAI",
+  "ISHINOMAKI",
+  "SHIOGAMA",
+  "KESENNUMA",
+  "SHIROISHI",
+  "NATORI",
+  "KAKUDA",
+  "TAGAJO",
+  "IWANUMA",
+  "TOME",
+  "KURIHARA",
+  "HIGASHIMATSUSHIMA",
+  "OSAKI",
+  "TOMIYA"
+],
+
+
+MIYAZAKI: [
+  "MIYAZAKI",
+  "MIYAKONOJO",
+  "NOBEOKA",
+  "NICHINAN",
+  "KOBAYASHI",
+  "HYUGA",
+  "KUSHIMA",
+  "SAITO",
+  "EBINO"
+],
+    
+
+NAGANO: [
+  "NAGANO",
+  "MATSUMOTO",
+  "UEDA",
+  "OKAYA",
+  "IIDA",
+  "SUWA",
+  "SUZAKA",
+  "KOMORO",
+  "INA",
+  "KOMAGANE",
+  "NAKANO",
+  "OMACHI",
+  "IIYAMA",
+  "CHINO",
+  "SHIOJIRI",
+  "SAKU",
+  "CHIKUMA",
+  "AZUMINO"
+],
+
+
+NAGASAKI: [
+  "NAGASAKI",
+  "SASEBO",
+  "SHIMABARA",
+  "OMURA",
+  "ISAHAYA",
+  "HIRADO",
+  "MATSUURA",
+  "TSUSHIMA",
+  "IKI",
+  "GOTO",
+  "SAIKAI",
+  "UNZEN",
+  "MINAMISHIMABARA"
+],
+
+
+NARA: [
+  "NARA",
+  "YAMATO TAKADA",
+  "YAMATO KORiyAMA",
+  "TENRI",
+  "KASHIHARA",
+  "SAKURAI",
+  "GOSE",
+  "IKARUGA",
+  "KATSURAGI",
+  "UDA"
+],
+
+
+NIIGATA: [
+  "NIIGATA",
+  "NAGAOKA",
+  "SANJO",
+  "KASHIWAZAKI",
+  "SHIBATA",
+  "OJIYA",
+  "KAMO",
+  "MITSUKE",
+  "MURAKAMI",
+  "MYOKO",
+  "JOETSU",
+  "SADO",
+  "AGANO",
+  "UONUMA",
+  "MINAMIUONUMA",
+  "TAINAI",
+  "ITOIGAWA",
+  "TOKAMACHI",
+  "GOSEN"
+],
+
+OITA: [
+  "OITA",
+  "BEPPU",
+  "NAKATSU",
+  "HITA",
+  "SAIKI",
+  "USUKI",
+  "TSUKUMI",
+  "TAKETA",
+  "BUNGOTAKADA",
+  "KITSUKI",
+  "USA",
+  "BUNGOONO",
+  "YUFU"
+],
+
+
+OKAYAMA: [
+  "OKAYAMA",
+  "KURASHIKI",
+  "TSUYAMA",
+  "TAMANO",
+  "KASAOKA",
+  "Ibara",
+  "SETOUCHI",
+  "AKAIWA",
+  "MANIWA",
+  "MISAKI",
+  "ASAKUCHI",
+  "SOKEN"
+],
+
+
+OKINAWA: [
+  "NAHA",
+  "ISHIGAKI",
+  "GINOWAN",
+  "URASOE",
+  "NAGO",
+  "ITOMAN",
+  "OKINAWA",
+  "URUMA",
+  "MIYAKOJIMA",
+  "NANJO"
+],
+
+OSAKA: [
+  "OSAKA",
+  "SAKAI",
+  "KISHIWADA",
+  "TOYONAKA",
+  "IKEDA",
+  "SUITA",
+  "IZUMIOTSU",
+  "TAKAISHI",
+  "KAIZUKA",
+  "MORIGUCHI",
+  "HIRAKATA",
+  "IBARAKI",
+  "TAKATSUKI",
+  "YAO",
+  "IZUMI",
+  "TONDABAYASHI",
+  "KAWACHINAGANO",
+  "MATSUBARA",
+  "DAITO",
+  "IZUMISANO",
+  "MINOH",
+  "KASHIWARA",
+  "HABIKINO",
+  "KADOMA",
+  "SETTSU",
+  "FUJIIDERA",
+  "HIGASHIOSAKA",
+  "SENNAN",
+  "SHIJONAWATE",
+  "KATANO",
+  "OSAKASAYAMA",
+  "HANNAN"
+],
+
+
+SAGA: [
+  "SAGA",
+  "KARATSU",
+  "TOSU",
+  "IMARI",
+  "TAKEO",
+  "KASHIMA",
+  "OGI",
+  "KANZAKI",
+  "URESHINO"
+],
+
+
+SAITAMA: [
+  "SAITAMA",
+  "KAWAGUCHI",
+  "KAWAGOE",
+  "TOKOROZAWA",
+  "KUMAGAYA",
+  "GYODA",
+  "CHICHIBU",
+  "KASUKABE",
+  "KAZO",
+  "HONJO",
+  "HIGASHIMATSUYAMA",
+  "SAYAMA",
+  "HANYU",
+  "KONOSU",
+  "AGEO",
+  "SOKA",
+  "KOSHIGAYA",
+  "WARABI",
+  "TODA",
+  "IRUMA",
+  "ASAKA",
+  "SHIKI",
+  "WAKO",
+  "NIIZA",
+  "OKEGWA",
+  "KUKI",
+  "KITAMOTO",
+  "YASHIO",
+  "FUJIMI",
+  "MISATO",
+  "HASUDA",
+  "SAKADO",
+  "SATTE",
+  "TSURUGASHIMA",
+  "HIDAKA",
+  "HANNO",
+  "YOSHIKAWA",
+  "FUJIMINO"
+],
+
+
+SHIGA: [
+  "OTSU",
+  "HIKONE",
+  "NAGAHAMA",
+  "OMIHACHIMAN",
+  "KUSATSU",
+  "MORIYAMA",
+  "RITTO",
+  "KOKA",
+  "YASU",
+  "KONAN",
+  "TAKASHIMA",
+  "HIGASHIOMI",
+  "MAIBARA"
+],
+
+
+
+SHIMANE: [
+  "MATSUE",
+  "IZUMO",
+  "HAMADA",
+  "MASUDA",
+  "ODA",
+  "YASUGI",
+  "GOTSU",
+  "UNNAN"
+],
+
+
+
+SHIZUOKA: [
+  "SHIZUOKA",
+  "HAMAMATSU",
+  "NUMAZU",
+  "ATAMI",
+  "MISHIMA",
+  "FUJI",
+  "FUJINOMIYA",
+  "ITO",
+  "SHIMADA",
+  "FUJIEDA",
+  "YAIZU",
+  "KAKEGAWA",
+  "FUROSAWA",
+  "GOTEMBA",
+  "SUSONO",
+  "KIKUGAWA",
+  "IZUNOKUNI",
+  "MAKINOHARA",
+  "OMAEZAKI"
+],
+
+
+TOCHIGI: [
+  "UTSUNOMIYA",
+  "ASHIKAGA",
+  "TOCHIGI",
+  "SANO",
+  "KANUMA",
+  "OYAMA",
+  "MOOKA",
+  "OTAWARA",
+  "Yaita",
+  "NASUSHIOBARA",
+  "SAKURA",
+  "NIKKO"
+],
+    
+
+TOKUSHIMA: [
+  "TOKUSHIMA",
+  "NARUTO",
+  "KOMATSUSHIMA",
+  "ANAN",
+  "YOSHINOGAWA",
+  "AWA",
+  "MIYOSHI"
+],
+
+
+
+TOKYO: [
+  "CHIYODA",
+  "CHUO",
+  "MINATO",
+  "SHINJUKU",
+  "BUNKYO",
+  "TAITO",
+  "SUMIDA",
+  "KOTO",
+  "SHINAGAWA",
+  "MEGURO",
+  "OTA",
+  "SETAGAYA",
+  "SHIBUYA",
+  "NAKANO",
+  "SUGINAMI",
+  "TOSHIMA",
+  "KITA",
+  "ARAKAWA",
+  "ITABASHI",
+  "NERIMA",
+  "ADACHI",
+  "KATSUSHIKA",
+  "EDOGAWA"
+],
+
+
+TOTTORI: [
+  "TOTTORI",
+  "YONAGO",
+  "KURAYOSHI",
+  "SAKAIMINATO"
+],
+
+
+TOYAMA: [
+  "TOYAMA",
+  "TAKAOKA",
+  "UOZU",
+  "HIMI",
+  "NAMERIKAWA",
+  "KUROBE",
+  "NANTO",
+  "OYABE",
+  "IMIZU",
+  "TONAMI"
+],
+
+WAKAYAMA: [
+  "WAKAYAMA",
+  "KAINAN",
+  "HASHIMOTO",
+  "ARIDA",
+  "GOB0",
+  "TANABE",
+  "SHINGU",
+  "KINOKAWA",
+  "IWADE"
+],
+
+
+YAMAGATA: [
+  "YAMAGATA",
+  "YONEZAWA",
+  "TSURUOKA",
+  "SAKATA",
+  "SHINJO",
+  "SAGAE",
+  "KAMINOYAMA",
+  "MURAYAMA",
+  "NAGAI",
+  "HIGASHINE",
+  "OBANAZAWA",
+  "NANYO"
+],
+
+
+
+YAMAGUCHI: [
+  "SHIMONOSEKI",
+  "UBE",
+  "HAGI",
+  "HOFU",
+  "KUDAMATSU",
+  "IWAKUNI",
+  "SHUNAN",
+  "SANNOSEKI",
+  "NAGATO",
+  "YANAI",
+  "MINE"
+],
+
+
+YAMANASHI: [
+  "KOFU",
+  "FUJIYOSHIDA",
+  "TSURU",
+  "YAMANASHI",
+  "OTSUKI",
+  "NIRASAKI",
+  "MINAMIARUPUSU",
+  "HOKUTO",
+  "KAI",
+  "FUEFUKI",
+  "UENOHARA",
+  "KOSHU",
+  "CHUO"
+]
+   
   }
 };  
