@@ -131,10 +131,13 @@ button:active,
   </select>
 
 
-<input id="cidade" placeholder="Cidade" disabled>  
+<select id="cidade" disabled>
+  <option value="">Cidade</option>
+</select>  
   
   <button onclick="finalizar()">CONFIRMAR INSCRIÇÃO</button>
-</div>
+  </div>
+  <input id="cidadeOutra" placeholder="Digite a cidade" style="display:none">
 
 <script>
 const params = new URLSearchParams(location.search);
@@ -179,6 +182,7 @@ const telefoneEl = document.getElementById("telefone");
 const paisEl = document.getElementById("pais");
 const estadoEl = document.getElementById("estado");
 const cidadeEl = document.getElementById("cidade");
+const cidadeOutraEl = document.getElementById("cidadeOutra");
 
 const ESTADOS = {
   BR: [
@@ -204,12 +208,39 @@ const ESTADOS = {
 };
 
 
+
+const CIDADES = {
+  BR: {
+    SP: ["SÃO PAULO","CAMPINAS","SOROCABA","SANTOS"],
+    MS: ["CAMPO GRANDE","DOURADOS","TRÊS LAGOAS"],
+    RJ: ["RIO DE JANEIRO","NITERÓI","CAMPOS"]
+  },
+
+  PY: {
+    Central: ["LUQUE","SAN LORENZO","LAMBARÉ"],
+    "Alto Paraná": ["CIUDAD DEL ESTE","HERNANDARIAS"],
+    Itapúa: ["ENCARNACIÓN","OBLIGADO"]
+  },
+
+  JP: {
+    Tokyo: ["SHINJUKU","SHIBUYA","AKIHABARA"],
+    Osaka: ["OSAKA","SAKAI"],
+    Aichi: ["NAGOYA","TOYOTA"]
+  }
+};  
+
+  
+
 nomeEl.oninput = e => e.target.value = e.target.value.replace(/[^A-Za-zÀ-ÿ ]/g,'').toUpperCase();
 cidadeEl.oninput = e => e.target.value = e.target.value.replace(/[^A-Za-zÀ-ÿ ]/g,'').toUpperCase();
 telefoneEl.oninput = e => e.target.value = e.target.value.replace(/\D/g,'');
 cpfEl.oninput = e => {
   e.target.value = e.target.value.replace(/\D/g, '').slice(0, 11);
+
+cidadeOutraEl.oninput = e => {
+  e.target.value = e.target.value.replace(/[^A-Za-zÀ-ÿ ]/g,'').toUpperCase();
 };
+  
 
 cpfEl.onblur = () => cpfEl.classList.toggle("erro", !validarCPF(cpfEl.value));
 emailEl.oninput = e => {
@@ -278,10 +309,54 @@ cidadeEl.placeholder =
   estadoEl.disabled = false;
 };
 
+
+
+
+  
  
 estadoEl.onchange = () => {
-  cidadeEl.disabled = !estadoEl.value;
-};  
+  cidadeEl.innerHTML = `<option value="">Cidade</option>`;
+  cidadeEl.disabled = true;
+  cidadeOutraEl.style.display = "none";
+  cidadeOutraEl.value = "";
+
+  if (!estadoEl.value) return;
+
+  const listaCidades = CIDADES[paisEl.value]?.[estadoEl.value];
+
+  if (listaCidades) {
+    listaCidades.forEach(cidade => {
+      const opt = document.createElement("option");
+      opt.value = cidade;
+      opt.textContent = cidade;
+      cidadeEl.appendChild(opt);
+    });
+  }
+
+  // opção OUTRA
+  const optOutra = document.createElement("option");
+  optOutra.value = "OUTRA";
+  optOutra.textContent = "OUTRA";
+  cidadeEl.appendChild(optOutra);
+
+  cidadeEl.disabled = false;
+};
+
+
+
+cidadeEl.onchange = () => {
+  if (cidadeEl.value === "OUTRA") {
+    cidadeOutraEl.style.display = "block";
+    cidadeOutraEl.focus();
+  } else {
+    cidadeOutraEl.style.display = "none";
+    cidadeOutraEl.value = "";
+  }
+};
+
+
+
+
 
 
    
@@ -358,7 +433,10 @@ if (!estadoEl.value) {
 }
 
 // 🔴 VALIDA CIDADE
-if (!cidadeEl.value.trim()) {
+if (
+  !cidadeEl.value ||
+  (cidadeEl.value === "OUTRA" && !cidadeOutraEl.value.trim())
+) {
   alert("⚠️ Informe a cidade.");
   cidadeEl.classList.add("erro");
   cidadeEl.focus();
@@ -383,7 +461,9 @@ if (!cidadeEl.value.trim()) {
     cpf: cpfEl.value.replace(/\D/g,''),
     email: emailEl.value.toLowerCase(),
     telefone: telefoneEl.value,
-    cidade: cidadeEl.value.toUpperCase(),
+    cidade: cidadeEl.value === "OUTRA"
+    ? cidadeOutraEl.value.toUpperCase()
+    : cidadeEl.value.toUpperCase(),
     estado: estadoEl.value,
 
     // 🔴 CAMPOS QUE ALIMENTAM H → O (OBRIGATÓRIOS)
