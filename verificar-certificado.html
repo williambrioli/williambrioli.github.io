@@ -170,10 +170,13 @@
     </p>
 
     <input
-      type="text"
-      id="cpf"
-      placeholder="Digite o CPF (somente números)"
-    >
+  type="text"
+  id="cpf"
+  placeholder="Digite o CPF (somente números)"
+  inputmode="numeric"
+  maxlength="11"
+  oninput="this.value = this.value.replace(/\D/g, '')"
+/>
 
      <div class="select-wrapper">
   <select id="curso" style="display:none;">
@@ -195,19 +198,53 @@
 <script>
 const API =
   "https://script.google.com/macros/s/AKfycbxB6mH2EqLyjQaUtMPMyx-GNLzHColazB0awBetRDG_Un3lCvYaF0tHRATIWOa7Iu6HsQ/exec";
+</script>
 
+<script>
+function validarCPF(cpf) {
+  if (cpf.length !== 11 || /^(\d)\1+$/.test(cpf)) return false;
+
+  let soma = 0;
+  for (let i = 0; i < 9; i++) {
+    soma += parseInt(cpf.charAt(i)) * (10 - i);
+  }
+  let dig1 = (soma * 10) % 11;
+  if (dig1 === 10) dig1 = 0;
+  if (dig1 !== parseInt(cpf.charAt(9))) return false;
+
+  soma = 0;
+  for (let i = 0; i < 10; i++) {
+    soma += parseInt(cpf.charAt(i)) * (11 - i);
+  }
+  let dig2 = (soma * 10) % 11;
+  if (dig2 === 10) dig2 = 0;
+
+  return dig2 === parseInt(cpf.charAt(10));
+}
+</script>
+
+
+ <script> 
 function verificar() {
-  const cpf = document.getElementById("cpf").value.trim();
-  const cursoSelect = document.getElementById("curso");
-  const curso = cursoSelect.value;
   const resultado = document.getElementById("resultado");
+  let cpf = document.getElementById("cpf").value.replace(/\D/g, "");
 
   if (!cpf) {
     resultado.innerHTML = "<div class='erro'>Informe o CPF.</div>";
     return;
   }
 
+  if (!validarCPF(cpf)) {
+    resultado.innerHTML =
+      "<div class='erro'>CPF inválido. Verifique a digitação.</div>";
+    return;
+  }
+
+  const cursoSelect = document.getElementById("curso");
+  const curso = cursoSelect.value;
+
   resultado.innerHTML = "<div class='loading'>🔍 Verificando...</div>";
+
 
   // 🔹 PRIMEIRA ETAPA: buscar cursos
   if (cursoSelect.options.length === 0) {
