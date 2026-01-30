@@ -151,6 +151,7 @@ button:active,
 
 <script src="js/localidades.js"></script>
 
+<script src="/js/igc-config.js"></script>  
   
 <script>
 const params = new URLSearchParams(location.search);
@@ -162,7 +163,8 @@ if (!TOKEN) {
 
 let ENDPOINT="", NOME_CURSO="", CARGA_HORARIA="", LOCAL_CURSO="", DATA_HORARIO_CURSO="", TURMA="";
 
-fetch(`https://script.google.com/macros/s/AKfycbxB6mH2EqLyjQaUtMPMyx-GNLzHColazB0awBetRDG_Un3lCvYaF0tHRATIWOa7Iu6HsQ/exec?token=${TOKEN}`)
+
+  fetch(`${window.IGC_CONFIG.APPS_SCRIPT_BASE}?token=${TOKEN}`)
   .then(r => r.json())
   .then(data => {
     if (!data.sucesso) {
