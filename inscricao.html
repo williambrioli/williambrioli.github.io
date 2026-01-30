@@ -337,10 +337,11 @@ cidadeEl.placeholder =
   
  
 estadoEl.onchange = () => {
-  // reset geral
+  // reset estado outro
   estadoOutroEl.style.display = "none";
   estadoOutroEl.value = "";
 
+  // reset cidade (SEM FORÇAR OUTRA)
   cidadeEl.innerHTML = `<option value="">Cidade</option>`;
   cidadeEl.disabled = true;
   cidadeOutraEl.style.display = "none";
@@ -348,16 +349,19 @@ estadoEl.onchange = () => {
 
   if (!estadoEl.value) return;
 
-  // 🟡 SE ESTADO = OUTRO
+  // 🟡 ESTADO = OUTRO → só abre o campo de estado
   if (estadoEl.value === "OUTRO") {
     estadoOutroEl.style.display = "block";
     estadoOutroEl.focus();
 
-    // cidade passa a ser manual
-    cidadeEl.innerHTML = `<option value="OUTRA">OUTRA</option>`;
+    // cidade fica disponível, mas neutra
     cidadeEl.disabled = false;
 
-    cidadeOutraEl.style.display = "block";
+    const optOutra = document.createElement("option");
+    optOutra.value = "OUTRA";
+    optOutra.textContent = "OUTRA";
+    cidadeEl.appendChild(optOutra);
+
     return;
   }
 
@@ -373,6 +377,7 @@ estadoEl.onchange = () => {
     });
   }
 
+  // adiciona OUTRA como opção
   const optOutra = document.createElement("option");
   optOutra.value = "OUTRA";
   optOutra.textContent = "OUTRA";
