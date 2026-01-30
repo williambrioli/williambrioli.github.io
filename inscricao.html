@@ -126,9 +126,14 @@ button:active,
 
 
   
-  <select id="estado" disabled>
+<select id="estado" disabled>
   <option value="">Estado / Região</option>
-  </select>
+</select>
+
+<input
+  id="estadoOutro"
+  placeholder="Digite o estado / região"
+  style="display:none"
 
 
 <select id="cidade" disabled>
@@ -189,6 +194,7 @@ const paisEl = document.getElementById("pais");
 const estadoEl = document.getElementById("estado");
 const cidadeEl = document.getElementById("cidade");
 const cidadeOutraEl = document.getElementById("cidadeOutra");
+const estadoOutroEl = document.getElementById("estadoOutro");
 
 const ESTADOS = {
   BR: [
@@ -243,9 +249,11 @@ telefoneEl.oninput = e => e.target.value = e.target.value.replace(/\D/g,'');
 cpfEl.oninput = e => {
   e.target.value = e.target.value.replace(/\D/g, '').slice(0, 11);
 };
+
+  estadoOutroEl.oninput = e => {e.target.value = e.target.value.replace(/[^A-Za-zÀ-ÿ ]/g,'').toUpperCase();
+};
   
-cidadeOutraEl.oninput = e => {
-  e.target.value = e.target.value.replace(/[^A-Za-zÀ-ÿ ]/g,'').toUpperCase();
+cidadeOutraEl.oninput = e => {e.target.value = e.target.value.replace(/[^A-Za-zÀ-ÿ ]/g,'').toUpperCase();
 };
   
 
@@ -311,6 +319,12 @@ cidadeEl.placeholder =
     opt.value = valor;
     opt.textContent = nome;
     estadoEl.appendChild(opt);
+
+    const optOutroEstado = document.createElement("option");
+    optOutroEstado.value = "OUTRO";
+    optOutroEstado.textContent = "OUTRO";
+    estadoEl.appendChild(optOutroEstado);
+    
   });
 
   estadoEl.disabled = false;
@@ -322,6 +336,10 @@ cidadeEl.placeholder =
   
  
 estadoEl.onchange = () => {
+  // reset geral
+  estadoOutroEl.style.display = "none";
+  estadoOutroEl.value = "";
+
   cidadeEl.innerHTML = `<option value="">Cidade</option>`;
   cidadeEl.disabled = true;
   cidadeOutraEl.style.display = "none";
@@ -329,6 +347,20 @@ estadoEl.onchange = () => {
 
   if (!estadoEl.value) return;
 
+  // 🟡 SE ESTADO = OUTRO
+  if (estadoEl.value === "OUTRO") {
+    estadoOutroEl.style.display = "block";
+    estadoOutroEl.focus();
+
+    // cidade passa a ser manual
+    cidadeEl.innerHTML = `<option value="OUTRA">OUTRA</option>`;
+    cidadeEl.disabled = false;
+
+    cidadeOutraEl.style.display = "block";
+    return;
+  }
+
+  // 🟢 ESTADO NORMAL → carrega cidades
   const listaCidades = CIDADES[paisEl.value]?.[estadoEl.value];
 
   if (listaCidades) {
@@ -340,7 +372,6 @@ estadoEl.onchange = () => {
     });
   }
 
-  // opção OUTRA
   const optOutra = document.createElement("option");
   optOutra.value = "OUTRA";
   optOutra.textContent = "OUTRA";
@@ -348,19 +379,6 @@ estadoEl.onchange = () => {
 
   cidadeEl.disabled = false;
 };
-
-
-
-cidadeEl.onchange = () => {
-  if (cidadeEl.value === "OUTRA") {
-    cidadeOutraEl.style.display = "block";
-    cidadeOutraEl.focus();
-  } else {
-    cidadeOutraEl.style.display = "none";
-    cidadeOutraEl.value = "";
-  }
-};
-
 
 
 
@@ -433,8 +451,11 @@ if (!paisEl.value) {
 }
 
 // 🔴 VALIDA ESTADO / PREFEITURA / DEPARTAMENTO
-if (!estadoEl.value) {
-  alert("⚠️ Selecione o estado / prefeitura / departamento.");
+if (
+  !estadoEl.value ||
+  (estadoEl.value === "OUTRO" && !estadoOutroEl.value.trim())
+) {
+  alert("⚠️ Informe o estado / região.");
   estadoEl.focus();
   return;
 }
@@ -471,7 +492,10 @@ if (
     cidade: cidadeEl.value === "OUTRA"
     ? cidadeOutraEl.value.toUpperCase()
     : cidadeEl.value.toUpperCase(),
-    estado: estadoEl.value,
+    estado:
+  estadoEl.value === "OUTRO"
+    ? estadoOutroEl.value.toUpperCase()
+    : estadoEl.value,
 
     // 🔴 CAMPOS QUE ALIMENTAM H → O (OBRIGATÓRIOS)
     nomeCurso: NOME_CURSO,
