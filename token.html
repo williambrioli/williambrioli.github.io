@@ -22,10 +22,17 @@
 </head>
 <body>
 
-  <iframe 
-    src="https://script.google.com/macros/s/AKfycbxB6mH2EqLyjQaUtMPMyx-GNLzHColazB0awBetRDG_Un3lCvYaF0tHRATIWOa7Iu6HsQ/exec?app=admin"
-    allowfullscreen>
-  </iframe>
+  <script src="/js/igc-config.js"></script>
+
+<iframe
+  id="adminFrame"
+  allowfullscreen>
+</iframe>
+
+<script>
+document.getElementById("adminFrame").src =
+  `${window.IGC_CONFIG.APPS_SCRIPT_BASE}?app=${window.IGC_CONFIG.APPS.ADMIN}`;
+</script>
 
 </body>
 </html>
