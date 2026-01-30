@@ -387,7 +387,15 @@ estadoEl.onchange = () => {
 };
 
 
-
+cidadeEl.onchange = () => {
+  if (cidadeEl.value === "OUTRA") {
+    cidadeOutraEl.style.display = "block";
+    cidadeOutraEl.focus();
+  } else {
+    cidadeOutraEl.style.display = "none";
+    cidadeOutraEl.value = "";
+  }
+};
 
 
    
