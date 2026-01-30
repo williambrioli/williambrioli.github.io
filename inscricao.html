@@ -133,11 +133,17 @@ button:active,
 
 <select id="cidade" disabled>
   <option value="">Cidade</option>
-</select>  
-  
-  <button onclick="finalizar()">CONFIRMAR INSCRIÇÃO</button>
-  </div>
-  <input id="cidadeOutra" placeholder="Digite a cidade" style="display:none">
+</select>
+
+<input
+  id="cidadeOutra"
+  placeholder="Digite a cidade"
+  style="display:none"
+>
+
+<button onclick="finalizar()">CONFIRMAR INSCRIÇÃO</button>
+</div>
+
 
 <script>
 const params = new URLSearchParams(location.search);
