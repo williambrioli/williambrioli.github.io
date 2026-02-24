@@ -1,68 +1,87 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<title>Agendamento</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/menu.css">
+<link rel="stylesheet" href="css/index.css">
+<link rel="stylesheet" href="css/search-bar.css">
+<link rel="stylesheet" href="css/whatsapp-fab.css">
+
+<link rel="canonical" href="https://www.williambrioli.com.br/">
+<title>Agendar Consulta | William Brioli</title>
+
+  
 </head>
 <body>
+<main>
 
-<h2>Agendar Consulta</h2>
 
-<input type="date" id="data"><br><br>
 
-<select id="hora">
-<option>09:00</option>
-<option>10:00</option>
-<option>11:00</option>
-<option>14:00</option>
-<option>15:00</option>
-<option>16:00</option>
-</select><br><br>
 
-<input type="text" id="nome" placeholder="Nome"><br><br>
-<input type="email" id="email" placeholder="Email"><br><br>
-<input type="text" id="whatsapp" placeholder="WhatsApp"><br><br>
 
-<button onclick="agendar()">Agendar e Pagar</button>
+  <section style="padding:40px 0;">
+    <div style="max-width:1200px;margin:auto;">
+      
+      <iframe 
+        src="https://script.google.com/macros/s/AKfycbzuh5W3a5apM3k15r7ppnuwzwdNfoBSRMpWKQ-Au3t-4YJseakfQBFa3c3E0LLHC4_N/exec"
+        width="100%"
+        height="900"
+        style="border:none;border-radius:16px;box-shadow:0 10px 30px rgba(0,0,0,0.1);">
+      </iframe>
+
+    </div>
+  </section>
+
+
+
+
+ 
+
+
+</main>
+
+
+<!-- CONTATO / RODAPÉ -->
+    <footer id="contato" class="site-footer">
+  <div class="container section-card" id="footerContainer">
+    <!-- Conteúdo será injetado via JS -->
+  </div>
+</footer>  
+
+
+  
+
+<script src="/js/config-whatsapp.js"></script>
+<!-- Script com configuração do WhatsApp (número, mensagens, etc.) -->
+
+<!-- Scripts complementares -->
+<script src="/js/load-whatsapp.js"></script>
+<!-- Script para carregar integração/funcionalidade do WhatsApp -->
+  
+
+<script src="/js/menu.js"></script>
+<!-- Script que injeta e controla o menu do site -->
+
+<script src="/js/footer-inject.js"></script>
+<!-- Script que injeta o conteúdo do rodapé (footer) -->
+
+<script src="/js/author-bio.js"></script>
+<!-- Script que injeta a bio do autor, se houver -->
 
 <script>
-
-const API = "https://script.google.com/macros/s/AKfycbzuh5W3a5apM3k15r7ppnuwzwdNfoBSRMpWKQ-Au3t-4YJseakfQBFa3c3E0LLHC4_N/exec";
-
-async function agendar() {
-
-  const data = document.getElementById("data").value;
-  const hora = document.getElementById("hora").value;
-  const nome = document.getElementById("nome").value;
-  const email = document.getElementById("email").value;
-  const whatsapp = document.getElementById("whatsapp").value;
-
-  const pre = await fetch(API, {
-    method: "POST",
-    headers: {"Content-Type":"application/json"},
-    body: JSON.stringify({
-      acao:"preReserva",
-      data, hora, nome, email, whatsapp
-    })
-  });
-
-  const preData = await pre.json();
-
-  const pag = await fetch(API, {
-    method: "POST",
-    headers: {"Content-Type":"application/json"},
-    body: JSON.stringify({
-      acao:"criarPagamento",
-      reservaId: preData.id
-    })
-  });
-
-  const pagData = await pag.json();
-
-  window.location.href = pagData.url;
-}
-
+  document.addEventListener("DOMContentLoaded", carregarMenu);
+  // Faz o menu aparecer automaticamente chamando a função carregarMenu definida em menu.js
 </script>
+
+
+<!-- Carrega o arquivo com textos e botões -->
+<script src="/js/site-data.js"></script>
+
+  
 
 </body>
 </html>
