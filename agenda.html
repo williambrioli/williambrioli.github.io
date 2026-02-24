@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Agendamento</title>
+</head>
+<body>
+
+<h2>Agendar Consulta</h2>
+
+<input type="date" id="data"><br><br>
+
+<select id="hora">
+<option>09:00</option>
+<option>10:00</option>
+<option>11:00</option>
+<option>14:00</option>
+<option>15:00</option>
+<option>16:00</option>
+</select><br><br>
+
+<input type="text" id="nome" placeholder="Nome"><br><br>
+<input type="email" id="email" placeholder="Email"><br><br>
+<input type="text" id="whatsapp" placeholder="WhatsApp"><br><br>
+
+<button onclick="agendar()">Agendar e Pagar</button>
+
+<script>
+
+const API = "https://script.google.com/macros/s/AKfycbxJ1mhA8-gPv4M6YsPEEX7rCvBVWO5GystXvqj6mQpynbYALx3PDGWRgnAKAWE8Grwv/exec";
+
+async function agendar() {
+
+  const data = document.getElementById("data").value;
+  const hora = document.getElementById("hora").value;
+  const nome = document.getElementById("nome").value;
+  const email = document.getElementById("email").value;
+  const whatsapp = document.getElementById("whatsapp").value;
+
+  const pre = await fetch(API, {
+    method: "POST",
+    headers: {"Content-Type":"application/json"},
+    body: JSON.stringify({
+      acao:"preReserva",
+      data, hora, nome, email, whatsapp
+    })
+  });
+
+  const preData = await pre.json();
+
+  const pag = await fetch(API, {
+    method: "POST",
+    headers: {"Content-Type":"application/json"},
+    body: JSON.stringify({
+      acao:"criarPagamento",
+      reservaId: preData.id
+    })
+  });
+
+  const pagData = await pag.json();
+
+  window.location.href = pagData.url;
+}
+
+</script>
+
+</body>
+</html>
