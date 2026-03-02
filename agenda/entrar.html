@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>IGC Treinamentos Corporativo</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Central da Agenda | Dr. William Brioli</title>
 
 <style>
 * { box-sizing: border-box; }
@@ -12,110 +12,45 @@ html, body {
   margin: 0;
   height: 100%;
   font-family: Arial, Helvetica, sans-serif;
-  background: #020617;
-  color: #e5e7eb;
+  background: #0f172a;
+  color: #e2e8f0;
 }
 
-/* ================= LOGIN ================= */
-#loginBox {
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  z-index: 10;
-}
-
-.login-card {
-  background: #020617;
-  border: 1px solid #1e293b;
-  border-radius: 14px;
-  padding: 32px;
-  width: 100%;
-  max-width: 420px;
-  box-shadow: 0 20px 50px rgba(0,0,0,.6);
-}
-
-.login-card h1 {
-  text-align: center;
-  margin-bottom: 24px;
-}
-
-.login-card input {
-  width: 100%;
-  padding: 14px;
-  margin-top: 10px;
-  border-radius: 8px;
-  border: 1px solid #334155;
-  background: #020617;
-  color: #e5e7eb;
-}
-
-.login-card button {
-  width: 100%;
-  margin-top: 16px;
-  padding: 14px;
-  border-radius: 8px;
-  border: none;
-  background: #2563eb;
-  color: #fff;
-  font-weight: bold;
-  cursor: pointer;
-}
-
-#loginErro {
-  color: #f87171;
-  margin-top: 12px;
-  text-align: center;
-}
-
-/* ================= LOADING ================= */
-#loadingBox {
-  display: none;
-  position: fixed;
-  inset: 0;
-  background: linear-gradient(180deg, #020617, #0f172a);
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  z-index: 9999;
-}
-
-/* ================= SHELL ================= */
+/* ================= APP ================= */
 #appBox {
-  display: flex;        /* 🔒 nasce invisível none o que estava */
+  display: flex;
   height: 100vh;
   flex-direction: column;
   overflow: hidden;
 }
 
-/* HEADER */
+/* ================= HEADER ================= */
 .header {
   display: flex;
   align-items: center;
-  gap: 32px;
-  background: #020617;
-  border-bottom: 1px solid #1e293b;
+  gap: 30px;
+  background: #111827;
+  border-bottom: 1px solid #1f2937;
   padding: 0 20px;
-  height: 56px;
+  height: 60px;
 }
 
 .logo {
   font-weight: bold;
-  font-size: 14px;
+  font-size: 15px;
   white-space: nowrap;
+  color: #38bdf8;
 }
 
-/* MENU DESKTOP */
+/* ================= MENU DESKTOP ================= */
 .menu {
   display: flex;
-  gap: 20px;
+  gap: 25px;
 }
 
 .menu-item {
   position: relative;
   cursor: pointer;
-  white-space: nowrap;
 }
 
 .menu-item span {
@@ -127,36 +62,36 @@ html, body {
   position: absolute;
   top: 100%;
   left: 0;
-  background: #020617;
-  border: 1px solid #1e293b;
+  background: #1e293b;
+  border: 1px solid #334155;
   border-radius: 8px;
   min-width: 240px;
-  box-shadow: 0 20px 40px rgba(0,0,0,.6);
+  box-shadow: 0 10px 30px rgba(0,0,0,.4);
   z-index: 1000;
 }
 
 .dropdown a {
   display: block;
-  padding: 10px 14px;
+  padding: 12px 14px;
   font-size: 13px;
-  color: #e5e7eb;
+  color: #e2e8f0;
   text-decoration: none;
 }
 
 .dropdown a:hover {
-  background: #1e293b;
+  background: #334155;
 }
 
 .menu-item:hover .dropdown {
   display: block;
 }
 
-/* MOBILE */
+/* ================= MOBILE ================= */
 .hamburger {
   margin-left: auto;
   display: none;
   cursor: pointer;
-  font-size: 22px;
+  font-size: 24px;
 }
 
 @media (max-width: 768px) {
@@ -164,32 +99,31 @@ html, body {
   .hamburger { display: block; }
 }
 
-/* MOBILE MENU */
+/* ================= MOBILE MENU ================= */
 #mobileMenu {
   display: none;
   position: fixed;
   inset: 0;
-  background: #020617;
-  z-index: 9998;
+  background: #0f172a;
+  z-index: 9999;
   padding: 20px;
 }
 
 #mobileMenu a {
   display: block;
-  padding: 14px 0;
-  border-bottom: 1px solid #1e293b;
-  color: #e5e7eb;
+  padding: 16px 0;
+  border-bottom: 1px solid #1f2937;
+  color: #e2e8f0;
   text-decoration: none;
+  font-size: 15px;
 }
 
 /* ================= CONTENT ================= */
 .content {
   flex: 1;
-  height: calc(100vh - 56px);
   position: relative;
 }
 
-/* HOME */
 .home {
   position: absolute;
   inset: 0;
@@ -198,111 +132,79 @@ html, body {
   align-items: center;
   justify-content: center;
   text-align: center;
+  padding: 20px;
 }
 
 .home h1 {
-  font-size: 28px;
+  font-size: 26px;
   margin-bottom: 10px;
 }
 
 .home p {
-  font-size: 15px;
-  opacity: .8;
+  font-size: 14px;
+  opacity: .7;
 }
 
-/* IFRAME */
 #moduloFrame {
   width: 100%;
   height: 100%;
   border: none;
   display: none;
-  background: #020617;
+  background: #fff;
 }
 
-/* ================= MAPA LINKS ================= */
-#mapaOverlay {
-  display: none;
-  position: fixed;
-  inset: 0;
-  background: rgba(2,6,23,.85);
-  z-index: 9999;
-  align-items: center;
-  justify-content: center;
-}
-
-.mapa-box {
-  background: #020617;
-  border-radius: 14px;
-  padding: 24px;
-  max-width: 520px;
-  width: 90%;
-  box-shadow: 0 20px 50px rgba(0,0,0,.6);
-}
-
-
-/* 📱 AJUSTE MOBILE – respiro inferior do iframe */
+/* Espaço extra no mobile */
 @media (max-width: 768px) {
-
   .content {
-    padding-bottom: 100px; /* espaço seguro p/ botões */
-  }
-
-  #moduloFrame {
-    height: calc(100vh - 56px - 100px);
-  }
-
-}
-
-@supports (padding-bottom: env(safe-area-inset-bottom)) {
-  .content {
-    padding-bottom: calc(80px + env(safe-area-inset-bottom));
+    padding-bottom: 80px;
   }
 }
-
-  
-  
 </style>
 </head>
 
 <body>
 
-
-<!-- APP -->
 <div id="appBox">
+
   <div class="header">
-    <div class="logo">Dr. William Brioli</div>
+    <div class="logo">Agenda • Dr. William Brioli</div>
 
     <div class="menu">
+
       <div class="menu-item">
         <span onclick="voltarInicio()">Início</span>
       </div>
 
       <div class="menu-item">
-        <span>Configurações</span>
-        <div class="dropdown">
-          <a onclick="abrirModulo('/agenda/configuraragenda.html')">Configurar Agenda</a>
-        </div>
-      </div>
-
-      
-
-      <div class="menu-item">
         <span>Agenda</span>
         <div class="dropdown">
-          <a onclick="abrirModulo('/agenda/gestaoconsultas.html')">Administrar Agendar</a>
-          <a onclick="abrirModulo('/agenda/agendapresencial.html')">Agendar Consulta Presencial</a>
-                    
+          <a onclick="abrirModulo('https://williambrioli.com.br/gestaoconsultas')">
+            Administrar Agenda
+          </a>
+          <a onclick="abrirModulo('https://williambrioli.com.br/agenda/agendapresencial')">
+            Agendar Consulta - Presencial
+          </a>
         </div>
       </div>
-    
+
+      <div class="menu-item">
+        <span>Configurações</span>
+        <div class="dropdown">
+          <a onclick="abrirModulo('https://williambrioli.com.br/agenda/configuraragenda')">
+            Configurar Agenda
+          </a>
+        </div>
+      </div>
+
+    </div>
 
     <div class="hamburger" onclick="toggleMobile()">☰</div>
   </div>
 
   <div class="content">
     <div class="home" id="home">
-      <h1>IGC Treinamentos Corporativo</h1>
-      <p>O dobro da performance pela metade do esforço</p>
+      <h1>Central da Agenda</h1>
+      <p>Gerencie consultas, horários e configurações em um único lugar.</p>
     </div>
 
     <iframe id="moduloFrame"></iframe>
@@ -312,21 +214,18 @@ html, body {
 <!-- MOBILE MENU -->
 <div id="mobileMenu">
   <a onclick="voltarInicio()">Início</a>
-  <a onclick="abrirModulo('/agenda/configuraragenda.html')">Configurar Agenda</a>
-  <a onclick="abrirModulo('/agenda/gestaoconsultas.html')">Administrar Agendar</a>
-  <a onclick="abrirModulo('/agenda/agendapresencial.html')">Agendar Consulta Presencial</a>
+  <a onclick="abrirModulo('https://williambrioli.com.br/gestaoconsultas')">
+    Administrar Agenda
+  </a>
+  <a onclick="abrirModulo('https://williambrioli.com.br/agenda/agendapresencial')">
+    Agendar Consulta - Presencial
+  </a>
+  <a onclick="abrirModulo('https://williambrioli.com.br/agenda/configuraragenda')">
+    Configurar Agenda
+  </a>
 </div>
 
-<script src="/js/igc-config.js"></script>
-
-
 <script>
-
-  
-  
-  
-
- 
 function abrirModulo(url) {
   home.style.display = "none";
   moduloFrame.style.display = "block";
