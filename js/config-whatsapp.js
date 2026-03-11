@@ -120,12 +120,18 @@
     // Primeiro monta o link usando key.
     const url = buildWaLink(key);
 
+ 
+    // Depois abre o link numa nova aba.
+    window.open(url, "_blank");
+  };
 
+})();  // <-- Fim da função autoexecutável
+// Fim do arquivo.
+// ================================================================
 
+// FUNÇÃO GLOBAL PARA ABRIR AGENDA NOS BOTÕES NECESSÁRIOS.
 
-// --- Função inteligente de CTA ---
-// Decide automaticamente se o botão abre agenda ou WhatsApp
-window.handleCTA = function(btn){
+function handleCTA(btn){
 
 const agenda = btn.dataset.agenda;
 const key = btn.dataset.btn;
@@ -137,16 +143,4 @@ return;
 
 openWA(key);
 
-};
-
-
-
-    
-
-    // Depois abre o link numa nova aba.
-    window.open(url, "_blank");
-  };
-
-})();  // <-- Fim da função autoexecutável
-// Fim do arquivo.
-// ================================================================
+}
