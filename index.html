@@ -245,7 +245,7 @@
 
         
   <div class="filtro-ajuda">
-  <button class="btn filtro-btn active" data-filter="todos">Todos</button>
+  <button class="btn filtro-btn" data-filter="todos">Todos</button>
   <button class="btn filtro-btn" data-filter="clinico">Atendimento Clínico</button>
   <button class="btn filtro-btn" data-filter="profissional">Empresas e Profissionais</button>
   </div>
@@ -1675,6 +1675,11 @@ document.querySelectorAll("[data-btn]").forEach(button => {
 (function(){
   const buttons = document.querySelectorAll('.filtro-btn');
   const items = document.querySelectorAll('.acc-item');
+
+  // 👇 ESCONDE TUDO NO INÍCIO
+  items.forEach(item => {
+    item.style.display = 'none';
+  });
 
   buttons.forEach(btn => {
     btn.addEventListener('click', () => {
