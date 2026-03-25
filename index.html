@@ -248,14 +248,14 @@
 
 <div class="accordion filtro-accordion">
 
-  <div class="acc-item filtro-item" data-filter="clinico">
+  <div class="acc-item filtro-item" data-target="clinico">
     <div class="acc-header">
       <h3>Atendimento Clínico</h3>
       <span>+</span>
     </div>
   </div>
 
-  <div class="acc-item filtro-item" data-filter="profissional">
+  <div class="acc-item filtro-item" data-target="profissional">
     <div class="acc-header">
       <h3>Empresas e Profissionais</h3>
       <span>+</span>
@@ -269,7 +269,7 @@
 
         
         
-        <div class="accordion" id="accordion">
+        <div class="accordion grupo" id="grupo-profissional" style="display:none;">
 
 
 
@@ -531,7 +531,7 @@ onclick="handleCTA(this)">
 
 
 <!-- Orientação e Transição de Carreira -->
-          <div class="acc-item" data-key="orientacao-carreira" data-type="clinico profissional">
+          <div class="acc-item" data-key="orientacao-carreira" data-type="profissional">
             <div class="acc-header" tabindex="0">
               <h3>Orientação e Transição de Carreira</h3>
               <span>+</span>
@@ -663,8 +663,65 @@ onclick="handleCTA(this)">
 
 
 
-      
+
+
+
+<!-- Mediação Extrajudical -->
+          <div class="acc-item" data-key="mediação-extrajudicial" data-type="clinico profissional">
+            <div class="acc-header" tabindex="0">
+              <h3>Mediação Extrajudical</h3>
+              <span>+</span>
+            </div>
+            <div class="acc-body">
+            
+  <p><strong>Conflitos não precisam virar processos.</strong> A mediação extrajudicial é um método moderno e pacífico para construir acordos <em>com diálogo</em>, sem recorrer ao Judiciário. Como mediador, atuo de forma <strong>imparcial, sigilosa e orientada a resultados</strong>, ajudando as partes a compreender interesses reais e a chegar a um acordo <strong>equilibrado e voluntário</strong>.</p>
+
+  <p>Como eu ajudo na prática?</p>
+  <ul>
+    <li><strong>Facilitação do diálogo:</strong> conduzo conversas estruturadas que transformam impasses em entendimento.</li>
+    <li><strong>Mapeamento de interesses:</strong> vamos além das posições para identificar necessidades de cada parte.</li>
+    <li><strong>Construção do acordo:</strong> co-criamos soluções viáveis, com foco em rapidez e segurança jurídica.</li>
+    <li><strong>Formalização:</strong> registro claro do que foi combinado, preservando a autonomia das partes.</li>
+  </ul>
+
+  <p>Para quais situações?</p>
+  <ul>
+    <li>Questões <strong>familiares</strong> e de convivência.</li>
+    <li>Demandas <strong>empresariais</strong> e societárias.</li>
+    <li>Conflitos <strong>contratuais</strong> e negociais.</li>
+    <li>Temas de <strong>vizinhança</strong> e cotidiano.</li>
+  </ul>
+
+  <p>Por que escolher a mediação?</p>
+  <ul>
+    <li><strong>Mais humano e eficiente:</strong> menos desgaste, mais soluções concretas.</li>
+    <li><strong>Rápido e confidencial:</strong> você resolve com discrição e agilidade.</li>
+    <li><strong>Autonomia preservada:</strong> o acordo nasce da vontade das partes, não de uma sentença.</li>
+  </ul>
+
+
+<button 
+class="btn wa-btn" 
+data-btn="mediadorextrajudicial"
+onclick="handleCTA(this)">
+</button>
+
+<!-- data-agenda="/agenda/agendaonline.html" --> 
+              
+          <!--    <button class="btn wa-btn" data-btn="mediadorextrajudicial" onclick="openWA('mediadorextrajudiciall')"></button> -->
+            </div>
+          </div>          
+
+</div>
+
+
+
           
+
+
+<div class="accordion grupo" id="grupo-clinico" style="display:none;">
+
+           
           
           <!-- Psicoterapia Individual -->
           <div class="acc-item" data-key="psi-ind" data-type="clinico">
@@ -818,56 +875,8 @@ onclick="handleCTA(this)">
              <!-- <button class="btn wa-btn" data-btn="terapiadecasal" onclick="openWA('terapiadecasall')"></button> -->
             </div>
           </div>
-
-         
-
-
-
-          <!-- Mediação Extrajudical -->
-          <div class="acc-item" data-key="mediação-extrajudicial" data-type="clinico profissional">
-            <div class="acc-header" tabindex="0">
-              <h3>Mediação Extrajudical</h3>
-              <span>+</span>
-            </div>
-            <div class="acc-body">
-            
-  <p><strong>Conflitos não precisam virar processos.</strong> A mediação extrajudicial é um método moderno e pacífico para construir acordos <em>com diálogo</em>, sem recorrer ao Judiciário. Como mediador, atuo de forma <strong>imparcial, sigilosa e orientada a resultados</strong>, ajudando as partes a compreender interesses reais e a chegar a um acordo <strong>equilibrado e voluntário</strong>.</p>
-
-  <p>Como eu ajudo na prática?</p>
-  <ul>
-    <li><strong>Facilitação do diálogo:</strong> conduzo conversas estruturadas que transformam impasses em entendimento.</li>
-    <li><strong>Mapeamento de interesses:</strong> vamos além das posições para identificar necessidades de cada parte.</li>
-    <li><strong>Construção do acordo:</strong> co-criamos soluções viáveis, com foco em rapidez e segurança jurídica.</li>
-    <li><strong>Formalização:</strong> registro claro do que foi combinado, preservando a autonomia das partes.</li>
-  </ul>
-
-  <p>Para quais situações?</p>
-  <ul>
-    <li>Questões <strong>familiares</strong> e de convivência.</li>
-    <li>Demandas <strong>empresariais</strong> e societárias.</li>
-    <li>Conflitos <strong>contratuais</strong> e negociais.</li>
-    <li>Temas de <strong>vizinhança</strong> e cotidiano.</li>
-  </ul>
-
-  <p>Por que escolher a mediação?</p>
-  <ul>
-    <li><strong>Mais humano e eficiente:</strong> menos desgaste, mais soluções concretas.</li>
-    <li><strong>Rápido e confidencial:</strong> você resolve com discrição e agilidade.</li>
-    <li><strong>Autonomia preservada:</strong> o acordo nasce da vontade das partes, não de uma sentença.</li>
-  </ul>
-
-
-<button 
-class="btn wa-btn" 
-data-btn="mediadorextrajudicial"
-onclick="handleCTA(this)">
-</button>
-
-<!-- data-agenda="/agenda/agendaonline.html" --> 
-              
-          <!--    <button class="btn wa-btn" data-btn="mediadorextrajudicial" onclick="openWA('mediadorextrajudiciall')"></button> -->
-            </div>
-          </div>
+   
+     
 
 
         </div>
@@ -876,6 +885,10 @@ onclick="handleCTA(this)">
 
 
 
+
+
+
+    
 
 
 <!-- BLOG -->
@@ -1312,7 +1325,7 @@ Na abordagem psicanalítica clínica integrativa, o atendimento costuma acontece
 // ACCORDION — versão estável (sem scroll, sem salto)
 // =============================
 (function(){
-  const items = document.querySelectorAll('#accordion .acc-item');
+  const items = document.querySelectorAll('#grupo-clinico .acc-item, #grupo-profissional .acc-item');
 
   items.forEach(item => {
     const header = item.querySelector('.acc-header');
@@ -1693,37 +1706,23 @@ document.querySelectorAll("[data-btn]").forEach(button => {
 (function(){
 
   const filtros = document.querySelectorAll('.filtro-item');
-  const items = document.querySelectorAll('#accordion .acc-item');
-
-  // começa escondido
-  items.forEach(item => item.style.display = 'none');
+  const grupos = document.querySelectorAll('.grupo');
 
   filtros.forEach(filtro => {
 
-    filtro.querySelector('.acc-header').addEventListener('click', () => {
+    filtro.addEventListener('click', () => {
 
-      const tipo = filtro.getAttribute('data-filter');
-
-      // alterna estado visual (abre/fecha)
+      const target = filtro.getAttribute('data-target');
       const isOpen = filtro.classList.contains('open');
 
-      document.querySelectorAll('.filtro-item').forEach(f => f.classList.remove('open'));
+      // fecha tudo
+      filtros.forEach(f => f.classList.remove('open'));
+      grupos.forEach(g => g.style.display = 'none');
 
       if (!isOpen) {
         filtro.classList.add('open');
+        document.getElementById('grupo-' + target).style.display = 'block';
       }
-
-      // mostra/esconde itens
-     items.forEach(item => {
-      const type = item.getAttribute('data-type') || '';
-
-      if (!isOpen && type.includes(tipo)) {
-        item.style.display = '';
-      } else {
-        item.style.display = 'none';
-        item.classList.remove('open');
-        }
-      });
 
     });
 
