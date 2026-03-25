@@ -480,7 +480,7 @@ onclick="handleCTA(this)">
 
 
  <!-- Terapia para Empreendedores -->
-          <div class="acc-item" data-key="terapia-empreendedores" data-type=" clinico profissional">
+          <div class="acc-item" data-key="terapia-empreendedores" data-type="profissional">
             <div class="acc-header" tabindex="0">
               <h3>Terapia para Empreendedores</h3>
               <span>+</span>
@@ -579,7 +579,7 @@ onclick="handleCTA(this)">
 
 
  <!-- Treinador Financeiro -->
-          <div class="acc-item" data-key="orientacao-financeira" data-type="clinico profissional">
+          <div class="acc-item" data-key="orientacao-financeira" data-type="profissional">
             <div class="acc-header" tabindex="0">
               <h3>Treinador Financeiro</h3>
               <span>+</span>
@@ -824,7 +824,7 @@ onclick="handleCTA(this)">
 
 
           <!-- Mediação Extrajudical -->
-          <div class="acc-item" data-key="mediação-extrajudicial" data-type=" clinico profissional">
+          <div class="acc-item" data-key="mediação-extrajudicial" data-type="clinico profissional">
             <div class="acc-header" tabindex="0">
               <h3>Mediação Extrajudical</h3>
               <span>+</span>
@@ -1714,14 +1714,14 @@ document.querySelectorAll("[data-btn]").forEach(button => {
       }
 
       // mostra/esconde itens
-      items.forEach(item => {
-        const type = item.getAttribute('data-type') || '';
+     items.forEach(item => {
+      const type = item.getAttribute('data-type') || '';
 
-        if (!isOpen && type.includes(tipo)) {
-          item.style.display = '';
-        } else {
-          item.style.display = 'none';
-          item.classList.remove('open');
+      if (!isOpen && type.includes(tipo)) {
+        item.style.display = '';
+      } else {
+        item.style.display = 'none';
+        item.classList.remove('open');
         }
       });
 
