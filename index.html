@@ -1312,7 +1312,7 @@ Na abordagem psicanalítica clínica integrativa, o atendimento costuma acontece
 // ACCORDION — versão estável (sem scroll, sem salto)
 // =============================
 (function(){
-  const items = document.querySelectorAll('.acc-item');
+  const items = document.querySelectorAll('#accordion .acc-item');
 
   items.forEach(item => {
     const header = item.querySelector('.acc-header');
@@ -1323,7 +1323,7 @@ Na abordagem psicanalítica clínica integrativa, o atendimento costuma acontece
       const isOpen = item.classList.contains('open');
 
       // Fecha todos os outros
-      document.querySelectorAll('.acc-item.open').forEach(i => i.classList.remove('open'));
+      document.querySelectorAll('#accordion .acc-item.open').forEach(i => i.classList.remove('open'));
 
       // Guarda a posição atual antes de qualquer mudança
       const scrollY = window.scrollY;
