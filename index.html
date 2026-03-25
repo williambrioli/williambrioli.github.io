@@ -1336,7 +1336,7 @@ Na abordagem psicanalítica clínica integrativa, o atendimento costuma acontece
       const isOpen = item.classList.contains('open');
 
       // Fecha todos os outros
-      document.querySelectorAll('#accordion .acc-item.open').forEach(i => i.classList.remove('open'));
+      items.forEach(i => i.classList.remove('open'));
 
       // Guarda a posição atual antes de qualquer mudança
       const scrollY = window.scrollY;
