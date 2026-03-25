@@ -1741,6 +1741,42 @@ document.querySelectorAll("[data-btn]").forEach(button => {
 
 
 
+// =============================
+// ACCORDION FAQ (DÚVIDAS)
+// =============================
+<script>
+  (function(){
+  const items = document.querySelectorAll('#faq .acc-item');
+
+  items.forEach(item => {
+    const header = item.querySelector('.acc-header');
+
+    header.addEventListener('click', (e) => {
+      e.preventDefault();
+
+      const isOpen = item.classList.contains('open');
+
+      // Fecha todos
+      items.forEach(i => i.classList.remove('open'));
+
+      // Abre o atual
+      if (!isOpen) {
+        item.classList.add('open');
+      }
+    });
+
+    // Acessibilidade teclado
+    header.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        header.click();
+      }
+    });
+  });
+})();
+
+</script>
+  
 
   
   
