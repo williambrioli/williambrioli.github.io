@@ -243,12 +243,20 @@
       <div class="container section-card">
         <h2>Como te ajudo?</h2>
 
+        
+  <div class="filtro-ajuda">
+  <button class="btn filtro-btn active" data-filter="todos">Todos</button>
+  <button class="btn filtro-btn" data-filter="clinico">Atendimento Clínico</button>
+  <button class="btn filtro-btn" data-filter="profissional">Empresas e Profissionais</button>
+  </div>
+        
+        
         <div class="accordion" id="accordion">
 
 
 
 <!-- Consultor em Postura Gerencial, Liderança e Resultado -->
-          <div class="acc-item" data-key="consultor-desenvolvimento-humano">
+          <div class="acc-item" data-key="consultor-desenvolvimento-humano" data-type="profissional">
             <div class="acc-header" tabindex="0">
               <h3>Consultor em Postura Gerencial, Liderança e Resultado</h3>
               <span>+</span>
@@ -290,7 +298,7 @@ onclick="handleCTA(this)">
 
 
 <!-- Desenvolvimento de Postura Gerencial -->
-          <div class="acc-item" data-key="consultor-posturagerencial">
+          <div class="acc-item" data-key="consultor-posturagerencial" data-type="profissional">
             <div class="acc-header" tabindex="0">
               <h3>Desenvolvimento de Postura Gerencial</h3>
               <span>+</span>
@@ -320,7 +328,7 @@ onclick="handleCTA(this)">
           
 
 <!-- Desenvolvimento de Lideranças na Prática -->
-          <div class="acc-item" data-key="liderança-pratica">
+          <div class="acc-item" data-key="liderança-pratica" data-type="profissional">
             <div class="acc-header" tabindex="0">
               <h3>Desenvolvimento de Lideranças na Prática</h3>
               <span>+</span>
@@ -349,7 +357,7 @@ onclick="handleCTA(this)">
 
 
   <!-- Acompanhamento de Gestores e Executivos -->
-          <div class="acc-item" data-key="gestores-executivos">
+          <div class="acc-item" data-key="gestores-executivos" data-type="profissional">
             <div class="acc-header" tabindex="0">
               <h3>Acompanhamento de Gestores e Executivos</h3>
               <span>+</span>
@@ -379,7 +387,7 @@ onclick="handleCTA(this)">
 
 
 <!-- Alinhamento de Equipes e Cultura Organizacional -->
-          <div class="acc-item" data-key="alinhamento-organizacional">
+          <div class="acc-item" data-key="alinhamento-organizacional" data-type="profissional">
             <div class="acc-header" tabindex="0">
               <h3>Alinhamento de Equipes e Cultura Organizacional</h3>
               <span>+</span>
@@ -408,7 +416,7 @@ onclick="handleCTA(this)">
 
 
 <!-- Estratégia Comercial e Atitude de Vendas -->
-          <div class="acc-item" data-key="estrategia-comercial">
+          <div class="acc-item" data-key="estrategia-comercial" data-type="profissional">
             <div class="acc-header" tabindex="0">
               <h3>Estratégia Comercial e Atitude de Vendas</h3>
               <span>+</span>
@@ -454,7 +462,7 @@ onclick="handleCTA(this)">
 
 
  <!-- Terapia para Empreendedores -->
-          <div class="acc-item" data-key="terapia-empreendedores">
+          <div class="acc-item" data-key="terapia-empreendedores" data-type=" clinico profissional">
             <div class="acc-header" tabindex="0">
               <h3>Terapia para Empreendedores</h3>
               <span>+</span>
@@ -505,7 +513,7 @@ onclick="handleCTA(this)">
 
 
 <!-- Orientação e Transição de Carreira -->
-          <div class="acc-item" data-key="orientacao-carreira">
+          <div class="acc-item" data-key="orientacao-carreira" data-type="clinico profissional">
             <div class="acc-header" tabindex="0">
               <h3>Orientação e Transição de Carreira</h3>
               <span>+</span>
@@ -553,7 +561,7 @@ onclick="handleCTA(this)">
 
 
  <!-- Treinador Financeiro -->
-          <div class="acc-item" data-key="orientacao-financeira">
+          <div class="acc-item" data-key="orientacao-financeira" data-type="clinico profissional">
             <div class="acc-header" tabindex="0">
               <h3>Treinador Financeiro</h3>
               <span>+</span>
@@ -597,7 +605,7 @@ onclick="handleCTA(this)">
 
 
 <!-- Implementação de NR-1 -->
-<div class="acc-item" data-key="implementacao-nr1">
+<div class="acc-item" data-key="implementacao-nr1" data-type="profissional">
   <div class="acc-header" tabindex="0">
     <h3>Implementador de NR-1</h3>
     <span>+</span>
@@ -641,7 +649,7 @@ onclick="handleCTA(this)">
           
           
           <!-- Psicoterapia Individual -->
-          <div class="acc-item" data-key="psi-ind">
+          <div class="acc-item" data-key="psi-ind" data-type="clinico">
             <div class="acc-header" tabindex="0">
               <h3>Psicoterapia Individual</h3>
               <span>+</span>
@@ -677,7 +685,7 @@ onclick="handleCTA(this)">
 
           
           <!-- Psicoterapia Breve -->
-          <div class="acc-item" data-key="psi-breve">
+          <div class="acc-item" data-key="psi-breve" data-type="clinico">
             <div class="acc-header" tabindex="0">
               <h3>Psicoterapia Breve</h3>
               <span>+</span>
@@ -714,7 +722,7 @@ onclick="handleCTA(this)">
 
           
           <!-- Sessão Única -->
-          <div class="acc-item" data-key="sessao-unica">
+          <div class="acc-item" data-key="sessao-unica" data-type="clinico">
             <div class="acc-header" tabindex="0">
               <h3>Psicoterapia de Sessão Única</h3>
               <span>+</span>
@@ -760,7 +768,7 @@ onclick="handleCTA(this)">
 
           
           <!-- Terapia de Casal -->
-          <div class="acc-item" data-key="terapia-casal">
+          <div class="acc-item" data-key="terapia-casal" data-type="clinico">
             <div class="acc-header" tabindex="0">
               <h3>Terapia de Casal</h3>
               <span>+</span>
@@ -798,7 +806,7 @@ onclick="handleCTA(this)">
 
 
           <!-- Mediação Extrajudical -->
-          <div class="acc-item" data-key="mediação-extrajudicial">
+          <div class="acc-item" data-key="mediação-extrajudicial" data-type=" clinico profissional">
             <div class="acc-header" tabindex="0">
               <h3>Mediação Extrajudical</h3>
               <span>+</span>
@@ -1654,9 +1662,55 @@ document.querySelectorAll("[data-btn]").forEach(button => {
 })();
 
 
+    
 </script>
 
 
+
+<!-- ==========================================
+     SCRIPT MENU ACORDION FILTRO
+     ========================================== -->
+
+<script>
+(function(){
+  const buttons = document.querySelectorAll('.filtro-btn');
+  const items = document.querySelectorAll('.acc-item');
+
+  buttons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      
+      // ativa botão
+      buttons.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      const filtro = btn.getAttribute('data-filter');
+
+      items.forEach(item => {
+        const type = item.getAttribute('data-type') || '';
+
+        if (filtro === 'todos') {
+          item.style.display = '';
+        } else if (type.includes(filtro)) {
+          item.style.display = '';
+        } else {
+          item.style.display = 'none';
+          item.classList.remove('open'); // fecha se estiver aberto
+        }
+      });
+
+    });
+  });
+})();
+</script>
+  
+
+
+
+
+
+
+
+  
   
 <!-- ==========================================
      SCRIPT QUE INJETA TEXTOS DOS BOTÕES DO SITE_DATA
