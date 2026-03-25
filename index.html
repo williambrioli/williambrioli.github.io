@@ -1698,12 +1698,11 @@ document.querySelectorAll("[data-btn]").forEach(button => {
 
 
 
-<!-- ==========================================
-     SCRIPT MENU ACORDION FILTRO
-     ========================================== -->
-
+// =============================
+// FILTRO (CONTROLA OS GRUPOS)
+// =============================
 <script>
-(function(){
+  (function(){
 
   const filtros = document.querySelectorAll('.filtro-item');
   const grupos = document.querySelectorAll('.grupo');
@@ -1721,7 +1720,9 @@ document.querySelectorAll("[data-btn]").forEach(button => {
 
       if (!isOpen) {
         filtro.classList.add('open');
-        document.getElementById('grupo-' + target).style.display = 'block';
+
+        const grupo = document.getElementById('grupo-' + target);
+        if (grupo) grupo.style.display = 'block';
       }
 
     });
@@ -1729,9 +1730,8 @@ document.querySelectorAll("[data-btn]").forEach(button => {
   });
 
 })();
-</script>
   
-
+</script>
 
 
 
