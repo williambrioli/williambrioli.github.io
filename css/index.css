@@ -733,8 +733,8 @@ footer.site-footer {
   background:#d7ebeb;
   border-radius:20px;
 
-  padding:24px;
-
+  padding:40px;
+  
   box-sizing:border-box;
 
   display:flex;
@@ -830,7 +830,7 @@ footer.site-footer {
 @media (max-width:768px){
 
   .review-card{
-    padding:18px;
+    padding:35px;
   }
 
   .review-user h3{
