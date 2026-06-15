@@ -32,18 +32,36 @@ fetch(REVIEWS_URL)
     }
 
     slide.innerHTML = `
-      <div class="review-card">
-        <h3>${review.nome}</h3>
+<div class="review-card">
 
-        <div class="stars">
-          ${'⭐'.repeat(Number(review.nota))}
-        </div>
+  <div class="review-header">
 
-        <p>
-          "${review.comentario}"
-        </p>
-      </div>
-    `;
+    <div class="review-avatar">
+      ${review.nome.charAt(0).toUpperCase()}
+    </div>
+
+    <div class="review-user">
+
+      <h3>${review.nome}</h3>
+
+      <span class="review-meta">
+        Avaliação Google
+      </span>
+
+    </div>
+
+  </div>
+
+  <div class="stars">
+    ${'★'.repeat(review.nota)}
+  </div>
+
+  <p class="review-text">
+    "${review.comentario}"
+  </p>
+
+</div>
+`;
 
     track.appendChild(slide);
 
