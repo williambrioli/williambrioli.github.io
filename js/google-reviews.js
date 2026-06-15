@@ -6,10 +6,16 @@ fetch(REVIEWS_URL)
 .then(reviews => {
 
   const track =
-  document.querySelector('#testimonials .tc-track');
+    document.querySelector('#testimonials .tc-track');
 
   const dotsCont =
-  document.querySelector('#testimonials .tc-dots');
+    document.querySelector('#testimonials .tc-dots');
+
+  const prev =
+    document.querySelector('#testimonials .tc-prev');
+
+  const next =
+    document.querySelector('#testimonials .tc-next');
 
   track.innerHTML = '';
   dotsCont.innerHTML = '';
@@ -17,95 +23,103 @@ fetch(REVIEWS_URL)
   reviews.forEach((review,index)=>{
 
     const slide =
-    document.createElement('div');
+      document.createElement('div');
 
-    slide.className =
-    'tc-slide';
+    slide.className = 'tc-slide';
 
-    if(index === 0)
+    if(index === 0){
       slide.classList.add('active');
+    }
 
     slide.innerHTML = `
       <div class="review-card">
-
         <h3>${review.nome}</h3>
 
         <div class="stars">
-          ${'⭐'.repeat(review.nota)}
+          ${'⭐'.repeat(Number(review.nota))}
         </div>
 
         <p>
           "${review.comentario}"
         </p>
-
       </div>
     `;
 
     track.appendChild(slide);
 
     const dot =
-    document.createElement('div');
+      document.createElement('div');
 
-    dot.className='tc-dot';
+    dot.className = 'tc-dot';
 
-    if(index===0)
+    if(index === 0){
       dot.classList.add('active');
+    }
 
     dotsCont.appendChild(dot);
 
   });
 
-});
+  const slides =
+    [...document.querySelectorAll('.tc-slide')];
 
+  const dots =
+    [...document.querySelectorAll('.tc-dot')];
 
+  if(slides.length <= 1){
+    return;
+  }
 
-const slides =
-document.querySelectorAll('.tc-slide');
+  let current = 0;
 
-const dots =
-document.querySelectorAll('.tc-dot');
+  function goTo(index){
 
-const prev =
-document.querySelector('.tc-prev');
+    slides.forEach(slide =>
+      slide.classList.remove('active')
+    );
 
-const next =
-document.querySelector('.tc-next');
+    dots.forEach(dot =>
+      dot.classList.remove('active')
+    );
 
-let current = 0;
+    slides[index].classList.add('active');
+    dots[index].classList.add('active');
 
-function goTo(index){
+    current = index;
+  }
 
-  slides[current].classList.remove('active');
-  dots[current].classList.remove('active');
+  next.addEventListener('click', ()=>{
 
-  current = index;
+    let i = current + 1;
 
-  slides[current].classList.add('active');
-  dots[current].classList.add('active');
-}
+    if(i >= slides.length){
+      i = 0;
+    }
 
-next.addEventListener('click', ()=>{
+    goTo(i);
 
-  let i = current + 1;
-
-  if(i >= slides.length)
-    i = 0;
-
-  goTo(i);
-});
-
-prev.addEventListener('click', ()=>{
-
-  let i = current - 1;
-
-  if(i < 0)
-    i = slides.length - 1;
-
-  goTo(i);
-});
-
-dots.forEach((dot,index)=>{
-  dot.addEventListener('click',()=>{
-    goTo(index);
   });
+
+  prev.addEventListener('click', ()=>{
+
+    let i = current - 1;
+
+    if(i < 0){
+      i = slides.length - 1;
+    }
+
+    goTo(i);
+
+  });
+
+  dots.forEach((dot,index)=>{
+
+    dot.addEventListener('click', ()=>{
+
+      goTo(index);
+
+    });
+
+  });
+
 });
