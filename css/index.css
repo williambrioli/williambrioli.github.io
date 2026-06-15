@@ -719,3 +719,41 @@ footer.site-footer {
 }
 
 
+
+
+/* ============================================================
+   SEÇÃO DEPOIMENTOS CARREGADO POR APP SCRIPTS
+   ============================================================ */
+
+
+.review-card{
+
+  max-width:600px;
+
+  margin:auto;
+
+  padding:30px;
+
+  background:#eef3f3;
+
+  border-radius:20px;
+
+  text-align:center;
+}
+
+.review-card h3{
+  margin-bottom:10px;
+}
+
+.review-card .stars{
+  font-size:22px;
+  margin-bottom:15px;
+}
+
+.review-card p{
+  font-size:18px;
+  font-style:italic;
+}
+
+
+
