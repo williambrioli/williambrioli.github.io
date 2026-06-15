@@ -730,32 +730,64 @@ footer.site-footer {
   width:100%;
   height:100%;
 
-  padding:30px;
-  background:#f3f8f8;
-
+  background:#f8f9fa;
   border-radius:20px;
 
-  text-align:center;
+  padding:30px;
 
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
   box-sizing:border-box;
 }
 
-.review-card h3{
-  margin-bottom:10px;
+.review-header{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:15px;
+
+  margin-bottom:20px;
 }
 
-.review-card .stars{
-  font-size:22px;
-  margin-bottom:15px;
+.review-avatar{
+
+  width:56px;
+  height:56px;
+
+  border-radius:50%;
+
+  background:#4285F4;
+
+  color:#fff;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  font-size:24px;
+  font-weight:700;
 }
 
-.review-card p{
-  font-size:18px;
+.review-user h3{
+  margin:0;
+  font-size:20px;
+  color:#202124;
+}
+
+.review-meta{
+  font-size:13px;
+  color:#5f6368;
+}
+
+.stars{
+  color:#fbbc04;
+  font-size:24px;
+  margin-bottom:20px;
+}
+
+.review-text{
+  font-size:20px;
   font-style:italic;
+  color:#202124;
+  line-height:1.6;
 }
-
 
 
