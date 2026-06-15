@@ -773,10 +773,6 @@ footer.site-footer {
 }
 
 .review-meta{
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  gap:6px;
   font-size:13px;
   color:#5f6368;
 }
@@ -792,9 +788,4 @@ footer.site-footer {
   font-style:italic;
   color:#202124;
   line-height:1.6;
-}
-
-.google-icon{
-  width:18px;
-  height:18px;
 }
