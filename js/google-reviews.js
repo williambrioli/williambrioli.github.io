@@ -56,3 +56,56 @@ fetch(REVIEWS_URL)
   });
 
 });
+
+
+
+const slides =
+document.querySelectorAll('.tc-slide');
+
+const dots =
+document.querySelectorAll('.tc-dot');
+
+const prev =
+document.querySelector('.tc-prev');
+
+const next =
+document.querySelector('.tc-next');
+
+let current = 0;
+
+function goTo(index){
+
+  slides[current].classList.remove('active');
+  dots[current].classList.remove('active');
+
+  current = index;
+
+  slides[current].classList.add('active');
+  dots[current].classList.add('active');
+}
+
+next.addEventListener('click', ()=>{
+
+  let i = current + 1;
+
+  if(i >= slides.length)
+    i = 0;
+
+  goTo(i);
+});
+
+prev.addEventListener('click', ()=>{
+
+  let i = current - 1;
+
+  if(i < 0)
+    i = slides.length - 1;
+
+  goTo(i);
+});
+
+dots.forEach((dot,index)=>{
+  dot.addEventListener('click',()=>{
+    goTo(index);
+  });
+});
