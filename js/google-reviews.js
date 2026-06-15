@@ -45,11 +45,7 @@ fetch(REVIEWS_URL)
       <h3>${review.nome}</h3>
 
       <span class="review-meta">
-        Google Reviews
-        <img
-          src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg"
-          class="google-icon"
-          alt="Google">
+        Avaliação Google
       </span>
 
     </div>
