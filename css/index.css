@@ -722,34 +722,41 @@ footer.site-footer {
 
 
 /* ============================================================
-   SEÇÃO DEPOIMENTOS CARREGADO POR APP SCRIPTS
+   DEPOIMENTOS GOOGLE
    ============================================================ */
 
-
 .review-card{
+
   width:100%;
   height:100%;
 
   background:#f8f9fa;
   border-radius:20px;
 
-  padding:30px;
+  padding:24px;
 
   box-sizing:border-box;
+
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-start;
 }
 
 .review-header{
+
   display:flex;
   align-items:center;
-  justify-content:center;
+  justify-content:flex-start;
+
   gap:15px;
 
-  margin-bottom:20px;
+  margin-bottom:18px;
 }
 
 .review-avatar{
 
   width:56px;
+  min-width:56px;
   height:56px;
 
   border-radius:50%;
@@ -766,26 +773,77 @@ footer.site-footer {
   font-weight:700;
 }
 
+.review-user{
+
+  text-align:left;
+}
+
 .review-user h3{
+
   margin:0;
   font-size:20px;
   color:#202124;
 }
 
 .review-meta{
+
+  margin-top:4px;
+
   font-size:13px;
   color:#5f6368;
 }
 
 .stars{
+
   color:#fbbc04;
+
   font-size:24px;
-  margin-bottom:20px;
+
+  margin:8px 0 18px;
+
+  text-align:left;
 }
 
 .review-text{
+
+  width:100%;
+
+  margin:0;
+
   font-size:20px;
-  font-style:italic;
+
+  line-height:1.7;
+
   color:#202124;
-  line-height:1.6;
+
+  font-style:italic;
+
+  text-align:left;
+
+  white-space:normal;
+
+  word-break:normal;
+
+  overflow-wrap:break-word;
+}
+
+@media (max-width:768px){
+
+  .review-card{
+    padding:18px;
+  }
+
+  .review-user h3{
+    font-size:18px;
+  }
+
+  .review-text{
+    font-size:16px;
+    line-height:1.6;
+  }
+
+  .stars{
+    font-size:22px;
+  }
+
 }
