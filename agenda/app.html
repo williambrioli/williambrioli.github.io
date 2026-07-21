@@ -24,18 +24,12 @@
 
   <script src="/js/igc-config.js"></script>
 
-<iframe
-  id="adminFrame"
-  allowfullscreen>
-</iframe>
+<iframe id="adminFrame" allowfullscreen></iframe>
 
 <script>
-document.getElementById("adminFrame").src =
-  `${window.IGC_CONFIG.APPS_SCRIPT_BASE}
-  
-  //?app=${window.IGC_CONFIG.APPS.ADMIN}`;
 
-  
+document.getElementById("adminFrame").src =
+    window.IGC_CONFIG.APPS_SCRIPT_BASE;
 
 </script>
 
