@@ -178,57 +178,32 @@ html, body {
 
       
       <div class="menu-item">
-        <span>Agenda</span>
+        <span> Módulo Agenda</span>
         <div class="dropdown">
-          <a onclick="abrirModulo('https://williambrioli.com.br/agenda/gestaoconsultas')">
-            Administrar Agenda
-          </a>
-          <a onclick="abrirModulo('https://williambrioli.com.br/agenda/agendapresencial')">
-            Agendar Consulta Presencial
-          </a>
-          <a onclick="abrirModulo('https://williambrioli.com.br/agenda/agendaonline')">
-           Agendamento Online
-          </a>
-                    
-        </div>
+          
+          <a onclick="abrirModulo('https://williambrioli.com.br/agenda/agendapresencial')"> Agendamento de Primeira Consulta </a>
+
+          <a onclick="abrirModulo('https://williambrioli.com.br/agenda/gestaoconsultas')"> Abrir Agenda + DRE </a>
+
+          <a onclick="abrirModulo('https://williambrioli.com.br/agenda/configuraragenda')"> Configurações </a>
+          
+           </div>
       </div>
 
 
 
 
 <div class="menu-item">
-        <span>Cadastro</span>
+        <span>Módulo Gestor</span>
         <div class="dropdown">
           
-      <a onclick="window.location.href=
-'https://script.google.com/macros/s/AKfycbzY8ss_ETwjqKExoMaZumSOasgW3cHUrPvCINs62_Y7QfJ_hPxi2X7tQY5nlXqx0wEi/exec'">
-    Gestor de Prontuários
-</a>
-
-<a onclick="abrirModulo('https://williambrioli.com.br/agenda/app')"> Gerir Prontuário Clínico </a>
-
-
-
-          
-     <!-- 
-      <a onclick="abrirModulo('https://script.google.com/macros/s/AKfycbyF9OL6VX2xywTHsyu_ZKekk1YZn7d7eqIqZ1mdxt-Vc1Z6OLGdAMV2TRLNiPoCfApO/exec?page=gestorprontuario')">
-            Gestor de Prontuários
-          </a>
-    -->                       
+         <a onclick="abrirModulo('https://williambrioli.com.br/agenda/app')"> Abrir </a>
+                       
         </div>
       </div>
 
-
-           
-           
-      <div class="menu-item">
-        <span>Configurações</span>
-        <div class="dropdown">
-          <a onclick="abrirModulo('https://williambrioli.com.br/agenda/configuraragenda')">
-            Configurar Agenda
-          </a>
-        </div>
-      </div>
+    
+      
 
     </div>
 
@@ -249,33 +224,14 @@ html, body {
 <!-- MOBILE MENU -->
 <div id="mobileMenu">
   <a onclick="voltarInicio()">Início</a>
-  <a onclick="abrirModulo('https://williambrioli.com.br/agenda/gestaoconsultas')">
-    Administrar Agenda
-  </a>
-  <a onclick="abrirModulo('https://williambrioli.com.br/agenda/agendapresencial')">
-    Agendar Consulta Presencial
-  </a>
-  <a onclick="abrirModulo('https://williambrioli.com.br/agenda/agendaonline')">
-    Agendamento Online
-  </a>
-  <a onclick="abrirModulo('https://williambrioli.com.br/agenda/configuraragenda')">
-    Configurar Agenda
-  </a>
-
-  <a onclick="window.location.href=
-'https://script.google.com/macros/s/AKfycbzY8ss_ETwjqKExoMaZumSOasgW3cHUrPvCINs62_Y7QfJ_hPxi2X7tQY5nlXqx0wEi/exec'">
-    Gestor de Prontuários
-</a>
-  
-  <!--
-<a onclick="abrirModulo('https://script.google.com/macros/s/AKfycbyF9OL6VX2xywTHsyu_ZKekk1YZn7d7eqIqZ1mdxt-Vc1Z6OLGdAMV2TRLNiPoCfApO/exec?page=gestorprontuario')">
-    Gestor de Prontuários
-    </a>
--->
-  
+  <a onclick="abrirModulo('https://williambrioli.com.br/agenda/agendapresencial')"> Agendamento de Primeira Consulta </a>
+  <a onclick="abrirModulo('https://williambrioli.com.br/agenda/gestaoconsultas')"> Abrir Agenda + DRE </a>
+  <a onclick="abrirModulo('https://williambrioli.com.br/agenda/configuraragenda')"> Configurações </a>
+  <a onclick="abrirModulo('https://williambrioli.com.br/agenda/app')"> Abrir </a>
     
 </div>
 
+  
 <script>
 function abrirModulo(url) {
   home.style.display = "none";
