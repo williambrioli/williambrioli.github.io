@@ -124,7 +124,7 @@ html, body {
   flex: 1;
   position: relative;
 }
-
+/*
 .home {
   position: absolute;
   inset: 0;
@@ -135,7 +135,29 @@ html, body {
   text-align: center;
   padding: 20px;
 }
+*/
 
+
+.home {
+  position: absolute;
+  inset: 0;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+  padding: 20px;
+
+  background-image: url("/img/fundo-desktop.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}  
+
+
+  
 .home h1 {
   font-size: 26px;
   margin-bottom: 10px;
@@ -159,6 +181,12 @@ html, body {
   .content {
     padding-bottom: 80px;
   }
+
+.home{
+
+        background-image: url("/img/fundo-mobile.png");
+  
+  
 }
 </style>
 </head>
@@ -213,8 +241,10 @@ html, body {
 
   <div class="content">
     <div class="home" id="home">
+      <!--
       <h1>SIGA | Sistema Integrado de Gestão Clínica </h1>
       <p>A plataforma completa para psicólogos, psicanalistas e terapeutas.</p>
+      -->
     </div>
 
     <iframe id="moduloFrame"></iframe>
@@ -224,7 +254,7 @@ html, body {
 <!-- MOBILE MENU -->
 <div id="mobileMenu">
   <a onclick="voltarInicio()">Início</a>
-  <a onclick="abrirModulo('https://williambrioli.com.br/siga/williambrioli/agendapresencial')"> Agendar Primeira Consulta </a>
+  <a onclick="abrirModulo('https://williambrioli.com.br/siga/williambrioli/agendapresencial')"> Agendar Consulta </a>
   <a onclick="abrirModulo('https://williambrioli.com.br/siga/williambrioli/gestaoconsultas')"> Gerenciar Agenda + DFC </a>
   <a onclick="abrirModulo('https://williambrioli.com.br/siga/williambrioli/configuraragenda')"> Configurações da Agenda </a>
   <a onclick="abrirModulo('https://williambrioli.com.br/siga/williambrioli/appgestor')"> Abrir Gestor Clínico</a>
