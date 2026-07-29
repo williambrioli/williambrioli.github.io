@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Assinar Termo de Consentimento</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      overflow: hidden;
+    }
+  </style>
+</head>
+<body>
+
+<script>
+  // Pega o token da URL do seu site
+  const params = new URLSearchParams(window.location.search);
+  const token = params.get('token') || '';
+
+  // Monta o endereço do Apps Script com o chaveamento correto
+  const appsScriptUrl = 'https://script.google.com/macros/s/AKfycbzY8ss_ETwjqKExoMaZumSOasgW3cHUrPvCINs62_Y7QfJ_hPxi2X7tQY5nlXqx0wEi/exec'
+                      + '?page=assinar&token=' + encodeURIComponent(token);
+
+  // Cria o iframe
+  const iframe = document.createElement('iframe');
+  iframe.src = appsScriptUrl;
+  iframe.style.cssText = 'position:fixed;inset:0;width:100%;height:100%;border:none;';
+  document.body.appendChild(iframe);
+</script>
+
+</body>
+</html>
