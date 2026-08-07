@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/png" sizes="32x32" href="/siga/williambrioli/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/siga/williambrioli/favicon-16.png">
+<link rel="icon" href="/siga/williambrioli/favicon.ico">
+<link rel="apple-touch-icon" href="/siga/williambrioli/apple-touch-icon.png">
+<link rel="manifest" href="/siga/williambrioli/site.webmanifest">
+<title>SIGA | Sistema Integrado de Gestão Clínica</title>
+
+<style>
+* { box-sizing: border-box; }
+
+  
+html, body {
+  margin: 0;
+  height: 100%;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #0f172a;
+  color: #e2e8f0;
+}
+
+/* ================= APP ================= */
+#appBox {
+  display: flex;
+  height: 100vh;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* ================= HEADER ================= */
+.header {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  background: #111827;
+  border-bottom: 1px solid #1f2937;
+  padding: 0 20px;
+  height: 60px;
+}
+
+.logo {
+  font-weight: bold;
+  font-size: 15px;
+  white-space: nowrap;
+  color: #38bdf8;
+}
+
+/* ================= MENU DESKTOP ================= */
+.menu {
+  display: flex;
+  gap: 25px;
+}
+
+.menu-item {
+  position: relative;
+  cursor: pointer;
+}
+
+.menu-item span {
+  font-size: 14px;
+}
+
+.dropdown {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #1e293b;
+  border: 1px solid #334155;
+  border-radius: 8px;
+  min-width: 240px;
+  box-shadow: 0 10px 30px rgba(0,0,0,.4);
+  z-index: 1000;
+}
+
+.dropdown a {
+  display: block;
+  padding: 12px 14px;
+  font-size: 13px;
+  color: #e2e8f0;
+  text-decoration: none;
+}
+
+.dropdown a:hover {
+  background: #334155;
+}
+
+.menu-item:hover .dropdown {
+  display: block;
+}
+
+/* ================= MOBILE ================= */
+.hamburger {
+  margin-left: auto;
+  display: none;
+  cursor: pointer;
+  font-size: 24px;
+}
+
+@media (max-width: 768px) {
+  .menu { display: none; }
+  .hamburger { display: block; }
+}
+
+/* ================= MOBILE MENU ================= */
+#mobileMenu {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: #0f172a;
+  z-index: 9999;
+  padding: 20px;
+}
+
+#mobileMenu a {
+  display: block;
+  padding: 16px 0;
+  border-bottom: 1px solid #1f2937;
+  color: #e2e8f0;
+  text-decoration: none;
+  font-size: 15px;
+}
+
+/* ================= CONTENT ================= */
+.content {
+  flex: 1;
+  position: relative;
+}
+/*
+.home {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 20px;
+}
+*/
+
+
+.home {
+  position: absolute;
+  inset: 0;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+  padding: 20px;
+
+  background-image: url("/img/fundo-desktop.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}  
+
+
+  
+.home h1 {
+  font-size: 26px;
+  margin-bottom: 10px;
+}
+
+.home p {
+  font-size: 14px;
+  opacity: .7;
+}
+
+#moduloFrame {
+  width: 100%;
+  height: 100%;
+  border: none;
+  display: none;
+  background: #fff;
+}
+
+/* Espaço extra no mobile */
+@media (max-width: 768px) {
+  .content {
+    padding-bottom: 80px;
+  }
+
+.home{
+
+        background-image: url("/img/fundo-mobile.png");
+  
+  
+}
+</style>
+</head>
+
+<body>
+
+<div id="appBox">
+
+  <div class="header">
+    <div class="logo">SIGA • Sistema Integrado de Gestão Clínica</div>
+
+    <div class="menu">
+
+      <div class="menu-item">
+        <span onclick="voltarInicio()">Início</span>
+      </div>
+
+      
+      <div class="menu-item">
+        <span> Módulo Agenda</span>
+        <div class="dropdown">
+          
+          <a onclick="abrirModulo('https://williambrioli.com.br/siga/williambrioli/agendapresencial')"> ➕ Nova Consulta </a>
+
+          <a onclick="abrirModulo('https://williambrioli.com.br/siga/williambrioli/gestaoconsultas')"> 🗓 Agenda </a>
+
+          <a onclick="abrirModulo('https://williambrioli.com.br/siga/williambrioli/configuraragenda')"> ⚙ Configurações </a>
+          
+           </div>
+      </div>
+
+
+
+
+<div class="menu-item">
+        <span>Módulo Clínico</span>
+        <div class="dropdown">
+          
+         <a onclick="abrirModulo('https://williambrioli.com.br/siga/williambrioli/appgestor')"> 👤 Atendimento </a>
+                       
+        </div>
+      </div>
+
+    
+      
+
+    </div>
+
+    
+    <div class="hamburger" onclick="toggleMobile()">☰</div>
+  </div>
+
+  <div class="content">
+    <div class="home" id="home">
+      <!--
+      <h1>SIGA | Sistema Integrado de Gestão Clínica </h1>
+      <p>A plataforma completa para psicólogos, psicanalistas e terapeutas.</p>
+      -->
+    </div>
+
+    <iframe id="moduloFrame"></iframe>
+  </div>
+</div>
+
+<!-- MOBILE MENU -->
+<div id="mobileMenu">
+  <a onclick="voltarInicio()">Início</a>
+  <a onclick="abrirModulo('https://williambrioli.com.br/siga/williambrioli/agendapresencial')"> ➕ Nova Consulta </a>
+  <a onclick="abrirModulo('https://williambrioli.com.br/siga/williambrioli/gestaoconsultas')"> 🗓 Agenda </a>
+  <a onclick="abrirModulo('https://williambrioli.com.br/siga/williambrioli/configuraragenda')"> ⚙ Configurações </a>
+  <a onclick="abrirModulo('https://williambrioli.com.br/siga/williambrioli/appgestor')"> 👤 Atendimento</a>
+    
+</div>
+
+  
+<script>
+function abrirModulo(url) {
+  home.style.display = "none";
+  moduloFrame.style.display = "block";
+  moduloFrame.src = url;
+  mobileMenu.style.display = "none";
+}
+
+function voltarInicio() {
+  moduloFrame.src = "";
+  moduloFrame.style.display = "none";
+  home.style.display = "flex";
+  mobileMenu.style.display = "none";
+}
+
+function toggleMobile() {
+  mobileMenu.style.display =
+    mobileMenu.style.display === "block" ? "none" : "block";
+}
+</script>
+
+</body>
+</html>
