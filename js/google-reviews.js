@@ -1,5 +1,4 @@
-const REVIEWS_URL =
-"https://script.google.com/macros/s/AKfycbwUHsEd3b_0-pntgxtmPSWLPbbiC_qc29ts-2UdW_DudWms2vuUUHYPChtyFGzwn5ib/exec";
+const REVIEWS_URL = "/js/reviews.json";
 
 fetch(REVIEWS_URL)
 .then(r => r.json())
