@@ -45,7 +45,7 @@ fetch(REVIEWS_URL)
       <h3>${review.nome}</h3>
 
       <span class="review-meta">
-        Avaliação Google
+      ${review.tipo ? review.tipo : 'Avaliação'}
       </span>
 
     </div>
