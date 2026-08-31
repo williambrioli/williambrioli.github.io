@@ -1,0 +1,116 @@
+[
+  {
+    "nome": "Paciente, 38 anos",
+    "nota": 5,
+    "comentario": "Preparo técnico, ético e teórico impecáveis. Um profissional altamente capacitado para acolher, pontuar observações e orientações eficazes e coerentes.",
+    "tipo": "Atendimento Clínico"
+  },
+  {
+    "nome": "Saulo Silva",
+    "nota": 5,
+    "comentario": "Excelente profissional, atualizado, atento e entrega sempre mais.",
+    "tipo": "Atendimento Clínico"
+  },
+  {
+    "nome": "Miguel",
+    "nota": 5,
+    "comentario": "Durante um pequeno espaço de tempo de conversa,esse profissional me deu uma aula,de como se sobressair dos problemas diários",
+    "tipo": "Atendimento Clínico"
+  },
+  {
+    "nome": "Vilson",
+    "nota": 5,
+    "comentario": "Ótimo profissional. Estarei sempre com William Brioli, assim que preciso. Obrigado William...",
+    "tipo": "Atendimento Clínico"
+  },
+  {
+    "nome": "Paciente, 28 anos",
+    "nota": 5,
+    "comentario": "Após algumas sessões, consegui entender melhor minhas emoções e sentir mais equilíbrio no dia a dia.",
+    "tipo": "Atendimento Clínico"
+  },
+  {
+    "nome": "Paciente de terapia de casal",
+    "nota": 5,
+    "comentario": "A terapia me ajudou a superar conflitos no relacionamento e melhorar a comunicação com meu parceiro.",
+    "tipo": "Atendimento Clínico"
+  },
+  {
+    "nome": "Marcia, 42 anos",
+    "nota": 5,
+    "comentario": "Senti um apoio humano e ético que fez toda a diferença na minha jornada de autoconhecimento.",
+    "tipo": "Atendimento Clínico"
+  },
+  {
+    "nome": "Nilton Carlos",
+    "nota": 5,
+    "comentario": "Ótimo profissional!",
+    "tipo": "Atendimento Clínico"
+  },
+  {
+    "nome": "Marina",
+    "nota": 5,
+    "comentario": "Ótimo profissional, recomendo!",
+    "tipo": "Atendimento Clínico"
+  },
+  {
+    "nome": "Henrique",
+    "nota": 5,
+    "comentario": "Excelente profissional.",
+    "tipo": "Atendimento Clínico"
+  },
+  {
+    "nome": "Jhennifer",
+    "nota": 5,
+    "comentario": "Ótimo Profissional.",
+    "tipo": "Atendimento Clínico"
+  },
+  {
+    "nome": "Douglas",
+    "nota": 5,
+    "comentario": "Ótimo Profissional. Recomendo",
+    "tipo": "Atendimento Clínico"
+  },
+  {
+    "nome": "Paulo Takahashi",
+    "nota": 5,
+    "comentario": "Cinco estrelas",
+    "tipo": "Atendimento Clínico"
+  },
+  {
+    "nome": "Carlos Roberto",
+    "nota": 5,
+    "comentario": "Cinco estrelas",
+    "tipo": "Atendimento Clínico"
+  },
+  {
+    "nome": "Dieni",
+    "nota": 5,
+    "comentario": "Cinco estrelas",
+    "tipo": "Atendimento Clínico"
+  },
+  {
+    "nome": "Jéssica Godoi",
+    "nota": 5,
+    "comentario": "Cinco estrelas",
+    "tipo": "Atendimento Clínico"
+  },
+  {
+    "nome": "Luiz carlos Sousa",
+    "nota": 5,
+    "comentario": "Cinco estrelas",
+    "tipo": "Atendimento Clínico"
+  },
+  {
+    "nome": "Calebe Nunes",
+    "nota": 5,
+    "comentario": "Cinco estrelas",
+    "tipo": "Atendimento Clínico"
+  },
+  {
+    "nome": "Vinícius Rocha",
+    "nota": 5,
+    "comentario": "Cinco estrelas",
+    "tipo": "Atendimento Clínico"
+  }
+]
