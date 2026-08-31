@@ -785,13 +785,21 @@ footer.site-footer {
   color:#202124;
 }
 
-.review-meta{
 
-  margin-top:4px;
 
-  font-size:13px;
-  color:#5f6368;
+.review-meta {
+  display: inline-block;
+  margin-top: 6px;
+  padding: 3px 10px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #1a73e8;
+  background: #e8f0fe;
+  border-radius: 20px;
+  letter-spacing: 0.3px;
 }
+
+
 
 .stars{
 
