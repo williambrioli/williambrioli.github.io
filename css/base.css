@@ -21,151 +21,60 @@
    =============================================== */
 
 
-/* ============================================================
-   BASE GLOBAL — VERSÃO PREMIUM 2026
-   William Brioli | Psicanálise & Desenvolvimento Humano
-   ============================================================ */
-
+/* 🔧 Variáveis globais do tema */
+/* O :root guarda valores que usamos em vários lugares.
+   Pense nelas como caixinhas com nomes que guardam cores e tamanhos. */
 :root {
-  /* Cores principais refinadas */
-  --bg: #F7FAFA;
-  --card: #FFFFFF;
-  --primary: #2A6B6C;          /* versão mais profunda e sofisticada */
-  --primary-700: #1A4A4B;      /* mais escura para hover e títulos */
-  --primary-light: #E8F3F3;    /* fundo suave */
-  --accent: #E8B86D;           /* dourado suave e elegante */
-  --text: #1A2A2A;
-  --muted: #4A5A5A;
-  --border: #E5EEEE;
-  --shadow-sm: 0 4px 16px rgba(26, 74, 75, 0.06);
-  --shadow-md: 0 8px 28px rgba(26, 74, 75, 0.08);
-  --shadow-lg: 0 16px 48px rgba(26, 74, 75, 0.10);
-  --radius: 16px;
-  --radius-sm: 10px;
-  --radius-full: 999px;
-  --max-width: 1280px;
-  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --bg: #F3F8F8;           /* cor de fundo geral */ /* cor clara do fundo do site */
+  --card: #FFFFFF;         /* fundo de cartões */ /* cor branca para cartões/caixas */
+  --primary: #2E7D7E;      /* cor principal */ /* cor usada para ações principais */
+  --primary-700: #1e5b5c;  /* variação mais escura */ /* mesma cor, só mais escura */
+  --accent: #F3C78A;       /* cor de destaque */ /* cor usada para chamar atenção */
+  --text: #1F2D2D;         /* texto padrão */ /* cor padrão do texto */
+  --muted: #000000;        /* texto suave */ /* aqui está preto (pode ser usado para contraste) */
+  --radius: 12px;          /* bordas arredondadas padrão */ /* quanto arredondar cantos */
+  --max-width: 1500px;     /* largura máxima dos containers */ /* largura máxima da área principal */
 }
 
-/* Reset */
-*, *::before, *::after {
+/* 🔄 Reset: remove inconsistências entre navegadores */
+/* O * seleciona tudo. Aqui estamos dizendo para todos os elementos que
+   a caixa (box) deve calcular largura/altura incluindo bordas e padding. */
+* {
   box-sizing: border-box;
-  margin: 0;
-  padding: 0;
 }
 
-html {
-  scroll-behavior: smooth;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
+/* 📄 Padrões de tipografia e plano de fundo */
+/* Aplica regras ao html e ao body (a página toda) */
 html, body {
-  height: 100%;
-  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-  background: var(--bg);
-  color: var(--text);
-  line-height: 1.65;
-  font-size: 16px;
+  height: 100%; /* faz a página ter 100% da altura da janela do navegador */
+  margin: 0;    /* tira a margem padrão que o navegador coloca */
+  padding: 0;   /* tira o espaçamento padrão que o navegador coloca */
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, 
+               "Helvetica Neue", Arial, sans-serif; /* lista de fontes que o site vai tentar usar */
+  background: var(--bg); /* usa a cor de fundo da variável --bg (aquela caixinha) */
+  color: var(--text);    /* usa a cor de texto da variável --text para o conteúdo */
 }
 
-/* Imagens */
+/* 🖼 Imagens responsivas */
+/* Estilo aplicado a todas as imagens */
 img {
-  max-width: 100%;
-  height: auto;
-  display: block;
-  border-radius: var(--radius-sm);
+  max-width: 100%; /* a imagem nunca fica maior que seu contêiner */
+  height: auto;    /* mantém a proporção da imagem (não estica) */
+  display: block;  /* evita espaços embaixo da imagem (comportamento de bloco) */
+  border-radius: 8px; /* estilo padrão: cantos levemente arredondados */
 }
 
-/* Links */
+/* 🔗 Links com herança de cor e sem sublinhado */
+/* Faz com que links não mudem a cor por padrão e não fiquem sublinhados */
 a {
-  color: inherit;
-  text-decoration: none;
-  transition: var(--transition);
+  color: inherit;        /* o link usa a mesma cor do elemento pai */
+  text-decoration: none; /* tira o risco (sublinhado) padrão dos links */
 }
 
-/* Container */
+/* 📦 Container padronizado usado em todo o site */
+/* Classe .container usada para centralizar e limitar largura do conteúdo */
 .container {
-  max-width: var(--max-width);
-  margin: 0 auto;
-  padding: 0 24px;
-}
-
-@media (min-width: 1200px) {
-  .container {
-    padding: 0 32px;
-  }
-}
-
-/* Tipografia base */
-h1, h2, h3, h4 {
-  font-weight: 700;
-  line-height: 1.25;
-  color: var(--primary-700);
-  letter-spacing: -0.02em;
-}
-
-h2 {
-  font-size: clamp(1.75rem, 4vw, 2.25rem);
-  margin-bottom: 1.25rem;
-  text-align: center;
-}
-
-p {
-  color: var(--muted);
-  margin-bottom: 1rem;
-}
-
-/* Botão global premium */
-.btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  padding: 14px 28px;
-  border-radius: var(--radius-full);
-  background: var(--primary);
-  color: #fff !important;
-  font-weight: 600;
-  font-size: 0.95rem;
-  letter-spacing: 0.02em;
-  border: none;
-  cursor: pointer;
-  transition: var(--transition);
-  box-shadow: 0 4px 14px rgba(42, 107, 108, 0.25);
-  text-align: center;
-  width: max-content;
-  margin: 16px auto;
-}
-
-.btn:hover {
-  background: var(--primary-700);
-  transform: translateY(-3px);
-  box-shadow: 0 8px 24px rgba(42, 107, 108, 0.35);
-}
-
-.btn:active {
-  transform: translateY(-1px) scale(0.98);
-}
-
-/* Botões do tipo <button> */
-button.btn {
-  font-family: inherit;
-  appearance: none;
-  outline: none;
-}
-
-/* Utilitários */
-.section-card {
-  background: var(--card);
-  border-radius: var(--radius);
-  padding: 40px 32px;
-  box-shadow: var(--shadow-sm);
-  border: 1px solid rgba(42, 107, 108, 0.06);
-}
-
-@media (max-width: 768px) {
-  .section-card {
-    padding: 28px 20px;
-  }
+  max-width: var(--max-width); /* largura máxima definida na variável --max-width */
+  margin: 0 auto;  /* centraliza horizontalmente (0 em cima/baixo, auto nas laterais) */
+  padding: 0px 0px; /* espaçamento interno (aqui, sem padding adicional) */
 }
