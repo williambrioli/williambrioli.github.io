@@ -570,3 +570,32 @@ button.btn:hover {
 .modal-content h3 {
   font-size: 1.12rem !important;
 }
+/* ============================================================
+   HERO DO BLOG – SEM BORDAS BRANCAS
+   ============================================================ */
+
+.blog-hero-wrap {
+  margin: 0 !important;
+  padding: 0 !important;
+  overflow: hidden;
+}
+
+.blog-hero {
+  margin: 0 !important;
+  border-radius: 0 !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  background-size: cover !important;
+  background-position: center center !important;
+  box-shadow: none !important;
+}
+
+/* Desktop – se quiser cantos arredondados só no desktop */
+@media (min-width: 900px) {
+  .blog-hero {
+    max-width: var(--max-width);
+    margin: 24px auto 0 !important;
+    border-radius: 24px !important;
+    overflow: hidden;
+  }
+}
