@@ -484,3 +484,89 @@ article p {
 .post-card {
   padding-top: 8px;
 }
+
+
+/* ============================================================
+   CORREÇÕES FINAIS FORTES – BLOG
+   ============================================================ */
+
+/* 1. BOTÃO NÃO FICA BRANCO NO HOVER */
+.btn,
+.btn.wa-btn,
+.modal-footer .btn,
+.article-actions .btn,
+a.btn,
+button.btn {
+  background-color: var(--primary) !important;
+  color: #ffffff !important;
+  border: none !important;
+}
+
+.btn:hover,
+.btn.wa-btn:hover,
+.modal-footer .btn:hover,
+.article-actions .btn:hover,
+a.btn:hover,
+button.btn:hover {
+  background-color: var(--primary-dark) !important;
+  color: #ffffff !important;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(31, 92, 93, 0.3) !important;
+}
+
+/* 2. RODAPÉ – remove o segundo fundo branco */
+.site-footer {
+  background: transparent !important;
+  padding: 40px 0 60px !important;
+}
+
+.site-footer .container {
+  max-width: 860px !important;
+  margin: 0 auto !important;
+  padding: 0 20px !important;
+  background: transparent !important;
+}
+
+#footerContainer {
+  background: transparent !important;
+  padding: 0 !important;
+  box-shadow: none !important;
+  border: none !important;
+}
+
+.footer-card {
+  background: #ffffff !important;
+  border-radius: 20px !important;
+  padding: 40px 36px !important;
+  box-shadow: 0 8px 30px rgba(31, 92, 93, 0.08) !important;
+  border: 1px solid var(--border) !important;
+  max-width: 100% !important;
+  margin: 0 auto !important;
+}
+
+/* 3. Conteúdo do artigo ocupa melhor a área */
+.article-content,
+.modal-content,
+.article-body {
+  max-width: 780px !important;
+  margin: 0 auto !important;
+  padding: 0 10px !important;
+}
+
+/* Título e subtítulos mais equilibrados */
+.article-content h1,
+.modal-header h2 {
+  font-size: 1.7rem !important;
+  line-height: 1.3 !important;
+}
+
+.article-content h2,
+.modal-content h2 {
+  font-size: 1.28rem !important;
+  margin-top: 30px !important;
+}
+
+.article-content h3,
+.modal-content h3 {
+  font-size: 1.12rem !important;
+}
