@@ -137,21 +137,32 @@
     };
   </script>
 
-  <!-- HERO PREMIUM -->
-  <header class="hero" id="hero" role="banner">
-    <div class="hero__img" id="heroImg" aria-hidden="true"></div>
-    <div class="hero__overlay">
-      <div class="hero__content">
-        <p class="hero-eyebrow">Psicanálise • Saúde Emocional • Desenvolvimento Humano</p>
-        <h1>Clareza emocional para quem precisa liderar a própria vida e as pessoas ao redor</h1>
-        <p class="lead">Atendimento clínico individual e de casais • Palestras e consultorias para líderes e equipes</p>
-        <div class="hero-ctas">
-          <button class="btn btn-primary wa-btn" data-btn="psicoterapiaindividual" data-agenda="/agendaonline.html" onclick="handleCTA(this)">Agendar sessão</button>
-          <button class="btn btn-outline wa-btn" data-btn="consultapresencial" onclick="openWA('duvidageneric')">Falar no WhatsApp</button>
-        </div>
+  <!-- HERO PREMIUM CRIATIVO -->
+<header class="hero" id="hero" role="banner">
+  <div class="hero__img" id="heroImg" aria-hidden="true"></div>
+  
+  <div class="hero__overlay">
+    <div class="hero-glass">
+      <p class="hero-eyebrow">Psicanálise • Saúde Emocional • Desenvolvimento Humano</p>
+      <h1>Clareza emocional para quem precisa liderar a própria vida e as pessoas ao redor</h1>
+      <p class="lead">Atendimento clínico individual e de casais • Palestras e consultorias para líderes e equipes</p>
+      
+      <div class="hero-ctas">
+        <button class="btn btn-primary wa-btn" 
+                data-btn="psicoterapiaindividual" 
+                data-agenda="/agendaonline.html" 
+                onclick="handleCTA(this)">
+          Agendar Online
+        </button>
+        <button class="btn btn-outline-light wa-btn" 
+                data-btn="consultapresencial" 
+                onclick="openWA('duvidageneric')">
+          Agendar Presencial
+        </button>
       </div>
     </div>
-  </header>
+  </div>
+</header>
 
   <main>
 
@@ -170,25 +181,28 @@
     </section>
 
     <!-- DEPOIMENTOS -->
-    <section id="depoimentos" class="section">
-      <div class="container">
-        <div class="section-header">
-          <h2>O que dizem sobre o trabalho</h2>
-          <p>Depoimentos reais de quem já passou pelo processo</p>
-        </div>
+<section id="depoimentos" class="section">
+  <div class="container">
+    <div class="section-header">
+      <h2>O que dizem sobre o trabalho</h2>
+      <p>Depoimentos reais de quem já passou pelo processo</p>
+    </div>
 
-        <div class="testimonials-carousel" id="testimonials">
-          <button class="tc-btn tc-prev" aria-label="Anterior">‹</button>
-          <div class="tc-track" aria-live="polite"></div>
-          <button class="tc-btn tc-next" aria-label="Próximo">›</button>
-          <div class="tc-dots"></div>
-        </div>
-
-        <div class="center">
-          <a href="depoimentos.html" class="btn btn-outline">Avalie meu trabalho</a>
-        </div>
+    <!-- Container que o google-reviews.js preenche -->
+    <div class="reviews-wrapper">
+      <div class="testimonials-carousel" id="testimonials">
+        <button class="tc-btn tc-prev" aria-label="Anterior">‹</button>
+        <div class="tc-track" aria-live="polite"></div>
+        <button class="tc-btn tc-next" aria-label="Próximo">›</button>
+        <div class="tc-dots"></div>
       </div>
-    </section>
+    </div>
+
+    <div class="center">
+      <a href="depoimentos.html" class="btn btn-outline">Avalie meu trabalho</a>
+    </div>
+  </div>
+</section>
 
     <!-- SOBRE MIM -->
     <section id="sobre" class="section">
@@ -229,7 +243,19 @@
             <div class="card-icon">🧠</div>
             <h3>Ansiedade, Burnout e Depressão</h3>
             <p>Na primeira sessão o foco é você. Um espaço de escuta profunda e sem julgamentos para compreender o que está por trás do cansaço, da ansiedade e da tristeza.</p>
-            <button class="btn wa-btn" data-btn="psicoterapiaindividual" data-agenda="/agendaonline.html" onclick="handleCTA(this)">Quero este atendimento</button>
+            <div class="card-actions">
+  <button class="btn btn-primary btn-sm wa-btn" 
+          data-btn="psicoterapiaindividual" 
+          data-agenda="/agendaonline.html" 
+          onclick="handleCTA(this)">
+    Agentar Consulta Online
+  </button>
+  <button class="btn btn-outline btn-sm wa-btn" 
+          data-btn="consultapresencial" 
+          onclick="openWA('duvidageneric')">
+    Agendar Consulta Presencial
+  </button>
+</div>
           </article>
 
           <article class="service-card">
@@ -457,11 +483,13 @@
     </section>
 
     <!-- CONTATO / RODAPÉ -->
-    <footer id="contato" class="site-footer">
-      <div class="container" id="footerContainer">
-        <!-- Conteúdo injetado via JS -->
-      </div>
-    </footer>
+<footer id="contato" class="site-footer">
+  <div class="container">
+    <div class="footer-card" id="footerContainer">
+      <!-- Conteúdo injetado via JS -->
+    </div>
+  </div>
+</footer>
 
   </main>
 
