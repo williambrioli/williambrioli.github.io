@@ -443,3 +443,269 @@
     font-size: 0.88rem;
   }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ===== HERO GLASS CRIATIVO ===== */
+.hero {
+  position: relative;
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  height: 680px;
+  overflow: hidden;
+  color: #fff;
+}
+
+@media (min-width: 900px) {
+  .hero {
+    margin-top: 24px;
+    border-radius: 28px;
+  }
+}
+
+.hero__img {
+  position: absolute;
+  inset: 0;
+  background-size: cover !important;
+  background-position: center center !important;
+  transition: transform 12s ease;
+}
+
+.hero:hover .hero__img {
+  transform: scale(1.04);
+}
+
+.hero__overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: flex-end;
+  padding: 40px;
+  background: linear-gradient(
+    90deg,
+    rgba(15, 35, 35, 0.82) 0%,
+    rgba(15, 35, 35, 0.55) 45%,
+    rgba(15, 35, 35, 0.15) 100%
+  );
+}
+
+.hero-glass {
+  max-width: 580px;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 24px;
+  padding: 36px 32px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
+}
+
+.hero-eyebrow {
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #E8C9A0;
+  margin-bottom: 14px;
+}
+
+.hero h1 {
+  font-size: clamp(1.85rem, 4.5vw, 2.7rem);
+  font-weight: 800;
+  color: #fff;
+  line-height: 1.18;
+  margin-bottom: 14px;
+  text-shadow: 0 2px 12px rgba(0,0,0,0.25);
+}
+
+.hero .lead {
+  font-size: 1.05rem;
+  color: rgba(255,255,255,0.88);
+  margin-bottom: 28px;
+  line-height: 1.5;
+}
+
+.hero-ctas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.btn-outline-light {
+  background: transparent;
+  color: #fff !important;
+  border: 2px solid rgba(255,255,255,0.7);
+}
+
+.btn-outline-light:hover {
+  background: #fff;
+  color: var(--primary-dark) !important;
+  border-color: #fff;
+}
+
+/* ===== DEPOIMENTOS CORRIGIDO ===== */
+.reviews-wrapper {
+  position: relative;
+  max-width: 920px;
+  margin: 0 auto;
+}
+
+.testimonials-carousel {
+  position: relative;
+  width: 100%;
+}
+
+.tc-track {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  min-height: 280px;
+  border-radius: 20px;
+  background: transparent;
+}
+
+/* Quando o google-reviews.js injeta os cards */
+.tc-track .review-card,
+.tc-slide {
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--border);
+}
+
+.tc-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: #fff;
+  border: none;
+  font-size: 22px;
+  color: var(--primary-dark);
+  box-shadow: var(--shadow-md);
+  cursor: pointer;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition);
+}
+
+.tc-btn:hover {
+  background: var(--primary);
+  color: #fff;
+}
+
+#testimonials .tc-prev { left: -20px; }
+#testimonials .tc-next { right: -20px; }
+
+.tc-dots {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  margin-top: 24px;
+}
+
+.tc-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgba(31, 92, 93, 0.2);
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.tc-dot.active {
+  width: 26px;
+  border-radius: 999px;
+  background: var(--primary);
+}
+
+/* ===== FOOTER COM CARD ===== */
+.site-footer {
+  padding: 48px 0 64px;
+  background: transparent;
+}
+
+.footer-card {
+  background: #fff;
+  border-radius: 24px;
+  padding: 48px 40px;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--border);
+}
+
+/* ===== CARD ACTIONS (Online + Presencial) ===== */
+.card-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: auto;
+}
+
+.card-actions .btn {
+  flex: 1;
+  margin: 0;
+  padding: 11px 12px;
+  font-size: 0.88rem;
+}
+
+/* ===== RESPONSIVO HERO ===== */
+@media (max-width: 899px) {
+  .hero {
+    height: 560px;
+    border-radius: 0;
+  }
+  
+  .hero__overlay {
+    padding: 24px 16px 32px;
+    background: linear-gradient(
+      to top,
+      rgba(15, 35, 35, 0.88) 0%,
+      rgba(15, 35, 35, 0.5) 50%,
+      transparent 100%
+    );
+  }
+  
+  .hero-glass {
+    max-width: 100%;
+    padding: 28px 22px;
+  }
+  
+  #testimonials .tc-prev { left: 8px; }
+  #testimonials .tc-next { right: 8px; }
+}
+
+@media (max-width: 600px) {
+  .hero {
+    height: 520px;
+  }
+  
+  .hero h1 {
+    font-size: 1.7rem;
+  }
+  
+  .card-actions {
+    flex-direction: column;
+  }
+}
