@@ -36,7 +36,7 @@ window.SITE_DATA = { // Cria um objeto global chamado SITE_DATA no objeto window
     orientacaoetransicaodecarreira: "Agendar Consulta",        // 🔥 novos botões globais que alterar os boões dos ACOORDIONS Como te ajudo.
     orientacaofinanceira: "Contratar Serviço",        // 🔥 novos botões globais que alterar os boões dos ACOORDIONS Como te ajudo.
     nr1: "Contratar Serviço",        // 🔥 novos botões globais que alterar os boões dos ACOORDIONS Como te ajudo.
-    planosaude: "Agendar Consulta",        // 🔥 novos botões globais que alterar os boões dos ACOORDIONS Dúvidas.
+    planosaude: "Agendar Consulta Online",        // 🔥 novos botões globais que alterar os boões dos ACOORDIONS Dúvidas.
     horariofuncionamento: "Agendar Consulta",        // 🔥 novos botões globais que alterar os boões dos ACOORDIONS Dúvidas.
     precisoterapia: "Agendar Consulta",        // 🔥 novos botões globais que alterar os boões dos ACOORDIONS Dúvidas.
     comofuncionaterapia: "Agendar Consulta",        // 🔥 novos botões globais que alterar os boões dos ACOORDIONS Dúvidas.
@@ -48,7 +48,8 @@ window.SITE_DATA = { // Cria um objeto global chamado SITE_DATA no objeto window
     posturagerencial: "Falar com o Consultor",
     liderancapratica: "Falar com o Consultor",
     acompanhargestores: "Falar com o Consultor",
-    alinhamentoorganizacional: "Falar com o Consultor"
+    alinhamentoorganizacional: "Falar com o Consultor",
+    consultapresencial: "Agendar Consulta Presencial"
 
     
     
