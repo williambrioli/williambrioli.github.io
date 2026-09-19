@@ -718,20 +718,31 @@
     box-shadow: 0 4px 12px rgba(0,0,0,0.12) !important;
   }
 
-  /* Força o conteúdo das setas */
-  .tc-prev::after {
-    content: "‹";
-    font-size: 26px;
-  }
+/* ============================================================
+   SETAS DO DEPOIMENTO – HOVER CORRETO (não fica branco)
+   ============================================================ */
 
-  .tc-next::after {
-    content: "›";
-    font-size: 26px;
-  }
+.tc-btn {
+  background: #ffffff !important;
+  color: var(--primary-dark) !important;
+  transition: all 0.25s ease !important;
+}
 
-  /* Esconde o texto original se estiver bugado */
-  .tc-prev,
-  .tc-next {
-    font-size: 0 !important;
+.tc-btn:hover,
+.tc-btn:active,
+.tc-btn:focus {
+  background: var(--primary) !important;      /* verde */
+  color: #ffffff !important;                  /* seta branca */
+  transform: scale(1.08);
+  box-shadow: 0 6px 16px rgba(31, 92, 93, 0.3) !important;
+}
+
+/* Mobile também */
+@media (max-width: 768px) {
+  .tc-btn:hover,
+  .tc-btn:active,
+  .tc-btn:focus {
+    background: var(--primary) !important;
+    color: #ffffff !important;
   }
 }
