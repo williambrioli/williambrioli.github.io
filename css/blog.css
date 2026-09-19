@@ -570,25 +570,64 @@ button.btn:hover {
 .modal-content h3 {
   font-size: 1.12rem !important;
 }
+
+
+
 /* ============================================================
-   HERO DO BLOG – SEM BORDAS BRANCAS
+   HERO DO BLOG – FULL WIDTH + BORDAS ARREDONDADAS NO CELULAR
    ============================================================ */
 
 .blog-hero-wrap {
   margin: 0 !important;
   padding: 0 !important;
+  width: 100% !important;
+  max-width: 100% !important;
   overflow: hidden;
 }
 
 .blog-hero {
-  margin: 0 !important;
-  border-radius: 0 !important;
   width: 100% !important;
   max-width: 100% !important;
+  margin: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
   background-size: cover !important;
   background-position: center center !important;
-  box-shadow: none !important;
+  min-height: 420px;
 }
+
+/* Desktop – igual ao hero do index */
+@media (min-width: 900px) {
+  .blog-hero {
+    max-width: var(--max-width) !important;
+    margin: 24px auto 0 !important;
+    border-radius: 28px !important;
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+  }
+}
+
+/* Mobile – full width + cantos arredondados suaves */
+@media (max-width: 899px) {
+  .blog-hero {
+    width: 100vw !important;
+    max-width: 100vw !important;
+    margin-left: calc(50% - 50vw) !important; /* força full bleed */
+    margin-right: calc(50% - 50vw) !important;
+    border-radius: 0 0 24px 24px !important; /* arredonda só embaixo */
+    min-height: 380px;
+    padding: 48px 20px 36px !important;
+  }
+}
+
+@media (max-width: 600px) {
+  .blog-hero {
+    min-height: 340px;
+    border-radius: 0 0 20px 20px !important;
+  }
+}
+
+
 
 /* Desktop – se quiser cantos arredondados só no desktop */
 @media (min-width: 900px) {
