@@ -3,7 +3,7 @@
    William Brioli
    ============================================================ */
 
-/* ===== HERO ===== */
+/* ===== HERO MODERNO (vidro baixo + deslocado) ===== */
 .hero {
   position: relative;
   width: 100%;
@@ -38,21 +38,30 @@
   inset: 0;
   display: flex;
   align-items: flex-end;
-  padding: 0 40px 48px;
+  padding: 0 40px 40px;
   background: linear-gradient(
     to top,
-    rgba(12, 30, 30, 0.78) 0%,
-    rgba(12, 30, 30, 0.35) 45%,
-    transparent 70%
+    rgba(12, 30, 30, 0.72) 0%,
+    rgba(12, 30, 30, 0.25) 40%,
+    transparent 65%
   );
 }
 
 .hero-content {
-  max-width: 640px;
+  max-width: 580px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 24px;
+  padding: 32px 28px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
+  transform: translateY(12px);          /* sobe um pouco do fundo */
+  margin-bottom: 8px;
 }
 
 .hero-eyebrow {
-  font-size: 0.8rem;
+  font-size: 0.78rem;
   font-weight: 600;
   letter-spacing: 0.1em;
   text-transform: uppercase;
@@ -61,31 +70,31 @@
 }
 
 .hero h1 {
-  font-size: clamp(1.9rem, 4.8vw, 2.75rem);
+  font-size: clamp(1.75rem, 4.5vw, 2.5rem);
   font-weight: 800;
   color: #fff;
-  line-height: 1.18;
-  margin-bottom: 14px;
-  text-shadow: 0 2px 16px rgba(0,0,0,0.35);
+  line-height: 1.2;
+  margin-bottom: 12px;
+  text-shadow: 0 2px 12px rgba(0,0,0,0.3);
 }
 
 .hero .lead {
-  font-size: 1.08rem;
+  font-size: 1.02rem;
   color: rgba(255,255,255,0.9);
-  margin-bottom: 28px;
+  margin-bottom: 24px;
   line-height: 1.5;
 }
 
 .hero-ctas {
   display: flex;
   flex-wrap: wrap;
-  gap: 12px;
+  gap: 10px;
 }
 
 .btn-outline-light {
   background: transparent;
   color: #fff !important;
-  border: 2px solid rgba(255,255,255,0.75);
+  border: 2px solid rgba(255,255,255,0.7);
 }
 
 .btn-outline-light:hover {
@@ -556,13 +565,19 @@
 
 /* ===== RESPONSIVO ===== */
 @media (max-width: 899px) {
-  .hero {
+ .hero {
     height: 560px;
     border-radius: 0;
   }
 
   .hero__overlay {
-    padding: 0 20px 36px;
+    padding: 0 16px 28px;
+  }
+
+  .hero-content {
+    max-width: 100%;
+    padding: 24px 20px;
+    transform: translateY(0);
   }
 
   .cc-track,
@@ -601,12 +616,12 @@
 }
 
 @media (max-width: 600px) {
-  .hero {
+ .hero {
     height: 520px;
   }
 
   .hero h1 {
-    font-size: 1.7rem;
+    font-size: 1.65rem;
   }
 
   .cards-grid,
@@ -639,4 +654,36 @@
   .review-text {
     font-size: 1rem;
   }
+}
+
+
+
+/* ===== LARGURA CONSISTENTE (igual ao hero e menu) ===== */
+.intro-card,
+.about-content,
+#blog .container > *:not(.section-header),
+.footer-card {
+  max-width: 860px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ===== BLOG com fundo branco ===== */
+#blog .container {
+  background: var(--card);
+  border-radius: var(--radius);
+  padding: 48px 40px;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--border);
+  max-width: 860px;
+}
+
+#blog .section-header {
+  margin-bottom: 32px;
+}
+
+/* ===== SOBRE MIM e INTRODUÇÃO já estão ok, só garantindo ===== */
+.intro-card,
+.about-content {
+  max-width: 860px;
 }
