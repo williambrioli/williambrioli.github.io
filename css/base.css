@@ -21,60 +21,156 @@
    =============================================== */
 
 
-/* 🔧 Variáveis globais do tema */
-/* O :root guarda valores que usamos em vários lugares.
-   Pense nelas como caixinhas com nomes que guardam cores e tamanhos. */
+/* ============================================================
+   BASE — PREMIUM 2026
+   ============================================================ */
+
 :root {
-  --bg: #F3F8F8;           /* cor de fundo geral */ /* cor clara do fundo do site */
-  --card: #FFFFFF;         /* fundo de cartões */ /* cor branca para cartões/caixas */
-  --primary: #2E7D7E;      /* cor principal */ /* cor usada para ações principais */
-  --primary-700: #1e5b5c;  /* variação mais escura */ /* mesma cor, só mais escura */
-  --accent: #F3C78A;       /* cor de destaque */ /* cor usada para chamar atenção */
-  --text: #1F2D2D;         /* texto padrão */ /* cor padrão do texto */
-  --muted: #000000;        /* texto suave */ /* aqui está preto (pode ser usado para contraste) */
-  --radius: 12px;          /* bordas arredondadas padrão */ /* quanto arredondar cantos */
-  --max-width: 1500px;     /* largura máxima dos containers */ /* largura máxima da área principal */
+  --bg: #F5F8F8;
+  --card: #FFFFFF;
+  --primary: #1F5C5D;
+  --primary-dark: #163F40;
+  --primary-light: #E6F2F2;
+  --accent: #D4A574;
+  --text: #1A2C2C;
+  --muted: #5A6B6B;
+  --border: #E2ECEC;
+  --shadow-sm: 0 4px 20px rgba(31, 92, 93, 0.06);
+  --shadow-md: 0 10px 40px rgba(31, 92, 93, 0.09);
+  --shadow-lg: 0 20px 60px rgba(31, 92, 93, 0.12);
+  --radius: 20px;
+  --radius-sm: 12px;
+  --radius-full: 999px;
+  --max-width: 1200px;
+  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* 🔄 Reset: remove inconsistências entre navegadores */
-/* O * seleciona tudo. Aqui estamos dizendo para todos os elementos que
-   a caixa (box) deve calcular largura/altura incluindo bordas e padding. */
-* {
+*, *::before, *::after {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-/* 📄 Padrões de tipografia e plano de fundo */
-/* Aplica regras ao html e ao body (a página toda) */
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+}
+
 html, body {
-  height: 100%; /* faz a página ter 100% da altura da janela do navegador */
-  margin: 0;    /* tira a margem padrão que o navegador coloca */
-  padding: 0;   /* tira o espaçamento padrão que o navegador coloca */
-  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, 
-               "Helvetica Neue", Arial, sans-serif; /* lista de fontes que o site vai tentar usar */
-  background: var(--bg); /* usa a cor de fundo da variável --bg (aquela caixinha) */
-  color: var(--text);    /* usa a cor de texto da variável --text para o conteúdo */
+  height: 100%;
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  font-size: 16px;
 }
 
-/* 🖼 Imagens responsivas */
-/* Estilo aplicado a todas as imagens */
 img {
-  max-width: 100%; /* a imagem nunca fica maior que seu contêiner */
-  height: auto;    /* mantém a proporção da imagem (não estica) */
-  display: block;  /* evita espaços embaixo da imagem (comportamento de bloco) */
-  border-radius: 8px; /* estilo padrão: cantos levemente arredondados */
+  max-width: 100%;
+  height: auto;
+  display: block;
 }
 
-/* 🔗 Links com herança de cor e sem sublinhado */
-/* Faz com que links não mudem a cor por padrão e não fiquem sublinhados */
 a {
-  color: inherit;        /* o link usa a mesma cor do elemento pai */
-  text-decoration: none; /* tira o risco (sublinhado) padrão dos links */
+  color: inherit;
+  text-decoration: none;
+  transition: var(--transition);
 }
 
-/* 📦 Container padronizado usado em todo o site */
-/* Classe .container usada para centralizar e limitar largura do conteúdo */
 .container {
-  max-width: var(--max-width); /* largura máxima definida na variável --max-width */
-  margin: 0 auto;  /* centraliza horizontalmente (0 em cima/baixo, auto nas laterais) */
-  padding: 0px 0px; /* espaçamento interno (aqui, sem padding adicional) */
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+@media (min-width: 1100px) {
+  .container {
+    padding: 0 32px;
+  }
+}
+
+/* Tipografia */
+h1, h2, h3 {
+  font-weight: 700;
+  line-height: 1.25;
+  color: var(--primary-dark);
+  letter-spacing: -0.02em;
+}
+
+h2 {
+  font-size: clamp(1.8rem, 4vw, 2.4rem);
+  margin-bottom: 0.75rem;
+}
+
+p {
+  color: var(--muted);
+}
+
+/* Botões */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 14px 28px;
+  border-radius: var(--radius-full);
+  font-weight: 600;
+  font-size: 0.95rem;
+  border: none;
+  cursor: pointer;
+  transition: var(--transition);
+  text-align: center;
+  font-family: inherit;
+}
+
+.btn-primary,
+.btn {
+  background: var(--primary);
+  color: #fff !important;
+  box-shadow: 0 6px 20px rgba(31, 92, 93, 0.25);
+}
+
+.btn:hover,
+.btn-primary:hover {
+  background: var(--primary-dark);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 28px rgba(31, 92, 93, 0.35);
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--primary) !important;
+  border: 2px solid var(--primary);
+  box-shadow: none;
+}
+
+.btn-outline:hover {
+  background: var(--primary);
+  color: #fff !important;
+}
+
+.btn-sm {
+  padding: 10px 20px;
+  font-size: 0.875rem;
+}
+
+.center {
+  text-align: center;
+  margin-top: 32px;
+}
+
+/* Seções */
+.section {
+  padding: 64px 0;
+}
+
+.section-header {
+  text-align: center;
+  max-width: 640px;
+  margin: 0 auto 48px;
+}
+
+.section-header p {
+  font-size: 1.1rem;
+  margin-top: 8px;
 }
