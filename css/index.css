@@ -3,13 +3,13 @@
    William Brioli
    ============================================================ */
 
-/* ===== HERO – TEXTO BEM EMBAIXO ===== */
+/* ===== HERO DEFINITIVO ===== */
 .hero {
   position: relative;
   width: 100%;
   max-width: var(--max-width);
   margin: 0 auto;
-  height: 680px;
+  height: 620px;
   overflow: hidden;
   color: #fff;
 }
@@ -17,6 +17,7 @@
 @media (min-width: 900px) {
   .hero {
     margin-top: 24px;
+    height: 680px;
     border-radius: 28px;
   }
 }
@@ -32,63 +33,44 @@
   position: absolute;
   inset: 0;
   display: flex;
-  align-items: flex-end;          /* empurra tudo para baixo */
-  justify-content: flex-start;
-  padding: 0 40px 28px;           /* bem perto do final */
+  align-items: flex-end;
   background: linear-gradient(
     to top,
-    rgba(10, 25, 25, 0.82) 0%,
-    rgba(10, 25, 25, 0.45) 35%,
-    transparent 65%
+    rgba(10, 25, 25, 0.75) 0%,
+    rgba(10, 25, 25, 0.25) 40%,
+    transparent 70%
   );
 }
 
-.hero-content {
-  max-width: 560px;
-  background: rgba(255, 255, 255, 0.12);
-  backdrop-filter: blur(18px);
-  -webkit-backdrop-filter: blur(18px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 22px;
-  padding: 28px 26px;
-  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.3);
+.hero-bottom {
+  width: 100%;
+  padding: 32px 40px 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
 }
 
-.hero-eyebrow {
-  font-size: 0.75rem;
-  font-weight: 600;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: #E8C9A0;
-  margin-bottom: 10px;
-}
-
-.hero h1 {
-  font-size: clamp(1.7rem, 4.2vw, 2.4rem);
-  font-weight: 800;
+.hero-tagline {
+  font-size: clamp(1.4rem, 3.5vw, 1.9rem);
+  font-weight: 700;
   color: #fff;
-  line-height: 1.2;
-  margin-bottom: 10px;
-}
-
-.hero .lead {
-  font-size: 1rem;
-  color: rgba(255,255,255,0.9);
-  margin-bottom: 22px;
-  line-height: 1.45;
+  line-height: 1.3;
+  max-width: 520px;
+  text-shadow: 0 2px 12px rgba(0,0,0,0.4);
+  margin: 0;
 }
 
 .hero-ctas {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: 12px;
 }
-
 
 .btn-outline-light {
   background: transparent;
   color: #fff !important;
-  border: 2px solid rgba(255,255,255,0.7);
+  border: 2px solid rgba(255,255,255,0.75);
 }
 
 .btn-outline-light:hover {
@@ -96,6 +78,7 @@
   color: var(--primary-dark) !important;
   border-color: #fff;
 }
+
 
 /* ===== INTRO ===== */
 .intro-card {
@@ -560,15 +543,16 @@
 /* ===== RESPONSIVO ===== */
 @media (max-width: 899px) {
  .hero {
-    height: 560px;
+    height: 520px;
     border-radius: 0;
   }
-  .hero__overlay {
-    padding: 0 16px 24px;
+
+  .hero-bottom {
+    padding: 24px 20px 28px;
   }
-  .hero-content {
-    max-width: 100%;
-    padding: 22px 18px;
+
+  .hero-tagline {
+    font-size: 1.35rem;
   }
   .cc-track,
   .pc-track {
@@ -607,10 +591,11 @@
 
 @media (max-width: 600px) {
  .hero {
-    height: 520px;
+    height: 480px;
   }
-  .hero h1 {
-    font-size: 1.55rem;
+
+  .hero-tagline {
+    font-size: 1.25rem;
   }
 
   .cards-grid,
@@ -652,7 +637,7 @@
 .about-content,
 #blog .container > *:not(.section-header),
 .footer-card {
-  max-width: 860px;
+  max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
 }
