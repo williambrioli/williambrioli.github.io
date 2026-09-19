@@ -137,12 +137,12 @@
     };
   </script>
 
-  <!-- HERO PREMIUM CRIATIVO -->
+  <!-- HERO -->
 <header class="hero" id="hero" role="banner">
   <div class="hero__img" id="heroImg" aria-hidden="true"></div>
-  
+
   <div class="hero__overlay">
-    <div class="hero-glass">
+    <div class="hero-content">
       <p class="hero-eyebrow">Psicanálise • Saúde Emocional • Desenvolvimento Humano</p>
       <h1>Clareza emocional para quem precisa liderar a própria vida e as pessoas ao redor</h1>
       <p class="lead">Atendimento clínico individual e de casais • Palestras e consultorias para líderes e equipes</p>
@@ -248,12 +248,12 @@
           data-btn="psicoterapiaindividual" 
           data-agenda="/agendaonline.html" 
           onclick="handleCTA(this)">
-    Agentar Consulta Online
+    Consulta Online
   </button>
   <button class="btn btn-outline btn-sm wa-btn" 
           data-btn="consultapresencial" 
           onclick="openWA('duvidageneric')">
-    Agendar Consulta Presencial
+    Consulta Presencial
   </button>
 </div>
           </article>
@@ -262,21 +262,51 @@
             <div class="card-icon">🎯</div>
             <h3>Processo Focado e Objetivo</h3>
             <p>Entre 4 e 12 encontros para trabalhar uma questão específica de forma clara, estratégica e no seu ritmo. Sem compromisso eterno.</p>
-            <button class="btn wa-btn" data-btn="psicoterapiabreve" data-agenda="/agendaonline.html" onclick="handleCTA(this)">Quero este atendimento</button>
+            <button class="btn btn-primary btn-sm wa-btn" 
+          data-btn="psicoterapiaindividual" 
+          data-agenda="/agendaonline.html" 
+          onclick="handleCTA(this)">
+    Consulta Online
+  </button>
+  <button class="btn btn-outline btn-sm wa-btn" 
+          data-btn="consultapresencial" 
+          onclick="openWA('duvidageneric')">
+    Consulta Presencial
+  </button>
           </article>
 
           <article class="service-card">
             <div class="card-icon">💬</div>
             <h3>Sessão Única</h3>
             <p>Uma conversa profunda e pontual para organizar uma decisão importante, um conflito ou simplesmente ser ouvido com qualidade.</p>
-            <button class="btn wa-btn" data-btn="sessaounica" onclick="handleCTA(this)">Quero este atendimento</button>
+            <button class="btn btn-primary btn-sm wa-btn" 
+          data-btn="psicoterapiaindividual" 
+          data-agenda="/agendaonline.html" 
+          onclick="handleCTA(this)">
+    Consulta Online
+  </button>
+  <button class="btn btn-outline btn-sm wa-btn" 
+          data-btn="consultapresencial" 
+          onclick="openWA('duvidageneric')">
+    Consulta Presencial
+  </button>
           </article>
 
           <article class="service-card">
             <div class="card-icon">❤️</div>
             <h3>Terapia de Casal</h3>
             <p>Espaço seguro e mediado para o casal se ouvir de verdade, compreender padrões e decidir o futuro com mais clareza e respeito.</p>
-            <button class="btn wa-btn" data-btn="terapiadecasal" onclick="handleCTA(this)">Quero este atendimento</button>
+            <button class="btn btn-primary btn-sm wa-btn" 
+          data-btn="psicoterapiaindividual" 
+          data-agenda="/agendaonline.html" 
+          onclick="handleCTA(this)">
+    Consulta Online
+  </button>
+  <button class="btn btn-outline btn-sm wa-btn" 
+          data-btn="consultapresencial" 
+          onclick="openWA('duvidageneric')">
+    Consulta Presencial
+  </button>
           </article>
 
         </div>
@@ -323,7 +353,17 @@
             <div class="card-icon">💡</div>
             <h3>Terapia para Empreendedores</h3>
             <p>Espaço clínico específico para quem carrega o próprio negócio e precisa fortalecer o emocional diante da pressão e incerteza.</p>
-            <button class="btn wa-btn" data-btn="terapiaparaempreendedores" data-agenda="/agendaonline.html" onclick="handleCTA(this)">Quero este atendimento</button>
+            <button class="btn btn-primary btn-sm wa-btn" 
+          data-btn="psicoterapiaindividual" 
+          data-agenda="/agendaonline.html" 
+          onclick="handleCTA(this)">
+    Consulta Online
+  </button>
+  <button class="btn btn-outline btn-sm wa-btn" 
+          data-btn="consultapresencial" 
+          onclick="openWA('duvidageneric')">
+    Consulta Presencial
+  </button>
           </article>
 
           <article class="service-card">
@@ -485,8 +525,8 @@
     <!-- CONTATO / RODAPÉ -->
 <footer id="contato" class="site-footer">
   <div class="container">
-    <div class="footer-card" id="footerContainer">
-      <!-- Conteúdo injetado via JS -->
+    <div id="footerContainer">
+      <!-- O JS injeta o .footer-card aqui dentro -->
     </div>
   </div>
 </footer>
