@@ -351,3 +351,85 @@ footer.site-footer {
     padding: 32px 24px;
   }
 }
+
+
+
+/* ===== RODAPÉ – evita card duplo ===== */
+.site-footer .container {
+  display: flex;
+  justify-content: center;
+}
+
+#footerContainer {
+  width: 100%;
+  max-width: 860px;
+}
+
+.footer-card {
+  background: var(--card);
+  border-radius: var(--radius);
+  padding: 40px 36px;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--border);
+  width: 100%;
+}
+
+/* Remove qualquer fundo extra que possa estar vindo de outro lugar */
+.site-footer {
+  background: transparent !important;
+}
+
+
+
+
+/* ===== Subtítulos dos artigos (mais equilibrados) ===== */
+.modal-content h2,
+.article-content h2,
+.modal-content h3,
+.article-content h3 {
+  font-size: 1.35rem !important;
+  line-height: 1.35;
+  margin-top: 28px;
+  margin-bottom: 12px;
+  color: var(--primary-dark);
+}
+
+.modal-content h4,
+.article-content h4 {
+  font-size: 1.15rem !important;
+  margin-top: 24px;
+  margin-bottom: 10px;
+}
+
+
+
+/* ===== Botão Agendar – hover correto ===== */
+.modal-footer .btn,
+.article-actions .btn,
+.btn.wa-btn {
+  background: var(--primary) !important;
+  color: #fff !important;
+  border: none !important;
+}
+
+.modal-footer .btn:hover,
+.article-actions .btn:hover,
+.btn.wa-btn:hover {
+  background: var(--primary-dark) !important;
+  color: #fff !important;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(31, 92, 93, 0.3);
+}
+
+
+
+
+/* ===== Esconde a imagem dos cards de artigo ===== */
+.post-card img {
+  display: none !important;
+}
+
+/* Opcional: se quiser um pouco mais de espaço no topo do card depois de esconder a imagem */
+.post-card {
+  padding-top: 8px;
+}
