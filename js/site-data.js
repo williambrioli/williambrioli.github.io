@@ -28,28 +28,28 @@ window.SITE_DATA = { // Cria um objeto global chamado SITE_DATA no objeto window
     modalCTA: "Agendar atendimento",              // botão dentro do modal — texto exibido no botão do modal.
     readMore: "Ler artigo completo",              // texto do botão "ler mais" nos cards da home/blog.
     closeModal: "Fechar",                          // texto do botão para fechar modais.
-    psicoterapiaindividual: "Agendar Consulta Online",        // 🔥 novos botões globais que alterar os boões dos ACOORDIONS Como te ajudo.
-    psicoterapiabreve: "Agendar Consulta",       // 🔥 novos botões globais que alterar os boões dos ACOORDIONS Como te ajudo.
-    sessaounica: "Contratar Serviço",        // 🔥 novos botões globais que alterar os boões dos ACOORDIONS Como te ajudo.
-    terapiadecasal: "Contratar Serviço",        // 🔥 novos botões globais que alterar os boões dos ACOORDIONS Como te ajudo.
-    terapiaparaempreendedores: "Agendar Consulta",        // 🔥 novos botões globais que alterar os boões dos ACOORDIONS Como te ajudo.
+    psicoterapiaindividual: "Consultar Online",        // 🔥 novos botões globais que alterar os boões dos ACOORDIONS Como te ajudo.
+    psicoterapiabreve: "Consultar Online",       // 🔥 novos botões globais que alterar os boões dos ACOORDIONS Como te ajudo.
+    sessaounica: "Consultar Online",        // 🔥 novos botões globais que alterar os boões dos ACOORDIONS Como te ajudo.
+    terapiadecasal: "Consultar Online",        // 🔥 novos botões globais que alterar os boões dos ACOORDIONS Como te ajudo.
+    terapiaparaempreendedores: "Consultar Online",        // 🔥 novos botões globais que alterar os boões dos ACOORDIONS Como te ajudo.
     orientacaoetransicaodecarreira: "Agendar Consulta",        // 🔥 novos botões globais que alterar os boões dos ACOORDIONS Como te ajudo.
     orientacaofinanceira: "Contratar Serviço",        // 🔥 novos botões globais que alterar os boões dos ACOORDIONS Como te ajudo.
     nr1: "Contratar Serviço",        // 🔥 novos botões globais que alterar os boões dos ACOORDIONS Como te ajudo.
-    planosaude: "Agendar Consulta Online",        // 🔥 novos botões globais que alterar os boões dos ACOORDIONS Dúvidas.
-    horariofuncionamento: "Agendar Consulta",        // 🔥 novos botões globais que alterar os boões dos ACOORDIONS Dúvidas.
-    precisoterapia: "Agendar Consulta",        // 🔥 novos botões globais que alterar os boões dos ACOORDIONS Dúvidas.
-    comofuncionaterapia: "Agendar Consulta",        // 🔥 novos botões globais que alterar os boões dos ACOORDIONS Dúvidas.
+    planosaude: "Consultar Online",        // 🔥 novos botões globais que alterar os boões dos ACOORDIONS Dúvidas.
+    horariofuncionamento: "Consultar Online",        // 🔥 novos botões globais que alterar os boões dos ACOORDIONS Dúvidas.
+    precisoterapia: "Consultar Online",        // 🔥 novos botões globais que alterar os boões dos ACOORDIONS Dúvidas.
+    comofuncionaterapia: "Consultar Online",        // 🔥 novos botões globais que alterar os boões dos ACOORDIONS Dúvidas.
     palestras: "Contratar Serviço",        // 🔥 novos botões globais que alterar os boões Palestras.
     mediadorextrajudicial: "Contratar Serviço",       
     consultor: "Contratar Serviço",        
-    depoimentos: "Agendar Consulta",
+    depoimentos: "Consultar Online",
     estrategiacomercialevendas: "Falar com o Consultor",
     posturagerencial: "Falar com o Consultor",
     liderancapratica: "Falar com o Consultor",
     acompanhargestores: "Falar com o Consultor",
     alinhamentoorganizacional: "Falar com o Consultor",
-    consultapresencial: "Agendar Consulta Presencial"
+    consultapresencial: "Consultar Presencial"
 
     
     
