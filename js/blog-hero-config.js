@@ -30,7 +30,7 @@ window.BLOG_HERO = {
   // Propriedade "title": título principal do HERO.
   // Ex.: "Blog • Psicanálise, Terapia e Vida Real"
   // Explicação simples: "o nome grande que aparece no topo"
-  title: "Blog • Psicanálise, Terapia e Vida Real",
+  title: "",
 
   // Propriedade "subtitle": frase maior que explica sobre o que é o blog.
   // Explicação simples: "uma linha que conta do que o blog fala"
