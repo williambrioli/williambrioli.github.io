@@ -652,7 +652,7 @@
 .about-content,
 #blog .container > *:not(.section-header),
 .footer-card {
-  max-width: 1200px;
+  max-width: 860px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -664,7 +664,7 @@
   padding: 48px 40px;
   box-shadow: var(--shadow-sm);
   border: 1px solid var(--border);
-  max-width: 1200px;
+  max-width: 860px;
 }
 
 #blog .section-header {
@@ -674,5 +674,5 @@
 /* ===== SOBRE MIM e INTRODUÇÃO já estão ok, só garantindo ===== */
 .intro-card,
 .about-content {
-  max-width: 1200px;
+  max-width: 860px;
 }
