@@ -662,38 +662,43 @@
 .about-content {
   max-width: 860px;
 }
-/* ===== CORREÇÃO MOBILE – setas não cobrem o texto ===== */
+/* ============================================================
+   DEPOIMENTOS – SETAS SEM COBRIR O TEXTO (MOBILE)
+   ============================================================ */
+
 @media (max-width: 768px) {
 
-  /* Aumenta um pouco a altura do track para dar espaço */
   .tc-track {
-    height: 420px !important;
-    padding: 0 12px;
+    height: auto !important;
+    min-height: 360px;
+    padding: 0 8px;
   }
 
-  /* Empurra as setas para fora do card */
-  #testimonials .tc-prev {
-    left: 4px !important;
-  }
-
-  #testimonials .tc-next {
-    right: 4px !important;
-  }
-
-  /* Deixa as setas menores e mais discretas no mobile */
-  .tc-btn {
-    width: 40px !important;
-    height: 40px !important;
-    font-size: 18px !important;
-    opacity: 0.9;
-  }
-
-  /* Garante que o texto do review não seja coberto */
+  /* Card com mais espaço interno nas laterais */
   .review-card {
-    padding: 24px 20px 28px !important;
+    padding: 26px 28px 30px !important;   /* ← aumenta o padding lateral */
+    margin: 0 6px;
   }
 
   .review-text {
-    padding: 0 8px;
+    font-size: 0.97rem !important;
+    line-height: 1.6 !important;
+  }
+
+  /* Setas menores e mais para as bordas */
+  .tc-btn {
+    width: 38px !important;
+    height: 38px !important;
+    font-size: 18px !important;
+    background: rgba(255, 255, 255, 0.95) !important;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15) !important;
+  }
+
+  #testimonials .tc-prev {
+    left: 2px !important;
+  }
+
+  #testimonials .tc-next {
+    right: 2px !important;
   }
 }
