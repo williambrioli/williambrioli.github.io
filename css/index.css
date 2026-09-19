@@ -3,7 +3,7 @@
    William Brioli
    ============================================================ */
 
-/* ===== HERO MODERNO (vidro baixo + deslocado) ===== */
+/* ===== HERO – TEXTO BEM EMBAIXO ===== */
 .hero {
   position: relative;
   width: 100%;
@@ -26,63 +26,56 @@
   inset: 0;
   background-size: cover !important;
   background-position: center center !important;
-  transition: transform 12s ease;
-}
-
-.hero:hover .hero__img {
-  transform: scale(1.03);
 }
 
 .hero__overlay {
   position: absolute;
   inset: 0;
   display: flex;
-  align-items: flex-end;
-  padding: 0 40px 40px;
+  align-items: flex-end;          /* empurra tudo para baixo */
+  justify-content: flex-start;
+  padding: 0 40px 28px;           /* bem perto do final */
   background: linear-gradient(
     to top,
-    rgba(12, 30, 30, 0.72) 0%,
-    rgba(12, 30, 30, 0.25) 40%,
+    rgba(10, 25, 25, 0.82) 0%,
+    rgba(10, 25, 25, 0.45) 35%,
     transparent 65%
   );
 }
 
 .hero-content {
-  max-width: 580px;
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  border-radius: 24px;
-  padding: 32px 28px;
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
-  transform: translateY(12px);          /* sobe um pouco do fundo */
-  margin-bottom: 8px;
+  max-width: 560px;
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 22px;
+  padding: 28px 26px;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.3);
 }
 
 .hero-eyebrow {
-  font-size: 0.78rem;
+  font-size: 0.75rem;
   font-weight: 600;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: #E8C9A0;
-  margin-bottom: 12px;
+  margin-bottom: 10px;
 }
 
 .hero h1 {
-  font-size: clamp(1.75rem, 4.5vw, 2.5rem);
+  font-size: clamp(1.7rem, 4.2vw, 2.4rem);
   font-weight: 800;
   color: #fff;
   line-height: 1.2;
-  margin-bottom: 12px;
-  text-shadow: 0 2px 12px rgba(0,0,0,0.3);
+  margin-bottom: 10px;
 }
 
 .hero .lead {
-  font-size: 1.02rem;
+  font-size: 1rem;
   color: rgba(255,255,255,0.9);
-  margin-bottom: 24px;
-  line-height: 1.5;
+  margin-bottom: 22px;
+  line-height: 1.45;
 }
 
 .hero-ctas {
@@ -90,6 +83,7 @@
   flex-wrap: wrap;
   gap: 10px;
 }
+
 
 .btn-outline-light {
   background: transparent;
@@ -569,17 +563,13 @@
     height: 560px;
     border-radius: 0;
   }
-
   .hero__overlay {
-    padding: 0 16px 28px;
+    padding: 0 16px 24px;
   }
-
   .hero-content {
     max-width: 100%;
-    padding: 24px 20px;
-    transform: translateY(0);
+    padding: 22px 18px;
   }
-
   .cc-track,
   .pc-track {
     height: 340px;
@@ -619,9 +609,8 @@
  .hero {
     height: 520px;
   }
-
   .hero h1 {
-    font-size: 1.65rem;
+    font-size: 1.55rem;
   }
 
   .cards-grid,
@@ -663,7 +652,7 @@
 .about-content,
 #blog .container > *:not(.section-header),
 .footer-card {
-  max-width: 860px;
+  max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -675,7 +664,7 @@
   padding: 48px 40px;
   box-shadow: var(--shadow-sm);
   border: 1px solid var(--border);
-  max-width: 860px;
+  max-width: 1200px;
 }
 
 #blog .section-header {
@@ -685,5 +674,5 @@
 /* ===== SOBRE MIM e INTRODUÇÃO já estão ok, só garantindo ===== */
 .intro-card,
 .about-content {
-  max-width: 860px;
+  max-width: 1200px;
 }
