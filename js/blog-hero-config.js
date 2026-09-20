@@ -34,11 +34,11 @@ window.BLOG_HERO = {
 
   // Propriedade "subtitle": frase maior que explica sobre o que é o blog.
   // Explicação simples: "uma linha que conta do que o blog fala"
-  subtitle: "Psicanálise, saúde emocional & desenvolvimento humano",
+  subtitle: "Psicanálise e desenvolvimento humano",
 
   // Propriedade "small": texto menor (observação) abaixo do subtítulo.
   // Explicação simples: "uma frase curtinha que complementa (ex.: 'atualizado')."
-  small: "Atualizado periodicamente com novos artigos."
+  small: "Atualizado periodicamente."
 };
 // Fim do objeto window.BLOG_HERO
 // Quando a página carregar, outro script pode usar:
