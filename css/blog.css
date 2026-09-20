@@ -652,3 +652,72 @@ button.btn:hover {
     overflow: hidden;
   }
 }
+
+
+
+
+
+/* ============================================================
+   BLOG HERO – MOBILE LIMPO (igual ao index)
+   ============================================================ */
+
+.blog-hero-wrap {
+  margin: 0 !important;
+  padding: 0 !important;
+  width: 100% !important;
+  overflow: hidden;
+}
+
+.blog-hero {
+  position: relative;
+  width: 100% !important;
+  min-height: 420px;
+  background-size: cover !important;
+  background-position: center center !important;
+  display: flex;
+  align-items: flex-end;
+  color: #fff;
+  border-radius: 0 !important;          /* sem borda redonda */
+  overflow: hidden;
+}
+
+/* Gradiente full (não fica como um quadrado) */
+.blog-hero-content {
+  width: 100%;
+  padding: 40px 24px 48px;
+  background: linear-gradient(
+    to top,
+    rgba(8, 22, 22, 0.78) 0%,
+    rgba(8, 22, 22, 0.35) 45%,
+    transparent 80%
+  );
+}
+
+/* Desktop – mantém arredondado */
+@media (min-width: 900px) {
+  .blog-hero {
+    max-width: var(--max-width);
+    margin: 24px auto 0;
+    border-radius: 28px !important;
+    min-height: 480px;
+  }
+
+  .blog-hero-content {
+    padding: 48px 48px 56px;
+  }
+}
+
+/* Mobile – full width + sem arredondamento */
+@media (max-width: 899px) {
+  .blog-hero {
+    width: 100vw !important;
+    margin-left: calc(50% - 50vw) !important;
+    margin-right: calc(50% - 50vw) !important;
+    border-radius: 0 !important;
+    min-height: 380px;
+  }
+
+  .blog-hero-content {
+    padding: 32px 20px 40px;
+  }
+}
