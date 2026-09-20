@@ -38,7 +38,7 @@ window.BLOG_HERO = {
 
   // Propriedade "small": texto menor (observação) abaixo do subtítulo.
   // Explicação simples: "uma frase curtinha que complementa (ex.: 'atualizado')."
-  small: "Atualizado periodicamente."
+  small: "Atualizado periodicamente"
 };
 // Fim do objeto window.BLOG_HERO
 // Quando a página carregar, outro script pode usar:
