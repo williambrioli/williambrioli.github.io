@@ -1,9 +1,5 @@
 /* ============================================================
-   BLOG.CSS — VERSÃO ALINHADA COM O INDEX 2026
-   ============================================================ */
-
-/* ============================================================
-   HERO DO BLOG — VERSÃO LIMPA E CORRIGIDA
+   HERO DO BLOG — VERSÃO LIMPA (compatível com o HTML atual)
    ============================================================ */
 
 .blog-hero-wrap {
@@ -17,16 +13,19 @@
   position: relative;
   width: 100%;
   min-height: 420px;
-  background-size: cover;
-  background-position: center center;
+  background-size: cover !important;
+  background-position: center center !important;
+  background-repeat: no-repeat;
   display: flex;
-  align-items: flex-end;
+  flex-direction: column;
+  justify-content: flex-end;
   color: #fff;
   border-radius: 0;
   overflow: hidden;
+  padding: 40px 24px 48px;
 }
 
-/* Gradiente em toda a imagem (não vira quadrado) */
+/* Gradiente suave por cima da imagem (sem criar quadrado) */
 .blog-hero::before {
   content: "";
   position: absolute;
@@ -41,28 +40,40 @@
   pointer-events: none;
 }
 
-.blog-hero-content {
+/* Textos ficam acima do gradiente */
+.blog-hero h1,
+.blog-hero p,
+.blog-hero small {
   position: relative;
   z-index: 2;
-  width: 100%;
-  padding: 40px 24px 48px;
-  background: transparent; /* remove o fundo que criava o quadrado */
 }
 
 .blog-hero h1 {
+  margin: 0 0 8px;
   font-size: clamp(1.9rem, 5vw, 2.8rem);
   font-weight: 800;
-  margin: 0 0 8px;
   line-height: 1.15;
   color: #fff;
   text-shadow: 0 2px 16px rgba(0,0,0,0.3);
 }
 
 .blog-hero p {
-  margin: 0;
+  margin: 0 0 10px;
   font-size: 1.05rem;
-  color: rgba(255,255,255,0.88);
-  max-width: 480px;
+  color: rgba(255,255,255,0.9);
+  max-width: 520px;
+  line-height: 1.45;
+}
+
+.blog-hero small {
+  display: inline-block;
+  margin-top: 4px;
+  padding: 4px 12px;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.15);
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: rgba(255,255,255,0.9);
 }
 
 /* Desktop */
@@ -72,10 +83,8 @@
     margin: 24px auto 0;
     border-radius: 28px;
     min-height: 480px;
-  }
-
-  .blog-hero-content {
     padding: 48px 48px 56px;
+    box-shadow: var(--shadow-md);
   }
 }
 
@@ -85,10 +94,7 @@
     width: 100%;
     min-height: 380px;
     border-radius: 0;
-  }
-
-  .blog-hero-content {
-    padding: 28px 20px 36px;
+    padding: 32px 20px 40px;
   }
 
   .blog-hero h1 {
@@ -98,11 +104,16 @@
   .blog-hero p {
     font-size: 0.95rem;
   }
+
+  .blog-hero small {
+    font-size: 0.78rem;
+  }
 }
 
 @media (max-width: 600px) {
   .blog-hero {
     min-height: 340px;
+    padding: 28px 18px 36px;
   }
 
   .blog-hero h1 {
