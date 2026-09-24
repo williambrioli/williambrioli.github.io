@@ -533,9 +533,9 @@
           <div class="en-title" id="detail-en"></div>
         </div>
         <div class="action-btns no-print">
-          <button class="btn-action" onclick="window.print()">🖨️ Imprimir</button>
-          <button class="btn-action primary" onclick="downloadPDF()">📄 Baixar PDF</button>
-        </div>
+  <button class="btn-action" onclick="printOnlyText()">🖨️ Imprimir Texto</button>
+  <button class="btn-action primary" onclick="printOnlyImage()">🖼️ Imprimir Infográfico</button>
+</div>
       </div>
 
       <div class="detail-content" id="print-area">
@@ -593,6 +593,7 @@
           namePT: "Enraizamento",
           nameEN: "Grounding",
           short: "Reconecta a percepção ao presente através do contato dos pés com o solo.",
+          image: "cards/aterramneto.png",
           content: `
             <h3>Introdução e Fundamentação</h3>
             <p>O enraizamento (grounding) é uma das técnicas mais básicas e amplamente utilizadas em abordagens somáticas. Ajuda o sistema nervoso a reconhecer que o corpo está seguro no momento presente, reduzindo estados de dissociação, hiperexcitação ou confusão.</p>
@@ -7843,18 +7844,50 @@
     }
 
     function openTechnique(catId, techId) {
-      const tech = techniquesData[catId].find(t => t.id === techId);
-      if (!tech) return;
+  const tech = techniquesData[catId].find(t => t.id === techId);
+  if (!tech) return;
 
-      document.getElementById('techniques-section').classList.remove('active');
-      document.getElementById('detail-section').classList.add('active');
+  document.getElementById('techniques-section').classList.remove('active');
+  document.getElementById('detail-section').classList.add('active');
 
-      document.getElementById('detail-title').textContent = tech.namePT;
-      document.getElementById('detail-en').textContent = tech.nameEN;
-      document.getElementById('detail-body').innerHTML = tech.content;
-      
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
+  document.getElementById('detail-title').textContent = tech.namePT;
+  document.getElementById('detail-en').textContent = tech.nameEN;
+
+  // Monta o conteúdo: Imagem primeiro + botão + texto oculto
+  let html = '';
+
+  // Imagem em destaque
+  if (tech.image) {
+    html += `
+      <div class="technique-image-wrap" style="text-align: center; margin-bottom: 1.5rem;">
+        <img id="technique-image" 
+             src="${tech.image}" 
+             alt="Infográfico - ${tech.namePT}"
+             style="max-width: 100%; height: auto; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.08);">
+      </div>
+    `;
+  }
+
+  // Botão para mostrar o texto
+  html += `
+    <div style="text-align: center; margin-bottom: 1.5rem;">
+      <button id="btn-toggle-text" class="btn-action primary" onclick="toggleTechniqueText()">
+        📖 Mostrar Texto / Explicação Completa
+      </button>
+    </div>
+  `;
+
+  // Texto completo (inicia oculto)
+  html += `
+    <div id="technique-text-content" style="display: none;">
+      ${tech.content}
+    </div>
+  `;
+
+  document.getElementById('detail-body').innerHTML = html;
+  
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
 
     function backToCategories() {
       document.getElementById('techniques-section').classList.remove('active');
@@ -7876,6 +7909,116 @@
       window.print();
     }
 
+
+function toggleTechniqueText() {
+  const textDiv = document.getElementById('technique-text-content');
+  const btn = document.getElementById('btn-toggle-text');
+
+  if (textDiv.style.display === 'none') {
+    textDiv.style.display = 'block';
+    btn.textContent = '📕 Ocultar Texto';
+  } else {
+    textDiv.style.display = 'none';
+    btn.textContent = '📖 Mostrar Texto / Explicação Completa';
+  }
+}
+
+
+
+ // Imprimir somente o texto da técnica
+function printOnlyText() {
+  const textContent = document.getElementById('technique-text-content');
+  if (!textContent) {
+    alert('Conteúdo textual não encontrado.');
+    return;
+  }
+
+  // Mostra o texto temporariamente para imprimir
+  const wasHidden = textContent.style.display === 'none';
+  textContent.style.display = 'block';
+
+  // Cria uma janela limpa só com o texto
+  const printWindow = window.open('', '_blank');
+  printWindow.document.write(`
+    <!DOCTYPE html>
+    <html>
+    <head>
+      <title>${document.getElementById('detail-title').textContent}</title>
+      <style>
+        body { font-family: system-ui, sans-serif; padding: 2cm; line-height: 1.6; color: #1e293b; }
+        h3 { color: #2c5f7c; margin-top: 1.5rem; }
+        .info-box, .warning-box { padding: 1rem; margin: 1rem 0; border-radius: 8px; }
+        .info-box { background: #f0f7f4; border-left: 4px solid #5b8a72; }
+        .warning-box { background: #fef8f0; border-left: 4px solid #d97706; }
+        .step-list { list-style: none; padding-left: 0; }
+        .step-list li { position: relative; padding-left: 2.5rem; margin-bottom: 1rem; }
+      </style>
+    </head>
+    <body>
+      <h1>${document.getElementById('detail-title').textContent}</h1>
+      <p style="color:#64748b;">${document.getElementById('detail-en').textContent}</p>
+      ${textContent.innerHTML}
+      <script>
+        window.onload = function() {
+          window.print();
+          setTimeout(() => window.close(), 400);
+        };
+      <\/script>
+    </body>
+    </html>
+  `);
+  printWindow.document.close();
+
+  // Volta o estado original do texto
+  if (wasHidden) textContent.style.display = 'none';
+}
+
+// Imprimir somente a imagem (Infográfico) em A4
+function printOnlyImage() {
+  const img = document.getElementById('technique-image');
+  if (!img) {
+    alert('Nenhuma imagem encontrada para esta técnica.');
+    return;
+  }
+
+  const printWindow = window.open('', '_blank');
+  printWindow.document.write(`
+    <!DOCTYPE html>
+    <html>
+    <head>
+      <title>Infográfico - ${document.getElementById('detail-title').textContent}</title>
+      <style>
+        @page { size: A4; margin: 1.2cm; }
+        html, body {
+          margin: 0;
+          height: 100%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+        img {
+          max-width: 100%;
+          max-height: 100vh;
+          object-fit: contain;
+        }
+      </style>
+    </head>
+    <body>
+      <img src="${img.src}" alt="Infográfico">
+      <script>
+        window.onload = function() {
+          window.print();
+          setTimeout(() => window.close(), 400);
+        };
+      <\/script>
+    </body>
+    </html>
+  `);
+  printWindow.document.close();
+}   
+
+    
+    
     // =====================================================
 // BUSCA GLOBAL MELHORADA
 // Funciona na tela inicial e dentro dos eixos
