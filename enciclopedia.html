@@ -7977,7 +7977,6 @@ function printOnlyText() {
 }
 
 // Imprimir somente a imagem (Infográfico) em A4
-// Imprimir somente a imagem (Infográfico) – força 1 página A4
 function printOnlyImage() {
   const img = document.getElementById('technique-image');
   if (!img) {
@@ -7986,89 +7985,66 @@ function printOnlyImage() {
   }
 
   const printWindow = window.open('', '_blank');
+  
   printWindow.document.write(`
     <!DOCTYPE html>
     <html>
     <head>
       <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
       <title>Infográfico</title>
       <style>
         @page {
           size: A4 portrait;
-          margin: 0.6cm;
+          margin: 0;
         }
 
         * {
-          margin: 0;
-          padding: 0;
+          margin: 0 !important;
+          padding: 0 !important;
           box-sizing: border-box;
         }
 
         html, body {
-          width: 100%;
-          height: 100%;
+          width: 210mm !important;
+          height: 297mm !important;
+          overflow: hidden !important;
           background: white;
         }
 
         body {
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          min-height: 100vh;
+          display: flex !important;
+          justify-content: center !important;
+          align-items: center !important;
         }
 
         img {
-          max-width: 100%;
-          max-height: 100vh;
-          width: auto;
-          height: auto;
-          object-fit: contain;
-          display: block;
-        }
-
-        /* Força enquadramento em A4 na hora da impressão */
-        @media print {
-          html, body {
-            width: 210mm;
-            height: 297mm;
-            margin: 0;
-            padding: 0;
-            overflow: hidden;
-          }
-
-          body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-          }
-
-          img {
-            max-width: 198mm !important;   /* largura útil da A4 */
-            max-height: 285mm !important;  /* altura útil da A4 */
-            width: auto !important;
-            height: auto !important;
-            object-fit: contain !important;
-          }
+          width: 200mm !important;
+          height: 285mm !important;
+          max-width: 200mm !important;
+          max-height: 285mm !important;
+          object-fit: contain !important;
+          object-position: center center !important;
+          display: block !important;
         }
       </style>
     </head>
     <body>
-      <img src="${img.src}" alt="Infográfico da técnica">
+      <img src="${img.src}" alt="Infográfico">
       <script>
         window.onload = function() {
-          // Pequeno atraso ajuda no celular
           setTimeout(function() {
             window.focus();
             window.print();
-          }, 400);
+          }, 600);
         };
       <\/script>
     </body>
     </html>
   `);
+  
   printWindow.document.close();
-}   
+}
 
     
     
